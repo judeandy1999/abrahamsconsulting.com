@@ -1,20 +1,93 @@
 {
   "site": {
     "name": "Abrahams Consulting",
-    "tagline": "Consulting for enterprise and government delivery teams."
+    "tagline": "Consulting for enterprise and government delivery teams.",
+    "consultationCta": {
+      "label": "Request a Consultation",
+      "path": "/consultation"
+    },
+    "consultationForm": {
+      "honeypotFieldName": "companyWebsite",
+      "fields": [
+        {
+          "name": "fullName",
+          "label": "Full name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Work email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "label": "Organization",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "qualificationSummary",
+          "label": "Qualification summary",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    }
   },
   "services": [
     {
       "slug": "consulting",
       "title": "Advisory Consulting",
-      "summary": "Strategy and execution support for complex delivery programs."
+      "summary": "Strategy and execution support for complex delivery programs.",
+      "capabilityLinkText": "Explore capabilities",
+      "procurementLinkText": "View contracts",
+      "consultationCtaLabel": "Discuss priorities"
     }
   ],
   "contracts": [
     {
       "code": "GSA-MAS",
       "name": "GSA Multiple Award Schedule",
-      "description": "Procurement vehicle for advisory and staffing engagements."
+      "description": "Procurement vehicle for advisory and staffing engagements.",
+      "servicesLinkText": "View services",
+      "consultationCtaLabel": "Discuss procurement"
     }
-  ]
+  ],
+  "trust": {
+    "certifications": [
+      {
+        "id": "mwbe",
+        "title": "MWBE Certification",
+        "issuer": "State authority",
+        "summary": "Certified minority and woman-owned business.",
+        "qualificationSignals": ["MWBE"]
+      }
+    ],
+    "caseSnapshots": [
+      {
+        "id": "case-1",
+        "title": "Program acceleration",
+        "clientContext": "Federal agency program",
+        "outcomesSummary": "Reduced delivery risk by 35%."
+      },
+      {
+        "id": "case-2",
+        "title": "Staffing surge",
+        "clientContext": "Enterprise operations team",
+        "outcomesSummary": "Filled 18 roles in six weeks."
+      }
+    ],
+    "partnerIndicators": [
+      {
+        "id": "partner-1",
+        "name": "Partner Alliance",
+        "imageSrc": "/images/trust/partner.svg",
+        "imageAlt": "Partner logo",
+        "imageWidth": 160,
+        "imageHeight": 48
+      }
+    ]
+  }
 }
