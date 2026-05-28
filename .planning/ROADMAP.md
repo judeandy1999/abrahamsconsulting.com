@@ -6,7 +6,8 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
 
 ## Phases
 
-- [x] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content. (completed 2026-05-28)
+- [x] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content.
+ (completed 2026-05-28)
 - [ ] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
 - [ ] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
 - [ ] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
@@ -24,9 +25,9 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
   3. Content editors can change core website content in code files and get schema validation feedback before deployment.
 **Plans**: 3 plans
 Plans:
-- [ ] `01-01-PLAN.md` - Establish Next.js + Vercel deployment-safe foundation and CI gate.
-- [ ] `01-02-PLAN.md` - Implement static-first core marketing routes and crawl primitives.
-- [ ] `01-03-PLAN.md` - Add typed content schema validation workflow for safe content updates.
+- [x] `01-01-PLAN.md` - Establish Next.js + Vercel deployment-safe foundation and CI gate.
+- [x] `01-02-PLAN.md` - Implement static-first core marketing routes and crawl primitives.
+- [x] `01-03-PLAN.md` - Add typed content schema validation workflow for safe content updates.
 
 ### Phase 2: Core Conversion Journeys
 **Goal**: Users can immediately understand the company offer and navigate high-intent service and procurement pages with a clear consultation path.
