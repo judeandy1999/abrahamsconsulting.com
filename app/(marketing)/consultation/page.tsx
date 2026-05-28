@@ -9,12 +9,18 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/consultation")!);
 
+function fieldHintId(name: string) {
+  return `${name}-hint`;
+}
+
 function renderField(field: ConsultationField) {
+  const hintId = fieldHintId(field.name);
   const commonProps = {
     id: field.name,
     name: field.name,
     required: field.required,
-    placeholder: field.placeholder
+    placeholder: field.placeholder,
+    "aria-describedby": field.required ? hintId : undefined
   };
 
   if (field.type === "textarea") {
@@ -61,17 +67,29 @@ export default function ConsultationPage() {
           style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
         />
 
-        <div style={{ display: "grid", gap: "1rem" }}>
-          {consultationForm.fields.map((field) => (
-            <div key={field.name}>
-              <label htmlFor={field.name} style={{ display: "block", marginBottom: "0.35rem", fontWeight: 600 }}>
-                {field.label}
-                {field.required ? " *" : ""}
-              </label>
-              {renderField(field)}
-            </div>
-          ))}
-        </div>
+        <fieldset style={{ border: 0, margin: 0, padding: 0 }}>
+          <legend className="sr-only">Consultation request details</legend>
+          <div style={{ display: "grid", gap: "1rem" }}>
+            {consultationForm.fields.map((field) => {
+              const hintId = fieldHintId(field.name);
+
+              return (
+                <div key={field.name}>
+                  <label htmlFor={field.name} style={{ display: "block", marginBottom: "0.35rem", fontWeight: 600 }}>
+                    {field.label}
+                    {field.required ? " *" : ""}
+                  </label>
+                  {renderField(field)}
+                  {field.required ? (
+                    <p id={hintId} style={{ margin: "0.35rem 0 0", fontSize: "0.875rem" }}>
+                      Required field
+                    </p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </fieldset>
 
         <button type="submit" style={{ marginTop: "1.25rem", padding: "0.65rem 1.25rem" }}>
           Submit consultation request
