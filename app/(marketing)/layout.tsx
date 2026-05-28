@@ -31,6 +31,9 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
             <li>
               <Link href="/contracts">Contracts</Link>
             </li>
+            <li>
+              <Link href="/consultation">Consultation</Link>
+            </li>
           </ul>
         </nav>
       </header>

@@ -12,6 +12,7 @@ test("marketing navigation exposes services and contracts discovery", async () =
 
   assert.match(source, /href="\/services"/);
   assert.match(source, /href="\/contracts"/);
+  assert.match(source, /href="\/consultation"/);
 });
 
 test("services overview links to service detail routes", async () => {
