@@ -8,7 +8,9 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
 
 - [x] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content.
  (completed 2026-05-28)
-- [ ] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
+ (completed 2026-05-28)
+- [x] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
+ (completed 2026-05-28)
 - [ ] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
 - [ ] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
 
@@ -41,9 +43,9 @@ Plans:
   4. User can reach one clear consultation CTA from the Home page and key service pages.
 **Plans**: 3 plans
 Plans:
-- [ ] `02-01-PLAN.md` - Establish conversion content contracts and single consultation destination route.
-- [ ] `02-02-PLAN.md` - Implement Home value-proposition journey with primary consultation CTA.
-- [ ] `02-03-PLAN.md` - Implement services and contract discovery journeys with capability routing and CTA continuity.
+- [x] `02-01-PLAN.md` - Establish conversion content contracts and single consultation destination route.
+- [x] `02-02-PLAN.md` - Implement Home value-proposition journey with primary consultation CTA.
+- [x] `02-03-PLAN.md` - Implement services and contract discovery journeys with capability routing and CTA continuity.
 **UI hint**: yes
 
 ### Phase 3: Trust and Lead Capture
@@ -79,6 +81,6 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
-| 2. Core Conversion Journeys | 0/3 | Planned | - |
+| 2. Core Conversion Journeys | 3/3 | Complete   | 2026-05-28 |
 | 3. Trust and Lead Capture | 0/TBD | Not started | - |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
