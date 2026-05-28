@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "../lib/seo/metadata";
 
-const marketingRoutes = ["/", "/about", "/services", "/contracts", "/trust", "/consultation"];
+const marketingRoutes = [
+  "/",
+  "/about",
+  "/services",
+  "/contracts",
+  "/trust",
+  "/consultation",
+  "/consultation/success"
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getSiteUrl();
