@@ -18,11 +18,12 @@ test("schema defines trust content with certifications, case snapshots, and part
 });
 
 test("schema defines consultation qualification field metadata", async () => {
-  const source = await readFile(SCHEMA_FILE, "utf8");
+  const schemaSource = await readFile(SCHEMA_FILE, "utf8");
+  const siteSource = await readFile(SITE_FILE, "utf8");
 
-  assert.match(source, /consultationFormSchema|consultationFieldSchema/);
-  assert.match(source, /honeypotFieldName/);
-  assert.match(source, /qualificationSummary|organization/);
+  assert.match(schemaSource, /consultationFormSchema|consultationFieldSchema/);
+  assert.match(schemaSource, /honeypotFieldName/);
+  assert.match(siteSource, /qualificationSummary|organization/);
 });
 
 test("trust content module provides certifications and at least two case snapshots", async () => {
