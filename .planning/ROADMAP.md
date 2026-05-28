@@ -59,7 +59,11 @@ Plans:
   3. User can see approved client or partner trust indicators without noticeable page slowdowns.
   4. User can submit the short contact form and receive a clear success confirmation.
   5. Internal team reliably receives each submitted lead through the initial email routing path.
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] `03-01-PLAN.md` - Extend trust and lead content contracts with validated schemas.
+- [ ] `03-02-PLAN.md` - Implement dedicated trust route and discoverability wiring.
+- [ ] `03-03-PLAN.md` - Complete consultation form submission and email lead routing path.
 **UI hint**: yes
 
 ### Phase 4: Launch Quality Gates
@@ -82,5 +86,5 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
 | 2. Core Conversion Journeys | 3/3 | Complete   | 2026-05-28 |
-| 3. Trust and Lead Capture | 0/TBD | Not started | - |
+| 3. Trust and Lead Capture | 0/3 | Planned | - |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
