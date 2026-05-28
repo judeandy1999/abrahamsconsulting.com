@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export default function HomePage() {
   return (
     <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
@@ -11,6 +13,12 @@ export default function HomePage() {
         <ul style={{ display: "flex", gap: "1rem", listStyle: "none", margin: 0, padding: 0 }}>
           <li>
             <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/services">Services</Link>
+          </li>
+          <li>
+            <Link href="/contracts">Contracts</Link>
           </li>
         </ul>
       </nav>
