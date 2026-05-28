@@ -1,4 +1,5 @@
 import nextPlugin from "@next/eslint-plugin-next";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
@@ -11,7 +12,10 @@ export default [
       parser: tsParser,
       parserOptions: {
         ecmaVersion: "latest",
-        sourceType: "module"
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true
+        }
       }
     },
     plugins: {
@@ -20,6 +24,15 @@ export default [
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs["core-web-vitals"].rules
+    }
+  },
+  {
+    files: ["app/**/*.{js,ts,tsx}"],
+    plugins: {
+      "jsx-a11y": jsxA11y
+    },
+    rules: {
+      ...jsxA11y.configs.recommended.rules
     }
   }
 ];

@@ -13,6 +13,9 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <>
       <JsonLdScript data={buildOrganizationJsonLd(site)} />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <header
         style={{
           borderBottom: "1px solid #e5e7eb",
