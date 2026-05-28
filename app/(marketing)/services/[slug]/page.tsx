@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadMarketingContent } from "../../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../../lib/seo/metadata";
+import { JsonLdScript } from "../../../../components/seo/JsonLdScript";
+import { buildServiceDetailBreadcrumbs } from "../../../../lib/seo/breadcrumbs";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "../../../../lib/seo/json-ld";
 import { getServicePageSeo } from "../../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
@@ -38,14 +41,19 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound();
   }
 
+  const breadcrumbs = buildServiceDetailBreadcrumbs(service.title, service.slug);
+
   return (
     <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+      <JsonLdScript data={buildServiceJsonLd(service)} />
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
       <h1 style={{ marginBottom: "1rem" }}>{service.title}</h1>
       <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>{service.summary}</p>
       <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
         <Link href="/consultation">{service.consultationCtaLabel}</Link>
         <Link href="/contracts">{service.procurementLinkText}</Link>
         <Link href="/services">Back to all services</Link>
+        <Link href="/trust">Review trust credentials</Link>
       </div>
     </main>
   );

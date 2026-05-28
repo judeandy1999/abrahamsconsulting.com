@@ -26,6 +26,7 @@ export default function HomePage() {
           <Link href="/consultation">{site.consultationCta.label}</Link>
           <Link href="/services">Explore Services</Link>
           <Link href="/contracts">View Contract Vehicles</Link>
+          <Link href="/trust">Review Trust Credentials</Link>
         </div>
       </section>
 

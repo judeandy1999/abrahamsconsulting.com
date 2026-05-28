@@ -1,12 +1,18 @@
 import Link from "next/link";
+import { JsonLdScript } from "../../components/seo/JsonLdScript";
+import { loadMarketingContent } from "../../lib/content/load-content";
+import { buildOrganizationJsonLd } from "../../lib/seo/json-ld";
 
 type MarketingLayoutProps = Readonly<{
   children: React.ReactNode;
 }>;
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
+  const { site } = loadMarketingContent();
+
   return (
     <>
+      <JsonLdScript data={buildOrganizationJsonLd(site)} />
       <header
         style={{
           borderBottom: "1px solid #e5e7eb",

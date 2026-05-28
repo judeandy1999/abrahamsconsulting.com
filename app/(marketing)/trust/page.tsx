@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { loadMarketingContent } from "../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
 import { getStaticPageSeo } from "../../../lib/seo/page-seo";
@@ -56,6 +57,11 @@ export default function TrustPage() {
           ))}
         </ul>
       </section>
+
+      <p style={{ lineHeight: 1.6, marginBottom: "2rem" }}>
+        Explore <Link href="/services">service capabilities</Link> or{" "}
+        <Link href="/consultation">start a consultation</Link> after reviewing qualification signals.
+      </p>
 
       <section aria-labelledby="partner-indicators-heading">
         <h2 id="partner-indicators-heading" style={{ marginBottom: "1rem" }}>

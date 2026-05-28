@@ -29,6 +29,10 @@ export default function ServicesPage() {
           </li>
         ))}
       </ul>
+      <p style={{ lineHeight: 1.6, marginTop: "1.5rem" }}>
+        Validate credentials on the <Link href="/trust">trust page</Link> or{" "}
+        <Link href="/consultation">request a consultation</Link> to align capabilities to your mission.
+      </p>
     </main>
   );
 }
