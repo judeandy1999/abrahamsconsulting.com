@@ -69,29 +69,29 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PLAT-01 | TBD | Pending |
-| PLAT-02 | TBD | Pending |
-| PLAT-03 | TBD | Pending |
-| IA-01 | TBD | Pending |
-| IA-02 | TBD | Pending |
-| IA-03 | TBD | Pending |
-| TRST-01 | TBD | Pending |
-| TRST-02 | TBD | Pending |
-| TRST-03 | TBD | Pending |
-| LEAD-01 | TBD | Pending |
-| LEAD-02 | TBD | Pending |
-| LEAD-03 | TBD | Pending |
-| SEO-01 | TBD | Pending |
-| SEO-02 | TBD | Pending |
-| SEO-03 | TBD | Pending |
-| PERF-01 | TBD | Pending |
-| A11Y-01 | TBD | Pending |
+| PLAT-01 | Phase 1 | Pending |
+| PLAT-02 | Phase 1 | Pending |
+| PLAT-03 | Phase 1 | Pending |
+| IA-01 | Phase 2 | Pending |
+| IA-02 | Phase 2 | Pending |
+| IA-03 | Phase 2 | Pending |
+| TRST-01 | Phase 3 | Pending |
+| TRST-02 | Phase 3 | Pending |
+| TRST-03 | Phase 3 | Pending |
+| LEAD-01 | Phase 2 | Pending |
+| LEAD-02 | Phase 3 | Pending |
+| LEAD-03 | Phase 3 | Pending |
+| SEO-01 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| PERF-01 | Phase 4 | Pending |
+| A11Y-01 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0
-- Unmapped: 17
+- Mapped to phases: 17
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-05-28*
-*Last updated: 2026-05-28 after initial definition*
+*Last updated: 2026-05-28 after roadmap mapping*
