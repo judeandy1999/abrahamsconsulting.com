@@ -11,7 +11,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **PLAT-01**: User can access the public website hosted on Vercel with stable production deployments and preview environments.
 - [x] **PLAT-02**: User experiences core marketing pages rendered with a static-first strategy (SSG/ISR) for fast navigation and load.
-- [ ] **PLAT-03**: Content editors can update core site content through code-managed content files validated by typed schemas.
+- [x] **PLAT-03**: Content editors can update core site content through code-managed content files validated by typed schemas.
 
 ### Information Architecture & Messaging
 
@@ -71,7 +71,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | PLAT-01 | Phase 1 | Complete |
 | PLAT-02 | Phase 1 | Complete |
-| PLAT-03 | Phase 1 | Pending |
+| PLAT-03 | Phase 1 | Complete |
 | IA-01 | Phase 2 | Pending |
 | IA-02 | Phase 2 | Pending |
 | IA-03 | Phase 2 | Pending |

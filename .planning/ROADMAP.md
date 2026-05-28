@@ -6,7 +6,7 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
 
 ## Phases
 
-- [ ] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content.
+- [x] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content. (completed 2026-05-28)
 - [ ] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
 - [ ] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
 - [ ] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
@@ -73,7 +73,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Platform MVP Foundation | 2/3 | In Progress|  |
+| 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
 | 2. Core Conversion Journeys | 0/TBD | Not started | - |
 | 3. Trust and Lead Capture | 0/TBD | Not started | - |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
