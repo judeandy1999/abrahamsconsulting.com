@@ -73,6 +73,17 @@ export const trustContentSchema = z.object({
   partnerIndicators: z.array(partnerIndicatorSchema).min(1, "At least one partner indicator is required")
 });
 
+export const launchPageSeoSchema = z.object({
+  routeKey: z.string().min(1, "Route key is required"),
+  path: z.string().min(1, "Path is required"),
+  title: z.string().min(1, "SEO title is required"),
+  description: z.string().min(1, "SEO description is required")
+});
+
+export const launchPageSeoListSchema = z
+  .array(launchPageSeoSchema)
+  .min(7, "Launch SEO registry must cover all static marketing routes");
+
 export const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
@@ -90,3 +101,4 @@ export type CaseSnapshot = z.infer<typeof caseSnapshotSchema>;
 export type PartnerIndicator = z.infer<typeof partnerIndicatorSchema>;
 export type TrustContent = z.infer<typeof trustContentSchema>;
 export type MarketingContent = z.infer<typeof marketingContentSchema>;
+export type LaunchPageSeo = z.infer<typeof launchPageSeoSchema>;

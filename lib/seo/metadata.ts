@@ -6,7 +6,7 @@ export function getSiteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_BASE_URL;
 }
 
-type MarketingMetadataOptions = {
+export type MarketingMetadataOptions = {
   title: string;
   description: string;
   path: string;

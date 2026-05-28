@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { unlink, writeFile } from "node:fs/promises";
-import { basename, resolve } from "node:path";
+import { basename, dirname, resolve } from "node:path";
 import process from "node:process";
 import { pathToFileURL } from "node:url";
 import ts from "typescript";
@@ -77,6 +77,17 @@ const trustContentSchema = z.object({
   partnerIndicators: z.array(partnerIndicatorSchema).min(1, "At least one partner indicator is required")
 });
 
+const launchPageSeoSchema = z.object({
+  routeKey: z.string().min(1, "Route key is required"),
+  path: z.string().min(1, "Path is required"),
+  title: z.string().min(1, "SEO title is required"),
+  description: z.string().min(1, "SEO description is required")
+});
+
+const launchPageSeoListSchema = z
+  .array(launchPageSeoSchema)
+  .min(7, "Launch SEO registry must cover all static marketing routes");
+
 const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
@@ -105,7 +116,7 @@ async function importTsDataModule(modulePath) {
   }).outputText;
 
   const tmpName = `.tmp-validate-${basename(modulePath, ".ts")}-${Date.now()}-${Math.round(Math.random() * 1000)}.mjs`;
-  const tmpPath = resolve(tmpName);
+  const tmpPath = resolve(dirname(absolutePath), tmpName);
 
   await writeFile(tmpPath, transpiled, "utf8");
 
@@ -168,6 +179,15 @@ async function validateProjectContent() {
       return false;
     }
 
+    const seoModule = await importTsDataModule("src/content/seo.ts");
+    const seoResult = launchPageSeoListSchema.safeParse(seoModule.launchPageSeoContent);
+
+    if (!seoResult.success) {
+      printFailure("src/content/seo.ts", seoResult.error);
+      return false;
+    }
+
+    printSuccess("src/content/seo.ts");
     printSuccess("src/content/*.ts");
     return true;
   } catch (error) {
