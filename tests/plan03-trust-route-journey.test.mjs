@@ -5,6 +5,8 @@ import test from "node:test";
 const LAYOUT_FILE = "app/(marketing)/layout.tsx";
 const TRUST_PAGE_FILE = "app/(marketing)/trust/page.tsx";
 const SITEMAP_FILE = "app/sitemap.ts";
+const SEO_ROUTES_FILE = "lib/seo/routes.ts";
+const SEO_CONTENT_FILE = "src/content/seo.ts";
 
 test("primary navigation exposes trust route", async () => {
   const source = await readFile(LAYOUT_FILE, "utf8");
@@ -31,7 +33,11 @@ test("trust page uses performance-safe partner indicator rendering", async () =>
 });
 
 test("sitemap includes trust route", async () => {
-  const source = await readFile(SITEMAP_FILE, "utf8");
+  const sitemapSource = await readFile(SITEMAP_FILE, "utf8");
+  const routesSource = await readFile(SEO_ROUTES_FILE, "utf8");
+  const seoContentSource = await readFile(SEO_CONTENT_FILE, "utf8");
 
-  assert.match(source, /const marketingRoutes = \[[^\]]*"\/trust"[^\]]*\];/);
+  assert.match(sitemapSource, /getLaunchSitemapEntries/);
+  assert.match(routesSource, /launchPageSeoContent/);
+  assert.match(seoContentSource, /path:\s*"\/trust"/);
 });
