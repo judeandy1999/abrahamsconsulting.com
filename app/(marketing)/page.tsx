@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
+import { buildMarketingMetadata } from "../../lib/seo/metadata";
+
 export const dynamic = "force-static";
+
+export const metadata: Metadata = buildMarketingMetadata({
+  title: "Abrahams Consulting",
+  description: "Strategic consulting and staffing services for enterprise and government teams.",
+  path: "/"
+});
 
 export default function HomePage() {
   return (
