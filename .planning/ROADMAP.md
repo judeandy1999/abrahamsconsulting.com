@@ -22,7 +22,11 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
   1. User can access the public website on production and preview deployments without downtime from release flow issues.
   2. User experiences fast initial load and navigation on core pages powered by static-first rendering behavior.
   3. Content editors can change core website content in code files and get schema validation feedback before deployment.
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] `01-01-PLAN.md` - Establish Next.js + Vercel deployment-safe foundation and CI gate.
+- [ ] `01-02-PLAN.md` - Implement static-first core marketing routes and crawl primitives.
+- [ ] `01-03-PLAN.md` - Add typed content schema validation workflow for safe content updates.
 
 ### Phase 2: Core Conversion Journeys
 **Goal**: Users can immediately understand the company offer and navigate high-intent service and procurement pages with a clear consultation path.
@@ -69,7 +73,7 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Platform MVP Foundation | 0/TBD | Not started | - |
+| 1. Platform MVP Foundation | 0/3 | Planned | - |
 | 2. Core Conversion Journeys | 0/TBD | Not started | - |
 | 3. Trust and Lead Capture | 0/TBD | Not started | - |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
