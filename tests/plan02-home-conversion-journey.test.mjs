@@ -7,6 +7,7 @@ const HOME_PAGE_FILE = "app/(marketing)/page.tsx";
 test("home route exposes conversion structure and typed content loader", async () => {
   const source = await readFile(HOME_PAGE_FILE, "utf8");
 
+  assert.match(source, /export const dynamic = "force-static";/);
   assert.match(source, /loadMarketingContent\(\)/);
   assert.match(source, /id="home-value-proposition"/);
   assert.match(source, /id="home-offer-summary"/);
