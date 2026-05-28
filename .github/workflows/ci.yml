@@ -30,3 +30,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Lighthouse CI
+        run: npx lhci autorun --config=./lighthouserc.json
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
