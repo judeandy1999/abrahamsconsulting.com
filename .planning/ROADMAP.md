@@ -39,7 +39,11 @@ Plans:
   2. User can navigate to consulting, staffing, and niche solution pages that clearly explain each offering.
   3. User can discover contract vehicles from top navigation and contextual internal links.
   4. User can reach one clear consultation CTA from the Home page and key service pages.
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] `02-01-PLAN.md` - Establish conversion content contracts and single consultation destination route.
+- [ ] `02-02-PLAN.md` - Implement Home value-proposition journey with primary consultation CTA.
+- [ ] `02-03-PLAN.md` - Implement services and contract discovery journeys with capability routing and CTA continuity.
 **UI hint**: yes
 
 ### Phase 3: Trust and Lead Capture
@@ -75,6 +79,6 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
-| 2. Core Conversion Journeys | 0/TBD | Not started | - |
+| 2. Core Conversion Journeys | 0/3 | Planned | - |
 | 3. Trust and Lead Capture | 0/TBD | Not started | - |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
