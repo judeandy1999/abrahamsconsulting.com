@@ -78,12 +78,22 @@ export default function TrustPage() {
           }}
         >
           {partnerIndicators.map((partner) => (
-            <li key={partner.id}>
+            <li
+              key={partner.id}
+              className="partner-indicator-card"
+              style={
+                {
+                  "--partner-image-width": `${partner.imageWidth}px`,
+                  "--partner-image-height": `${partner.imageHeight}px`
+                } as React.CSSProperties
+              }
+            >
               <Image
                 src={partner.imageSrc}
                 alt={partner.imageAlt}
                 width={partner.imageWidth}
                 height={partner.imageHeight}
+                sizes={`${partner.imageWidth}px`}
                 loading="lazy"
               />
               <p style={{ marginTop: "0.5rem", fontSize: "0.875rem" }}>{partner.name}</p>

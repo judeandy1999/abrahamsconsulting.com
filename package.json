@@ -9,18 +9,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "zod": "latest"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "latest",
+    "@lhci/cli": "^0.15.1",
     "@types/node": "latest",
     "@types/react": "latest",
+    "@typescript-eslint/parser": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest"

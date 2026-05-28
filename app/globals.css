@@ -16,3 +16,16 @@ body {
 a {
   color: inherit;
 }
+
+.partner-indicator-card {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--partner-image-height, 48px) + 2rem);
+  width: var(--partner-image-width, 160px);
+}
+
+.partner-indicator-card img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
