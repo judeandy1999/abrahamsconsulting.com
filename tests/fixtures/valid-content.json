@@ -1,0 +1,20 @@
+{
+  "site": {
+    "name": "Abrahams Consulting",
+    "tagline": "Consulting for enterprise and government delivery teams."
+  },
+  "services": [
+    {
+      "slug": "consulting",
+      "title": "Advisory Consulting",
+      "summary": "Strategy and execution support for complex delivery programs."
+    }
+  ],
+  "contracts": [
+    {
+      "code": "GSA-MAS",
+      "name": "GSA Multiple Award Schedule",
+      "description": "Procurement vehicle for advisory and staffing engagements."
+    }
+  ]
+}

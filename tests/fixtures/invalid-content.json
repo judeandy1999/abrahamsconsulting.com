@@ -1,0 +1,19 @@
+{
+  "site": {
+    "name": "",
+    "tagline": 42
+  },
+  "services": [
+    {
+      "slug": "",
+      "title": "Advisory Consulting"
+    }
+  ],
+  "contracts": [
+    {
+      "code": "GSA-MAS",
+      "name": "",
+      "description": ""
+    }
+  ]
+}
