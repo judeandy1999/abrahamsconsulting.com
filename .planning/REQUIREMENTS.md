@@ -21,15 +21,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Trust & Credibility
 
-- [ ] **TRST-01**: User can view certifications and qualification signals (including MWBE-related credentials) on dedicated trust content.
-- [ ] **TRST-02**: User can review at least two publishable project/case snapshots with outcomes-oriented summaries.
-- [ ] **TRST-03**: User can see approved client/partner trust indicators (for example logos or named references) without blocking page performance.
+- [x] **TRST-01**: User can view certifications and qualification signals (including MWBE-related credentials) on dedicated trust content.
+- [x] **TRST-02**: User can review at least two publishable project/case snapshots with outcomes-oriented summaries.
+- [x] **TRST-03**: User can see approved client/partner trust indicators (for example logos or named references) without blocking page performance.
 
 ### Lead Conversion
 
 - [x] **LEAD-01**: User can reach a single clear consultation CTA from the Home page and key service pages.
-- [ ] **LEAD-02**: User can submit a short contact form with essential qualification fields and receive successful submission confirmation.
-- [ ] **LEAD-03**: Internal team can receive lead submissions reliably through the initial email-based routing path.
+- [x] **LEAD-02**: User can submit a short contact form with essential qualification fields and receive successful submission confirmation.
+- [x] **LEAD-03**: Internal team can receive lead submissions reliably through the initial email-based routing path.
 
 ### SEO, Performance, and Accessibility
 
@@ -75,12 +75,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | IA-01 | Phase 2 | Complete |
 | IA-02 | Phase 2 | Complete |
 | IA-03 | Phase 2 | Complete |
-| TRST-01 | Phase 3 | Pending |
-| TRST-02 | Phase 3 | Pending |
-| TRST-03 | Phase 3 | Pending |
+| TRST-01 | Phase 3 | Complete |
+| TRST-02 | Phase 3 | Complete |
+| TRST-03 | Phase 3 | Complete |
 | LEAD-01 | Phase 2 | Complete |
-| LEAD-02 | Phase 3 | Pending |
-| LEAD-03 | Phase 3 | Pending |
+| LEAD-02 | Phase 3 | Complete |
+| LEAD-03 | Phase 3 | Complete |
 | SEO-01 | Phase 4 | Pending |
 | SEO-02 | Phase 4 | Pending |
 | SEO-03 | Phase 4 | Pending |

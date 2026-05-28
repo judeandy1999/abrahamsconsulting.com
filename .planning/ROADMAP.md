@@ -11,7 +11,7 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
  (completed 2026-05-28)
 - [x] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
  (completed 2026-05-28)
-- [ ] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
+- [x] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow. (completed 2026-05-28)
 - [ ] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
 
 ## Phase Details
@@ -61,9 +61,9 @@ Plans:
   5. Internal team reliably receives each submitted lead through the initial email routing path.
 **Plans**: 3 plans
 Plans:
-- [ ] `03-01-PLAN.md` - Extend trust and lead content contracts with validated schemas.
-- [ ] `03-02-PLAN.md` - Implement dedicated trust route and discoverability wiring.
-- [ ] `03-03-PLAN.md` - Complete consultation form submission and email lead routing path.
+- [x] `03-01-PLAN.md` - Extend trust and lead content contracts with validated schemas.
+- [x] `03-02-PLAN.md` - Implement dedicated trust route and discoverability wiring.
+- [x] `03-03-PLAN.md` - Complete consultation form submission and email lead routing path.
 **UI hint**: yes
 
 ### Phase 4: Launch Quality Gates
@@ -86,5 +86,5 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
 | 2. Core Conversion Journeys | 3/3 | Complete   | 2026-05-28 |
-| 3. Trust and Lead Capture | 0/3 | Planned | - |
+| 3. Trust and Lead Capture | 3/3 | Complete   | 2026-05-28 |
 | 4. Launch Quality Gates | 0/TBD | Not started | - |
