@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMarketingMetadata } from "../../../../lib/seo/metadata";
+import { getStaticPageSeo } from "../../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = buildMarketingMetadata({
-  title: "Consultation Submitted",
-  description: "Your consultation request was received by Abrahams Consulting.",
-  path: "/consultation/success"
-});
+export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/consultation/success")!);
 
 export default function ConsultationSuccessPage() {
   return (
-    <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>Submission received</h1>
       <p style={{ lineHeight: 1.6, marginBottom: "1rem" }}>
         Thank you. Your consultation request was submitted successfully and routed to our team for review.

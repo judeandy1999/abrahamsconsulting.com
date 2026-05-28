@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { loadMarketingContent } from "../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../lib/seo/metadata";
+import { getStaticPageSeo } from "../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = buildMarketingMetadata({
-  title: "Abrahams Consulting",
-  description: "Strategic consulting and staffing services for enterprise and government teams.",
-  path: "/"
-});
+export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/")!);
 
 export default function HomePage() {
   const { site, services, contracts } = loadMarketingContent();
@@ -17,7 +14,7 @@ export default function HomePage() {
   const featuredContracts = contracts.slice(0, 2);
 
   return (
-    <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
       <section id="home-value-proposition" style={{ marginBottom: "2rem" }}>
         <h1 style={{ marginBottom: "1rem" }}>{site.name}</h1>
         <p style={{ marginBottom: "1.25rem", lineHeight: 1.6 }}>{site.tagline}</p>

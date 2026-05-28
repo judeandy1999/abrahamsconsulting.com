@@ -1,22 +1,18 @@
 import Image from "next/image";
 import { loadMarketingContent } from "../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
+import { getStaticPageSeo } from "../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
 
-export const metadata = buildMarketingMetadata({
-  title: "Trust & Credentials",
-  description:
-    "Review Abrahams Consulting certifications, MWBE qualification signals, case snapshots, and approved partner indicators.",
-  path: "/trust"
-});
+export const metadata = buildMarketingMetadata(getStaticPageSeo("/trust")!);
 
 export default function TrustPage() {
   const { trust } = loadMarketingContent();
   const { certifications, caseSnapshots, partnerIndicators } = trust;
 
   return (
-    <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>Trust & Credentials</h1>
       <p style={{ lineHeight: 1.6, marginBottom: "2rem" }}>
         Evaluate qualification signals, delivery outcomes, and approved partner indicators before engaging our team.

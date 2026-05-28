@@ -3,14 +3,11 @@ import Link from "next/link";
 import { loadMarketingContent } from "../../../lib/content/load-content";
 import type { ConsultationField } from "../../../src/content/schema";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
+import { getStaticPageSeo } from "../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = buildMarketingMetadata({
-  title: "Consultation",
-  description: "Start a consultation with Abrahams Consulting to align services and contract vehicles to your mission needs.",
-  path: "/consultation"
-});
+export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/consultation")!);
 
 function renderField(field: ConsultationField) {
   const commonProps = {
@@ -47,7 +44,7 @@ export default function ConsultationPage() {
   const { consultationForm } = site;
 
   return (
-    <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>{site.consultationCta.label}</h1>
       <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>
         Share your timeline, delivery priorities, and procurement context so we can recommend the right consulting or

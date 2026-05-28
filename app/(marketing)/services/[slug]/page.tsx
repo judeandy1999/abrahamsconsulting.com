@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadMarketingContent } from "../../../../lib/content/load-content";
+import { buildMarketingMetadata } from "../../../../lib/seo/metadata";
+import { getServicePageSeo } from "../../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
 
@@ -15,6 +18,17 @@ export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
 
+export async function generateMetadata({ params }: ServiceDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const seo = getServicePageSeo(slug);
+
+  if (!seo) {
+    return {};
+  }
+
+  return buildMarketingMetadata(seo);
+}
+
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { services } = loadMarketingContent();
   const { slug } = await params;
@@ -25,7 +39,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
   }
 
   return (
-    <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
+    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>{service.title}</h1>
       <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>{service.summary}</p>
       <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
