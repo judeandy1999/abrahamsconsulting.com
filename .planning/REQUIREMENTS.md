@@ -33,11 +33,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### SEO, Performance, and Accessibility
 
-- [ ] **SEO-01**: User can access pages with complete technical metadata (title, description, canonical) aligned to each page intent.
-- [ ] **SEO-02**: Search engines can crawl and index the site via valid `sitemap.xml`, `robots.txt`, and clean internal linking.
-- [ ] **SEO-03**: Search engines can interpret structured business context via valid Organization/Service/Breadcrumb schema where applicable.
-- [ ] **PERF-01**: Users on real devices experience launch pages that meet agreed Core Web Vitals targets (LCP, INP, CLS) at p75.
-- [ ] **A11Y-01**: Keyboard and assistive-technology users can navigate primary pages and complete the contact form with WCAG 2.2 AA-aligned behavior.
+- [x] **SEO-01**: User can access pages with complete technical metadata (title, description, canonical) aligned to each page intent.
+- [x] **SEO-02**: Search engines can crawl and index the site via valid `sitemap.xml`, `robots.txt`, and clean internal linking.
+- [x] **SEO-03**: Search engines can interpret structured business context via valid Organization/Service/Breadcrumb schema where applicable.
+- [x] **PERF-01**: Users on real devices experience launch pages that meet agreed Core Web Vitals targets (LCP, INP, CLS) at p75.
+- [x] **A11Y-01**: Keyboard and assistive-technology users can navigate primary pages and complete the contact form with WCAG 2.2 AA-aligned behavior.
 
 ## v2 Requirements
 
@@ -81,11 +81,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LEAD-01 | Phase 2 | Complete |
 | LEAD-02 | Phase 3 | Complete |
 | LEAD-03 | Phase 3 | Complete |
-| SEO-01 | Phase 4 | Pending |
-| SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 4 | Pending |
-| PERF-01 | Phase 4 | Pending |
-| A11Y-01 | Phase 4 | Pending |
+| SEO-01 | Phase 4 | Complete |
+| SEO-02 | Phase 4 | Complete |
+| SEO-03 | Phase 4 | Complete |
+| PERF-01 | Phase 4 | Complete |
+| A11Y-01 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 17 total

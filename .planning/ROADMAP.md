@@ -13,7 +13,8 @@ This roadmap delivers a rapid MVP in vertical slices that move from platform rea
  (completed 2026-05-28)
 - [x] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
  (completed 2026-05-28)
-- [ ] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
+- [x] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
+ (completed 2026-05-28)
 
 ## Phase Details
 
@@ -80,10 +81,10 @@ Plans:
   5. Keyboard and assistive technology users can navigate primary pages and complete the contact form with WCAG 2.2 AA-aligned behavior.
 **Plans**: 4 plans
 Plans:
-- [ ] `04-01-PLAN.md` - Typed launch SEO registry and complete per-route metadata coverage.
-- [ ] `04-02-PLAN.md` - Registry-driven crawl primitives and Organization/Service/Breadcrumb JSON-LD.
-- [ ] `04-03-PLAN.md` - Speed Insights RUM and Lighthouse CI performance budgets on launch routes.
-- [ ] `04-04-PLAN.md` - WCAG 2.2 AA shell/form accessibility hardening and CI a11y gates.
+- [x] `04-01-PLAN.md` - Typed launch SEO registry and complete per-route metadata coverage.
+- [x] `04-02-PLAN.md` - Registry-driven crawl primitives and Organization/Service/Breadcrumb JSON-LD.
+- [x] `04-03-PLAN.md` - Speed Insights RUM and Lighthouse CI performance budgets on launch routes.
+- [x] `04-04-PLAN.md` - WCAG 2.2 AA shell/form accessibility hardening and CI a11y gates.
 **UI hint**: yes
 
 ## Progress
@@ -93,4 +94,4 @@ Plans:
 | 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
 | 2. Core Conversion Journeys | 3/3 | Complete   | 2026-05-28 |
 | 3. Trust and Lead Capture | 3/3 | Complete   | 2026-05-28 |
-| 4. Launch Quality Gates | 0/4 | Planned | - |
+| 4. Launch Quality Gates | 4/4 | Complete   | 2026-05-28 |
