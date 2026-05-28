@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { loadMarketingContent } from "../../../lib/content/load-content";
+import type { ConsultationField } from "../../../src/content/schema";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
 
 export const dynamic = "force-static";
@@ -11,8 +12,39 @@ export const metadata: Metadata = buildMarketingMetadata({
   path: "/consultation"
 });
 
+function renderField(field: ConsultationField) {
+  const commonProps = {
+    id: field.name,
+    name: field.name,
+    required: field.required,
+    placeholder: field.placeholder
+  };
+
+  if (field.type === "textarea") {
+    return <textarea {...commonProps} rows={5} style={{ width: "100%", padding: "0.5rem" }} />;
+  }
+
+  if (field.type === "select") {
+    return (
+      <select {...commonProps} defaultValue="" style={{ width: "100%", padding: "0.5rem" }}>
+        <option value="" disabled>
+          Select an option
+        </option>
+        {(field.options ?? []).map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    );
+  }
+
+  return <input {...commonProps} type={field.type} style={{ width: "100%", padding: "0.5rem" }} />;
+}
+
 export default function ConsultationPage() {
   const { site } = loadMarketingContent();
+  const { consultationForm } = site;
 
   return (
     <main style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
@@ -21,6 +53,34 @@ export default function ConsultationPage() {
         Share your timeline, delivery priorities, and procurement context so we can recommend the right consulting or
         staffing path.
       </p>
+
+      <form action="/api/lead" method="POST" style={{ marginBottom: "2rem" }}>
+        <input
+          type="text"
+          name={consultationForm.honeypotFieldName}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
+
+        <div style={{ display: "grid", gap: "1rem" }}>
+          {consultationForm.fields.map((field) => (
+            <div key={field.name}>
+              <label htmlFor={field.name} style={{ display: "block", marginBottom: "0.35rem", fontWeight: 600 }}>
+                {field.label}
+                {field.required ? " *" : ""}
+              </label>
+              {renderField(field)}
+            </div>
+          ))}
+        </div>
+
+        <button type="submit" style={{ marginTop: "1.25rem", padding: "0.65rem 1.25rem" }}>
+          Submit consultation request
+        </button>
+      </form>
+
       <section aria-label="Consultation next steps" style={{ marginBottom: "1.5rem" }}>
         <h2 style={{ marginBottom: "0.75rem" }}>Prepare before we connect</h2>
         <ul style={{ lineHeight: 1.7, paddingLeft: "1.25rem" }}>
