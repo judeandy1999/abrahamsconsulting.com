@@ -57,10 +57,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LAYT-01 | Phase 5 | Pending |
-| LAYT-02 | Phase 5 | Pending |
-| TYPE-01 | Phase 5 | Pending |
-| TYPE-02 | Phase 5 | Pending |
+| LAYT-01 | Phase 5 | Complete |
+| LAYT-02 | Phase 5 | Complete |
+| TYPE-01 | Phase 5 | Complete |
+| TYPE-02 | Phase 5 | Complete |
 | TYPE-03 | Phase 6 | Pending |
 | RESP-01 | Phase 6 | Pending |
 | PERF-01 | Phase 6 | Pending |
