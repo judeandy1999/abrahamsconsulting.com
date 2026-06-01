@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: ready_for_verification
-stopped_at: Completed phase 04-launch-quality-gates (plans 04-01 through 04-04)
-last_updated: "2026-05-28T12:30:00.000Z"
-last_activity: 2026-05-28 - Phase 4 execution completed (launch quality gates)
+milestone: v1.1
+milestone_name: Homepage Visual Scale
+status: planning
+last_updated: "2026-06-01T12:36:49.627Z"
+last_activity: 2026-06-01
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 13
-  completed_plans: 13
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,12 +24,10 @@ See: `.planning/PROJECT.md` (updated 2026-05-28)
 
 ## Current Position
 
-Phase: 4 of 4 (Launch Quality Gates)
-Plan: 4 of 4 in current phase
-Status: Milestone complete — ready for verification
-Last activity: 2026-05-28 - Phase 4 execution completed (launch quality gates)
-
-Progress: [██████████] 100%
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-01 — Milestone v1.1 started
 
 ## Performance Metrics
 
@@ -60,6 +57,10 @@ Progress: [██████████] 100%
 | Phase 03-trust-and-lead-capture P01 | 12min | 3 tasks | 7 files |
 | Phase 03-trust-and-lead-capture P02 | 10min | 3 tasks | 6 files |
 | Phase 03-trust-and-lead-capture P03 | 12min | 3 tasks | 7 files |
+| Phase 04-launch-quality-gates P01 | 35min | 3 tasks | 15 files |
+| Phase 04-launch-quality-gates P02 | 30min | 3 tasks | 11 files |
+| Phase 04-launch-quality-gates P03 | 40min | 3 tasks | 8 files |
+| Phase 04-launch-quality-gates P04 | 25min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,10 @@ Decisions are logged in `PROJECT.md` Key Decisions table. Recent decisions affec
 - [Phase 3] Extended marketing content with trust artifacts and consultation form field contracts.
 - [Phase 3] Delivered static /trust route with nav and sitemap discoverability.
 - [Phase 3] Implemented honeypot-protected POST /api/lead with Resend HTTP delivery (no new SDK).
+- [Phase 4] Centralized launch SEO in src/content/seo.ts with contract-tested metadata coverage.
+- [Phase 4] Single lib/seo/routes.ts registry drives sitemap including service detail URLs.
+- [Phase 4] Speed Insights plus Lighthouse CI enforce CWV budgets on primary launch routes.
+- [Phase 4] Skip link, focus-visible styles, and jsx-a11y guardrails for WCAG-oriented launch behavior.
 
 ### Pending Todos
 
@@ -102,6 +107,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-05-28T10:47:41.282Z
-Stopped at: Completed phase 03-trust-and-lead-capture (plans 03-01 through 03-03)
+Last session: 2026-05-28T12:30:00.000Z
+Stopped at: Completed phase 04-launch-quality-gates (plans 04-01 through 04-04)
 Resume file: None
