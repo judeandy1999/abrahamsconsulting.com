@@ -12,26 +12,28 @@ export default function ContractsPage() {
   const { contracts } = loadMarketingContent();
 
   return (
-    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
-      <h1 style={{ marginBottom: "1rem" }}>Contracts</h1>
-      <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>
-        We support procurement-ready delivery through contract-aligned capabilities that help agencies and prime
-        partners engage quickly and compliantly.
-      </p>
-      <ul style={{ lineHeight: 1.7, paddingLeft: "1.25rem", marginBottom: "1.5rem" }}>
-        {contracts.map((contract) => (
-          <li key={contract.code} style={{ marginBottom: "1rem" }}>
-            <h2 style={{ marginBottom: "0.5rem" }}>
-              {contract.code} - {contract.name}
-            </h2>
-            <p style={{ marginBottom: "0.5rem" }}>{contract.description}</p>
-            <Link href="/services">{contract.servicesLinkText}</Link>
-          </li>
-        ))}
-      </ul>
-      <p>
-        Need to validate the right vehicle? <Link href="/consultation">Request a consultation</Link>.
-      </p>
+    <main id="main-content" className="marketing-main">
+      <div className="marketing-main__inner">
+        <h1>Contracts</h1>
+        <p>
+          We support procurement-ready delivery through contract-aligned capabilities that help agencies and prime
+          partners engage quickly and compliantly.
+        </p>
+        <ul>
+          {contracts.map((contract) => (
+            <li key={contract.code}>
+              <h2>
+                {contract.code} - {contract.name}
+              </h2>
+              <p>{contract.description}</p>
+              <Link href="/services">{contract.servicesLinkText}</Link>
+            </li>
+          ))}
+        </ul>
+        <p>
+          Need to validate the right vehicle? <Link href="/consultation">Request a consultation</Link>.
+        </p>
+      </div>
     </main>
   );
 }

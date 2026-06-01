@@ -8,12 +8,14 @@ export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/abou
 
 export default function AboutPage() {
   return (
-    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
-      <h1 style={{ marginBottom: "1rem" }}>About Abrahams Consulting</h1>
-      <p style={{ lineHeight: 1.6 }}>
-        Our team partners with public and private sector organizations to improve operational outcomes through tailored
-        strategy, staffing, and contract alignment.
-      </p>
+    <main id="main-content" className="marketing-main">
+      <div className="marketing-main__inner">
+        <h1>About Abrahams Consulting</h1>
+        <p>
+          Our team partners with public and private sector organizations to improve operational outcomes through tailored
+          strategy, staffing, and contract alignment.
+        </p>
+      </div>
     </main>
   );
 }

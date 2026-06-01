@@ -44,16 +44,18 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
   const breadcrumbs = buildServiceDetailBreadcrumbs(service.title, service.slug);
 
   return (
-    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
-      <JsonLdScript data={buildServiceJsonLd(service)} />
-      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
-      <h1 style={{ marginBottom: "1rem" }}>{service.title}</h1>
-      <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>{service.summary}</p>
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-        <Link href="/consultation">{service.consultationCtaLabel}</Link>
-        <Link href="/contracts">{service.procurementLinkText}</Link>
-        <Link href="/services">Back to all services</Link>
-        <Link href="/trust">Review trust credentials</Link>
+    <main id="main-content" className="marketing-main">
+      <div className="marketing-main__inner">
+        <JsonLdScript data={buildServiceJsonLd(service)} />
+        <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+        <h1>{service.title}</h1>
+        <p>{service.summary}</p>
+        <div className="marketing-main__actions">
+          <Link href="/consultation">{service.consultationCtaLabel}</Link>
+          <Link href="/contracts">{service.procurementLinkText}</Link>
+          <Link href="/services">Back to all services</Link>
+          <Link href="/trust">Review trust credentials</Link>
+        </div>
       </div>
     </main>
   );

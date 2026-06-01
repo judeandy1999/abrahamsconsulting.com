@@ -13,19 +13,19 @@ Requirements for the Homepage Visual Scale milestone. Each maps to roadmap phase
 
 ### Layout & Container Width
 
-- [ ] **LAYT-01**: User sees a wider content area (84rem max-width) across header navigation, page sections, and footer on desktop viewports.
-- [ ] **LAYT-02**: User sees AwardBanner remain at its current compact dimensions — not scaled with the rest of the site.
+- [x] **LAYT-01**: User sees a wider content area (84rem max-width) across header navigation, page sections, and footer on desktop viewports.
+- [x] **LAYT-02**: User sees AwardBanner remain at its current compact dimensions — not scaled with the rest of the site.
 
 ### Typography & Visual Scale
 
-- [ ] **TYPE-01**: User sees proportionally larger homepage headlines, body text, and section headings compared to v1.0.
-- [ ] **TYPE-02**: User sees proportionally larger buttons, feature text, and section spacing on the homepage.
-- [ ] **TYPE-03**: User sees scaled typography and spacing applied consistently across non-home marketing pages (services, contracts, trust, consultation).
+- [x] **TYPE-01**: User sees proportionally larger homepage headlines, body text, and section headings compared to v1.0.
+- [x] **TYPE-02**: User sees proportionally larger buttons, feature text, and section spacing on the homepage.
+- [x] **TYPE-03**: User sees scaled typography and spacing applied consistently across non-home marketing pages (services, contracts, trust, consultation).
 
 ### Responsive & Quality
 
-- [ ] **RESP-01**: User on tablet and mobile viewports sees layout adapt correctly without horizontal overflow or broken grids.
-- [ ] **PERF-01**: User on real devices experiences pages that still meet v1.0 Core Web Vitals thresholds (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1) at p75 after layout changes.
+- [x] **RESP-01**: User on tablet and mobile viewports sees layout adapt correctly without horizontal overflow or broken grids.
+- [x] **PERF-01**: User on real devices experiences pages that still meet v1.0 Core Web Vitals thresholds (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1) at p75 after layout changes.
 
 ## v2 Requirements
 
@@ -61,9 +61,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LAYT-02 | Phase 5 | Complete |
 | TYPE-01 | Phase 5 | Complete |
 | TYPE-02 | Phase 5 | Complete |
-| TYPE-03 | Phase 6 | Pending |
-| RESP-01 | Phase 6 | Pending |
-| PERF-01 | Phase 6 | Pending |
+| TYPE-03 | Phase 6 | Complete |
+| RESP-01 | Phase 6 | Complete |
+| PERF-01 | Phase 6 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 7 total

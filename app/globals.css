@@ -742,14 +742,134 @@ textarea:focus-visible {
 .marketing-main__inner {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
+  font-size: 1.0625rem;
+  color: #374151;
+}
+
+.marketing-main__inner h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.875rem, 2.5vw, 2.375rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-section-heading);
 }
 
 .marketing-main__inner h2 {
-  margin-top: 0;
+  margin: 0 0 1.125rem;
+  font-size: var(--home-section-heading-size);
+  line-height: var(--home-section-heading-line-height);
+  font-weight: 700;
+  color: var(--color-section-heading);
+}
+
+.marketing-main__inner h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #111827;
+}
+
+.marketing-main__inner p {
+  margin: 0 0 1.25rem;
+  line-height: 1.7;
 }
 
 .marketing-main__inner ul {
   line-height: 1.7;
+  padding-left: 1.35rem;
+  margin: 0 0 1.25rem;
+}
+
+.marketing-main__inner li {
+  margin-bottom: 1.125rem;
+}
+
+.marketing-main__inner li:last-child {
+  margin-bottom: 0;
+}
+
+.marketing-main__section {
+  margin-bottom: 2.75rem;
+}
+
+.marketing-main__section:last-child {
+  margin-bottom: 0;
+}
+
+.marketing-main__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.125rem;
+}
+
+.marketing-main__form {
+  margin-bottom: 2.25rem;
+}
+
+.marketing-main__form-grid {
+  display: grid;
+  gap: 1.125rem;
+}
+
+.marketing-main__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.marketing-main__field {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  color: #111827;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+.marketing-main__field:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.marketing-main__hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--color-slate);
+}
+
+.marketing-main__submit {
+  margin-top: 1.35rem;
+}
+
+.marketing-main__partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marketing-main__partner-caption {
+  margin: 0.55rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: #374151;
+}
+
+.marketing-main__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 
 /* Site footer */
@@ -1099,7 +1219,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   min-height: calc(var(--partner-image-height, 48px) + 2rem);
-  width: var(--partner-image-width, 160px);
+  width: var(--partner-image-width, 176px);
 }
 
 .partner-indicator-card img {
@@ -1214,6 +1334,15 @@ body.nav-menu-open {
     gap: 1.75rem;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .marketing-main__inner {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .marketing-main__partner-grid {
+    gap: 1.25rem;
   }
 
   .home-about__carousel-group {

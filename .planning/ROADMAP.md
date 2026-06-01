@@ -7,7 +7,7 @@ Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow 
 ## Phases
 
 - [x] **Phase 5: Site Layout & Home Visual Scale** - Widen container to 84rem, scale homepage typography/spacing, preserve AwardBanner.
-- [ ] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages and verify responsive/CWV baselines.
+- [x] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages and verify responsive/CWV baselines.
 
 ## Phase Details
 
@@ -41,7 +41,7 @@ Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 5. Site Layout & Home Visual Scale | 1/1 | Complete | 2026-06-01 |
-| 6. Marketing Pages Scale & Quality Verification | 0/? | Not started | — |
+| 6. Marketing Pages Scale & Quality Verification | 1/1 | Complete | 2026-06-01 |
 
 ## v1.0 Archive
 

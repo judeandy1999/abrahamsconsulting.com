@@ -20,16 +20,17 @@ function renderField(field: ConsultationField) {
     name: field.name,
     required: field.required,
     placeholder: field.placeholder,
+    className: "marketing-main__field",
     "aria-describedby": field.required ? hintId : undefined
   };
 
   if (field.type === "textarea") {
-    return <textarea {...commonProps} rows={5} style={{ width: "100%", padding: "0.5rem" }} />;
+    return <textarea {...commonProps} rows={5} />;
   }
 
   if (field.type === "select") {
     return (
-      <select {...commonProps} defaultValue="" style={{ width: "100%", padding: "0.5rem" }}>
+      <select {...commonProps} defaultValue="">
         <option value="" disabled>
           Select an option
         </option>
@@ -42,7 +43,7 @@ function renderField(field: ConsultationField) {
     );
   }
 
-  return <input {...commonProps} type={field.type} style={{ width: "100%", padding: "0.5rem" }} />;
+  return <input {...commonProps} type={field.type} />;
 }
 
 export default function ConsultationPage() {
@@ -50,64 +51,66 @@ export default function ConsultationPage() {
   const { consultationForm } = site;
 
   return (
-    <main id="main-content" style={{ margin: "0 auto", maxWidth: "64rem", padding: "3rem 1.5rem" }}>
-      <h1 style={{ marginBottom: "1rem" }}>{site.consultationCta.label}</h1>
-      <p style={{ lineHeight: 1.6, marginBottom: "1.5rem" }}>
-        Share your timeline, delivery priorities, and procurement context so we can recommend the right consulting or
-        staffing path.
-      </p>
+    <main id="main-content" className="marketing-main">
+      <div className="marketing-main__inner">
+        <h1>{site.consultationCta.label}</h1>
+        <p>
+          Share your timeline, delivery priorities, and procurement context so we can recommend the right consulting or
+          staffing path.
+        </p>
 
-      <form action="/api/lead" method="POST" style={{ marginBottom: "2rem" }}>
-        <input
-          type="text"
-          name={consultationForm.honeypotFieldName}
-          tabIndex={-1}
-          autoComplete="off"
-          aria-hidden="true"
-          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
-        />
+        <form action="/api/lead" method="POST" className="marketing-main__form">
+          <input
+            type="text"
+            name={consultationForm.honeypotFieldName}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="marketing-main__honeypot"
+          />
 
-        <fieldset style={{ border: 0, margin: 0, padding: 0 }}>
-          <legend className="sr-only">Consultation request details</legend>
-          <div style={{ display: "grid", gap: "1rem" }}>
-            {consultationForm.fields.map((field) => {
-              const hintId = fieldHintId(field.name);
+          <fieldset style={{ border: 0, margin: 0, padding: 0 }}>
+            <legend className="sr-only">Consultation request details</legend>
+            <div className="marketing-main__form-grid">
+              {consultationForm.fields.map((field) => {
+                const hintId = fieldHintId(field.name);
 
-              return (
-                <div key={field.name}>
-                  <label htmlFor={field.name} style={{ display: "block", marginBottom: "0.35rem", fontWeight: 600 }}>
-                    {field.label}
-                    {field.required ? " *" : ""}
-                  </label>
-                  {renderField(field)}
-                  {field.required ? (
-                    <p id={hintId} style={{ margin: "0.35rem 0 0", fontSize: "0.875rem" }}>
-                      Required field
-                    </p>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-        </fieldset>
+                return (
+                  <div key={field.name}>
+                    <label htmlFor={field.name} className="marketing-main__label">
+                      {field.label}
+                      {field.required ? " *" : ""}
+                    </label>
+                    {renderField(field)}
+                    {field.required ? (
+                      <p id={hintId} className="marketing-main__hint">
+                        Required field
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+          </fieldset>
 
-        <button type="submit" style={{ marginTop: "1.25rem", padding: "0.65rem 1.25rem" }}>
-          Submit consultation request
-        </button>
-      </form>
+          <button type="submit" className="btn btn--primary marketing-main__submit">
+            Submit consultation request
+          </button>
+        </form>
 
-      <section aria-label="Consultation next steps" style={{ marginBottom: "1.5rem" }}>
-        <h2 style={{ marginBottom: "0.75rem" }}>Prepare before we connect</h2>
-        <ul style={{ lineHeight: 1.7, paddingLeft: "1.25rem" }}>
-          <li>Outline the mission outcomes and delivery constraints your team is managing.</li>
-          <li>List the capability areas where you need consulting or staffing support first.</li>
-          <li>Identify contract vehicles your organization already prefers or requires.</li>
-        </ul>
-      </section>
-      <p style={{ lineHeight: 1.6 }}>
-        Need more context first? Explore <Link href="/services">service capabilities</Link> or review{" "}
-        <Link href="/contracts">contract vehicle pathways</Link>.
-      </p>
+        <section className="marketing-main__section" aria-label="Consultation next steps">
+          <h2>Prepare before we connect</h2>
+          <ul>
+            <li>Outline the mission outcomes and delivery constraints your team is managing.</li>
+            <li>List the capability areas where you need consulting or staffing support first.</li>
+            <li>Identify contract vehicles your organization already prefers or requires.</li>
+          </ul>
+        </section>
+        <p style={{ marginBottom: 0 }}>
+          Need more context first? Explore <Link href="/services">service capabilities</Link> or review{" "}
+          <Link href="/contracts">contract vehicle pathways</Link>.
+        </p>
+      </div>
     </main>
   );
 }
