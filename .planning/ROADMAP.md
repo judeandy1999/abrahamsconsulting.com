@@ -2,96 +2,50 @@
 
 ## Overview
 
-This roadmap delivers a rapid MVP in vertical slices that move from platform readiness to conversion-ready pages, then trust-building content, and finally launch quality hardening. Each phase ships a user-verifiable capability and maps every v1 requirement exactly once.
+Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow and undersized on desktop. Two phases widen the container, scale typography, and verify quality baselines hold.
 
 ## Phases
 
-- [x] **Phase 1: Platform MVP Foundation** - Launch-ready Next.js and Vercel baseline with typed code-managed content.
- (completed 2026-05-28)
- (completed 2026-05-28)
-- [x] **Phase 2: Core Conversion Journeys** - Deliver Home, Services, and Contract discovery paths with clear CTA routes.
- (completed 2026-05-28)
-- [x] **Phase 3: Trust and Lead Capture** - Add credibility proof pages and complete the contact submission flow.
- (completed 2026-05-28)
-- [x] **Phase 4: Launch Quality Gates** - Harden SEO, indexing, performance, and accessibility to launch thresholds.
- (completed 2026-05-28)
+- [ ] **Phase 5: Site Layout & Home Visual Scale** - Widen container to 84rem, scale homepage typography/spacing, preserve AwardBanner.
+- [ ] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages and verify responsive/CWV baselines.
 
 ## Phase Details
 
-### Phase 1: Platform MVP Foundation
-**Goal**: Users can reliably access a fast static-first marketing site foundation while the team can safely update content through validated code workflows.
+### Phase 5: Site Layout & Home Visual Scale
+**Goal**: Users on desktop see a wider, more readable homepage with proportionally larger typography and spacing, while the award banner stays compact.
 **Mode:** mvp
-**Depends on**: Nothing (first phase)
-**Requirements**: PLAT-01, PLAT-02, PLAT-03
+**Depends on**: v1.0 (Phases 1–4 complete)
+**Requirements**: LAYT-01, LAYT-02, TYPE-01, TYPE-02
 **Success Criteria** (what must be TRUE):
-  1. User can access the public website on production and preview deployments without downtime from release flow issues.
-  2. User experiences fast initial load and navigation on core pages powered by static-first rendering behavior.
-  3. Content editors can change core website content in code files and get schema validation feedback before deployment.
-**Plans**: 3 plans
-Plans:
-- [x] `01-01-PLAN.md` - Establish Next.js + Vercel deployment-safe foundation and CI gate.
-- [x] `01-02-PLAN.md` - Implement static-first core marketing routes and crawl primitives.
-- [x] `01-03-PLAN.md` - Add typed content schema validation workflow for safe content updates.
-
-### Phase 2: Core Conversion Journeys
-**Goal**: Users can immediately understand the company offer and navigate high-intent service and procurement pages with a clear consultation path.
-**Mode:** mvp
-**Depends on**: Phase 1
-**Requirements**: IA-01, IA-02, IA-03, LEAD-01
-**Success Criteria** (what must be TRUE):
-  1. User can understand the core value proposition from the Home page hero and primary sections.
-  2. User can navigate to consulting, staffing, and niche solution pages that clearly explain each offering.
-  3. User can discover contract vehicles from top navigation and contextual internal links.
-  4. User can reach one clear consultation CTA from the Home page and key service pages.
-**Plans**: 3 plans
-Plans:
-- [x] `02-01-PLAN.md` - Establish conversion content contracts and single consultation destination route.
-- [x] `02-02-PLAN.md` - Implement Home value-proposition journey with primary consultation CTA.
-- [x] `02-03-PLAN.md` - Implement services and contract discovery journeys with capability routing and CTA continuity.
+  1. User sees content area widened to 84rem max-width in header, hero, certification bar, about section, main content, and footer.
+  2. User sees AwardBanner unchanged at its current compact size and typography.
+  3. User sees larger homepage headlines, body text, section headings, buttons, and spacing compared to v1.0.
+  4. User on tablet/mobile sees homepage layout adapt without horizontal overflow.
+**Plans**: TBD (via `/gsd-plan-phase 5`)
 **UI hint**: yes
 
-### Phase 3: Trust and Lead Capture
-**Goal**: Users can evaluate credibility signals and submit qualified consultation inquiries through a complete working contact path.
+### Phase 6: Marketing Pages Scale & Quality Verification
+**Goal**: Users experience consistent visual scale across all marketing pages with verified responsive behavior and performance baselines.
 **Mode:** mvp
-**Depends on**: Phase 2
-**Requirements**: TRST-01, TRST-02, TRST-03, LEAD-02, LEAD-03
+**Depends on**: Phase 5
+**Requirements**: TYPE-03, RESP-01, PERF-01
 **Success Criteria** (what must be TRUE):
-  1. User can view certifications and qualification signals on dedicated trust content pages.
-  2. User can review at least two outcomes-focused case/project snapshots.
-  3. User can see approved client or partner trust indicators without noticeable page slowdowns.
-  4. User can submit the short contact form and receive a clear success confirmation.
-  5. Internal team reliably receives each submitted lead through the initial email routing path.
-**Plans**: 3 plans
-Plans:
-- [x] `03-01-PLAN.md` - Extend trust and lead content contracts with validated schemas.
-- [x] `03-02-PLAN.md` - Implement dedicated trust route and discoverability wiring.
-- [x] `03-03-PLAN.md` - Complete consultation form submission and email lead routing path.
-**UI hint**: yes
-
-### Phase 4: Launch Quality Gates
-**Goal**: Users and search engines experience production pages that meet launch SEO, performance, and accessibility quality bars.
-**Mode:** mvp
-**Depends on**: Phase 3
-**Requirements**: SEO-01, SEO-02, SEO-03, PERF-01, A11Y-01
-**Success Criteria** (what must be TRUE):
-  1. User can access every launch page with complete intent-aligned title, description, and canonical metadata.
-  2. Search engines can crawl and index the site through valid sitemap, robots directives, and clean internal linking.
-  3. Search engines can parse Organization, Service, and Breadcrumb structured data where relevant.
-  4. Users on real devices experience launch pages that meet agreed Core Web Vitals thresholds at p75.
-  5. Keyboard and assistive technology users can navigate primary pages and complete the contact form with WCAG 2.2 AA-aligned behavior.
-**Plans**: 4 plans
-Plans:
-- [x] `04-01-PLAN.md` - Typed launch SEO registry and complete per-route metadata coverage.
-- [x] `04-02-PLAN.md` - Registry-driven crawl primitives and Organization/Service/Breadcrumb JSON-LD.
-- [x] `04-03-PLAN.md` - Speed Insights RUM and Lighthouse CI performance budgets on launch routes.
-- [x] `04-04-PLAN.md` - WCAG 2.2 AA shell/form accessibility hardening and CI a11y gates.
+  1. User sees scaled typography and spacing on services, contracts, trust, and consultation pages consistent with homepage changes.
+  2. User on tablet and mobile viewports sees all updated pages adapt correctly without broken grids or overflow.
+  3. User on real devices experiences updated pages that still meet v1.0 Core Web Vitals thresholds at p75.
+**Plans**: TBD (via `/gsd-plan-phase 6`)
 **UI hint**: yes
 
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Platform MVP Foundation | 3/3 | Complete   | 2026-05-28 |
-| 2. Core Conversion Journeys | 3/3 | Complete   | 2026-05-28 |
-| 3. Trust and Lead Capture | 3/3 | Complete   | 2026-05-28 |
-| 4. Launch Quality Gates | 4/4 | Complete   | 2026-05-28 |
+| 5. Site Layout & Home Visual Scale | 0/? | Not started | — |
+| 6. Marketing Pages Scale & Quality Verification | 0/? | Not started | — |
+
+## v1.0 Archive
+
+v1.0 shipped 4 phases (Platform MVP Foundation, Core Conversion Journeys, Trust and Lead Capture, Launch Quality Gates) — all complete 2026-05-28. See `.planning/phases/` archive or git history for phase summaries.
+
+---
+*Roadmap created: 2026-06-01 for milestone v1.1*

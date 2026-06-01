@@ -3,41 +3,29 @@
 **Defined:** 2026-05-28
 **Core Value:** Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## v1 Requirements
+## v1.0 Requirements (Validated)
 
-Requirements for initial release. Each maps to roadmap phases.
+All v1.0 requirements shipped and validated in milestone v1.0 (Phases 1–4). See `.planning/MILESTONES.md` or phase summaries for details.
 
-### Foundation & Platform
+## v1.1 Requirements
 
-- [x] **PLAT-01**: User can access the public website hosted on Vercel with stable production deployments and preview environments.
-- [x] **PLAT-02**: User experiences core marketing pages rendered with a static-first strategy (SSG/ISR) for fast navigation and load.
-- [x] **PLAT-03**: Content editors can update core site content through code-managed content files validated by typed schemas.
+Requirements for the Homepage Visual Scale milestone. Each maps to roadmap phases.
 
-### Information Architecture & Messaging
+### Layout & Container Width
 
-- [x] **IA-01**: User can understand the company's value proposition within the Home page hero and primary sections.
-- [x] **IA-02**: User can navigate to service/capability pages that clearly explain consulting, staffing, and niche solution offerings.
-- [x] **IA-03**: User can discover contract vehicles and procurement-relevant capabilities from primary navigation and internal links.
+- [ ] **LAYT-01**: User sees a wider content area (84rem max-width) across header navigation, page sections, and footer on desktop viewports.
+- [ ] **LAYT-02**: User sees AwardBanner remain at its current compact dimensions — not scaled with the rest of the site.
 
-### Trust & Credibility
+### Typography & Visual Scale
 
-- [x] **TRST-01**: User can view certifications and qualification signals (including MWBE-related credentials) on dedicated trust content.
-- [x] **TRST-02**: User can review at least two publishable project/case snapshots with outcomes-oriented summaries.
-- [x] **TRST-03**: User can see approved client/partner trust indicators (for example logos or named references) without blocking page performance.
+- [ ] **TYPE-01**: User sees proportionally larger homepage headlines, body text, and section headings compared to v1.0.
+- [ ] **TYPE-02**: User sees proportionally larger buttons, feature text, and section spacing on the homepage.
+- [ ] **TYPE-03**: User sees scaled typography and spacing applied consistently across non-home marketing pages (services, contracts, trust, consultation).
 
-### Lead Conversion
+### Responsive & Quality
 
-- [x] **LEAD-01**: User can reach a single clear consultation CTA from the Home page and key service pages.
-- [x] **LEAD-02**: User can submit a short contact form with essential qualification fields and receive successful submission confirmation.
-- [x] **LEAD-03**: Internal team can receive lead submissions reliably through the initial email-based routing path.
-
-### SEO, Performance, and Accessibility
-
-- [x] **SEO-01**: User can access pages with complete technical metadata (title, description, canonical) aligned to each page intent.
-- [x] **SEO-02**: Search engines can crawl and index the site via valid `sitemap.xml`, `robots.txt`, and clean internal linking.
-- [x] **SEO-03**: Search engines can interpret structured business context via valid Organization/Service/Breadcrumb schema where applicable.
-- [x] **PERF-01**: Users on real devices experience launch pages that meet agreed Core Web Vitals targets (LCP, INP, CLS) at p75.
-- [x] **A11Y-01**: Keyboard and assistive-technology users can navigate primary pages and complete the contact form with WCAG 2.2 AA-aligned behavior.
+- [ ] **RESP-01**: User on tablet and mobile viewports sees layout adapt correctly without horizontal overflow or broken grids.
+- [ ] **PERF-01**: User on real devices experiences pages that still meet v1.0 Core Web Vitals thresholds (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1) at p75 after layout changes.
 
 ## v2 Requirements
 
@@ -53,15 +41,15 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ## Out of Scope
 
-Explicitly excluded to prevent scope creep in the rapid MVP release.
+Explicitly excluded to prevent scope creep in this milestone.
 
 | Feature | Reason |
 |---------|--------|
-| Full CMS adoption in v1 | Slows initial launch; code-managed content is faster and lower risk for MVP |
-| Complex martech stack at launch | Adds script bloat and integration risk before baseline performance/SEO stability |
-| Chatbot-first or multi-step lead funnel | Increases conversion friction before baseline form performance is proven |
-| Heavy animation and autoplay media | Creates avoidable Core Web Vitals risk during initial release |
-| Multilingual rollout in v1 | Expands SEO/content governance complexity and conflicts with rapid timeline |
+| AwardBanner scaling | User explicitly requested banner stay compact |
+| Full-bleed layouts (>84rem) | 84rem chosen as target; full-bleed adds complexity without clear benefit |
+| New page content or sections | v1.1 is visual scale only, not new features |
+| CMS adoption | Still deferred post-MVP |
+| Multilingual rollout | Still deferred post-MVP |
 
 ## Traceability
 
@@ -69,29 +57,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PLAT-01 | Phase 1 | Complete |
-| PLAT-02 | Phase 1 | Complete |
-| PLAT-03 | Phase 1 | Complete |
-| IA-01 | Phase 2 | Complete |
-| IA-02 | Phase 2 | Complete |
-| IA-03 | Phase 2 | Complete |
-| TRST-01 | Phase 3 | Complete |
-| TRST-02 | Phase 3 | Complete |
-| TRST-03 | Phase 3 | Complete |
-| LEAD-01 | Phase 2 | Complete |
-| LEAD-02 | Phase 3 | Complete |
-| LEAD-03 | Phase 3 | Complete |
-| SEO-01 | Phase 4 | Complete |
-| SEO-02 | Phase 4 | Complete |
-| SEO-03 | Phase 4 | Complete |
-| PERF-01 | Phase 4 | Complete |
-| A11Y-01 | Phase 4 | Complete |
+| LAYT-01 | Phase 5 | Pending |
+| LAYT-02 | Phase 5 | Pending |
+| TYPE-01 | Phase 5 | Pending |
+| TYPE-02 | Phase 5 | Pending |
+| TYPE-03 | Phase 6 | Pending |
+| RESP-01 | Phase 6 | Pending |
+| PERF-01 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 17 total
-- Mapped to phases: 17
+- v1.1 requirements: 7 total
+- Mapped to phases: 7
 - Unmapped: 0
 
 ---
-*Requirements defined: 2026-05-28*
-*Last updated: 2026-05-28 after roadmap mapping*
+*Requirements defined: 2026-06-01*
+*Last updated: 2026-06-01 after milestone v1.1 roadmap mapping*
