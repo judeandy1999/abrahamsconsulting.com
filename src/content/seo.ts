@@ -23,6 +23,13 @@ export const launchPageSeoContent = [
       "Explore Abrahams Consulting niche solutions for security, networking, and storage—including IBM Resiliency, Aruba networking, and enterprise storage guidance."
   },
   {
+    routeKey: "executive-recruiting",
+    path: "/executive-recruiting",
+    title: "IT Executive Recruiting",
+    description:
+      "Identify visionary C-Suite and VP-level technology leaders through Abrahams Consulting's forensic, data-driven executive search process."
+  },
+  {
     routeKey: "contracts",
     path: "/contracts",
     title: "Contract Vehicles & Procurement",

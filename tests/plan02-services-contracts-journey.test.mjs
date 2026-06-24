@@ -8,17 +8,22 @@ const SERVICES_FILE = "app/(marketing)/services/page.tsx";
 const SERVICE_DETAIL_FILE = "app/(marketing)/services/[slug]/page.tsx";
 const CONTRACTS_FILE = "app/(marketing)/contracts/page.tsx";
 
-test("marketing navigation exposes solutions dropdown and contracts discovery", async () => {
+test("marketing navigation exposes solutions dropdown and legacy-aligned destinations", async () => {
   const headerSource = await readFile(HEADER_FILE, "utf8");
   const siteSource = await readFile(SITE_FILE, "utf8");
 
   assert.match(headerSource, /site\.navigation/);
   assert.match(headerSource, /main-nav__dropdown/);
   assert.match(headerSource, /aria-haspopup="true"/);
+  assert.match(siteSource, /label: "Solutions"/);
   assert.match(siteSource, /"\/services"/);
   assert.match(siteSource, /children:/);
-  assert.match(siteSource, /"\/contracts"/);
-  assert.match(siteSource, /"\/consultation"/);
+  assert.match(siteSource, /"\/executive-recruiting"/);
+  assert.match(siteSource, /IT Executive Recruiting/);
+  assert.match(siteSource, /Consulting Services/);
+  assert.match(siteSource, /Manufacturer Store/);
+  assert.match(siteSource, /"Blog"/);
+  assert.match(siteSource, /"EVA"/);
 });
 
 test("services page renders solutions landing sections", async () => {

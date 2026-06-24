@@ -42,12 +42,17 @@ describe("plan04 crawl and schema contract", () => {
     assert.match(serviceSource, /JsonLdScript/);
   });
 
-  it("primary navigation includes core launch destinations", async () => {
+  it("primary navigation includes solutions and legacy-aligned destinations", async () => {
     const navSource = await readProjectFile("components/marketing/MainNav.tsx");
     const siteSource = await readProjectFile("src/content/site.ts");
-    for (const href of ["/services", "/contracts", "/trust", "/consultation"]) {
-      assert.match(navSource, new RegExp(`href=\\{item\\.href\\}`));
-      assert.match(siteSource, new RegExp(`"${href}"`));
+    const seoSource = await readProjectFile("src/content/seo.ts");
+
+    assert.match(navSource, /href=\{item\.href\}/);
+    assert.match(siteSource, /label: "Solutions"/);
+    assert.match(siteSource, /"\/services"/);
+    assert.match(siteSource, /IT Executive Recruiting/);
+    for (const href of ["/contracts", "/trust", "/consultation"]) {
+      assert.match(seoSource, new RegExp(`"${href}"`));
     }
     assert.match(navSource, /logo\.webp/);
     assert.match(navSource, /SCHEDULE A CONSULTATION/);

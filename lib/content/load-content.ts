@@ -1,4 +1,5 @@
 import { contractsContent } from "../../src/content/contracts";
+import { executiveRecruitingPageContent } from "../../src/content/executive-recruiting";
 import { marketingContentSchema, type MarketingContent } from "../../src/content/schema";
 import { servicesContent } from "../../src/content/services";
 import { solutionsPageContent } from "../../src/content/solutions";
@@ -11,6 +12,7 @@ export function loadMarketingContent(): MarketingContent {
     services: servicesContent,
     contracts: contractsContent,
     trust: trustContent,
-    solutionsPage: solutionsPageContent
+    solutionsPage: solutionsPageContent,
+    executiveRecruitingPage: executiveRecruitingPageContent
   });
 }

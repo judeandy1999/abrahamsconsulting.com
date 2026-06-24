@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MarketingMotionGroup, MarketingMotionItem } from "../../../../components/marketing/MarketingMotion";
 import { loadMarketingContent } from "../../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../../lib/seo/metadata";
 import { JsonLdScript } from "../../../../components/seo/JsonLdScript";
@@ -45,18 +46,20 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
   return (
     <main id="main-content" className="marketing-main">
-      <div className="marketing-main__inner">
+      <MarketingMotionGroup className="marketing-main__inner">
         <JsonLdScript data={buildServiceJsonLd(service)} />
         <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
-        <h1>{service.title}</h1>
-        <p>{service.summary}</p>
-        <div className="marketing-main__actions">
-          <Link href="/consultation">{service.consultationCtaLabel}</Link>
-          <Link href="/contracts">{service.procurementLinkText}</Link>
-          <Link href="/services">Back to all services</Link>
-          <Link href="/trust">Review trust credentials</Link>
-        </div>
-      </div>
+        <MarketingMotionItem>
+          <h1>{service.title}</h1>
+          <p>{service.summary}</p>
+          <div className="marketing-main__actions">
+            <Link href="/consultation">{service.consultationCtaLabel}</Link>
+            <Link href="/contracts">{service.procurementLinkText}</Link>
+            <Link href="/services">Back to all services</Link>
+            <Link href="/trust">Review trust credentials</Link>
+          </div>
+        </MarketingMotionItem>
+      </MarketingMotionGroup>
     </main>
   );
 }

@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { SiteContent } from "../../src/content/schema";
+import { useMarketingMotionConfig } from "./marketing-motion";
 import { FooterContactCta, FooterContactIcon } from "./FooterMuiIcons";
 import { SocialIcon } from "./SocialIcons";
 
@@ -11,12 +15,24 @@ type MarketingFooterProps = {
 export function MarketingFooter({ site }: MarketingFooterProps) {
   const { footer, contact, socialLinks } = site;
   const year = new Date().getFullYear();
+  const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
 
   return (
     <footer className="site-footer">
       <div className="site-footer__main">
-        <div className="site-footer__columns">
-          <section className="site-footer__column" aria-labelledby="footer-assist-title">
+        <motion.div
+          className="site-footer__columns"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          <motion.section
+            className="site-footer__column"
+            aria-labelledby="footer-assist-title"
+            variants={itemVariants}
+            transition={itemTransition}
+          >
             <h2 id="footer-assist-title" className="site-footer__heading">
               {footer.assistTitle}
             </h2>
@@ -28,9 +44,14 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
               className="site-footer__logo"
             />
             <p className="site-footer__assist-text">{footer.assistBody}</p>
-          </section>
+          </motion.section>
 
-          <section className="site-footer__column" aria-labelledby="footer-badges-title">
+          <motion.section
+            className="site-footer__column"
+            aria-labelledby="footer-badges-title"
+            variants={itemVariants}
+            transition={itemTransition}
+          >
             <h2 id="footer-badges-title" className="site-footer__heading">
               {footer.badgesTitle}
             </h2>
@@ -66,9 +87,14 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
                 ))}
               </ul>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="site-footer__column" aria-labelledby="footer-connect-title">
+          <motion.section
+            className="site-footer__column"
+            aria-labelledby="footer-connect-title"
+            variants={itemVariants}
+            transition={itemTransition}
+          >
             <h2 id="footer-connect-title" className="site-footer__heading">
               {footer.connectTitle}
             </h2>
@@ -95,8 +121,8 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
               ))}
             </ul>
             <FooterContactCta href={footer.contactCtaHref} label={footer.contactCtaLabel} />
-          </section>
-        </div>
+          </motion.section>
+        </motion.div>
       </div>
 
       <div className="site-footer__transition" aria-hidden="true">
@@ -104,7 +130,13 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
         <div className="site-footer__transition-stripe" />
       </div>
 
-      <div className="site-footer__bar">
+      <motion.div
+        className="site-footer__bar"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewport}
+        transition={itemTransition}
+      >
         <div className="site-footer__bar-inner">
           <div className="site-footer__legal">
             <Link href={footer.privacyPolicyHref}>{footer.privacyPolicyLabel}</Link>
@@ -130,7 +162,7 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

@@ -245,9 +245,10 @@ textarea:focus-visible {
 
 .main-nav__links > ul {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.35rem;
+  justify-content: flex-end;
+  gap: 0.85rem 1.1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -257,9 +258,10 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: #1f2937;
+  white-space: nowrap;
 }
 
 .main-nav__links a:hover {
@@ -1052,8 +1054,462 @@ textarea:focus-visible {
 }
 
 /* Solutions page */
-.marketing-main--solutions {
+.marketing-main--solutions,
+.marketing-main--executive-recruiting {
   background: var(--color-white);
+}
+
+/* Executive recruiting page */
+.exec-recruiting-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-navy);
+  background: var(--color-white);
+}
+
+.exec-recruiting-hero__inner {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 2rem 2.5rem;
+}
+
+.exec-recruiting-hero__content,
+.exec-recruiting-hero__visual {
+  min-width: 0;
+}
+
+.exec-recruiting-hero__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-navy);
+}
+
+.exec-recruiting-hero__eyebrow::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin-top: 0.65rem;
+  background: var(--color-red);
+}
+
+.exec-recruiting-hero__headline {
+  margin: 0 0 1rem;
+  max-width: 34rem;
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #042551;
+}
+
+.exec-recruiting-hero__headline-accent {
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-hero__description {
+  margin: 0 0 1.75rem;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-hero__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.exec-recruiting-hero__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.exec-recruiting-hero__feature-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: rgba(17, 156, 255, 0.12);
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-hero__feature-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.exec-recruiting-hero__feature-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.exec-recruiting-hero__feature-text {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.exec-recruiting-hero__cta-primary {
+  background: #042551;
+}
+
+.exec-recruiting-hero__cta-primary:hover {
+  background: var(--color-navy-deep);
+}
+
+.exec-recruiting-hero__cta-secondary {
+  color: #042551;
+  border-color: #042551;
+}
+
+.exec-recruiting-hero__cta-secondary:hover {
+  background: rgba(4, 37, 81, 0.06);
+}
+
+.exec-recruiting-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  min-height: 28rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.25rem;
+}
+
+.exec-recruiting-hero__visual-dots {
+  position: absolute;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.55) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  opacity: 0.85;
+  z-index: 3;
+}
+
+.exec-recruiting-hero__visual-dots--top {
+  top: 0;
+  left: 4%;
+  width: 5.5rem;
+  height: 4.5rem;
+}
+
+.exec-recruiting-hero__visual-dots--bottom {
+  bottom: 0;
+  left: 38%;
+  width: 6rem;
+  height: 3.5rem;
+}
+
+.exec-recruiting-hero__visual-shell {
+  position: relative;
+  width: min(100%, 42rem);
+  margin-left: auto;
+  min-height: 24rem;
+  border-radius: 1.25rem 0 0 0;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(11, 31, 58, 0.14);
+}
+
+.exec-recruiting-hero__visual-accent {
+  position: absolute;
+  inset: 0;
+  background: #042551;
+  clip-path: polygon(0 0, 22% 0, 0 100%);
+  z-index: 2;
+}
+
+.exec-recruiting-hero__visual-frame {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.exec-recruiting-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 24rem;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+/* Executive recruiting — wrong hire costs */
+.exec-recruiting-costs {
+  background: var(--color-section-alt-bg);
+}
+
+.exec-recruiting-costs__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 4rem 1.75rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.exec-recruiting-costs__header {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.exec-recruiting-costs__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-costs__title {
+  margin: 0;
+  font-size: var(--home-section-heading-size);
+  font-weight: 700;
+  line-height: var(--home-section-heading-line-height);
+  letter-spacing: -0.01em;
+  color: var(--color-section-heading);
+}
+
+.exec-recruiting-costs__title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: var(--color-red);
+}
+
+.exec-recruiting-costs__description {
+  margin: 0;
+  max-width: 44rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-costs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.exec-recruiting-costs__card-inner {
+  display: grid;
+  gap: 1.25rem;
+  height: 100%;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.08);
+  text-align: center;
+}
+
+.exec-recruiting-costs__card-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 7rem;
+}
+
+.exec-recruiting-costs__card-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 6rem;
+  object-fit: contain;
+}
+
+.exec-recruiting-costs__card-body {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.exec-recruiting-costs__card-title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-section-heading);
+}
+
+.exec-recruiting-costs__card-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-costs__card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-primary);
+  transition: color 0.2s ease;
+}
+
+.exec-recruiting-costs__card-link:hover {
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-costs__card-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Executive recruiting — hiring CTA */
+.exec-recruiting-cta {
+  background: var(--color-section-alt-bg);
+  padding: 0 1.75rem 4rem;
+}
+
+.exec-recruiting-cta__card {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  min-height: 26rem;
+  overflow: hidden;
+}
+
+.exec-recruiting-cta__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 3rem 2.5rem;
+}
+
+.exec-recruiting-cta__title {
+  margin: 0;
+  max-width: 28rem;
+  font-size: clamp(1.625rem, 2.4vw, 2.125rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-cta__title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: var(--color-red);
+}
+
+.exec-recruiting-cta__description {
+  margin: 0;
+  max-width: 24rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-cta__actions {
+  margin-top: 0.25rem;
+}
+
+.exec-recruiting-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.35rem;
+  background: #042551;
+  color: var(--color-white);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.exec-recruiting-cta__button:hover {
+  background: #031d3d;
+}
+
+.exec-recruiting-cta__button-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.exec-recruiting-cta__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  margin: auto 0 0;
+  padding: 1.5rem 0 0;
+  list-style: none;
+}
+
+.exec-recruiting-cta__highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #042551;
+}
+
+.exec-recruiting-cta__highlight-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-teal);
+  flex-shrink: 0;
+}
+
+.exec-recruiting-cta__media {
+  position: relative;
+  min-height: 100%;
+}
+
+.exec-recruiting-cta__image-wrap {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.exec-recruiting-cta__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .solutions-hero {
@@ -2526,6 +2982,85 @@ body.nav-menu-open {
     padding-bottom: 2.5rem;
   }
 
+  .exec-recruiting-hero__inner {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    gap: 2rem;
+  }
+
+  .exec-recruiting-hero__visual {
+    order: -1;
+    min-height: 18rem;
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .exec-recruiting-hero__visual-shell {
+    width: 100%;
+    min-height: 16rem;
+  }
+
+  .exec-recruiting-hero__visual-accent {
+    clip-path: polygon(0 0, 18% 0, 0 100%);
+  }
+
+  .exec-recruiting-hero__visual-frame {
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .exec-recruiting-hero__image {
+    min-height: 16rem;
+  }
+
+  .exec-recruiting-hero__visual-dots--top {
+    left: 2%;
+  }
+
+  .exec-recruiting-hero__visual-dots--bottom {
+    left: 28%;
+  }
+
+  .exec-recruiting-hero__features {
+    grid-template-columns: 1fr;
+  }
+
+  .exec-recruiting-costs__inner {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .exec-recruiting-cta {
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  .exec-recruiting-cta__card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .exec-recruiting-cta__content {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .exec-recruiting-cta__media {
+    min-height: 16rem;
+  }
+
+  .exec-recruiting-cta__image-wrap {
+    position: relative;
+    clip-path: none;
+    min-height: 16rem;
+  }
+
+  .exec-recruiting-cta__highlights {
+    gap: 0.875rem 1.25rem;
+  }
+
+  .exec-recruiting-costs__grid {
+    grid-template-columns: 1fr;
+  }
+
   .solutions-showcases {
     padding: 1.5rem 0 2.5rem;
   }
@@ -2540,10 +3075,6 @@ body.nav-menu-open {
   .solution-showcase--text-right .solution-showcase__panel,
   .solution-showcase--text-right .solution-showcase__media {
     order: unset;
-  }
-
-  .solution-showcase--text-right .solution-showcase__media {
-    order: -1;
   }
 
   .solution-showcase__panel {
@@ -2805,7 +3336,7 @@ body.nav-menu-open {
   }
 
   .main-nav__logo {
-    height: 5.35rem;
+    height: 3.35rem;
   }
 
   .home-hero__features {

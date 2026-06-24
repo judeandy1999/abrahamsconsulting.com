@@ -48,11 +48,26 @@ export const siteContent: SiteContent = {
         { label: "Tape Storage", href: "/services#tape-storage" }
       ]
     },
-    { label: "Contract Vehicles", href: "/contracts" },
-    { label: "Certifications", href: "/trust" },
-    { label: "Clients", href: "/trust" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/consultation" }
+    {
+      label: "IT Executive Recruiting",
+      href: "/executive-recruiting"
+    },
+    {
+      label: "Consulting Services",
+      href: "https://abrahamsconsulting.com/consulting-service/"
+    },
+    {
+      label: "Manufacturer Store",
+      href: "https://abrahamsconsulting.com/abrahams-consulting-product-page/"
+    },
+    {
+      label: "Blog",
+      href: "https://www.abrahamsconsulting.com/blog/"
+    },
+    {
+      label: "EVA",
+      href: "https://evespeaks.com/"
+    }
   ],
   homeHero: {
     headlinePrefix: "Trusted Government ",

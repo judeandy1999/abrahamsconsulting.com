@@ -165,7 +165,7 @@ const launchPageSeoSchema = z.object({
 
 const launchPageSeoListSchema = z
   .array(launchPageSeoSchema)
-  .min(7, "Launch SEO registry must cover all static marketing routes");
+  .min(8, "Launch SEO registry must cover all static marketing routes");
 
 const solutionSectionIconSchema = z.enum([
   "shield",
@@ -234,12 +234,73 @@ const solutionsPageSchema = z.object({
   showcases: z.array(solutionShowcaseSchema).min(2, "Solutions page requires at least two showcases")
 });
 
+const executiveRecruitingFeatureIconSchema = z.enum(["talent", "vetting", "leadership", "impact"]);
+const executiveRecruitingCtaHighlightIconSchema = z.enum(["confidential", "precision", "partnership"]);
+
+const executiveRecruitingCardSchema = z.object({
+  id: z.string().min(1, "Executive recruiting card id is required"),
+  title: z.string().min(1, "Executive recruiting card title is required"),
+  description: z.string().min(1, "Executive recruiting card description is required"),
+  imageSrc: z.string().min(1, "Executive recruiting card image source is required"),
+  imageAlt: z.string().min(1, "Executive recruiting card image alt text is required"),
+  learnMoreLabel: z.string().min(1, "Executive recruiting card learn more label is required"),
+  learnMoreHref: z.string().min(1, "Executive recruiting card learn more href is required")
+});
+
+const executiveRecruitingPageSchema = z.object({
+  hero: z.object({
+    eyebrow: z.string().min(1, "Executive recruiting eyebrow is required"),
+    headlinePrefix: z.string().min(1, "Executive recruiting headline prefix is required"),
+    headlineAccent: z.string().min(1, "Executive recruiting headline accent is required"),
+    headlineSuffix: z.string().min(1, "Executive recruiting headline suffix is required"),
+    description: z.string().min(1, "Executive recruiting description is required"),
+    imageSrc: z.string().min(1, "Executive recruiting image source is required"),
+    imageAlt: z.string().min(1, "Executive recruiting image alt text is required"),
+    features: z
+      .array(
+        z.object({
+          icon: executiveRecruitingFeatureIconSchema,
+          title: z.string().min(1, "Executive recruiting feature title is required"),
+          description: z.string().min(1, "Executive recruiting feature description is required")
+        })
+      )
+      .length(4, "Executive recruiting hero requires four features"),
+    primaryCtaLabel: z.string().min(1, "Executive recruiting primary CTA label is required"),
+    primaryCtaHref: z.string().min(1, "Executive recruiting primary CTA href is required"),
+    secondaryCtaLabel: z.string().min(1, "Executive recruiting secondary CTA label is required"),
+    secondaryCtaHref: z.string().url("Executive recruiting secondary CTA href must be valid")
+  }),
+  wrongHireSection: z.object({
+    eyebrow: z.string().min(1, "Wrong hire section eyebrow is required"),
+    title: z.string().min(1, "Wrong hire section title is required"),
+    description: z.string().min(1, "Wrong hire section description is required"),
+    cards: z.array(executiveRecruitingCardSchema).length(3, "Wrong hire section requires three cards")
+  }),
+  hiringProfileCta: z.object({
+    title: z.string().min(1, "Hiring profile CTA title is required"),
+    description: z.string().min(1, "Hiring profile CTA description is required"),
+    ctaLabel: z.string().min(1, "Hiring profile CTA label is required"),
+    ctaHref: z.string().min(1, "Hiring profile CTA href is required"),
+    imageSrc: z.string().min(1, "Hiring profile CTA image source is required"),
+    imageAlt: z.string().min(1, "Hiring profile CTA image alt text is required"),
+    highlights: z
+      .array(
+        z.object({
+          icon: executiveRecruitingCtaHighlightIconSchema,
+          label: z.string().min(1, "Hiring profile CTA highlight label is required")
+        })
+      )
+      .length(3, "Hiring profile CTA requires three highlights")
+  })
+});
+
 const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
   contracts: z.array(contractItemSchema).min(1, "At least one contract entry is required"),
   trust: trustContentSchema,
-  solutionsPage: solutionsPageSchema
+  solutionsPage: solutionsPageSchema,
+  executiveRecruitingPage: executiveRecruitingPageSchema
 });
 
 function formatPath(issuePath) {
@@ -312,13 +373,15 @@ async function validateProjectContent() {
     const contractsModule = await importTsDataModule("src/content/contracts.ts");
     const trustModule = await importTsDataModule("src/content/trust.ts");
     const solutionsModule = await importTsDataModule("src/content/solutions.ts");
+    const executiveRecruitingModule = await importTsDataModule("src/content/executive-recruiting.ts");
 
     const content = {
       site: siteModule.siteContent,
       services: servicesModule.servicesContent,
       contracts: contractsModule.contractsContent,
       trust: trustModule.trustContent,
-      solutionsPage: solutionsModule.solutionsPageContent
+      solutionsPage: solutionsModule.solutionsPageContent,
+      executiveRecruitingPage: executiveRecruitingModule.executiveRecruitingPageContent
     };
 
     const result = marketingContentSchema.safeParse(content);

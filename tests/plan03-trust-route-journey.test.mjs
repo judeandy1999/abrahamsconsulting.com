@@ -9,12 +9,14 @@ const SITEMAP_FILE = "app/sitemap.ts";
 const SEO_ROUTES_FILE = "lib/seo/routes.ts";
 const SEO_CONTENT_FILE = "src/content/seo.ts";
 
-test("primary navigation exposes trust route", async () => {
+test("primary navigation exposes solutions route and trust remains in launch SEO", async () => {
   const headerSource = await readFile(HEADER_FILE, "utf8");
   const siteSource = await readFile(SITE_FILE, "utf8");
+  const seoSource = await readFile(SEO_CONTENT_FILE, "utf8");
 
   assert.match(headerSource, /site\.navigation/);
-  assert.match(siteSource, /"\/trust"/);
+  assert.match(siteSource, /"\/services"/);
+  assert.match(seoSource, /"\/trust"/);
 });
 
 test("trust page is static and renders credibility sections", async () => {

@@ -30,7 +30,26 @@
           { "label": "Networking", "href": "/services#networking" }
         ]
       },
-      { "label": "Contract Vehicles", "href": "/contracts" }
+      {
+        "label": "IT Executive Recruiting",
+        "href": "/executive-recruiting"
+      },
+      {
+        "label": "Consulting Services",
+        "href": "https://abrahamsconsulting.com/consulting-service/"
+      },
+      {
+        "label": "Manufacturer Store",
+        "href": "https://abrahamsconsulting.com/abrahams-consulting-product-page/"
+      },
+      {
+        "label": "Blog",
+        "href": "https://www.abrahamsconsulting.com/blog/"
+      },
+      {
+        "label": "EVA",
+        "href": "https://evespeaks.com/"
+      }
     ],
     "homeHero": {
       "headlinePrefix": "Trusted Government ",
@@ -254,5 +273,89 @@
         }
       }
     ]
+  },
+  "executiveRecruitingPage": {
+    "hero": {
+      "eyebrow": "EXECUTIVE SEARCH EXCELLENCE",
+      "headlinePrefix": "Identify the ",
+      "headlineAccent": "Visionaries",
+      "headlineSuffix": " Others Miss.",
+      "description": "We help organizations secure top 1% C-Suite and VP-level talent.",
+      "imageSrc": "/images/executive-recruiting/hero.png",
+      "imageAlt": "Executive leadership team in a boardroom",
+      "features": [
+        {
+          "icon": "talent",
+          "title": "Top 1% Talent",
+          "description": "Access pre-vetted executive and VP-level leaders."
+        },
+        {
+          "icon": "vetting",
+          "title": "Data-Driven Vetting",
+          "description": "Forensic evaluation uncovering what others overlook."
+        },
+        {
+          "icon": "leadership",
+          "title": "C-Suite & VP Specialists",
+          "description": "Deep expertise across technology leadership functions."
+        },
+        {
+          "icon": "impact",
+          "title": "Long-Term Impact",
+          "description": "We align leaders with your strategy, culture, and growth goals."
+        }
+      ],
+      "primaryCtaLabel": "FIND EXECUTIVE",
+      "primaryCtaHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link",
+      "secondaryCtaLabel": "WATCH THE 2 MIN VIDEO",
+      "secondaryCtaHref": "https://youtube.com/shorts/knuzqrbw1wY?feature=share"
+    },
+    "wrongHireSection": {
+      "eyebrow": "EXECUTIVE HIRING RISKS",
+      "title": "The High Cost of the Wrong Hire",
+      "description": "Standard recruiting agencies play a numbers game. At the executive level, precision is the only metric that matters.",
+      "cards": [
+        {
+          "id": "revenue-stagnation",
+          "title": "Revenue Stagnation",
+          "description": "Every day a C-level seat sits empty, strategic initiatives stall.",
+          "imageSrc": "/images/executive-recruiting/revenue-stagnation.png",
+          "imageAlt": "Revenue stagnation icon",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
+        },
+        {
+          "id": "cultural-misalignment",
+          "title": "Cultural Misalignment",
+          "description": "Resumes show skills, not behavior.",
+          "imageSrc": "/images/executive-recruiting/cultural-misalignment.png",
+          "imageAlt": "Cultural misalignment icon",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
+        },
+        {
+          "id": "bad-hire-risk",
+          "title": "The Bad Hire Risk",
+          "description": "Replacing an executive costs 213% of their salary.",
+          "imageSrc": "/images/executive-recruiting/bad-hire-risk.png",
+          "imageAlt": "Bad hire risk icon",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
+        }
+      ]
+    },
+    "hiringProfileCta": {
+      "title": "Ready to Hire Your Next CIO, CTO or VP Leader?",
+      "description": "We identify leaders others miss.",
+      "ctaLabel": "Schedule a Confidential Consultation",
+      "ctaHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link",
+      "imageSrc": "/images/executive-recruiting/hero.png",
+      "imageAlt": "Executive leadership team in a boardroom",
+      "highlights": [
+        { "icon": "confidential", "label": "Confidential Process" },
+        { "icon": "precision", "label": "Precision-Driven Search" },
+        { "icon": "partnership", "label": "Long-Term Partnership" }
+      ]
+    }
   }
 }
