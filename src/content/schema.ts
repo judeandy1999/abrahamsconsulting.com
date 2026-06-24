@@ -74,6 +74,14 @@ export const siteContentSchema = z.object({
     partnersHeading: z.string().min(1, "Home about partners heading is required"),
     partnerLogos: z.array(partnerLogoSchema).min(1, "At least one partner logo is required")
   }),
+  homeFederalCapabilities: z.object({
+    heading: z.string().min(1, "Federal capabilities heading is required"),
+    body: z.string().min(1, "Federal capabilities body is required"),
+    linkLabel: z.string().min(1, "Federal capabilities link label is required"),
+    linkHref: z.string().url("Federal capabilities link must be a valid URL"),
+    videoEmbedUrl: z.string().url("Federal capabilities video embed URL must be valid"),
+    videoTitle: z.string().min(1, "Federal capabilities video title is required")
+  }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
     path: z.literal("/consultation")

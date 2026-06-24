@@ -1,5 +1,6 @@
 import type { SiteContent } from "../../src/content/schema";
 import { AwardBannerBadge } from "./AwardBannerBadge";
+import { HeroFeatureIcon } from "./HeroFeatureIcon";
 import { IconArrowRight } from "./NavIcons";
 
 type AwardBannerProps = {
@@ -31,7 +32,7 @@ export function AwardBanner({ site }: AwardBannerProps) {
           rel="noopener noreferrer"
         >
           {awardBanner.ctaLabel}
-          <IconArrowRight className="award-banner__cta-icon" />
+          <IconArrowRight className="award-banner__cta-icon award-banner__cta-icon--arrow" />
         </a>
       </div>
     </section>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AwardBanner } from "../../components/marketing/AwardBanner";
 import { HomeAboutSection } from "../../components/marketing/HomeAboutSection";
 import { HomeCertificationBar } from "../../components/marketing/HomeCertificationBar";
+import { HomeFederalCapabilitiesSection } from "../../components/marketing/HomeFederalCapabilitiesSection";
 import { HomeHero } from "../../components/marketing/HomeHero";
 import { loadMarketingContent } from "../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../lib/seo/metadata";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <HomeHero site={site} />
         <HomeCertificationBar site={site} />
         <HomeAboutSection site={site} />
+        <HomeFederalCapabilitiesSection site={site} />
       </main>
     </>
   );

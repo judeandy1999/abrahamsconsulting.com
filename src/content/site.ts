@@ -96,6 +96,15 @@ export const siteContent: SiteContent = {
       { id: "stars-iii", name: "Stars III", imageSrc: "/images/companies/StarsIII-150x150.png" }
     ]
   },
+  homeFederalCapabilities: {
+    heading: "FEDERAL CAPABILITIES",
+    body:
+      "Abrahams Consulting LLC has expanded its Federal Capabilities as an 8 (a) Woman Owned Small Business with the award of the 8 (a) STARS GSA contract vehicle in February 2022. Learn more about it ",
+    linkLabel: "here.",
+    linkHref: "https://bit.ly/AbrahamsGSASTARSIII",
+    videoEmbedUrl: "https://www.youtube.com/embed/QrHVjEpjMIs?modestbranding=1&rel=0",
+    videoTitle: "GSA's 8(a)STARS III Overview"
+  },
   footer: {
     assistTitle: "We Are Here To Assist You",
     assistBody:

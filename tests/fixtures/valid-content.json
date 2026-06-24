@@ -46,6 +46,14 @@
       "partnersHeading": "Technology partners",
       "partnerLogos": [{ "id": "f5", "name": "F5", "imageSrc": "/images/companies/f5-150x150.jpg" }]
     },
+    "homeFederalCapabilities": {
+      "heading": "FEDERAL CAPABILITIES",
+      "body": "Federal contract vehicle overview. Learn more ",
+      "linkLabel": "here.",
+      "linkHref": "https://bit.ly/AbrahamsGSASTARSIII",
+      "videoEmbedUrl": "https://www.youtube.com/embed/QrHVjEpjMIs?modestbranding=1&rel=0",
+      "videoTitle": "GSA's 8(a)STARS III Overview"
+    },
     "footer": {
       "assistTitle": "We Are Here To Assist You",
       "assistBody": "We are here to help.",

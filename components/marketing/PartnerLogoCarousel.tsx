@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type { SiteContent } from "../../src/content/schema";
 
 const LOGOS_PER_GROUP = 6;
+const AUTO_ADVANCE_MS = 5000;
 
 type PartnerLogo = SiteContent["homeAbout"]["partnerLogos"][number];
 
@@ -35,74 +36,164 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
 export function PartnerLogoCarousel({ logos }: PartnerLogoCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [groupIndex, setGroupIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   const groups = useMemo(() => chunkLogos(logos, LOGOS_PER_GROUP), [logos]);
 
-  const goToGroup = (nextIndex: number) => {
-    const track = trackRef.current;
-    if (!track) {
+  const goToGroup = useCallback(
+    (nextIndex: number) => {
+      const track = trackRef.current;
+      if (!track || groups.length === 0) {
+        return;
+      }
+
+      const index = ((nextIndex % groups.length) + groups.length) % groups.length;
+      setGroupIndex(index);
+      track.scrollTo({ left: track.clientWidth * index, behavior: reduceMotion ? "auto" : "smooth" });
+    },
+    [groups.length, reduceMotion]
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setReduceMotion(mediaQuery.matches);
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    if (groups.length <= 1 || paused || reduceMotion) {
       return;
     }
 
-    const index = Math.max(0, Math.min(groups.length - 1, nextIndex));
-    setGroupIndex(index);
-    track.scrollTo({ left: track.clientWidth * index, behavior: "smooth" });
-  };
+    const timer = window.setInterval(() => {
+      setGroupIndex((current) => {
+        const nextIndex = (current + 1) % groups.length;
+        const track = trackRef.current;
+        if (track) {
+          track.scrollTo({
+            left: track.clientWidth * nextIndex,
+            behavior: "smooth"
+          });
+        }
+        return nextIndex;
+      });
+    }, AUTO_ADVANCE_MS);
+
+    return () => window.clearInterval(timer);
+  }, [groups.length, paused, reduceMotion]);
 
   return (
-    <div className="home-about__carousel">
-      <button
-        type="button"
-        className="home-about__carousel-control home-about__carousel-control--prev"
-        onClick={() => goToGroup(groupIndex - 1)}
-        disabled={groupIndex === 0}
-        aria-label="Show previous technology partners"
-      >
-        <ChevronIcon direction="left" />
-      </button>
+    <div
+      className={`home-about__carousel-shell${paused ? " is-paused" : ""}`}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+          setPaused(false);
+        }
+      }}
+    >
+      <div className="home-about__carousel">
+        <button
+          type="button"
+          className="home-about__carousel-control home-about__carousel-control--prev"
+          onClick={() => goToGroup(groupIndex - 1)}
+          aria-label="Show previous technology partners"
+        >
+          <ChevronIcon direction="left" />
+        </button>
 
-      <div
-        ref={trackRef}
-        className="home-about__carousel-track"
-        tabIndex={0}
-        aria-live="polite"
-        aria-label={`Technology partners, group ${groupIndex + 1} of ${groups.length}`}
-      >
-        <ul className="home-about__carousel-list">
-          {groups.map((group, groupKey) => (
-            <li
-              key={`group-${groupKey}`}
-              className="home-about__carousel-group"
-              aria-hidden={groupKey !== groupIndex}
-            >
-              {group.map((logo) => (
-                <div key={logo.id} className="home-about__carousel-cell">
-                  <Image
-                    src={logo.imageSrc}
-                    alt=""
-                    width={240}
-                    height={135}
-                    sizes="(max-width: 640px) 30vw, (max-width: 960px) 26vw, 180px"
-                    unoptimized={logo.imageSrc.endsWith(".svg")}
-                    className="home-about__carousel-logo"
-                  />
-                  <span className="sr-only">{logo.name}</span>
-                </div>
-              ))}
-            </li>
-          ))}
-        </ul>
+        <div
+          ref={trackRef}
+          className="home-about__carousel-track"
+          tabIndex={0}
+          aria-live="polite"
+          aria-label={`Technology partners, group ${groupIndex + 1} of ${groups.length}`}
+        >
+          <ul className="home-about__carousel-list">
+            {groups.map((group, groupKey) => (
+              <li
+                key={`group-${groupKey}`}
+                className="home-about__carousel-group"
+                aria-hidden={groupKey !== groupIndex}
+              >
+                {group.map((logo) => (
+                  <div key={logo.id} className="home-about__carousel-cell">
+                    <Image
+                      src={logo.imageSrc}
+                      alt=""
+                      width={240}
+                      height={135}
+                      sizes="(max-width: 640px) 30vw, (max-width: 960px) 26vw, 180px"
+                      unoptimized={logo.imageSrc.endsWith(".svg")}
+                      className="home-about__carousel-logo"
+                    />
+                    <span className="sr-only">{logo.name}</span>
+                  </div>
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          className="home-about__carousel-control home-about__carousel-control--next"
+          onClick={() => goToGroup(groupIndex + 1)}
+          aria-label="Show next technology partners"
+        >
+          <ChevronIcon direction="right" />
+        </button>
       </div>
 
-      <button
-        type="button"
-        className="home-about__carousel-control home-about__carousel-control--next"
-        onClick={() => goToGroup(groupIndex + 1)}
-        disabled={groupIndex >= groups.length - 1}
-        aria-label="Show next technology partners"
-      >
-        <ChevronIcon direction="right" />
-      </button>
+      {groups.length > 1 ? (
+        <div
+          className="home-about__carousel-progress"
+          role="tablist"
+          aria-label="Technology partner groups"
+          style={
+            {
+              "--carousel-interval": `${AUTO_ADVANCE_MS}ms`,
+              "--carousel-progress-count": groups.length
+            } as CSSProperties
+          }
+        >
+          {groups.map((_, index) => {
+            const isActive = index === groupIndex;
+            const isComplete = index < groupIndex;
+
+            return (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                className={[
+                  "home-about__carousel-progress-segment",
+                  isActive ? "is-active" : "",
+                  isComplete ? "is-complete" : ""
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+                onClick={() => goToGroup(index)}
+                aria-label={`Show technology partners group ${index + 1}`}
+                aria-selected={isActive}
+              >
+                <span
+                  key={isActive ? `fill-${groupIndex}` : `fill-${index}`}
+                  className="home-about__carousel-progress-fill"
+                  aria-hidden
+                />
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }
