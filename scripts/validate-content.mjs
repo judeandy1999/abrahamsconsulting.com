@@ -20,12 +20,85 @@ const consultationFormSchema = z.object({
   fields: z.array(consultationFieldSchema).min(4, "Consultation form requires essential qualification fields")
 });
 
+const heroFeatureSchema = z.object({
+  icon: z.enum(["shield", "document", "lock", "people"]),
+  label: z.string().min(1, "Hero feature label is required")
+});
+
+const navLinkSchema = z.object({
+  label: z.string().min(1, "Navigation label is required"),
+  href: z.string().min(1, "Navigation href is required")
+});
+
+const socialLinkSchema = z.object({
+  platform: z.enum(["linkedin", "facebook", "twitter", "youtube"]),
+  href: z.string().url("Social link must be a valid URL"),
+  label: z.string().min(1, "Social link label is required")
+});
+
+const partnerLogoSchema = z.object({
+  id: z.string().min(1, "Partner logo id is required"),
+  name: z.string().min(1, "Partner logo name is required"),
+  imageSrc: z.string().min(1, "Partner logo image source is required")
+});
+
 const siteContentSchema = z.object({
   name: z.string().min(1, "Site name is required"),
   tagline: z.string().min(1, "Site tagline is required"),
+  contact: z.object({
+    phone: z.string().min(1, "Contact phone is required"),
+    phoneIcon: z.literal("phone"),
+    email: z.string().email("Contact email must be valid"),
+    emailIcon: z.literal("mail")
+  }),
+  socialLinks: z.array(socialLinkSchema).min(1, "At least one social link is required"),
+  awardBanner: z.object({
+    headline: z.string().min(1, "Award banner headline is required"),
+    description: z.string().min(1, "Award banner description is required"),
+    ctaLabel: z.string().min(1, "Award banner CTA label is required"),
+    href: z.string().url("Award banner link must be a valid URL")
+  }),
+  navigation: z.array(navLinkSchema).min(1, "At least one navigation link is required"),
+  homeHero: z.object({
+    headlinePrefix: z.string().min(1, "Hero headline prefix is required"),
+    headlineAccent: z.string().min(1, "Hero headline accent is required"),
+    headlineSuffix: z.string().min(1, "Hero headline suffix is required"),
+    description: z.string().min(1, "Hero description is required"),
+    features: z.array(heroFeatureSchema).min(1, "At least one hero feature is required"),
+    primaryCtaLabel: z.string().min(1, "Hero primary CTA label is required"),
+    secondaryCtaLabel: z.string().min(1, "Hero secondary CTA label is required")
+  }),
+  certificationStrip: z.object({
+    title: z.string().min(1, "Certification strip title is required"),
+    imageSrc: z.string().min(1, "Certification strip image source is required"),
+    imageAlt: z.string().min(1, "Certification strip image alt text is required")
+  }),
+  homeAbout: z.object({
+    eyebrow: z.string().min(1, "Home about eyebrow is required"),
+    heading: z.string().min(1, "Home about heading is required"),
+    paragraphs: z.array(z.string().min(1)).min(1, "Home about requires at least one paragraph"),
+    partnersHeading: z.string().min(1, "Home about partners heading is required"),
+    partnerLogos: z.array(partnerLogoSchema).min(1, "At least one partner logo is required")
+  }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
     path: z.literal("/consultation")
+  }),
+  footer: z.object({
+    assistTitle: z.string().min(1, "Footer assist title is required"),
+    assistBody: z.string().min(1, "Footer assist body is required"),
+    logoSrc: z.string().min(1, "Footer logo source is required"),
+    logoAlt: z.string().min(1, "Footer logo alt is required"),
+    badgesTitle: z.string().min(1, "Footer badges title is required"),
+    badges: z.array(partnerLogoSchema).min(1, "At least one footer badge is required"),
+    connectTitle: z.string().min(1, "Footer connect title is required"),
+    address: z.string().min(1, "Footer address is required"),
+    phones: z.array(z.string().min(1)).min(1, "At least one footer phone is required"),
+    contactCtaLabel: z.string().min(1, "Footer contact CTA label is required"),
+    contactCtaHref: z.string().min(1, "Footer contact CTA href is required"),
+    privacyPolicyLabel: z.string().min(1, "Footer privacy policy label is required"),
+    privacyPolicyHref: z.string().min(1, "Footer privacy policy href is required"),
+    copyrightName: z.string().min(1, "Footer copyright name is required")
   }),
   consultationForm: consultationFormSchema
 });

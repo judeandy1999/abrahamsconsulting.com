@@ -2,17 +2,20 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const LAYOUT_FILE = "app/(marketing)/layout.tsx";
+const HEADER_FILE = "components/marketing/MainNav.tsx";
+const SITE_FILE = "src/content/site.ts";
 const SERVICES_FILE = "app/(marketing)/services/page.tsx";
 const SERVICE_DETAIL_FILE = "app/(marketing)/services/[slug]/page.tsx";
 const CONTRACTS_FILE = "app/(marketing)/contracts/page.tsx";
 
 test("marketing navigation exposes services and contracts discovery", async () => {
-  const source = await readFile(LAYOUT_FILE, "utf8");
+  const headerSource = await readFile(HEADER_FILE, "utf8");
+  const siteSource = await readFile(SITE_FILE, "utf8");
 
-  assert.match(source, /href="\/services"/);
-  assert.match(source, /href="\/contracts"/);
-  assert.match(source, /href="\/consultation"/);
+  assert.match(headerSource, /site\.navigation/);
+  assert.match(siteSource, /"\/services"/);
+  assert.match(siteSource, /"\/contracts"/);
+  assert.match(siteSource, /"\/consultation"/);
 });
 
 test("services overview links to service detail routes", async () => {

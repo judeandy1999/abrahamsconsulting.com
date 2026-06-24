@@ -43,13 +43,15 @@ describe("plan04 crawl and schema contract", () => {
   });
 
   it("primary navigation includes core launch destinations", async () => {
-    const layoutSource = await readProjectFile("app/(marketing)/layout.tsx");
-    for (const label of ["Home", "Services", "Contracts", "Trust", "Consultation"]) {
-      assert.match(layoutSource, new RegExp(label));
+    const navSource = await readProjectFile("components/marketing/MainNav.tsx");
+    const siteSource = await readProjectFile("src/content/site.ts");
+    for (const href of ["/services", "/contracts", "/trust", "/consultation"]) {
+      assert.match(navSource, new RegExp(`href=\\{item\\.href\\}`));
+      assert.match(siteSource, new RegExp(`"${href}"`));
     }
-    for (const href of ["/", "/services", "/contracts", "/trust", "/consultation"]) {
-      assert.match(layoutSource, new RegExp(`href=["']${href.replace(/\//g, "\\/")}["']`));
-    }
+    assert.match(navSource, /logo\.webp/);
+    assert.match(navSource, /SCHEDULE A CONSULTATION/);
+    assert.match(navSource, /main-nav__toggle/);
   });
 
   it("robots references production sitemap URL", async () => {

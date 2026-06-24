@@ -2,16 +2,19 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const LAYOUT_FILE = "app/(marketing)/layout.tsx";
+const HEADER_FILE = "components/marketing/MainNav.tsx";
+const SITE_FILE = "src/content/site.ts";
 const TRUST_PAGE_FILE = "app/(marketing)/trust/page.tsx";
 const SITEMAP_FILE = "app/sitemap.ts";
 const SEO_ROUTES_FILE = "lib/seo/routes.ts";
 const SEO_CONTENT_FILE = "src/content/seo.ts";
 
 test("primary navigation exposes trust route", async () => {
-  const source = await readFile(LAYOUT_FILE, "utf8");
+  const headerSource = await readFile(HEADER_FILE, "utf8");
+  const siteSource = await readFile(SITE_FILE, "utf8");
 
-  assert.match(source, /href="\/trust"/);
+  assert.match(headerSource, /site\.navigation/);
+  assert.match(siteSource, /"\/trust"/);
 });
 
 test("trust page is static and renders credibility sections", async () => {

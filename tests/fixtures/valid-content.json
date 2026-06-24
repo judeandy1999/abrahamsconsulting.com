@@ -2,6 +2,72 @@
   "site": {
     "name": "Abrahams Consulting",
     "tagline": "Consulting for enterprise and government delivery teams.",
+    "contact": {
+      "phone": "646-558-3887",
+      "phoneIcon": "phone",
+      "email": "salessupportnys@abrahamsconsulting.com",
+      "emailIcon": "mail"
+    },
+    "socialLinks": [
+      {
+        "platform": "linkedin",
+        "href": "https://www.linkedin.com/company/abrahams-consulting-llc",
+        "label": "LinkedIn"
+      }
+    ],
+    "awardBanner": {
+      "headline": "Awarded New York State PBITS Contract (2025–2029)",
+      "description": "Providing trusted IT solutions and procurement support for New York State agencies.",
+      "ctaLabel": "Learn More",
+      "href": "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
+    },
+    "navigation": [
+      { "label": "Solutions", "href": "/services" },
+      { "label": "Contract Vehicles", "href": "/contracts" }
+    ],
+    "homeHero": {
+      "headlinePrefix": "Trusted Government ",
+      "headlineAccent": "IT Solutions",
+      "headlineSuffix": " & Procurement Partner",
+      "description": "Public sector technology and procurement partner.",
+      "features": [{ "icon": "shield", "label": "Certified Minority-Owned Business" }],
+      "primaryCtaLabel": "REQUEST A CONSULTATION",
+      "secondaryCtaLabel": "VIEW CONTRACT VEHICLES"
+    },
+    "certificationStrip": {
+      "title": "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
+      "imageSrc": "/images/Abrahams-certifications.png",
+      "imageAlt": "Certification and partnership logos"
+    },
+    "homeAbout": {
+      "eyebrow": "Who we are",
+      "heading": "About Abrahams Consulting",
+      "paragraphs": ["Government and enterprise IT partner since 2006."],
+      "partnersHeading": "Technology partners",
+      "partnerLogos": [{ "id": "f5", "name": "F5", "imageSrc": "/images/companies/f5-150x150.jpg" }]
+    },
+    "footer": {
+      "assistTitle": "We Are Here To Assist You",
+      "assistBody": "We are here to help.",
+      "logoSrc": "/images/logo.webp",
+      "logoAlt": "Abrahams Consulting",
+      "badgesTitle": "Our Badge",
+      "badges": [
+        {
+          "id": "pmi",
+          "name": "PMI",
+          "imageSrc": "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.png"
+        }
+      ],
+      "connectTitle": "Connect",
+      "address": "30 Broad Street, NY NY 10004",
+      "phones": ["646-558-3887"],
+      "contactCtaLabel": "CONTACT US",
+      "contactCtaHref": "/consultation",
+      "privacyPolicyLabel": "Privacy Policy",
+      "privacyPolicyHref": "/about",
+      "copyrightName": "Abrahams Consulting LLC"
+    },
     "consultationCta": {
       "label": "Request a Consultation",
       "path": "/consultation"
