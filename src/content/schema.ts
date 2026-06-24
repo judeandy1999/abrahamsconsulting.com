@@ -19,9 +19,15 @@ const heroFeatureSchema = z.object({
   label: z.string().min(1, "Hero feature label is required")
 });
 
+const navChildLinkSchema = z.object({
+  label: z.string().min(1, "Navigation child label is required"),
+  href: z.string().min(1, "Navigation child href is required")
+});
+
 const navLinkSchema = z.object({
   label: z.string().min(1, "Navigation label is required"),
-  href: z.string().min(1, "Navigation href is required")
+  href: z.string().min(1, "Navigation href is required"),
+  children: z.array(navChildLinkSchema).optional()
 });
 
 const socialLinkSchema = z.object({
@@ -81,6 +87,51 @@ export const siteContentSchema = z.object({
     linkHref: z.string().url("Federal capabilities link must be a valid URL"),
     videoEmbedUrl: z.string().url("Federal capabilities video embed URL must be valid"),
     videoTitle: z.string().min(1, "Federal capabilities video title is required")
+  }),
+  homeSolutions: z.object({
+    title: z.string().min(1, "Home solutions title is required"),
+    ctaLabel: z.string().min(1, "Home solutions CTA label is required"),
+    ctaHref: z.string().min(1, "Home solutions CTA href is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Solution item id is required"),
+          icon: z.enum(["cybersecurity", "cloud", "procurement", "ai", "staffing"]),
+          title: z.string().min(1, "Solution item title is required"),
+          description: z.string().min(1, "Solution item description is required")
+        })
+      )
+      .min(1, "At least one solution item is required")
+  }),
+  homeConsultingServices: z.object({
+    title: z.string().min(1, "Home consulting services title is required"),
+    subtitle: z.string().min(1, "Home consulting services subtitle is required"),
+    ctaLabel: z.string().min(1, "Home consulting services CTA label is required"),
+    ctaHref: z.string().min(1, "Home consulting services CTA href is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Consulting service item id is required"),
+          icon: z.enum(["managed-services", "cloud-services", "professional-services"]),
+          title: z.string().min(1, "Consulting service item title is required"),
+          description: z.string().min(1, "Consulting service item description is required")
+        })
+      )
+      .min(1, "At least one consulting service item is required")
+  }),
+  homeWhyChoose: z.object({
+    title: z.string().min(1, "Why choose title is required"),
+    body: z.string().min(1, "Why choose body is required"),
+    stats: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Why choose stat id is required"),
+          icon: z.enum(["experience", "government-clients", "technology-partners", "client-success"]),
+          value: z.string().min(1, "Why choose stat value is required"),
+          label: z.string().min(1, "Why choose stat label is required")
+        })
+      )
+      .min(1, "At least one why choose stat is required")
   }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
@@ -165,11 +216,79 @@ export const launchPageSeoListSchema = z
   .array(launchPageSeoSchema)
   .min(7, "Launch SEO registry must cover all static marketing routes");
 
+const solutionSectionIconSchema = z.enum([
+  "shield",
+  "network",
+  "hard-drive",
+  "layout-grid",
+  "cloud",
+  "settings",
+  "messages",
+  "smartphone"
+]);
+
+const solutionInsightIconSchema = z.enum(["play-circle", "calendar", "eye", "award"]);
+
+const solutionPanelSchema = z.object({
+  icon: solutionSectionIconSchema,
+  eyebrow: z.string().min(1, "Solution panel eyebrow is required"),
+  partnerName: z.string(),
+  paragraphs: z.array(z.string().min(1)).min(1, "Solution panel requires at least one paragraph"),
+  ctaLabel: z.string().min(1, "Solution panel CTA label is required"),
+  ctaHref: z.string().min(1, "Solution panel CTA href is required")
+});
+
+const solutionVideoMediaSchema = z.object({
+  type: z.literal("video"),
+  presenter: z.string().optional(),
+  subtitle: z.string().optional(),
+  title: z.string().min(1, "Solution video title is required"),
+  titleAccent: z.string().optional(),
+  videoEmbedUrl: z.string().url("Solution video embed URL must be valid"),
+  videoTitle: z.string().min(1, "Solution video iframe title is required"),
+  addedOnLabel: z.string().optional(),
+  addedOnItems: z.array(z.string().min(1)).optional(),
+  meta: z
+    .array(
+      z.object({
+        icon: solutionInsightIconSchema,
+        label: z.string().min(1, "Solution video meta label is required")
+      })
+    )
+    .optional(),
+  duration: z.string().optional()
+});
+
+const solutionImageMediaSchema = z.object({
+  type: z.literal("image"),
+  imageSrc: z.string().min(1, "Solution image source is required"),
+  imageAlt: z.string().min(1, "Solution image alt text is required"),
+  caption: z.string().min(1, "Solution image caption is required")
+});
+
+const solutionMediaSchema = z.discriminatedUnion("type", [solutionVideoMediaSchema, solutionImageMediaSchema]);
+
+const solutionShowcaseSchema = z.object({
+  id: z.string().min(1, "Solution showcase id is required"),
+  textPosition: z.enum(["left", "right"]),
+  panel: solutionPanelSchema,
+  media: solutionMediaSchema
+});
+
+export const solutionsPageSchema = z.object({
+  hero: z.object({
+    segments: z.array(z.string().min(1)).min(1, "Solutions hero requires at least one segment"),
+    description: z.string().min(1, "Solutions hero description is required")
+  }),
+  showcases: z.array(solutionShowcaseSchema).min(2, "Solutions page requires at least two showcases")
+});
+
 export const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
   contracts: z.array(contractItemSchema).min(1, "At least one contract entry is required"),
-  trust: trustContentSchema
+  trust: trustContentSchema,
+  solutionsPage: solutionsPageSchema
 });
 
 export type ConsultationField = z.infer<typeof consultationFieldSchema>;
@@ -181,5 +300,6 @@ export type Certification = z.infer<typeof certificationSchema>;
 export type CaseSnapshot = z.infer<typeof caseSnapshotSchema>;
 export type PartnerIndicator = z.infer<typeof partnerIndicatorSchema>;
 export type TrustContent = z.infer<typeof trustContentSchema>;
+export type SolutionsPageContent = z.infer<typeof solutionsPageSchema>;
 export type MarketingContent = z.infer<typeof marketingContentSchema>;
 export type LaunchPageSeo = z.infer<typeof launchPageSeoSchema>;

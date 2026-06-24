@@ -38,7 +38,16 @@ export const siteContent: SiteContent = {
     href: "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
   },
   navigation: [
-    { label: "Solutions", href: "/services" },
+    {
+      label: "Solutions",
+      href: "/services",
+      children: [
+        { label: "Security", href: "/services#security" },
+        { label: "Networking", href: "/services#networking" },
+        { label: "Cloud Storage", href: "/services#cloud-storage" },
+        { label: "Tape Storage", href: "/services#tape-storage" }
+      ]
+    },
     { label: "Contract Vehicles", href: "/contracts" },
     { label: "Certifications", href: "/trust" },
     { label: "Clients", href: "/trust" },
@@ -104,6 +113,108 @@ export const siteContent: SiteContent = {
     linkHref: "https://bit.ly/AbrahamsGSASTARSIII",
     videoEmbedUrl: "https://www.youtube.com/embed/QrHVjEpjMIs?modestbranding=1&rel=0",
     videoTitle: "GSA's 8(a)STARS III Overview"
+  },
+  homeSolutions: {
+    title: "OUR SOLUTIONS",
+    ctaLabel: "FIND YOUR SOLUTION",
+    ctaHref: "/services",
+    items: [
+      {
+        id: "cybersecurity",
+        icon: "cybersecurity",
+        title: "CYBERSECURITY SOLUTIONS",
+        description:
+          "Protect critical infrastructure with enterprise-grade security platforms and managed protection services."
+      },
+      {
+        id: "cloud-infrastructure",
+        icon: "cloud",
+        title: "CLOUD & INFRASTRUCTURE",
+        description:
+          "Modernize operations with scalable cloud, networking, and storage solutions built for performance and reliability."
+      },
+      {
+        id: "procurement",
+        icon: "procurement",
+        title: "IT PROCUREMENT & CONTRACT VEHICLES",
+        description:
+          "Simplify purchasing through approved government contracts and procurement expertise."
+      },
+      {
+        id: "ai-emerging-tech",
+        icon: "ai",
+        title: "AI & EMERGING TECHNOLOGY",
+        description:
+          "Accelerate innovation with AI-powered automation and intelligent digital transformation."
+      },
+      {
+        id: "staffing-consulting",
+        icon: "staffing",
+        title: "TECHNICAL STAFFING & CONSULTING",
+        description:
+          "Access specialized IT professionals for project delivery, implementation, and strategic guidance."
+      }
+    ]
+  },
+  homeConsultingServices: {
+    title: "CONSULTING SERVICES",
+    subtitle: "Services for your technology solutions needs",
+    ctaLabel: "CHECK OUT FULL CONSULTING SERVICES",
+    ctaHref: "/services",
+    items: [
+      {
+        id: "managed-services",
+        icon: "managed-services",
+        title: "MANAGED SERVICES",
+        description:
+          "Providing the responsibility for maintaining, and anticipating need for, a range of processes and functions in order to improve operations and cut expenses."
+      },
+      {
+        id: "cloud-services",
+        icon: "cloud-services",
+        title: "CLOUD SERVICES",
+        description:
+          "Having a secured cloud tech solutions can prevent your business data from being penetrated by unwanted attacks, stealing sensitive data and unauthorized user access or use."
+      },
+      {
+        id: "professional-services",
+        icon: "professional-services",
+        title: "PROFESSIONAL SERVICES",
+        description:
+          "We provide Professional service that will help small business/governments with Technical Staffing, Digital Marketing, IT Services, Project Management, Design and more."
+      }
+    ]
+  },
+  homeWhyChoose: {
+    title: "WHY CHOOSE ABRAHAMS CONSULTING?",
+    body:
+      "We combine deep industry expertise, strong partner values, and a commitment to excellence to deliver solutions that drive mission success and operational efficiency.",
+    stats: [
+      {
+        id: "experience",
+        icon: "experience",
+        value: "15+",
+        label: "Years of Experience in IT Solutions"
+      },
+      {
+        id: "government-clients",
+        icon: "government-clients",
+        value: "100+",
+        label: "Government & Public Sector Clients"
+      },
+      {
+        id: "technology-partners",
+        icon: "technology-partners",
+        value: "50+",
+        label: "Certified Technology Partners"
+      },
+      {
+        id: "client-success",
+        icon: "client-success",
+        value: "100%",
+        label: "Commitment to Client Success"
+      }
+    ]
   },
   footer: {
     assistTitle: "We Are Here To Assist You",

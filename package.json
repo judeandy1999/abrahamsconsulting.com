@@ -20,6 +20,7 @@
     "@mui/material-nextjs": "^9.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.40.0",
+    "lucide-react": "^1.21.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

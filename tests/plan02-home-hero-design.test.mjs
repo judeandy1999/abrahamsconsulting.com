@@ -14,6 +14,9 @@ test("home page composes hero, certification, and about sections", async () => {
   assert.match(source, /HomeCertificationBar/);
   assert.match(source, /HomeAboutSection/);
   assert.match(source, /HomeFederalCapabilitiesSection/);
+  assert.match(source, /HomeSolutionsSection/);
+  assert.match(source, /HomeConsultingServicesSection/);
+  assert.match(source, /HomeWhyChooseSection/);
 });
 
 test("hero uses provided background and logo assets", async () => {

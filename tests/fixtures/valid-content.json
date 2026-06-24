@@ -22,7 +22,14 @@
       "href": "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
     },
     "navigation": [
-      { "label": "Solutions", "href": "/services" },
+      {
+        "label": "Solutions",
+        "href": "/services",
+        "children": [
+          { "label": "Security", "href": "/services#security" },
+          { "label": "Networking", "href": "/services#networking" }
+        ]
+      },
       { "label": "Contract Vehicles", "href": "/contracts" }
     ],
     "homeHero": {
@@ -53,6 +60,45 @@
       "linkHref": "https://bit.ly/AbrahamsGSASTARSIII",
       "videoEmbedUrl": "https://www.youtube.com/embed/QrHVjEpjMIs?modestbranding=1&rel=0",
       "videoTitle": "GSA's 8(a)STARS III Overview"
+    },
+    "homeSolutions": {
+      "title": "OUR SOLUTIONS",
+      "ctaLabel": "FIND YOUR SOLUTION",
+      "ctaHref": "/services",
+      "items": [
+        {
+          "id": "cybersecurity",
+          "icon": "cybersecurity",
+          "title": "CYBERSECURITY SOLUTIONS",
+          "description": "Protect critical infrastructure with enterprise-grade security platforms."
+        }
+      ]
+    },
+    "homeConsultingServices": {
+      "title": "CONSULTING SERVICES",
+      "subtitle": "Services for your technology solutions needs",
+      "ctaLabel": "CHECK OUT FULL CONSULTING SERVICES",
+      "ctaHref": "/services",
+      "items": [
+        {
+          "id": "managed-services",
+          "icon": "managed-services",
+          "title": "MANAGED SERVICES",
+          "description": "Managed operations support for improved efficiency."
+        }
+      ]
+    },
+    "homeWhyChoose": {
+      "title": "WHY CHOOSE ABRAHAMS CONSULTING?",
+      "body": "We combine deep industry expertise and a commitment to excellence.",
+      "stats": [
+        {
+          "id": "experience",
+          "icon": "experience",
+          "value": "15+",
+          "label": "Years of Experience in IT Solutions"
+        }
+      ]
     },
     "footer": {
       "assistTitle": "We Are Here To Assist You",
@@ -161,6 +207,51 @@
         "imageAlt": "Partner logo",
         "imageWidth": 160,
         "imageHeight": 48
+      }
+    ]
+  },
+  "solutionsPage": {
+    "hero": {
+      "segments": ["Security", "Networking"],
+      "description": "Solutions for security and networking."
+    },
+    "showcases": [
+      {
+        "id": "security",
+        "textPosition": "left",
+        "panel": {
+          "icon": "shield",
+          "eyebrow": "Security",
+          "partnerName": "IBM Resiliency",
+          "paragraphs": ["IBM Resiliency protects mission-critical data."],
+          "ctaLabel": "EXPLORE IBM SOLUTIONS",
+          "ctaHref": "/consultation"
+        },
+        "media": {
+          "type": "video",
+          "title": "Cyber Resiliency with",
+          "titleAccent": "IBM FlashSystem Storage",
+          "videoEmbedUrl": "https://www.youtube.com/embed/00Ct8Oceq3E?modestbranding=1&rel=0",
+          "videoTitle": "Cyber Resiliency with IBM Flash Storage"
+        }
+      },
+      {
+        "id": "networking",
+        "textPosition": "right",
+        "panel": {
+          "icon": "network",
+          "eyebrow": "Networking",
+          "partnerName": "Aruba",
+          "paragraphs": ["Network assessment, design, and deployment services."],
+          "ctaLabel": "FIND OUT MORE",
+          "ctaHref": "/consultation"
+        },
+        "media": {
+          "type": "image",
+          "imageSrc": "/images/solutions/vector-networking.jpg",
+          "imageAlt": "Niche solutions",
+          "caption": "Niche Solutions"
+        }
       }
     ]
   }

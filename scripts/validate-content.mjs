@@ -25,9 +25,15 @@ const heroFeatureSchema = z.object({
   label: z.string().min(1, "Hero feature label is required")
 });
 
+const navChildLinkSchema = z.object({
+  label: z.string().min(1, "Navigation child label is required"),
+  href: z.string().min(1, "Navigation child href is required")
+});
+
 const navLinkSchema = z.object({
   label: z.string().min(1, "Navigation label is required"),
-  href: z.string().min(1, "Navigation href is required")
+  href: z.string().min(1, "Navigation href is required"),
+  children: z.array(navChildLinkSchema).optional()
 });
 
 const socialLinkSchema = z.object({
@@ -161,11 +167,79 @@ const launchPageSeoListSchema = z
   .array(launchPageSeoSchema)
   .min(7, "Launch SEO registry must cover all static marketing routes");
 
+const solutionSectionIconSchema = z.enum([
+  "shield",
+  "network",
+  "hard-drive",
+  "layout-grid",
+  "cloud",
+  "settings",
+  "messages",
+  "smartphone"
+]);
+
+const solutionInsightIconSchema = z.enum(["play-circle", "calendar", "eye", "award"]);
+
+const solutionPanelSchema = z.object({
+  icon: solutionSectionIconSchema,
+  eyebrow: z.string().min(1, "Solution panel eyebrow is required"),
+  partnerName: z.string(),
+  paragraphs: z.array(z.string().min(1)).min(1, "Solution panel requires at least one paragraph"),
+  ctaLabel: z.string().min(1, "Solution panel CTA label is required"),
+  ctaHref: z.string().min(1, "Solution panel CTA href is required")
+});
+
+const solutionVideoMediaSchema = z.object({
+  type: z.literal("video"),
+  presenter: z.string().optional(),
+  subtitle: z.string().optional(),
+  title: z.string().min(1, "Solution video title is required"),
+  titleAccent: z.string().optional(),
+  videoEmbedUrl: z.string().url("Solution video embed URL must be valid"),
+  videoTitle: z.string().min(1, "Solution video iframe title is required"),
+  addedOnLabel: z.string().optional(),
+  addedOnItems: z.array(z.string().min(1)).optional(),
+  meta: z
+    .array(
+      z.object({
+        icon: solutionInsightIconSchema,
+        label: z.string().min(1, "Solution video meta label is required")
+      })
+    )
+    .optional(),
+  duration: z.string().optional()
+});
+
+const solutionImageMediaSchema = z.object({
+  type: z.literal("image"),
+  imageSrc: z.string().min(1, "Solution image source is required"),
+  imageAlt: z.string().min(1, "Solution image alt text is required"),
+  caption: z.string().min(1, "Solution image caption is required")
+});
+
+const solutionMediaSchema = z.discriminatedUnion("type", [solutionVideoMediaSchema, solutionImageMediaSchema]);
+
+const solutionShowcaseSchema = z.object({
+  id: z.string().min(1, "Solution showcase id is required"),
+  textPosition: z.enum(["left", "right"]),
+  panel: solutionPanelSchema,
+  media: solutionMediaSchema
+});
+
+const solutionsPageSchema = z.object({
+  hero: z.object({
+    segments: z.array(z.string().min(1)).min(1, "Solutions hero requires at least one segment"),
+    description: z.string().min(1, "Solutions hero description is required")
+  }),
+  showcases: z.array(solutionShowcaseSchema).min(2, "Solutions page requires at least two showcases")
+});
+
 const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
   contracts: z.array(contractItemSchema).min(1, "At least one contract entry is required"),
-  trust: trustContentSchema
+  trust: trustContentSchema,
+  solutionsPage: solutionsPageSchema
 });
 
 function formatPath(issuePath) {
@@ -237,12 +311,14 @@ async function validateProjectContent() {
     const servicesModule = await importTsDataModule("src/content/services.ts");
     const contractsModule = await importTsDataModule("src/content/contracts.ts");
     const trustModule = await importTsDataModule("src/content/trust.ts");
+    const solutionsModule = await importTsDataModule("src/content/solutions.ts");
 
     const content = {
       site: siteModule.siteContent,
       services: servicesModule.servicesContent,
       contracts: contractsModule.contractsContent,
-      trust: trustModule.trustContent
+      trust: trustModule.trustContent,
+      solutionsPage: solutionsModule.solutionsPageContent
     };
 
     const result = marketingContentSchema.safeParse(content);

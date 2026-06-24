@@ -18,9 +18,9 @@ export const launchPageSeoContent = [
   {
     routeKey: "services",
     path: "/services",
-    title: "Consulting & Staffing Services",
+    title: "Security, Networking & Storage Solutions",
     description:
-      "Explore advisory consulting and strategic staffing capabilities for regulated enterprise and government delivery programs."
+      "Explore Abrahams Consulting niche solutions for security, networking, and storage—including IBM Resiliency, Aruba networking, and enterprise storage guidance."
   },
   {
     routeKey: "contracts",
