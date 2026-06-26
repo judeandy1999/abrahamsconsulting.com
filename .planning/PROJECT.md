@@ -8,15 +8,14 @@ This project is a full revamp of the Abrahams Consulting marketing website using
 
 Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## Current Milestone: v1.1 Homepage Visual Scale
+## Current Milestone: v1.2 Executive Recruiting Completion
 
-**Goal:** Make the site feel more spacious and readable by widening the content area and scaling up typography and spacing, while keeping the award announcement banner compact.
+**Goal:** Complete the executive recruiting page with legacy-aligned sections that drive hiring-profile discovery and consultation leads.
 
 **Target features:**
-- Widen site-wide content container from 72rem to 84rem (~1344px)
-- Scale up typography, spacing, and key visual elements across marketing pages
-- Preserve AwardBanner at its current compact size
-- Maintain responsive breakpoints and v1.0 performance/a11y baselines
+- Tabbed "Which IT Leadership Hiring Profile Fits You?" section with four profiles
+- Typed content model, local images, accessible tab UI
+- Preserve existing hero, wrong-hire, and consultation CTA sections
 
 ## Requirements
 
@@ -26,13 +25,12 @@ Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting
 - [x] Achieve strong SEO and web performance foundations across core launch pages. (v1.0 Phase 4)
 - [x] Rewrite content to improve clarity, trust, and conversion intent. (v1.0 Phases 2–3)
 - [x] Prioritize launch quality for the Home page first, then expand to remaining priority pages. (v1.0 Phase 2)
+- [x] Widen site-wide content container to 84rem and scale marketing typography. (v1.1)
 
 ### Active
 
-- [ ] Widen site-wide content container to 84rem for header, footer, and all page sections.
-- [ ] Scale up homepage typography, spacing, and visual elements proportionally.
-- [ ] Keep AwardBanner sizing unchanged (compact announcement bar).
-- [ ] Verify responsive behavior and Core Web Vitals remain within launch thresholds after layout changes.
+- [ ] Executive recruiting hiring profiles tabbed section with four outcomes
+- [ ] Content schema, validation, and local assets for profile images
 
 ### Out of Scope
 

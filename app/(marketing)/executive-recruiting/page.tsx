@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExecutiveRecruitingHero } from "../../../components/marketing/ExecutiveRecruitingHero";
 import { ExecutiveRecruitingHiringCta } from "../../../components/marketing/ExecutiveRecruitingHiringCta";
+import { ExecutiveRecruitingHiringProfilesSection } from "../../../components/marketing/ExecutiveRecruitingHiringProfilesSection";
 import { ExecutiveRecruitingWrongHireSection } from "../../../components/marketing/ExecutiveRecruitingWrongHireSection";
 import { loadMarketingContent } from "../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
@@ -18,6 +19,7 @@ export default function ExecutiveRecruitingPage() {
       <ExecutiveRecruitingHero hero={executiveRecruitingPage.hero} />
       <ExecutiveRecruitingWrongHireSection section={executiveRecruitingPage.wrongHireSection} />
       <ExecutiveRecruitingHiringCta cta={executiveRecruitingPage.hiringProfileCta} />
+      <ExecutiveRecruitingHiringProfilesSection section={executiveRecruitingPage.hiringProfilesSection} />
     </main>
   );
 }

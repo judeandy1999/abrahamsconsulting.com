@@ -8,8 +8,19 @@ Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow 
 
 - [x] **Phase 5: Site Layout & Home Visual Scale** - Widen container to 84rem, scale homepage typography/spacing, preserve AwardBanner.
 - [x] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages and verify responsive/CWV baselines.
+- [ ] **Phase 7: Executive Recruiting Hiring Profiles** - Tabbed hiring profile section on `/executive-recruiting`.
 
 ## Phase Details
+
+### Phase 7: Executive Recruiting Hiring Profiles
+**Goal**: Users can explore four IT leadership hiring profiles via an accessible tabbed section and navigate to the hiring profile scorecard.
+**Depends on**: Executive recruiting page foundation (hero, wrong-hire, CTA)
+**Success Criteria** (what must be TRUE):
+  1. User sees "Which IT Leadership Hiring Profile Fits You?" with four tabs matching legacy labels.
+  2. User can switch tabs and see panel content (headline, description, highlights, image) update.
+  3. User can click LEARN MORE to open the hiring profile scorecard.
+  4. Section is responsive on mobile without broken tab layout.
+**Status**: Implemented inline (pending verification)
 
 ### Phase 5: Site Layout & Home Visual Scale
 **Goal**: Users on desktop see a wider, more readable homepage with proportionally larger typography and spacing, while the award banner stays compact.

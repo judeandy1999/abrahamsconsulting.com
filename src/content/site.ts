@@ -66,7 +66,7 @@ export const siteContent: SiteContent = {
     },
     {
       label: "EVA",
-      href: "https://evespeaks.com/"
+      href: "https://evespeaks.com/virtual-assistance-services/"
     }
   ],
   homeHero: {

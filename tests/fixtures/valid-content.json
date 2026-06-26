@@ -344,6 +344,81 @@
         }
       ]
     },
+    "hiringProfilesSection": {
+      "eyebrow": "EXECUTIVE SEARCH SOLUTIONS",
+      "title": "Which IT Leadership Hiring Profile Fits You?",
+      "description": "Answer a few practical questions and receive a tailored recommendation with actionable insights.",
+      "profiles": [
+        {
+          "id": "advisory-alignment",
+          "tabLabel": "Advisory & Alignment Reset",
+          "tabIcon": "advisory",
+          "panelEyebrow": "01. ADVISORY & ALIGNMENT RESET",
+          "headline": "Align leadership with your mission and goals.",
+          "description": "If your team lacks alignment or role clarity, this outcome guides you through resetting internal expectations and building consensus before search.",
+          "highlights": [
+            { "icon": "users", "label": "Clarify roles and responsibilities" },
+            { "icon": "target", "label": "Build consensus and alignment" },
+            { "icon": "chart", "label": "Strengthen leadership planning outcomes" }
+          ],
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/advisory.png",
+          "imageAlt": "Leadership alignment session",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
+        },
+        {
+          "id": "retained-search",
+          "tabLabel": "Retained Executive Search",
+          "tabIcon": "retained",
+          "panelEyebrow": "02. RETAINED EXECUTIVE SEARCH",
+          "headline": "Secure top-tier IT leaders with a proven process.",
+          "description": "Ideal when the stakes are high and you need a proven process to attract, assess, and secure top-tier IT leaders.",
+          "highlights": [
+            { "icon": "search", "label": "Attract qualified executive candidates" },
+            { "icon": "precision", "label": "Assess leadership fit rigorously" },
+            { "icon": "shield", "label": "Mitigate hiring risk at scale" }
+          ],
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/retained.png",
+          "imageAlt": "Retained executive search",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
+        },
+        {
+          "id": "confidential-replacement",
+          "tabLabel": "Confidential Replacement Search",
+          "tabIcon": "confidential",
+          "panelEyebrow": "03. CONFIDENTIAL REPLACEMENT SEARCH",
+          "headline": "Replace leadership discreetly and without disruption.",
+          "description": "For sensitive situations where discretion is key, this option helps you quietly replace a current leader.",
+          "highlights": [
+            { "icon": "lock", "label": "Protect sensitive transitions" },
+            { "icon": "shield", "label": "Minimize market exposure" },
+            { "icon": "target", "label": "Maintain business continuity" }
+          ],
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/confidential.png",
+          "imageAlt": "Confidential replacement search",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
+        },
+        {
+          "id": "interim-leadership",
+          "tabLabel": "Interim Leadership Bridge",
+          "tabIcon": "interim",
+          "panelEyebrow": "04. INTERIM LEADERSHIP BRIDGE",
+          "headline": "Keep momentum while you search for a permanent hire.",
+          "description": "When immediate leadership is critical but a permanent hire isn't ready, this outcome provides guidance on sourcing experienced interim executives.",
+          "highlights": [
+            { "icon": "clock", "label": "Fill leadership gaps quickly" },
+            { "icon": "shield", "label": "Reduce operational risk" },
+            { "icon": "users", "label": "Bridge to permanent placement" }
+          ],
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/interim.png",
+          "imageAlt": "Interim leadership bridge",
+          "learnMoreLabel": "LEARN MORE",
+          "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
+        }
+      ]
+    },
     "hiringProfileCta": {
       "title": "Ready to Hire Your Next CIO, CTO or VP Leader?",
       "description": "We identify leaders others miss.",

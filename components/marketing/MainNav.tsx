@@ -3,13 +3,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { isExternalHref } from "../../lib/navigation/is-external-href";
 import type { SiteContent } from "../../src/content/schema";
 import { IconChevronDown } from "./NavIcons";
 
 type MainNavProps = {
   site: SiteContent;
 };
+
+type NavLinkProps = {
+  href: string;
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
+  role?: string;
+};
+
+function NavLink({ href, className, onClick, children, role }: NavLinkProps) {
+  if (isExternalHref(href)) {
+    return (
+      <a href={href} className={className} onClick={onClick} rel="noopener noreferrer" role={role}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} onClick={onClick} role={role}>
+      {children}
+    </Link>
+  );
+}
 
 export function MainNav({ site }: MainNavProps) {
   const menuId = useId();
@@ -98,9 +123,9 @@ export function MainNav({ site }: MainNavProps) {
                 if (!hasChildren) {
                   return (
                     <li key={itemKey}>
-                      <Link href={item.href} onClick={closeMenus}>
+                      <NavLink href={item.href} onClick={closeMenus}>
                         {item.label}
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 }
@@ -114,9 +139,9 @@ export function MainNav({ site }: MainNavProps) {
                   >
                     <div className="main-nav__dropdown">
                       <div className="main-nav__dropdown-row">
-                        <Link href={item.href} className="main-nav__dropdown-link" onClick={closeMenus}>
+                        <NavLink href={item.href} className="main-nav__dropdown-link" onClick={closeMenus}>
                           {item.label}
-                        </Link>
+                        </NavLink>
                         <button
                           type="button"
                           className="main-nav__dropdown-toggle"
@@ -140,14 +165,14 @@ export function MainNav({ site }: MainNavProps) {
                       >
                         {item.children!.map((child) => (
                           <li key={child.href} role="none">
-                            <Link
+                            <NavLink
                               href={child.href}
                               role="menuitem"
                               className="main-nav__dropdown-item"
                               onClick={closeMenus}
                             >
                               {child.label}
-                            </Link>
+                            </NavLink>
                           </li>
                         ))}
                       </ul>

@@ -285,6 +285,38 @@ export const solutionsPageSchema = z.object({
 
 const executiveRecruitingFeatureIconSchema = z.enum(["talent", "vetting", "leadership", "impact"]);
 const executiveRecruitingCtaHighlightIconSchema = z.enum(["confidential", "precision", "partnership"]);
+const executiveRecruitingHiringProfileTabIconSchema = z.enum(["advisory", "retained", "confidential", "interim"]);
+const executiveRecruitingHiringProfileHighlightIconSchema = z.enum([
+  "users",
+  "target",
+  "chart",
+  "search",
+  "shield",
+  "lock",
+  "clock",
+  "precision"
+]);
+
+const executiveRecruitingHiringProfileSchema = z.object({
+  id: z.string().min(1, "Hiring profile id is required"),
+  tabLabel: z.string().min(1, "Hiring profile tab label is required"),
+  tabIcon: executiveRecruitingHiringProfileTabIconSchema,
+  panelEyebrow: z.string().min(1, "Hiring profile panel eyebrow is required"),
+  headline: z.string().min(1, "Hiring profile headline is required"),
+  description: z.string().min(1, "Hiring profile description is required"),
+  highlights: z
+    .array(
+      z.object({
+        icon: executiveRecruitingHiringProfileHighlightIconSchema,
+        label: z.string().min(1, "Hiring profile highlight label is required")
+      })
+    )
+    .length(3, "Hiring profile requires three highlights"),
+  imageSrc: z.string().min(1, "Hiring profile image source is required"),
+  imageAlt: z.string().min(1, "Hiring profile image alt text is required"),
+  learnMoreLabel: z.string().min(1, "Hiring profile learn more label is required"),
+  learnMoreHref: z.string().min(1, "Hiring profile learn more href is required")
+});
 
 const executiveRecruitingCardSchema = z.object({
   id: z.string().min(1, "Executive recruiting card id is required"),
@@ -324,6 +356,12 @@ export const executiveRecruitingPageSchema = z.object({
     title: z.string().min(1, "Wrong hire section title is required"),
     description: z.string().min(1, "Wrong hire section description is required"),
     cards: z.array(executiveRecruitingCardSchema).length(3, "Wrong hire section requires three cards")
+  }),
+  hiringProfilesSection: z.object({
+    eyebrow: z.string().min(1, "Hiring profiles section eyebrow is required"),
+    title: z.string().min(1, "Hiring profiles section title is required"),
+    description: z.string().min(1, "Hiring profiles section description is required"),
+    profiles: z.array(executiveRecruitingHiringProfileSchema).length(4, "Hiring profiles section requires four profiles")
   }),
   hiringProfileCta: z.object({
     title: z.string().min(1, "Hiring profile CTA title is required"),

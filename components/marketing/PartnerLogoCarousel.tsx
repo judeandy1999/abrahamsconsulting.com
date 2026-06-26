@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import type { SiteContent } from "../../src/content/schema";
 
 const LOGOS_PER_GROUP = 6;
-const AUTO_ADVANCE_MS = 5000;
+const AUTO_ADVANCE_MS = 4000;
 
 type PartnerLogo = SiteContent["homeAbout"]["partnerLogos"][number];
 
