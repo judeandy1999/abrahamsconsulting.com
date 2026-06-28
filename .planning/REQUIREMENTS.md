@@ -1,31 +1,42 @@
 # Requirements: Abrahams Consulting Website Revamp
 
 **Defined:** 2026-05-28
+**Updated:** 2026-06-23 (v1.3 NASA SEWP VI)
 **Core Value:** Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
 ## v1.0 Requirements (Validated)
 
 All v1.0 requirements shipped and validated in milestone v1.0 (Phases 1–4). See `.planning/MILESTONES.md` or phase summaries for details.
 
-## v1.1 Requirements
+## v1.1 Requirements (Validated)
 
-Requirements for the Homepage Visual Scale milestone. Each maps to roadmap phases.
+Homepage visual scale milestone — all requirements complete.
 
-### Layout & Container Width
+## v1.2 Requirements (Validated)
 
-- [x] **LAYT-01**: User sees a wider content area (84rem max-width) across header navigation, page sections, and footer on desktop viewports.
-- [x] **LAYT-02**: User sees AwardBanner remain at its current compact dimensions — not scaled with the rest of the site.
+- [x] **EXEC-01**: User sees tabbed "Which IT Leadership Hiring Profile Fits You?" with four profiles on `/executive-recruiting`.
+- [x] **EXEC-02**: User can switch tabs and navigate to the hiring profile scorecard.
 
-### Typography & Visual Scale
+## v1.3 Requirements — NASA SEWP VI Page
 
-- [x] **TYPE-01**: User sees proportionally larger homepage headlines, body text, and section headings compared to v1.0.
-- [x] **TYPE-02**: User sees proportionally larger buttons, feature text, and section spacing on the homepage.
-- [x] **TYPE-03**: User sees scaled typography and spacing applied consistently across non-home marketing pages (services, contracts, trust, consultation).
+Requirements for the NASA SEWP VI federal contract page. Each maps to Phase 8.
 
-### Responsive & Quality
+### Content Accuracy & Maintainability
 
-- [x] **RESP-01**: User on tablet and mobile viewports sees layout adapt correctly without horizontal overflow or broken grids.
-- [x] **PERF-01**: User on real devices experiences pages that still meet v1.0 Core Web Vitals thresholds (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1) at p75 after layout changes.
+- [ ] **SEWP-01**: Page displays only contract information verifiable from the Capability Statement and SEWP VI documentation.
+- [ ] **SEWP-02**: Page excludes retired or expired contract vehicles (e.g. STARS III).
+- [ ] **SEWP-03**: Capability Statement and Ordering Guide PDF paths are content-configurable; files replaceable in `public/documents/nasa-sewp-vi/` without code changes.
+
+### Page Structure & UX
+
+- [ ] **SEWP-04**: User can access `/nasa-sewp-vi` with hero, contract overview grid, about sections, core competencies, Category A capabilities, active contract vehicles, past performance, company information, certifications, resources, and federal sales contact.
+- [ ] **SEWP-05**: User sees layout, typography, spacing, cards, buttons, and animations consistent with existing marketing pages.
+- [ ] **SEWP-06**: User on tablet and mobile viewports sees all sections adapt without broken grids or horizontal overflow.
+
+### SEO & Quality
+
+- [ ] **SEWP-07**: Page is included in SEO registry, sitemap, and static metadata contract tests.
+- [ ] **SEWP-08**: Content passes schema validation in build pipeline (`content:check`).
 
 ## v2 Requirements
 
@@ -41,35 +52,23 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ## Out of Scope
 
-Explicitly excluded to prevent scope creep in this milestone.
-
 | Feature | Reason |
 |---------|--------|
-| AwardBanner scaling | User explicitly requested banner stay compact |
-| Full-bleed layouts (>84rem) | 84rem chosen as target; full-bleed adds complexity without clear benefit |
-| New page content or sections | v1.1 is visual scale only, not new features |
-| CMS adoption | Still deferred post-MVP |
-| Multilingual rollout | Still deferred post-MVP |
+| Website redesign | User explicitly requested matching existing design system |
+| Invented content or statistics | Leadership/PMO accuracy requirement |
+| Customer logos on past performance | Not in existing assets unless already on site |
+| Patriotic imagery / stock flag photos | User design requirement |
+| CMS for PDF management | v1 uses file replacement in public/documents |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LAYT-01 | Phase 5 | Complete |
-| LAYT-02 | Phase 5 | Complete |
-| TYPE-01 | Phase 5 | Complete |
-| TYPE-02 | Phase 5 | Complete |
-| TYPE-03 | Phase 6 | Complete |
-| RESP-01 | Phase 6 | Complete |
-| PERF-01 | Phase 6 | Complete |
-
-**Coverage:**
-- v1.1 requirements: 7 total
-- Mapped to phases: 7
-- Unmapped: 0
-
----
-*Requirements defined: 2026-06-01*
-*Last updated: 2026-06-01 after milestone v1.1 roadmap mapping*
+| SEWP-01 | Phase 8 | In progress |
+| SEWP-02 | Phase 8 | In progress |
+| SEWP-03 | Phase 8 | In progress |
+| SEWP-04 | Phase 8 | In progress |
+| SEWP-05 | Phase 8 | In progress |
+| SEWP-06 | Phase 8 | In progress |
+| SEWP-07 | Phase 8 | In progress |
+| SEWP-08 | Phase 8 | In progress |

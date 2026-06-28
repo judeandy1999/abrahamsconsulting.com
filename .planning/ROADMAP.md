@@ -2,50 +2,35 @@
 
 ## Overview
 
-Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow and undersized on desktop. Two phases widen the container, scale typography, and verify quality baselines hold.
+Milestone v1.3 delivers the NASA SEWP VI Prime Contractor page at `/nasa-sewp-vi` — accurate federal contract content, dynamic PDF resources, and design-system-aligned sections suitable for leadership and NASA SEWP PMO review.
 
 ## Phases
 
-- [x] **Phase 5: Site Layout & Home Visual Scale** - Widen container to 84rem, scale homepage typography/spacing, preserve AwardBanner.
-- [x] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages and verify responsive/CWV baselines.
-- [ ] **Phase 7: Executive Recruiting Hiring Profiles** - Tabbed hiring profile section on `/executive-recruiting`.
+- [x] **Phase 5: Site Layout & Home Visual Scale** - Widen container to 84rem, scale homepage typography/spacing.
+- [x] **Phase 6: Marketing Pages Scale & Quality Verification** - Apply consistent scale to remaining pages.
+- [x] **Phase 7: Executive Recruiting Hiring Profiles** - Tabbed hiring profile section on `/executive-recruiting`.
+- [ ] **Phase 8: NASA SEWP VI Federal Contract Page** - `/nasa-sewp-vi` with verified content and dynamic PDFs.
 
 ## Phase Details
 
+### Phase 8: NASA SEWP VI Federal Contract Page
+**Goal**: Federal buyers and NASA SEWP PMO reviewers can access accurate Abrahams Consulting SEWP VI Prime contract information, download resources, and contact federal sales.
+**Depends on**: Marketing page foundation, content schema pipeline, design system components
+**Requirements**: SEWP-01 through SEWP-08
+**Success Criteria** (what must be TRUE):
+  1. User can visit `/nasa-sewp-vi` and see contract 80TECH26D1658, Category A, and verified company/contract details.
+  2. User can download Capability Statement and Ordering Guide PDFs; replacing files in `public/documents/nasa-sewp-vi/` updates links without code changes.
+  3. Page displays only active contract vehicles (NASA SEWP VI Prime, NY State OGS / PBITS) — no STARS III or expired vehicles.
+  4. Page matches existing typography, spacing, cards, buttons, and responsive behavior.
+  5. Page passes content validation, SEO registry, sitemap inclusion, and production build.
+**Status**: Implemented — pending leadership/PMO review
+
 ### Phase 7: Executive Recruiting Hiring Profiles
-**Goal**: Users can explore four IT leadership hiring profiles via an accessible tabbed section and navigate to the hiring profile scorecard.
-**Depends on**: Executive recruiting page foundation (hero, wrong-hire, CTA)
-**Success Criteria** (what must be TRUE):
-  1. User sees "Which IT Leadership Hiring Profile Fits You?" with four tabs matching legacy labels.
-  2. User can switch tabs and see panel content (headline, description, highlights, image) update.
-  3. User can click LEARN MORE to open the hiring profile scorecard.
-  4. Section is responsive on mobile without broken tab layout.
-**Status**: Implemented inline (pending verification)
+**Goal**: Users can explore four IT leadership hiring profiles via an accessible tabbed section.
+**Status**: Complete
 
-### Phase 5: Site Layout & Home Visual Scale
-**Goal**: Users on desktop see a wider, more readable homepage with proportionally larger typography and spacing, while the award banner stays compact.
-**Mode:** mvp
-**Depends on**: v1.0 (Phases 1–4 complete)
-**Requirements**: LAYT-01, LAYT-02, TYPE-01, TYPE-02
-**Success Criteria** (what must be TRUE):
-  1. User sees content area widened to 84rem max-width in header, hero, certification bar, about section, main content, and footer.
-  2. User sees AwardBanner unchanged at its current compact size and typography.
-  3. User sees larger homepage headlines, body text, section headings, buttons, and spacing compared to v1.0.
-  4. User on tablet/mobile sees homepage layout adapt without horizontal overflow.
-**Plans**: TBD (via `/gsd-plan-phase 5`)
-**UI hint**: yes
-
-### Phase 6: Marketing Pages Scale & Quality Verification
-**Goal**: Users experience consistent visual scale across all marketing pages with verified responsive behavior and performance baselines.
-**Mode:** mvp
-**Depends on**: Phase 5
-**Requirements**: TYPE-03, RESP-01, PERF-01
-**Success Criteria** (what must be TRUE):
-  1. User sees scaled typography and spacing on services, contracts, trust, and consultation pages consistent with homepage changes.
-  2. User on tablet and mobile viewports sees all updated pages adapt correctly without broken grids or overflow.
-  3. User on real devices experiences updated pages that still meet v1.0 Core Web Vitals thresholds at p75.
-**Plans**: TBD (via `/gsd-plan-phase 6`)
-**UI hint**: yes
+### Phase 5–6
+**Status**: Complete (v1.1)
 
 ## Progress
 
@@ -53,10 +38,12 @@ Milestone v1.1 addresses post-launch visual feedback: the site feels too narrow 
 |-------|----------------|--------|-----------|
 | 5. Site Layout & Home Visual Scale | 1/1 | Complete | 2026-06-01 |
 | 6. Marketing Pages Scale & Quality Verification | 1/1 | Complete | 2026-06-01 |
+| 7. Executive Recruiting Hiring Profiles | — | Complete | 2026-06-23 |
+| 8. NASA SEWP VI Federal Contract Page | — | In progress | — |
 
 ## v1.0 Archive
 
-v1.0 shipped 4 phases (Platform MVP Foundation, Core Conversion Journeys, Trust and Lead Capture, Launch Quality Gates) — all complete 2026-05-28. See `.planning/phases/` archive or git history for phase summaries.
+v1.0 shipped 4 phases (Platform MVP Foundation, Core Conversion Journeys, Trust and Lead Capture, Launch Quality Gates) — all complete 2026-05-28.
 
 ---
-*Roadmap created: 2026-06-01 for milestone v1.1*
+*Roadmap updated: 2026-06-23 for milestone v1.3*

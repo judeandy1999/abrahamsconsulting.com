@@ -1,6 +1,7 @@
 import { contractsContent } from "../../src/content/contracts";
 import { executiveRecruitingPageContent } from "../../src/content/executive-recruiting";
 import { marketingContentSchema, type MarketingContent } from "../../src/content/schema";
+import { loadNasaSewpViPageContent } from "./nasa-sewp-vi-page";
 import { servicesContent } from "../../src/content/services";
 import { solutionsPageContent } from "../../src/content/solutions";
 import { siteContent } from "../../src/content/site";
@@ -13,6 +14,7 @@ export function loadMarketingContent(): MarketingContent {
     contracts: contractsContent,
     trust: trustContent,
     solutionsPage: solutionsPageContent,
-    executiveRecruitingPage: executiveRecruitingPageContent
+    executiveRecruitingPage: executiveRecruitingPageContent,
+    nasaSewpViPage: loadNasaSewpViPageContent()
   });
 }

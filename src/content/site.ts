@@ -278,6 +278,10 @@ export const siteContent: SiteContent = {
     label: "Request a Consultation",
     path: "/consultation"
   },
+  nasaSewpViCta: {
+    label: "NASA SEWP VI",
+    path: "/nasa-sewp-vi"
+  },
   consultationForm: {
     honeypotFieldName: "companyWebsite",
     fields: [

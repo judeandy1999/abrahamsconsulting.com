@@ -30,6 +30,13 @@ export const launchPageSeoContent = [
       "Identify visionary C-Suite and VP-level technology leaders through Abrahams Consulting's forensic, data-driven executive search process."
   },
   {
+    routeKey: "nasa-sewp-vi",
+    path: "/nasa-sewp-vi",
+    title: "NASA SEWP VI Prime Contractor",
+    description:
+      "Abrahams Consulting LLC is a NASA SEWP VI Prime Contractor under Category A – ITC/AV Solutions, contract 80TECH26D1658."
+  },
+  {
     routeKey: "contracts",
     path: "/contracts",
     title: "Contract Vehicles & Procurement",

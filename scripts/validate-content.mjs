@@ -90,6 +90,10 @@ const siteContentSchema = z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
     path: z.literal("/consultation")
   }),
+  nasaSewpViCta: z.object({
+    label: z.string().min(1, "NASA SEWP VI CTA label is required"),
+    path: z.literal("/nasa-sewp-vi")
+  }),
   footer: z.object({
     assistTitle: z.string().min(1, "Footer assist title is required"),
     assistBody: z.string().min(1, "Footer assist body is required"),
@@ -332,13 +336,161 @@ const executiveRecruitingPageSchema = z.object({
   })
 });
 
+const nasaSewpViPastPerformanceSchema = z.object({
+  id: z.string().min(1),
+  organization: z.string().min(1),
+  description: z.string().optional()
+});
+
+const nasaSewpViPageSchema = z.object({
+  hero: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    subtitle: z.string().min(1),
+    description: z.string().min(1),
+    contractNumber: z.string().min(1),
+    category: z.string().min(1),
+    capabilityStatementCtaLabel: z.string().min(1)
+  }),
+  contractOverview: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum([
+            "document",
+            "tag",
+            "ceiling",
+            "calendar",
+            "award",
+            "customers",
+            "uei",
+            "cage",
+            "business-size",
+            "founded"
+          ]),
+          label: z.string().min(1),
+          value: z.string().min(1)
+        })
+      )
+      .length(10)
+  }),
+  aboutSewp: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(1)).min(1)
+  }),
+  aboutCompany: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(1)).min(1)
+  }),
+  whyChoose: z.object({
+    title: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          title: z.string().min(1)
+        })
+      )
+      .min(1)
+  }),
+  coreCompetencies: z.object({
+    title: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum([
+            "infrastructure",
+            "cybersecurity",
+            "cloud",
+            "ai",
+            "staffing",
+            "network",
+            "storage",
+            "lifecycle",
+            "compliance",
+            "helpdesk"
+          ]),
+          title: z.string().min(1)
+        })
+      )
+      .min(1)
+  }),
+  categoryACapabilities: z.object({
+    title: z.string().min(1),
+    items: z.array(z.string().min(1)).min(1)
+  }),
+  contractVehicles: z.object({
+    title: z.string().min(1),
+    items: z.array(z.string().min(1)).min(1)
+  }),
+  orderingProcess: z.object({
+    title: z.string().min(1),
+    steps: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .length(3)
+  }),
+  pastPerformance: z.object({
+    title: z.string().min(1),
+    items: z.array(nasaSewpViPastPerformanceSchema).min(1)
+  }),
+  companyInformation: z.object({
+    title: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          label: z.string().min(1),
+          value: z.string().min(1),
+          href: z.string().url().optional()
+        })
+      )
+      .min(1)
+  }),
+  certifications: z.object({
+    title: z.string().min(1),
+    items: z.array(z.string().min(1)).min(1)
+  }),
+  resources: z.object({
+    title: z.string().min(1),
+    capabilityStatement: z.object({
+      label: z.string().min(1),
+      href: z.string().min(1)
+    }),
+    orderingGuide: z.object({
+      label: z.string().min(1),
+      comingSoonLabel: z.string().min(1),
+      href: z.string().min(1),
+      isAvailable: z.boolean().optional()
+    })
+  }),
+  federalSalesContact: z.object({
+    title: z.string().min(1),
+    prompt: z.string().min(1),
+    subtitle: z.string().min(1),
+    email: z.string().email(),
+    phones: z.array(z.string().min(1)).min(1),
+    ctaLabel: z.string().min(1)
+  })
+});
+
 const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
   contracts: z.array(contractItemSchema).min(1, "At least one contract entry is required"),
   trust: trustContentSchema,
   solutionsPage: solutionsPageSchema,
-  executiveRecruitingPage: executiveRecruitingPageSchema
+  executiveRecruitingPage: executiveRecruitingPageSchema,
+  nasaSewpViPage: nasaSewpViPageSchema
 });
 
 function formatPath(issuePath) {
@@ -412,6 +564,7 @@ async function validateProjectContent() {
     const trustModule = await importTsDataModule("src/content/trust.ts");
     const solutionsModule = await importTsDataModule("src/content/solutions.ts");
     const executiveRecruitingModule = await importTsDataModule("src/content/executive-recruiting.ts");
+    const nasaSewpViModule = await importTsDataModule("src/content/nasa-sewp-vi.ts");
 
     const content = {
       site: siteModule.siteContent,
@@ -419,7 +572,8 @@ async function validateProjectContent() {
       contracts: contractsModule.contractsContent,
       trust: trustModule.trustContent,
       solutionsPage: solutionsModule.solutionsPageContent,
-      executiveRecruitingPage: executiveRecruitingModule.executiveRecruitingPageContent
+      executiveRecruitingPage: executiveRecruitingModule.executiveRecruitingPageContent,
+      nasaSewpViPage: nasaSewpViModule.nasaSewpViPageContent
     };
 
     const result = marketingContentSchema.safeParse(content);

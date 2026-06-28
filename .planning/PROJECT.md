@@ -8,14 +8,15 @@ This project is a full revamp of the Abrahams Consulting marketing website using
 
 Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## Current Milestone: v1.2 Executive Recruiting Completion
+## Current Milestone: v1.3 NASA SEWP VI Federal Contract Page
 
-**Goal:** Complete the executive recruiting page with legacy-aligned sections that drive hiring-profile discovery and consultation leads.
+**Goal:** Publish an accurate, maintainable NASA SEWP VI Prime Contractor page at `/nasa-sewp-vi` that matches the existing design system and supports leadership/PMO review.
 
 **Target features:**
-- Tabbed "Which IT Leadership Hiring Profile Fits You?" section with four profiles
-- Typed content model, local images, accessible tab UI
-- Preserve existing hero, wrong-hire, and consultation CTA sections
+- Full contract page with verified content from Capability Statement and SEWP VI documentation
+- Typed content module with schema validation; PDF paths configurable without code changes
+- Hero, contract overview, competencies, past performance, company info, resources, and federal sales contact
+- SEO registry and sitemap inclusion; responsive, accessible layout reusing site patterns
 
 ## Requirements
 
@@ -26,24 +27,28 @@ Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting
 - [x] Rewrite content to improve clarity, trust, and conversion intent. (v1.0 Phases 2–3)
 - [x] Prioritize launch quality for the Home page first, then expand to remaining priority pages. (v1.0 Phase 2)
 - [x] Widen site-wide content container to 84rem and scale marketing typography. (v1.1)
+- [x] Executive recruiting hiring profiles tabbed section with four outcomes. (v1.2)
 
 ### Active
 
-- [ ] Executive recruiting hiring profiles tabbed section with four outcomes
-- [ ] Content schema, validation, and local assets for profile images
+- [ ] NASA SEWP VI page at `/nasa-sewp-vi` with verified contract content
+- [ ] Dynamic PDF resource paths (Capability Statement, Ordering Guide)
+- [ ] Content schema, validation, SEO, and responsive sections matching existing design system
 
 ### Out of Scope
 
+- Website redesign or new design system — page must match existing site
+- Invented statistics, expired contract vehicles, or unverifiable claims
 - Multilingual support in v1 — English-only launch is prioritized for speed.
-- CMS implementation in v1 — content is code-managed for the fastest initial release.
+- CMS implementation in v1 — content is code-managed; PDFs replaceable via `public/documents/` paths
 - Advanced integrations in v1 (CRM, analytics stack, custom workflows) — deferred until the core site relaunch is stable.
 - AwardBanner scaling — banner stays at current compact dimensions.
 
 ## Context
 
-Abrahams Consulting is an established MWBE technology consulting and staffing company with existing service lines, contract vehicles, and certifications that must be communicated clearly online. The current website includes key sections such as niche solutions, consulting services, contract vehicles, certifications, clients, careers, and blog content, and v1 should preserve this business footprint while improving structure, UX, and discoverability. This is a greenfield implementation in the current workspace and should follow modern Next.js and Vercel best practices.
+Abrahams Consulting is an established MWBE technology consulting and staffing company with existing service lines, contract vehicles, and certifications that must be communicated clearly online. The NASA SEWP VI Prime Contract (80TECH26D1658, Category A – ITC/AV Solutions) requires a dedicated federal-facing page suitable for agency buyers and NASA SEWP PMO review.
 
-v1.0 shipped the full MVP (platform foundation, conversion journeys, trust/lead capture, launch quality gates). v1.1 addresses post-launch visual feedback that the homepage and site shell feel too narrow and undersized on desktop viewports.
+v1.0 shipped the full MVP. v1.1 addressed desktop visual scale. v1.2 completed executive recruiting hiring profiles. v1.3 adds the NASA SEWP VI contract page without redesigning the site.
 
 ## Constraints
 
@@ -53,6 +58,7 @@ v1.0 shipped the full MVP (platform foundation, conversion journeys, trust/lead 
 - **Timeline**: Rapid MVP cadence — prioritize speed to first high-quality launch and iterate after.
 - **Content model**: Code-managed content in v1 — avoids CMS overhead during initial delivery.
 - **Localization**: English-only for v1 — reduces scope and accelerates launch.
+- **Accuracy**: Only display information verifiable from official Capability Statement and SEWP VI documentation.
 
 ## Key Decisions
 
@@ -61,10 +67,9 @@ v1.0 shipped the full MVP (platform foundation, conversion journeys, trust/lead 
 | Use Next.js for the revamp | Strong SSR/SSG support, modern DX, and SEO/performance capabilities | ✓ Good |
 | Deploy on Vercel | Native Next.js platform with optimized deployment workflow | ✓ Good |
 | Launch with code-managed content, no CMS | Fastest path to shipping and controlling quality in v1 | ✓ Good |
-| Prioritize rapid MVP over broad first-release scope | Early launch and iterative delivery is preferred | ✓ Good |
-| Keep v1 English-only | Avoids localization complexity in the initial rollout | ✓ Good |
-| Site-wide container width 84rem for v1.1 | User feedback: 72rem feels narrow on desktop; 84rem balances spaciousness without full-bleed | — Pending |
-| Exclude AwardBanner from scale-up | Banner is a compact announcement strip; scaling would reduce information density | — Pending |
+| PDFs in `public/documents/nasa-sewp-vi/` with content-module paths | Replace Capability Statement and Ordering Guide without code changes | — Pending |
+| Reuse existing marketing section patterns (hero, cards, tag grids) | Page must feel native to the existing site | — Pending |
+| Exclude retired vehicles (e.g. STARS III) | Leadership requirement: no expired contract vehicles on page | — Pending |
 
 ## Evolution
 
@@ -78,10 +83,5 @@ This document evolves at phase transitions and milestone boundaries.
 5. "What This Is" still accurate? → Update if drifted
 
 **After each milestone** (via `/gsd:complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
-
----
-*Last updated: 2026-06-01 after milestone v1.1 initialization*
+- Archive milestone summary
+- Reset active requirements for next milestone
