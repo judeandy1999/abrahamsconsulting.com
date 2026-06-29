@@ -54,11 +54,11 @@ export const siteContent: SiteContent = {
     },
     {
       label: "Consulting Services",
-      href: "https://abrahamsconsulting.com/consulting-service/"
+      href: "/consulting-services"
     },
     {
       label: "Manufacturer Store",
-      href: "https://abrahamsconsulting.com/abrahams-consulting-product-page/"
+      href: "https://cmcengage.com/6702"
     },
     {
       label: "Blog",
@@ -86,7 +86,7 @@ export const siteContent: SiteContent = {
   },
   certificationStrip: {
     title: "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
-    imageSrc: "/images/Abrahams-certifications.png",
+    imageSrc: "/images/Abrahams-certifications.webp",
     imageAlt:
       "Certification and partnership logos: NQA ISO 9001, SBA EDWOSB, SBA 8(a), ITIL, Empire State Development MWBE, and OMNIA Partners"
   },
@@ -99,25 +99,25 @@ export const siteContent: SiteContent = {
     ],
     partnersHeading: "Technology partners",
     partnerLogos: [
-      { id: "f5", name: "F5", imageSrc: "/images/companies/f5-150x150.jpg" },
-      { id: "commvault", name: "Commvault", imageSrc: "/images/companies/commvault-150x150.png" },
+      { id: "f5", name: "F5", imageSrc: "/images/companies/f5-150x150.webp" },
+      { id: "commvault", name: "Commvault", imageSrc: "/images/companies/commvault-150x150.webp" },
       { id: "aruba", name: "Aruba", imageSrc: "/images/companies/arubaLogo.svg" },
-      { id: "hp", name: "HP", imageSrc: "/images/companies/hpLogo-150x150.png" },
-      { id: "accellion", name: "Accellion", imageSrc: "/images/companies/Accellion-Logo-150x150.jpg" },
-      { id: "ibm", name: "IBM", imageSrc: "/images/companies/IBM-150x150.png" },
-      { id: "dell", name: "Dell", imageSrc: "/images/companies/Dell-150x150.png" },
-      { id: "vmware", name: "VMware", imageSrc: "/images/companies/VmWare-150x150.png" },
-      { id: "red-hat", name: "Red Hat", imageSrc: "/images/companies/redhatlogo00.png" },
-      { id: "lenovo", name: "Lenovo", imageSrc: "/images/companies/Lenovo-150x150.png" },
-      { id: "trustwave", name: "Trustwave", imageSrc: "/images/companies/trustwave-150x150.png" },
-      { id: "opswat", name: "OPSWAT", imageSrc: "/images/companies/Opswat-Logo-150x150.png" },
-      { id: "vertiv", name: "Vertiv", imageSrc: "/images/companies/Vertiv-150x150.png" },
-      { id: "lexmark", name: "Lexmark", imageSrc: "/images/companies/LexmarkLogo-150x150.png" },
-      { id: "xerox", name: "Xerox", imageSrc: "/images/companies/Xerox-150x150.png" },
-      { id: "cloudinary", name: "Cloudinary", imageSrc: "/images/companies/Cloudinary.png" },
-      { id: "device42", name: "Device42", imageSrc: "/images/companies/device42-150x150.png" },
-      { id: "nintex", name: "Nintex", imageSrc: "/images/companies/nintex-process-platform-150x150.png" },
-      { id: "stars-iii", name: "Stars III", imageSrc: "/images/companies/StarsIII-150x150.png" }
+      { id: "hp", name: "HP", imageSrc: "/images/companies/hpLogo-150x150.webp" },
+      { id: "accellion", name: "Accellion", imageSrc: "/images/companies/Accellion-Logo-150x150.webp" },
+      { id: "ibm", name: "IBM", imageSrc: "/images/companies/IBM-150x150.webp" },
+      { id: "dell", name: "Dell", imageSrc: "/images/companies/Dell-150x150.webp" },
+      { id: "vmware", name: "VMware", imageSrc: "/images/companies/VmWare-150x150.webp" },
+      { id: "red-hat", name: "Red Hat", imageSrc: "/images/companies/redhatlogo00.webp" },
+      { id: "lenovo", name: "Lenovo", imageSrc: "/images/companies/Lenovo-150x150.webp" },
+      { id: "trustwave", name: "Trustwave", imageSrc: "/images/companies/trustwave-150x150.webp" },
+      { id: "opswat", name: "OPSWAT", imageSrc: "/images/companies/Opswat-Logo-150x150.webp" },
+      { id: "vertiv", name: "Vertiv", imageSrc: "/images/companies/Vertiv-150x150.webp" },
+      { id: "lexmark", name: "Lexmark", imageSrc: "/images/companies/LexmarkLogo-150x150.webp" },
+      { id: "xerox", name: "Xerox", imageSrc: "/images/companies/Xerox-150x150.webp" },
+      { id: "cloudinary", name: "Cloudinary", imageSrc: "/images/companies/Cloudinary.webp" },
+      { id: "device42", name: "Device42", imageSrc: "/images/companies/device42-150x150.webp" },
+      { id: "nintex", name: "Nintex", imageSrc: "/images/companies/nintex-process-platform-150x150.webp" },
+      { id: "stars-iii", name: "Stars III", imageSrc: "/images/companies/StarsIII-150x150.webp" }
     ]
   },
   homeFederalCapabilities: {
@@ -175,7 +175,7 @@ export const siteContent: SiteContent = {
     title: "CONSULTING SERVICES",
     subtitle: "Services for your technology solutions needs",
     ctaLabel: "CHECK OUT FULL CONSULTING SERVICES",
-    ctaHref: "/services",
+    ctaHref: "/consulting-services",
     items: [
       {
         id: "managed-services",
@@ -242,27 +242,27 @@ export const siteContent: SiteContent = {
       {
         id: "pmi-2023",
         name: "PMI Member 2023",
-        imageSrc: "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.png"
+        imageSrc: "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.webp"
       },
       {
         id: "nqa-iso9001",
         name: "NQA ISO 9001 Quality Management",
-        imageSrc: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.jpg"
+        imageSrc: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp"
       },
       {
         id: "maryland-mbe",
         name: "Maryland MBE Program",
-        imageSrc: "/images/footer/Maryland-MBE-Seal-r8yaep2c5rsdh2q6oah4rj1ltxm182b5v7189otwbs.png"
+        imageSrc: "/images/footer/Maryland-MBE-Seal-r8yaep2c5rsdh2q6oah4rj1ltxm182b5v7189otwbs.webp"
       },
       {
         id: "ariba",
         name: "Find us on Ariba Network",
-        imageSrc: "/images/footer/badge_245x100.jpg"
+        imageSrc: "/images/footer/badge_245x100.webp"
       },
       {
         id: "maryland-sbr",
         name: "Maryland SBR Program",
-        imageSrc: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.png"
+        imageSrc: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.webp"
       }
     ],
     connectTitle: "Connect",

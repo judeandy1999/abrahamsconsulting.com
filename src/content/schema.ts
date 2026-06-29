@@ -279,16 +279,19 @@ const solutionShowcaseSchema = z.object({
   media: solutionMediaSchema
 });
 
+export const segmentedPageHeroSchema = z.object({
+  segments: z.array(z.string().min(1)).min(1, "Hero requires at least one segment"),
+  description: z.string().min(1, "Hero description is required")
+});
+
 export const solutionsPageSchema = z.object({
-  hero: z.object({
-    segments: z.array(z.string().min(1)).min(1, "Solutions hero requires at least one segment"),
-    description: z.string().min(1, "Solutions hero description is required")
-  }),
+  hero: segmentedPageHeroSchema,
   showcases: z.array(solutionShowcaseSchema).min(2, "Solutions page requires at least two showcases")
 });
 
 const nasaSewpViPastPerformanceSchema = z.object({
   id: z.string().min(1),
+  icon: z.enum(["government-building", "network", "ai-brain", "managed-services", "education", "justice"]),
   organization: z.string().min(1),
   description: z.string().optional()
 });
@@ -330,26 +333,43 @@ export const nasaSewpViPageSchema = z.object({
       .length(10)
   }),
   aboutSewp: z.object({
+    eyebrow: z.string().min(1),
     title: z.string().min(1),
     paragraphs: z.array(z.string().min(1)).min(1)
   }),
   aboutCompany: z.object({
+    eyebrow: z.string().min(1),
     title: z.string().min(1),
-    paragraphs: z.array(z.string().min(1)).min(1)
+    paragraphs: z.array(z.string().min(1)).min(1),
+    highlights: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum(["wosb", "established", "federal-partner"]),
+          title: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .length(3)
   }),
   whyChoose: z.object({
     title: z.string().min(1),
+    description: z.string().min(1),
     items: z
       .array(
         z.object({
           id: z.string().min(1),
-          title: z.string().min(1)
+          icon: z.enum(["handshake", "wosb", "experience", "iso", "ai", "federal"]),
+          title: z.string().min(1),
+          description: z.string().min(1)
         })
       )
-      .min(1)
+      .length(6)
   }),
   coreCompetencies: z.object({
+    eyebrow: z.string().min(1),
     title: z.string().min(1),
+    description: z.string().min(1),
     items: z
       .array(
         z.object({
@@ -366,18 +386,54 @@ export const nasaSewpViPageSchema = z.object({
             "compliance",
             "helpdesk"
           ]),
-          title: z.string().min(1)
+          title: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .length(10)
+  }),
+  categoryACapabilities: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum([
+            "computer-systems",
+            "storage",
+            "networking",
+            "imaging",
+            "power-cabling",
+            "audio-visual",
+            "security-sensors",
+            "software-cloud",
+            "product-services"
+          ]),
+          title: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .length(9)
+  }),
+  contractVehicles: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          title: z.string().min(1),
+          badge: z.string().min(1).optional(),
+          description: z.string().min(1),
+          logoSrc: z.string().min(1),
+          logoAlt: z.string().min(1),
+          href: z.string().min(1).optional()
         })
       )
       .min(1)
-  }),
-  categoryACapabilities: z.object({
-    title: z.string().min(1),
-    items: z.array(z.string().min(1)).min(1)
-  }),
-  contractVehicles: z.object({
-    title: z.string().min(1),
-    items: z.array(z.string().min(1)).min(1)
   }),
   orderingProcess: z.object({
     title: z.string().min(1),
@@ -391,8 +447,10 @@ export const nasaSewpViPageSchema = z.object({
       .length(3)
   }),
   pastPerformance: z.object({
+    eyebrow: z.string().min(1),
     title: z.string().min(1),
-    items: z.array(nasaSewpViPastPerformanceSchema).min(1)
+    description: z.string().min(1),
+    items: z.array(nasaSewpViPastPerformanceSchema).length(6)
   }),
   companyInformation: z.object({
     title: z.string().min(1),
@@ -400,16 +458,45 @@ export const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
+          icon: z.enum([
+            "headquarters",
+            "phone",
+            "federal-sales",
+            "website",
+            "uei",
+            "cage",
+            "business-size",
+            "founded"
+          ]),
           label: z.string().min(1),
           value: z.string().min(1),
           href: z.string().url().optional()
         })
       )
-      .min(1)
+      .length(8)
   }),
   certifications: z.object({
     title: z.string().min(1),
-    items: z.array(z.string().min(1)).min(1)
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum([
+            "nasa-sewp-vi",
+            "small-business",
+            "iso-9001",
+            "itil",
+            "omnia-partners",
+            "mwbe",
+            "maryland-mbe",
+            "maryland-sbr",
+            "sam-gov",
+            "ariba-network"
+          ]),
+          label: z.string().min(1)
+        })
+      )
+      .length(10)
   }),
   resources: z.object({
     title: z.string().min(1),
@@ -479,6 +566,52 @@ const executiveRecruitingCardSchema = z.object({
   learnMoreHref: z.string().min(1, "Executive recruiting card learn more href is required")
 });
 
+const consultingServiceIconSchema = z.enum(["managed-services", "cloud-services", "professional-services"]);
+
+const consultingServiceModalSectionSchema = z.object({
+  title: z.string().min(1, "Consulting service modal section title is required"),
+  items: z.array(z.string().min(1)).min(1, "Consulting service modal section requires at least one item")
+});
+
+const consultingServiceItemSchema = z.object({
+  id: z.string().min(1, "Consulting service item id is required"),
+  icon: consultingServiceIconSchema,
+  title: z.string().min(1, "Consulting service item title is required"),
+  description: z.string().min(1, "Consulting service item description is required"),
+  modal: z.object({
+    imageSrc: z.string().min(1, "Consulting service modal image source is required"),
+    imageAlt: z.string().min(1, "Consulting service modal image alt text is required"),
+    sections: z.array(consultingServiceModalSectionSchema).min(1, "Consulting service modal requires at least one section"),
+    ctaHref: z.string().min(1, "Consulting service modal CTA href is required")
+  })
+});
+
+export const consultingServicesPageSchema = z.object({
+  hero: segmentedPageHeroSchema,
+  servicesSection: z.object({
+    title: z.string().min(1, "Consulting services section title is required"),
+    knowMoreLabel: z.string().min(1, "Consulting services know more label is required"),
+    scheduleLabel: z.string().min(1, "Consulting services schedule label is required"),
+    items: z.array(consultingServiceItemSchema).length(3, "Consulting services section requires three items")
+  }),
+  packageSection: z.object({
+    eyebrow: z.string().min(1, "Consulting services package section eyebrow is required"),
+    title: z.string().min(1, "Consulting services package section title is required"),
+    description: z.string().min(1, "Consulting services package section description is required"),
+    knowMoreLabel: z.string().min(1, "Consulting services package know more label is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Consulting services package item id is required"),
+          icon: z.enum(["capabilities-services", "capabilities-federal", "capabilities-products"]),
+          title: z.string().min(1, "Consulting services package item title is required"),
+          href: z.string().min(1, "Consulting services package item href is required")
+        })
+      )
+      .length(3, "Consulting services package section requires three items")
+  })
+});
+
 export const executiveRecruitingPageSchema = z.object({
   hero: z.object({
     eyebrow: z.string().min(1, "Executive recruiting eyebrow is required"),
@@ -539,6 +672,7 @@ export const marketingContentSchema = z.object({
   trust: trustContentSchema,
   solutionsPage: solutionsPageSchema,
   executiveRecruitingPage: executiveRecruitingPageSchema,
+  consultingServicesPage: consultingServicesPageSchema,
   nasaSewpViPage: nasaSewpViPageSchema
 });
 
@@ -552,7 +686,9 @@ export type CaseSnapshot = z.infer<typeof caseSnapshotSchema>;
 export type PartnerIndicator = z.infer<typeof partnerIndicatorSchema>;
 export type TrustContent = z.infer<typeof trustContentSchema>;
 export type SolutionsPageContent = z.infer<typeof solutionsPageSchema>;
+export type SegmentedPageHero = z.infer<typeof segmentedPageHeroSchema>;
 export type ExecutiveRecruitingPageContent = z.infer<typeof executiveRecruitingPageSchema>;
+export type ConsultingServicesPageContent = z.infer<typeof consultingServicesPageSchema>;
 export type NasaSewpViPageContent = z.infer<typeof nasaSewpViPageSchema>;
 export type MarketingContent = z.infer<typeof marketingContentSchema>;
 export type LaunchPageSeo = z.infer<typeof launchPageSeoSchema>;

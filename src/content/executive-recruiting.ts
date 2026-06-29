@@ -13,7 +13,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
     headlineSuffix: " Others Miss.",
     description:
       "We help organizations secure top 1% C-Suite and VP-level talent through a forensic, data-driven vetting process that goes beyond the resume.",
-    imageSrc: "/images/executive-recruiting/hero.png",
+    imageSrc: "/images/executive-recruiting/hero.webp",
     imageAlt: "Executive leadership team collaborating in a modern boardroom overlooking the city skyline",
     features: [
       {
@@ -53,7 +53,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
         title: "Revenue Stagnation",
         description:
           "Every day a C-level seat sits empty, strategic initiatives stall. We reduce vacancy time by leveraging our pre-vetted \"Shadow Bench\" of passive talent.",
-        imageSrc: "/images/executive-recruiting/revenue-stagnation.png",
+        imageSrc: "/images/executive-recruiting/revenue-stagnation.webp",
         imageAlt: "Revenue stagnation icon representing delayed executive hiring impact",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: EXECUTIVE_RECRUITING_MEETING_URL
@@ -63,7 +63,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
         title: "Cultural Misalignment",
         description:
           "Resumes show skills, not behavior. Our proprietary 34-point psychometric assessment helps ensure leaders fit your organization's culture and goals.",
-        imageSrc: "/images/executive-recruiting/cultural-misalignment.png",
+        imageSrc: "/images/executive-recruiting/cultural-misalignment.webp",
         imageAlt: "Cultural misalignment icon representing leadership fit challenges",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: EXECUTIVE_RECRUITING_MEETING_URL
@@ -73,7 +73,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
         title: "The Bad Hire Risk",
         description:
           "Replacing an executive can cost up to 213% of their annual salary. Our industry-leading replacement guarantee helps protect your investment.",
-        imageSrc: "/images/executive-recruiting/bad-hire-risk.png",
+        imageSrc: "/images/executive-recruiting/bad-hire-risk.webp",
         imageAlt: "Bad hire risk icon representing executive replacement costs",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: EXECUTIVE_RECRUITING_MEETING_URL
@@ -99,7 +99,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
           { icon: "target", label: "Build consensus and alignment" },
           { icon: "chart", label: "Strengthen leadership planning outcomes" }
         ],
-        imageSrc: "/images/executive-recruiting/hiring-profiles/advisory.png",
+        imageSrc: "/images/executive-recruiting/hiring-profiles/advisory.webp",
         imageAlt: "Leadership team aligning around a strategic planning session",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: HIRING_PROFILE_SCORECARD_URL
@@ -117,7 +117,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
           { icon: "precision", label: "Assess leadership fit rigorously" },
           { icon: "shield", label: "Mitigate hiring risk at scale" }
         ],
-        imageSrc: "/images/executive-recruiting/hiring-profiles/retained.png",
+        imageSrc: "/images/executive-recruiting/hiring-profiles/retained.webp",
         imageAlt: "Executive recruiter reviewing leadership candidate profiles",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: HIRING_PROFILE_SCORECARD_URL
@@ -135,7 +135,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
           { icon: "shield", label: "Minimize market exposure" },
           { icon: "target", label: "Maintain business continuity" }
         ],
-        imageSrc: "/images/executive-recruiting/hiring-profiles/confidential.png",
+        imageSrc: "/images/executive-recruiting/hiring-profiles/confidential.webp",
         imageAlt: "Confidential executive search consultation in a private office",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: HIRING_PROFILE_SCORECARD_URL
@@ -153,7 +153,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
           { icon: "shield", label: "Reduce operational risk" },
           { icon: "users", label: "Bridge to permanent placement" }
         ],
-        imageSrc: "/images/executive-recruiting/hiring-profiles/interim.png",
+        imageSrc: "/images/executive-recruiting/hiring-profiles/interim.webp",
         imageAlt: "Interim executive leading a technology team through transition",
         learnMoreLabel: "LEARN MORE",
         learnMoreHref: HIRING_PROFILE_SCORECARD_URL
@@ -165,7 +165,7 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
     description: "We identify leaders others miss.",
     ctaLabel: "Schedule a Confidential Consultation",
     ctaHref: EXECUTIVE_RECRUITING_MEETING_URL,
-    imageSrc: "/images/executive-recruiting/hero.png",
+    imageSrc: "/images/executive-recruiting/hero.webp",
     imageAlt: "Executive leadership team in a confidential boardroom consultation",
     highlights: [
       { icon: "confidential", label: "Confidential Process" },

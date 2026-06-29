@@ -54,7 +54,7 @@ export const solutionsPageContent: SolutionsPageContent = {
       },
       media: {
         type: "image",
-        imageSrc: "/images/solutions/vector-networking.jpg",
+        imageSrc: "/images/solutions/vector-networking.webp",
         imageAlt: "Niche solutions infographic showing cloud, operations, collaboration, and mobility capabilities",
         caption: "Niche Solutions"
       }
@@ -75,7 +75,7 @@ export const solutionsPageContent: SolutionsPageContent = {
       },
       media: {
         type: "image",
-        imageSrc: "/images/solutions/vector-storage.jpg",
+        imageSrc: "/images/solutions/vector-storage.webp",
         imageAlt: "Niche solutions infographic for cloud and enterprise storage",
         caption: "Niche Solutions"
       }
@@ -95,7 +95,7 @@ export const solutionsPageContent: SolutionsPageContent = {
       },
       media: {
         type: "image",
-        imageSrc: "/images/solutions/data-storage.jpg",
+        imageSrc: "/images/solutions/data-storage.webp",
         imageAlt: "Enterprise data storage and backup infrastructure",
         caption: "Niche Solutions"
       }

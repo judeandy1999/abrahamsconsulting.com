@@ -36,11 +36,11 @@
       },
       {
         "label": "Consulting Services",
-        "href": "https://abrahamsconsulting.com/consulting-service/"
+        "href": "/consulting-services"
       },
       {
         "label": "Manufacturer Store",
-        "href": "https://abrahamsconsulting.com/abrahams-consulting-product-page/"
+        "href": "https://cmcengage.com/6702"
       },
       {
         "label": "Blog",
@@ -62,7 +62,7 @@
     },
     "certificationStrip": {
       "title": "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
-      "imageSrc": "/images/Abrahams-certifications.png",
+      "imageSrc": "/images/Abrahams-certifications.webp",
       "imageAlt": "Certification and partnership logos"
     },
     "homeAbout": {
@@ -70,7 +70,7 @@
       "heading": "About Abrahams Consulting",
       "paragraphs": ["Government and enterprise IT partner since 2006."],
       "partnersHeading": "Technology partners",
-      "partnerLogos": [{ "id": "f5", "name": "F5", "imageSrc": "/images/companies/f5-150x150.jpg" }]
+      "partnerLogos": [{ "id": "f5", "name": "F5", "imageSrc": "/images/companies/f5-150x150.webp" }]
     },
     "homeFederalCapabilities": {
       "heading": "FEDERAL CAPABILITIES",
@@ -129,7 +129,7 @@
         {
           "id": "pmi",
           "name": "PMI",
-          "imageSrc": "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.png"
+          "imageSrc": "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.webp"
         }
       ],
       "connectTitle": "Connect",
@@ -271,7 +271,7 @@
         },
         "media": {
           "type": "image",
-          "imageSrc": "/images/solutions/vector-networking.jpg",
+          "imageSrc": "/images/solutions/vector-networking.webp",
           "imageAlt": "Niche solutions",
           "caption": "Niche Solutions"
         }
@@ -285,7 +285,7 @@
       "headlineAccent": "Visionaries",
       "headlineSuffix": " Others Miss.",
       "description": "We help organizations secure top 1% C-Suite and VP-level talent.",
-      "imageSrc": "/images/executive-recruiting/hero.png",
+      "imageSrc": "/images/executive-recruiting/hero.webp",
       "imageAlt": "Executive leadership team in a boardroom",
       "features": [
         {
@@ -323,7 +323,7 @@
           "id": "revenue-stagnation",
           "title": "Revenue Stagnation",
           "description": "Every day a C-level seat sits empty, strategic initiatives stall.",
-          "imageSrc": "/images/executive-recruiting/revenue-stagnation.png",
+          "imageSrc": "/images/executive-recruiting/revenue-stagnation.webp",
           "imageAlt": "Revenue stagnation icon",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
@@ -332,7 +332,7 @@
           "id": "cultural-misalignment",
           "title": "Cultural Misalignment",
           "description": "Resumes show skills, not behavior.",
-          "imageSrc": "/images/executive-recruiting/cultural-misalignment.png",
+          "imageSrc": "/images/executive-recruiting/cultural-misalignment.webp",
           "imageAlt": "Cultural misalignment icon",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
@@ -341,7 +341,7 @@
           "id": "bad-hire-risk",
           "title": "The Bad Hire Risk",
           "description": "Replacing an executive costs 213% of their salary.",
-          "imageSrc": "/images/executive-recruiting/bad-hire-risk.png",
+          "imageSrc": "/images/executive-recruiting/bad-hire-risk.webp",
           "imageAlt": "Bad hire risk icon",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link"
@@ -365,7 +365,7 @@
             { "icon": "target", "label": "Build consensus and alignment" },
             { "icon": "chart", "label": "Strengthen leadership planning outcomes" }
           ],
-          "imageSrc": "/images/executive-recruiting/hiring-profiles/advisory.png",
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/advisory.webp",
           "imageAlt": "Leadership alignment session",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
@@ -382,7 +382,7 @@
             { "icon": "precision", "label": "Assess leadership fit rigorously" },
             { "icon": "shield", "label": "Mitigate hiring risk at scale" }
           ],
-          "imageSrc": "/images/executive-recruiting/hiring-profiles/retained.png",
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/retained.webp",
           "imageAlt": "Retained executive search",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
@@ -399,7 +399,7 @@
             { "icon": "shield", "label": "Minimize market exposure" },
             { "icon": "target", "label": "Maintain business continuity" }
           ],
-          "imageSrc": "/images/executive-recruiting/hiring-profiles/confidential.png",
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/confidential.webp",
           "imageAlt": "Confidential replacement search",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
@@ -416,7 +416,7 @@
             { "icon": "shield", "label": "Reduce operational risk" },
             { "icon": "users", "label": "Bridge to permanent placement" }
           ],
-          "imageSrc": "/images/executive-recruiting/hiring-profiles/interim.png",
+          "imageSrc": "/images/executive-recruiting/hiring-profiles/interim.webp",
           "imageAlt": "Interim leadership bridge",
           "learnMoreLabel": "LEARN MORE",
           "learnMoreHref": "https://itleadershiphiringprofile.scoreapp.com/"
@@ -428,7 +428,7 @@
       "description": "We identify leaders others miss.",
       "ctaLabel": "Schedule a Confidential Consultation",
       "ctaHref": "https://info.abrahamsconsulting.com/meetings/angela-gibson/executive-it-recruiting-meeting-link",
-      "imageSrc": "/images/executive-recruiting/hero.png",
+      "imageSrc": "/images/executive-recruiting/hero.webp",
       "imageAlt": "Executive leadership team in a boardroom",
       "highlights": [
         { "icon": "confidential", "label": "Confidential Process" },

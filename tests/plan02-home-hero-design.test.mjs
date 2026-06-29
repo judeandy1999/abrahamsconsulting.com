@@ -24,7 +24,7 @@ test("hero uses provided background and logo assets", async () => {
   const cssSource = await readFile(GLOBALS_FILE, "utf8");
 
   assert.match(heroSource, /hero-logo\.webp/);
-  assert.match(cssSource, /hero-bg\.avif/);
+  assert.match(cssSource, /hero-bg\.webp/);
   assert.match(heroSource, /home-hero__headline-accent/);
 });
 
@@ -44,5 +44,5 @@ test("certification bar uses composite certifications image", async () => {
 
   assert.match(certSource, /certificationStrip\.imageSrc/);
   assert.match(certSource, /certificationStrip\.imageAlt/);
-  assert.match(siteSource, /Abrahams-certifications\.png/);
+  assert.match(siteSource, /Abrahams-certifications\.webp/);
 });

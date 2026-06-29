@@ -37,7 +37,7 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
               {footer.assistTitle}
             </h2>
             <Image
-              src="/images/logo-2.png"
+              src="/images/logo-2.webp"
               alt={site.name}
               width={220}
               height={48}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="New York State">
+  <circle cx="60" cy="60" r="56" fill="#fff" stroke="#1a4480" stroke-width="4" />
+  <circle cx="60" cy="60" r="48" fill="#f4f7fb" stroke="#1a4480" stroke-width="2" />
+  <path
+    fill="#1a4480"
+    d="M60 24c-8.5 0-15.5 6.2-16.8 14.3-6.2 1.4-10.7 6.9-10.7 13.4 0 4.2 1.9 8 4.9 10.6-1.2 2.1-1.9 4.5-1.9 7.1 0 7.5 6.1 13.6 13.6 13.6h19.8c7.5 0 13.6-6.1 13.6-13.6 0-2.6-.7-5-1.9-7.1 3-2.6 4.9-6.4 4.9-10.6 0-6.5-4.5-12-10.7-13.4C75.5 30.2 68.5 24 60 24Z"
+  />
+  <path
+    fill="#fff"
+    d="M60 34c-5.8 0-10.5 4.7-10.5 10.5S54.2 55 60 55s10.5-4.7 10.5-10.5S65.8 34 60 34Zm0 28.5c-6.2 0-11.2 5-11.2 11.2v4.3h22.4v-4.3c0-6.2-5-11.2-11.2-11.2Z"
+  />
+  <path fill="#c8102e" d="M48 78h24v4H48z" />
+  <text
+    x="60"
+    y="98"
+    text-anchor="middle"
+    fill="#1a4480"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="8"
+    font-weight="700"
+    letter-spacing="0.08em"
+  >
+    NEW YORK STATE
+  </text>
+</svg>

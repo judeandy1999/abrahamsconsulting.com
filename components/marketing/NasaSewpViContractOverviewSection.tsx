@@ -40,14 +40,15 @@ export function NasaSewpViContractOverviewSection({ section }: NasaSewpViContrac
 
   return (
     <section className="sewp-vi-overview" aria-labelledby="sewp-vi-overview-heading">
-      <Image
-        src={NASA_SEWP_VI_OVERVIEW_ASSETS.backgroundImageSrc}
-        alt=""
-        width={640}
-        height={480}
-        aria-hidden
-        className="sewp-vi-overview__bg"
-      />
+      <div className="sewp-vi-overview__bg-wrap" aria-hidden="true">
+        <Image
+          src={NASA_SEWP_VI_OVERVIEW_ASSETS.backgroundImageSrc}
+          alt=""
+          width={640}
+          height={480}
+          className="sewp-vi-overview__bg"
+        />
+      </div>
 
       <motion.div
         className="sewp-vi-overview__inner"
@@ -57,7 +58,6 @@ export function NasaSewpViContractOverviewSection({ section }: NasaSewpViContrac
         viewport={viewport}
       >
         <motion.header className="sewp-vi-overview__header" variants={itemVariants} transition={itemTransition}>
-          <p className="sewp-vi-overview__eyebrow">{section.eyebrow}</p>
           <h2 id="sewp-vi-overview-heading" className="sewp-vi-overview__title">
             {section.title}
           </h2>

@@ -23,6 +23,13 @@ export const launchPageSeoContent = [
       "Explore Abrahams Consulting niche solutions for security, networking, and storage—including IBM Resiliency, Aruba networking, and enterprise storage guidance."
   },
   {
+    routeKey: "consulting-services",
+    path: "/consulting-services",
+    title: "Consulting Services",
+    description:
+      "Explore Abrahams Consulting managed services, professional services, and cloud services—including SOC/NOC operations, staffing, and Cloud7 secure cloud delivery."
+  },
+  {
     routeKey: "executive-recruiting",
     path: "/executive-recruiting",
     title: "IT Executive Recruiting",

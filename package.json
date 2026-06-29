@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "content:check": "node scripts/validate-content.mjs",
+    "images:convert": "node scripts/convert-images-to-webp.mjs",
+    "images:update-refs": "node scripts/update-image-references.mjs",
     "prebuild": "npm run content:check",
     "build": "next build",
     "start": "next start",

@@ -1,9 +1,11 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { SolutionsPageContent } from "../../src/content/schema";
+import type { SegmentedPageHero } from "../../src/content/schema";
+
 type SolutionsHeroProps = {
-  hero: SolutionsPageContent["hero"];
+  hero: SegmentedPageHero;
+  headingId?: string;
 };
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -11,7 +13,7 @@ const ITEM_DURATION = 0.85;
 const STAGGER = 0.16;
 const DELAY_CHILDREN = 0.12;
 
-export function SolutionsHero({ hero }: SolutionsHeroProps) {
+export function SolutionsHero({ hero, headingId = "solutions-hero-heading" }: SolutionsHeroProps) {
   const reduceMotion = useReducedMotion();
 
   const itemVariants = reduceMotion
@@ -32,7 +34,7 @@ export function SolutionsHero({ hero }: SolutionsHeroProps) {
   const viewport = { once: true, amount: 0.15 };
 
   return (
-    <section className="solutions-hero" aria-labelledby="solutions-hero-heading">
+    <section className="solutions-hero" aria-labelledby={headingId}>
       <motion.div
         className="solutions-hero__inner"
         variants={containerVariants}
@@ -40,7 +42,7 @@ export function SolutionsHero({ hero }: SolutionsHeroProps) {
         whileInView="visible"
         viewport={viewport}
       >
-        <motion.h1 id="solutions-hero-heading" className="solutions-hero__title" variants={itemVariants} transition={itemTransition}>
+        <motion.h1 id={headingId} className="solutions-hero__title" variants={itemVariants} transition={itemTransition}>
           {hero.segments.map((segment, index) => (
             <span key={segment}>
               {index > 0 ? <span className="solutions-hero__divider" aria-hidden="true"> | </span> : null}
@@ -52,6 +54,7 @@ export function SolutionsHero({ hero }: SolutionsHeroProps) {
         <motion.p className="solutions-hero__description" variants={itemVariants} transition={itemTransition}>
           {hero.description}
         </motion.p>
-      </motion.div>    </section>
+      </motion.div>
+    </section>
   );
 }

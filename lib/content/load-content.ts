@@ -1,4 +1,5 @@
 import { contractsContent } from "../../src/content/contracts";
+import { consultingServicesPageContent } from "../../src/content/consulting-services";
 import { executiveRecruitingPageContent } from "../../src/content/executive-recruiting";
 import { marketingContentSchema, type MarketingContent } from "../../src/content/schema";
 import { loadNasaSewpViPageContent } from "./nasa-sewp-vi-page";
@@ -15,6 +16,7 @@ export function loadMarketingContent(): MarketingContent {
     trust: trustContent,
     solutionsPage: solutionsPageContent,
     executiveRecruitingPage: executiveRecruitingPageContent,
+    consultingServicesPage: consultingServicesPageContent,
     nasaSewpViPage: loadNasaSewpViPageContent()
   });
 }
