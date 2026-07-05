@@ -8,15 +8,15 @@ This project is a full revamp of the Abrahams Consulting marketing website using
 
 Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## Current Milestone: v1.3 NASA SEWP VI Federal Contract Page
+## Current Milestone: v1.4 NASA SEWP VI Electronic Ordering Guide
 
-**Goal:** Publish an accurate, maintainable NASA SEWP VI Prime Contractor page at `/nasa-sewp-vi` that matches the existing design system and supports leadership/PMO review.
+**Goal:** Add a design-accurate Electronic Ordering Guide section on `/nasa-sewp-vi` directly after Contract Overview, with a downloadable SEWP VI PDF and content-managed metadata.
 
 **Target features:**
-- Full contract page with verified content from Capability Statement and SEWP VI documentation
-- Typed content module with schema validation; PDF paths configurable without code changes
-- Hero, contract overview, competencies, past performance, company info, resources, and federal sales contact
-- SEO registry and sitemap inclusion; responsive, accessible layout reusing site patterns
+- Two-column section matching approved mockup (feature list + download card)
+- PDF download wired to `public/documents/nasa-sewp-vi/ordering-guide.pdf` via existing document path config
+- Last Updated and Version metadata in content module; coming-soon state when PDF absent
+- Responsive layout reusing NASA SEWP VI section patterns and motion
 
 ## Requirements
 
@@ -28,27 +28,29 @@ Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting
 - [x] Prioritize launch quality for the Home page first, then expand to remaining priority pages. (v1.0 Phase 2)
 - [x] Widen site-wide content container to 84rem and scale marketing typography. (v1.1)
 - [x] Executive recruiting hiring profiles tabbed section with four outcomes. (v1.2)
+- [x] NASA SEWP VI page at `/nasa-sewp-vi` with verified contract content and federal sections. (v1.3 Phase 8)
 
 ### Active
 
-- [ ] NASA SEWP VI page at `/nasa-sewp-vi` with verified contract content
-- [ ] Dynamic PDF resource paths (Capability Statement, Ordering Guide)
-- [ ] Content schema, validation, SEO, and responsive sections matching existing design system
+- [ ] Electronic Ordering Guide section placed after Contract Overview on `/nasa-sewp-vi`
+- [ ] Download card with PDF availability detection and metadata (last updated, version)
+- [ ] Typed content + schema validation for ordering guide copy and feature bullets
 
 ### Out of Scope
 
-- Website redesign or new design system — page must match existing site
+- Website redesign or new design system — section must match existing site and provided mockup
 - Invented statistics, expired contract vehicles, or unverifiable claims
 - Multilingual support in v1 — English-only launch is prioritized for speed.
 - CMS implementation in v1 — content is code-managed; PDFs replaceable via `public/documents/` paths
 - Advanced integrations in v1 (CRM, analytics stack, custom workflows) — deferred until the core site relaunch is stable.
 - AwardBanner scaling — banner stays at current compact dimensions.
+- Auto-computing Last Updated from PDF file mtime — manual content field for v1.4 unless trivial to add later
 
 ## Context
 
 Abrahams Consulting is an established MWBE technology consulting and staffing company with existing service lines, contract vehicles, and certifications that must be communicated clearly online. The NASA SEWP VI Prime Contract (80TECH26D1658, Category A – ITC/AV Solutions) requires a dedicated federal-facing page suitable for agency buyers and NASA SEWP PMO review.
 
-v1.0 shipped the full MVP. v1.1 addressed desktop visual scale. v1.2 completed executive recruiting hiring profiles. v1.3 adds the NASA SEWP VI contract page without redesigning the site.
+v1.3 shipped the full `/nasa-sewp-vi` page. Partial ordering-guide scaffolding exists (`NasaSewpViOrderingGuideCard`, `orderingProcess` content, `resources.orderingGuide`) but the approved **Electronic Ordering Guide** mockup is not yet implemented or wired into the page body. NASA SEWP CHUM requires the ordering guide to be live on the website before the first order.
 
 ## Constraints
 
@@ -67,9 +69,10 @@ v1.0 shipped the full MVP. v1.1 addressed desktop visual scale. v1.2 completed e
 | Use Next.js for the revamp | Strong SSR/SSG support, modern DX, and SEO/performance capabilities | ✓ Good |
 | Deploy on Vercel | Native Next.js platform with optimized deployment workflow | ✓ Good |
 | Launch with code-managed content, no CMS | Fastest path to shipping and controlling quality in v1 | ✓ Good |
-| PDFs in `public/documents/nasa-sewp-vi/` with content-module paths | Replace Capability Statement and Ordering Guide without code changes | — Pending |
-| Reuse existing marketing section patterns (hero, cards, tag grids) | Page must feel native to the existing site | — Pending |
-| Exclude retired vehicles (e.g. STARS III) | Leadership requirement: no expired contract vehicles on page | — Pending |
+| PDFs in `public/documents/nasa-sewp-vi/` with content-module paths | Replace Capability Statement and Ordering Guide without code changes | ✓ Good |
+| Reuse existing marketing section patterns (hero, cards, tag grids) | Page must feel native to the existing site | ✓ Good |
+| Exclude retired vehicles (e.g. STARS III) | Leadership requirement: no expired contract vehicles on page | ✓ Good |
+| Ordering Guide section immediately after Contract Overview | User mockup placement on `/nasa-sewp-vi` | — Pending |
 
 ## Evolution
 
@@ -85,3 +88,6 @@ This document evolves at phase transitions and milestone boundaries.
 **After each milestone** (via `/gsd:complete-milestone`):
 - Archive milestone summary
 - Reset active requirements for next milestone
+
+---
+*Last updated: 2026-07-05 after milestone v1.4 start*

@@ -1,42 +1,33 @@
 # Requirements: Abrahams Consulting Website Revamp
 
 **Defined:** 2026-05-28
-**Updated:** 2026-06-23 (v1.3 NASA SEWP VI)
+**Updated:** 2026-07-05 (v1.4 Electronic Ordering Guide)
 **Core Value:** Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## v1.0 Requirements (Validated)
+## v1.0–v1.3 Requirements (Validated)
 
-All v1.0 requirements shipped and validated in milestone v1.0 (Phases 1–4). See `.planning/MILESTONES.md` or phase summaries for details.
+Prior milestones shipped through Phase 8 (`/nasa-sewp-vi` federal contract page). See `.planning/ROADMAP.md` and phase summaries for details.
 
-## v1.1 Requirements (Validated)
+## v1.4 Requirements — Electronic Ordering Guide
 
-Homepage visual scale milestone — all requirements complete.
+Requirements for the NASA SEWP VI Electronic Ordering Guide section. Each maps to Phase 9.
 
-## v1.2 Requirements (Validated)
+### Placement & Layout
 
-- [x] **EXEC-01**: User sees tabbed "Which IT Leadership Hiring Profile Fits You?" with four profiles on `/executive-recruiting`.
-- [x] **EXEC-02**: User can switch tabs and navigate to the hiring profile scorecard.
+- [ ] **EOG-01**: User visiting `/nasa-sewp-vi` sees the Electronic Ordering Guide section immediately after the Contract Overview section.
+- [ ] **EOG-02**: Section uses a two-column layout matching the approved mockup — feature list and intro on the left, download card on the right.
+- [ ] **EOG-03**: User on tablet and mobile viewports sees the section stack vertically without broken layout or horizontal overflow.
 
-## v1.3 Requirements — NASA SEWP VI Page
+### Content & UX
 
-Requirements for the NASA SEWP VI federal contract page. Each maps to Phase 8.
+- [ ] **EOG-04**: Section displays title "Electronic Ordering Guide", introductory copy, and four feature items (Easy to Download, Always Up to Date, Print-Ready Format, Required Before First Order) from the typed content module.
+- [ ] **EOG-05**: Download card displays heading, supporting text, **Download PDF** action, **Last Updated** date, and **Version** number from content.
+- [ ] **EOG-06**: When the ordering guide PDF is missing from `public/documents/nasa-sewp-vi/`, the download control shows a coming-soon/disabled state instead of a broken link.
 
-### Content Accuracy & Maintainability
+### Maintainability & Quality
 
-- [ ] **SEWP-01**: Page displays only contract information verifiable from the Capability Statement and SEWP VI documentation.
-- [ ] **SEWP-02**: Page excludes retired or expired contract vehicles (e.g. STARS III).
-- [ ] **SEWP-03**: Capability Statement and Ordering Guide PDF paths are content-configurable; files replaceable in `public/documents/nasa-sewp-vi/` without code changes.
-
-### Page Structure & UX
-
-- [ ] **SEWP-04**: User can access `/nasa-sewp-vi` with hero, contract overview grid, about sections, core competencies, Category A capabilities, active contract vehicles, past performance, company information, certifications, resources, and federal sales contact.
-- [ ] **SEWP-05**: User sees layout, typography, spacing, cards, buttons, and animations consistent with existing marketing pages.
-- [ ] **SEWP-06**: User on tablet and mobile viewports sees all sections adapt without broken grids or horizontal overflow.
-
-### SEO & Quality
-
-- [ ] **SEWP-07**: Page is included in SEO registry, sitemap, and static metadata contract tests.
-- [ ] **SEWP-08**: Content passes schema validation in build pipeline (`content:check`).
+- [ ] **EOG-07**: PDF href remains configurable via `NASA_SEWP_VI_DOCUMENTS.orderingGuide`; replacing the file in `public/documents/nasa-sewp-vi/` updates availability without code changes.
+- [ ] **EOG-08**: Section passes content schema validation (`content:check`), uses accessible semantics for the download control, and matches existing NASA SEWP VI typography, spacing, icons, and motion patterns.
 
 ## v2 Requirements
 
@@ -54,21 +45,29 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Feature | Reason |
 |---------|--------|
-| Website redesign | User explicitly requested matching existing design system |
-| Invented content or statistics | Leadership/PMO accuracy requirement |
-| Customer logos on past performance | Not in existing assets unless already on site |
-| Patriotic imagery / stock flag photos | User design requirement |
-| CMS for PDF management | v1 uses file replacement in public/documents |
+| Merging Contract Overview and Ordering Guide into one combined grid | Mockup is a distinct section; Contract Overview keeps its existing 10-field layout |
+| CMS for PDF or metadata management | v1 uses file replacement and content module fields |
+| Invented CHUM compliance claims | Copy must match approved mockup / official SEWP documentation |
+| Blog / RSS integration | Separate milestone |
+| Auto-sync Last Updated from PDF filesystem | Manual content field for v1.4; revisit if leadership wants automation |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SEWP-01 | Phase 8 | In progress |
-| SEWP-02 | Phase 8 | In progress |
-| SEWP-03 | Phase 8 | In progress |
-| SEWP-04 | Phase 8 | In progress |
-| SEWP-05 | Phase 8 | In progress |
-| SEWP-06 | Phase 8 | In progress |
-| SEWP-07 | Phase 8 | In progress |
-| SEWP-08 | Phase 8 | In progress |
+| EOG-01 | Phase 9 | Pending |
+| EOG-02 | Phase 9 | Pending |
+| EOG-03 | Phase 9 | Pending |
+| EOG-04 | Phase 9 | Pending |
+| EOG-05 | Phase 9 | Pending |
+| EOG-06 | Phase 9 | Pending |
+| EOG-07 | Phase 9 | Pending |
+| EOG-08 | Phase 9 | Pending |
+
+**Coverage:**
+- v1.4 requirements: 8 total
+- Mapped to phases: 8
+- Unmapped: 0 ✓
+
+---
+*Requirements defined: 2026-07-05 for milestone v1.4*
