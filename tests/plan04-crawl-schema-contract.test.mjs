@@ -51,7 +51,7 @@ describe("plan04 crawl and schema contract", () => {
     assert.match(siteSource, /label: "Solutions"/);
     assert.match(siteSource, /"\/services"/);
     assert.match(siteSource, /IT Executive Recruiting/);
-    for (const href of ["/contracts", "/trust", "/consultation"]) {
+    for (const href of ["/contracts", "/trust", "/contact-us"]) {
       assert.match(seoSource, new RegExp(`"${href}"`));
     }
     assert.match(navSource, /logo\.webp/);

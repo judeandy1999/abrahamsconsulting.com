@@ -6,18 +6,26 @@ import { pathToFileURL } from "node:url";
 import ts from "typescript";
 import { z } from "zod";
 
-const consultationFieldSchema = z.object({
-  name: z.string().min(1, "Field name is required"),
-  label: z.string().min(1, "Field label is required"),
-  type: z.enum(["text", "email", "tel", "textarea", "select"]),
-  required: z.boolean(),
-  placeholder: z.string().optional(),
-  options: z.array(z.string().min(1)).optional()
+const hubspotFormSchema = z.object({
+  portalId: z.string().min(1, "HubSpot portal id is required"),
+  formId: z.string().min(1, "HubSpot form id is required"),
+  region: z.string().min(1, "HubSpot region is required"),
+  targetId: z.string().min(1, "HubSpot target id is required").optional()
 });
 
-const consultationFormSchema = z.object({
-  honeypotFieldName: z.string().min(1, "Honeypot field name is required"),
-  fields: z.array(consultationFieldSchema).min(4, "Consultation form requires essential qualification fields")
+const contactChannelSchema = z.object({
+  id: z.string().min(1, "Contact channel id is required"),
+  label: z.string().min(1, "Contact channel label is required"),
+  value: z.string().min(1, "Contact channel value is required"),
+  icon: z.enum(["mail", "phone", "smartphone", "map-pin"]),
+  href: z.string().optional()
+});
+
+const contactPageSchema = z.object({
+  title: z.string().min(1, "Contact page title is required"),
+  description: z.string().min(1, "Contact page description is required"),
+  channels: z.array(contactChannelSchema).min(1, "At least one contact channel is required"),
+  hubspotForm: hubspotFormSchema
 });
 
 const heroFeatureSchema = z.object({
@@ -88,7 +96,7 @@ const siteContentSchema = z.object({
   }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
-    path: z.literal("/consultation")
+    path: z.literal("/contact-us")
   }),
   nasaSewpViCta: z.object({
     label: z.string().min(1, "NASA SEWP VI CTA label is required"),
@@ -110,7 +118,7 @@ const siteContentSchema = z.object({
     privacyPolicyHref: z.string().min(1, "Footer privacy policy href is required"),
     copyrightName: z.string().min(1, "Footer copyright name is required")
   }),
-  consultationForm: consultationFormSchema
+  contactPage: contactPageSchema
 });
 
 const serviceItemSchema = z.object({
@@ -530,16 +538,119 @@ const nasaSewpViPageSchema = z.object({
       )
       .min(1)
   }),
-  orderingProcess: z.object({
+  electronicOrderingGuide: z.object({
     title: z.string().min(1),
-    steps: z
+    intro: z.string().min(1),
+    download: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      downloadLabel: z.string().min(1),
+      comingSoonLabel: z.string().min(1),
+      href: z.string().min(1),
+      illustrationSrc: z.string().min(1),
+      illustrationAlt: z.string().min(1),
+      isAvailable: z.boolean().optional()
+    }),
+    accessibility: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      requirements: z.array(z.string().min(1)).length(4),
+      vpat: z.object({
+        title: z.string().min(1),
+        description: z.string().min(1),
+        downloadLabel: z.string().min(1),
+        comingSoonLabel: z.string().min(1),
+        href: z.string().min(1),
+        isAvailable: z.boolean().optional()
+      })
+    })
+  }),
+  gwacIdentificationStatement: z.object({
+    title: z.string().min(1),
+    intro: z.string().min(1),
+    headerGraphicSrc: z.string().min(1),
+    headerGraphicAlt: z.string().min(1),
+    whatIsGwac: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      highlights: z.array(z.string().min(1)).length(3)
+    }),
+    commitment: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1)
+    }),
+    facts: z
       .array(
         z.object({
           id: z.string().min(1),
-          description: z.string().min(1)
+          icon: z.enum(["globe", "calendar", "users"]),
+          label: z.string().min(1),
+          value: z.string().min(1)
         })
       )
       .length(3)
+  }),
+  fairOpportunityClause: z.object({
+    title: z.string().min(1),
+    titleAccentWord: z.string().min(1),
+    intro: z.string().min(1),
+    headerGraphicSrc: z.string().min(1),
+    headerGraphicAlt: z.string().min(1),
+    clause: z.object({
+      label: z.string().min(1),
+      badgeGraphicSrc: z.string().min(1),
+      badgeGraphicAlt: z.string().min(1),
+      paragraphs: z.array(z.string().min(1)).min(1)
+    })
+  }),
+  programManagerContact: z.object({
+    titlePrimary: z.string().min(1),
+    titleSecondary: z.string().min(1),
+    intro: z.string().min(1),
+    helpCallout: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1)
+    }),
+    details: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum(["clock", "globe", "map-pin"]),
+          label: z.string().min(1),
+          value: z.string().min(1)
+        })
+      )
+      .length(3),
+    profile: z.object({
+      name: z.string().min(1),
+      role: z.string().min(1),
+      contacts: z
+        .array(
+          z.object({
+            id: z.string().min(1),
+            icon: z.enum(["phone", "smartphone", "mail", "building"]),
+            label: z.string().min(1),
+            value: z.string().min(1),
+            href: z.string().min(1).optional()
+          })
+        )
+        .length(4)
+    })
+  }),
+  externalResourceLinks: z.object({
+    heading: z.string().min(1),
+    cards: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          title: z.string().min(1),
+          description: z.string().min(1),
+          ctaLabel: z.string().min(1),
+          href: z.string().url(),
+          redirectNote: z.string().min(1)
+        })
+      )
+      .length(2)
   }),
   pastPerformance: z.object({
     eyebrow: z.string().min(1),
@@ -598,12 +709,6 @@ const nasaSewpViPageSchema = z.object({
     capabilityStatement: z.object({
       label: z.string().min(1),
       href: z.string().min(1)
-    }),
-    orderingGuide: z.object({
-      label: z.string().min(1),
-      comingSoonLabel: z.string().min(1),
-      href: z.string().min(1),
-      isAvailable: z.boolean().optional()
     })
   }),
   federalSalesContact: z.object({

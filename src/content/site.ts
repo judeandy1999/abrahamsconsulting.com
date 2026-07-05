@@ -269,64 +269,57 @@ export const siteContent: SiteContent = {
     address: "30 Broad Street, NY NY 10004 14th Floor",
     phones: ["877-541-1938", "646-558-3887"],
     contactCtaLabel: "CONTACT US",
-    contactCtaHref: "/consultation",
+    contactCtaHref: "/contact-us",
     privacyPolicyLabel: "Privacy Policy",
     privacyPolicyHref: "/about",
     copyrightName: "Technology Consultant Abrahams Consulting LLC"
   },
   consultationCta: {
-    label: "Request a Consultation",
-    path: "/consultation"
+    label: "Contact Us",
+    path: "/contact-us"
   },
   nasaSewpViCta: {
     label: "NASA SEWP VI",
     path: "/nasa-sewp-vi"
   },
-  consultationForm: {
-    honeypotFieldName: "companyWebsite",
-    fields: [
+  contactPage: {
+    title: "Contact Us",
+    description:
+      "Have questions about the SEWP VI contract, our solutions, or how we can support your agency? Fill out the form and a member of our team will get back to you promptly.",
+    channels: [
       {
-        name: "fullName",
-        label: "Full name",
-        type: "text",
-        required: true,
-        placeholder: "Jane Doe"
+        id: "email",
+        label: "Email Us",
+        value: "salessupportnys@abrahamsconsulting.com",
+        icon: "mail",
+        href: "mailto:salessupportnys@abrahamsconsulting.com"
       },
       {
-        name: "email",
-        label: "Work email",
-        type: "email",
-        required: true,
-        placeholder: "jane.doe@agency.gov"
+        id: "toll-free",
+        label: "Toll Free",
+        value: "877-541-1938",
+        icon: "phone",
+        href: "tel:+18775411938"
       },
       {
-        name: "organization",
-        label: "Organization",
-        type: "text",
-        required: true,
-        placeholder: "Agency or company name"
+        id: "direct",
+        label: "Direct",
+        value: "646-558-3887",
+        icon: "smartphone",
+        href: "tel:+16465583887"
       },
       {
-        name: "phone",
-        label: "Phone (optional)",
-        type: "tel",
-        required: false,
-        placeholder: "+1 (555) 555-0100"
-      },
-      {
-        name: "timeline",
-        label: "Desired engagement timeline",
-        type: "select",
-        required: true,
-        options: ["Immediate (0-30 days)", "Near-term (1-3 months)", "Planning (3+ months)"]
-      },
-      {
-        name: "qualificationSummary",
-        label: "What outcomes or capabilities do you need support with?",
-        type: "textarea",
-        required: true,
-        placeholder: "Describe mission priorities, delivery constraints, and procurement context."
+        id: "office",
+        label: "Our Office",
+        value: "30 Broad Street, NY NY 10004\n14th Floor",
+        icon: "map-pin"
       }
-    ]
+    ],
+    hubspotForm: {
+      portalId: "44647552",
+      formId: "7b2491d8-74db-49db-b377-eae6eccdd2fe",
+      region: "na1",
+      targetId: "hubspot-contact-form"
+    }
   }
 };

@@ -23,12 +23,13 @@ describe("plan04 accessibility gates contract", () => {
     assert.match(cssSource, /input:focus-visible|textarea:focus-visible|select:focus-visible/);
   });
 
-  it("consultation form keeps labels and native submit path", async () => {
-    const consultationSource = await readProjectFile("app/(marketing)/consultation/page.tsx");
-    assert.match(consultationSource, /htmlFor=/);
-    assert.match(consultationSource, /action=["']\/api\/lead["']/);
-    assert.match(consultationSource, /type=["']submit["']/);
-    assert.match(consultationSource, /aria-describedby/);
+  it("contact page exposes HubSpot embed with accessible form region", async () => {
+    const pageSource = await readProjectFile("components/marketing/ContactUsPageContent.tsx");
+    const hubspotSource = await readProjectFile("components/marketing/HubSpotContactForm.tsx");
+    assert.match(pageSource, /aria-labelledby="contact-us-heading"/);
+    assert.match(hubspotSource, /aria-labelledby="contact-us-heading"/);
+    assert.match(hubspotSource, /js\.hsforms\.net\/forms\/embed\/v2\.js/);
+    assert.match(hubspotSource, /hbspt\.forms\.create/);
   });
 
   it("lighthouse config enforces accessibility score budget", async () => {

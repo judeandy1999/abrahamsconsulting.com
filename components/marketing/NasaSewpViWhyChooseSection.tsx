@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { NASA_SEWP_VI_WHY_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { NasaSewpViWhyIcon } from "./NasaSewpViWhyIcon";
 import { useMarketingMotionConfig } from "./marketing-motion";
 

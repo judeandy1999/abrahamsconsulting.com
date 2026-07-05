@@ -19,7 +19,7 @@ export const solutionsPageContent: SolutionsPageContent = {
           "IBM provides advanced data protection solutions to safeguard critical data against threats like ransomware, hardware failures, and natural disasters. Additionally, IBM helps organizations develop robust business continuity plans to minimize the impact of disruptions and ensure rapid recovery."
         ],
         ctaLabel: "EXPLORE IBM SOLUTIONS",
-        ctaHref: "/consultation"
+        ctaHref: "/contact-us"
       },
       media: {
         type: "video",
@@ -50,7 +50,7 @@ export const solutionsPageContent: SolutionsPageContent = {
           "We provide network assessment, network design, and network planning deployment by employing a consultative approach which allows for a clear understanding of our clients' current infrastructure, enabling us to identify key areas of improvement or upgrade."
         ],
         ctaLabel: "FIND OUT MORE",
-        ctaHref: "/consultation"
+        ctaHref: "/contact-us"
       },
       media: {
         type: "image",
@@ -71,7 +71,7 @@ export const solutionsPageContent: SolutionsPageContent = {
           "With cloud storage provided by HPE it is now possible to run your workload anywhere."
         ],
         ctaLabel: "FIND OUT MORE",
-        ctaHref: "/consultation"
+        ctaHref: "/contact-us"
       },
       media: {
         type: "image",
@@ -91,7 +91,7 @@ export const solutionsPageContent: SolutionsPageContent = {
           "Quantum Corporation has announced its latest innovations to protect against ransomware and other forms of cyberattacks."
         ],
         ctaLabel: "FIND OUT MORE",
-        ctaHref: "/consultation"
+        ctaHref: "/contact-us"
       },
       media: {
         type: "image",

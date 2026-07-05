@@ -10,7 +10,7 @@
         "http://localhost:3000/services",
         "http://localhost:3000/contracts",
         "http://localhost:3000/trust",
-        "http://localhost:3000/consultation"
+        "http://localhost:3000/contact-us"
       ]
     },
     "assert": {

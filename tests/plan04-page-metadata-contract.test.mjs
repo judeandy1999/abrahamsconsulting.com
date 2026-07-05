@@ -13,8 +13,8 @@ const STATIC_LAUNCH_PATHS = [
   "/nasa-sewp-vi",
   "/contracts",
   "/trust",
-  "/consultation",
-  "/consultation/success"
+  "/contact-us",
+  "/contact-us/success"
 ];
 
 const ROUTE_FILES_BY_PATH = {
@@ -25,8 +25,8 @@ const ROUTE_FILES_BY_PATH = {
   "/nasa-sewp-vi": "app/(marketing)/nasa-sewp-vi/page.tsx",
   "/contracts": "app/(marketing)/contracts/page.tsx",
   "/trust": "app/(marketing)/trust/page.tsx",
-  "/consultation": "app/(marketing)/consultation/page.tsx",
-  "/consultation/success": "app/(marketing)/consultation/success/page.tsx"
+  "/contact-us": "app/(marketing)/contact-us/page.tsx",
+  "/contact-us/success": "app/(marketing)/contact-us/success/page.tsx"
 };
 
 async function readProjectFile(relativePath) {

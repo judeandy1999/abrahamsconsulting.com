@@ -39,7 +39,7 @@ export default function ContractsPage() {
 
         <MarketingMotionItem>
           <p>
-            Need to validate the right vehicle? <Link href="/consultation">Request a consultation</Link>.
+            Need to validate the right vehicle? <Link href="/contact-us">Request a consultation</Link>.
           </p>
         </MarketingMotionItem>
       </MarketingMotionGroup>

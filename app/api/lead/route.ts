@@ -1,24 +1,25 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { loadMarketingContent } from "../../../lib/content/load-content";
 import { sendLeadEmail } from "../../../lib/lead/send-lead-email";
 
 const leadSubmissionSchema = z.object({
-  fullName: z.string().trim().min(1, "Full name is required"),
   email: z.string().trim().email("A valid email is required"),
-  organization: z.string().trim().min(1, "Organization is required"),
+  firstName: z.string().trim().optional(),
+  lastName: z.string().trim().optional(),
+  companyName: z.string().trim().optional(),
+  jobTitle: z.string().trim().optional(),
   phone: z.string().trim().optional(),
-  timeline: z.string().trim().min(1, "Timeline is required"),
-  qualificationSummary: z.string().trim().min(1, "Qualification summary is required")
+  message: z.string().trim().optional()
 });
 
 function validationErrorResponse(message: string, status = 400) {
   return NextResponse.json({ error: message }, { status });
 }
 
+const HONEYPOT_FIELD_NAME = "companyWebsite";
+
 export async function POST(request: Request) {
-  const { site } = loadMarketingContent();
-  const honeypotFieldName = site.consultationForm.honeypotFieldName;
+  const honeypotFieldName = HONEYPOT_FIELD_NAME;
 
   let formData: FormData;
 
@@ -35,12 +36,13 @@ export async function POST(request: Request) {
   }
 
   const parsed = leadSubmissionSchema.safeParse({
-    fullName: formData.get("fullName"),
     email: formData.get("email"),
-    organization: formData.get("organization"),
+    firstName: formData.get("firstName") ?? undefined,
+    lastName: formData.get("lastName") ?? undefined,
+    companyName: formData.get("companyName") ?? undefined,
+    jobTitle: formData.get("jobTitle") ?? undefined,
     phone: formData.get("phone") ?? undefined,
-    timeline: formData.get("timeline"),
-    qualificationSummary: formData.get("qualificationSummary")
+    message: formData.get("message") ?? undefined
   });
 
   if (!parsed.success) {
@@ -60,6 +62,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unable to deliver lead notification" }, { status: 502 });
   }
 
-  const successUrl = new URL("/consultation/success", request.url);
+  const successUrl = new URL("/contact-us/success", request.url);
   return NextResponse.redirect(successUrl, 303);
 }

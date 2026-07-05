@@ -14,9 +14,14 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <>
       <JsonLdScript data={buildOrganizationJsonLd(site)} />
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+      <div className="skip-links">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <a href="#site-navigation" className="skip-link">
+          Skip to navigation
+        </a>
+      </div>
       <MarketingHeader site={site} />
       {children}
       <MarketingFooter site={site} />

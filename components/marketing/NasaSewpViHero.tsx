@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
+import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViHeroProps = {
@@ -113,6 +114,7 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
               download
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={accessibleExternalLinkLabel(hero.capabilityStatementCtaLabel)}
             >
               <IconDownload />
               {hero.capabilityStatementCtaLabel}
@@ -126,7 +128,7 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
         <div className="sewp-vi-hero__visual-frame">
           <Image
             src={NASA_SEWP_VI_HERO_ASSETS.visualImageSrc}
-            alt={NASA_SEWP_VI_HERO_ASSETS.visualImageAlt}
+            alt=""
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -135,7 +137,7 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
         </div>
         <Image
           src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
-          alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
+          alt=""
           width={96}
           height={96}
           className="sewp-vi-hero__nasa-logo"

@@ -1,24 +1,31 @@
 export type LeadEmailPayload = {
-  fullName: string;
   email: string;
-  organization: string;
+  firstName?: string;
+  lastName?: string;
+  companyName?: string;
+  jobTitle?: string;
   phone?: string;
-  timeline: string;
-  qualificationSummary: string;
+  message?: string;
 };
 
+function formatOptional(value: string | undefined) {
+  return value?.trim() || "Not provided";
+}
+
 function formatLeadEmailBody(payload: LeadEmailPayload): string {
+  const fullName = [payload.firstName, payload.lastName].filter(Boolean).join(" ").trim();
+
   return [
-    "New consultation lead submission",
+    "New contact form submission",
     "",
-    `Name: ${payload.fullName}`,
     `Email: ${payload.email}`,
-    `Organization: ${payload.organization}`,
-    `Phone: ${payload.phone?.trim() || "Not provided"}`,
-    `Timeline: ${payload.timeline}`,
+    `Name: ${fullName || "Not provided"}`,
+    `Company: ${formatOptional(payload.companyName)}`,
+    `Job title: ${formatOptional(payload.jobTitle)}`,
+    `Phone: ${formatOptional(payload.phone)}`,
     "",
-    "Qualification summary:",
-    payload.qualificationSummary
+    "Message:",
+    formatOptional(payload.message)
   ].join("\n");
 }
 
@@ -31,6 +38,8 @@ export async function sendLeadEmail(payload: LeadEmailPayload): Promise<void> {
     throw new Error("Lead email delivery is not configured");
   }
 
+  const subjectName = payload.companyName?.trim() || payload.email;
+
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -40,7 +49,7 @@ export async function sendLeadEmail(payload: LeadEmailPayload): Promise<void> {
     body: JSON.stringify({
       from,
       to: [to],
-      subject: `Consultation lead: ${payload.organization}`,
+      subject: `Contact form: ${subjectName}`,
       text: formatLeadEmailBody(payload)
     })
   });

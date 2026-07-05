@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NasaSewpViCompetencyIcon } from "./NasaSewpViCompetencyIcon";
@@ -12,8 +13,11 @@ type NasaSewpViCoreCompetenciesSectionProps = {
 
 type CompetencyItem = NasaSewpViPageContent["coreCompetencies"]["items"][number];
 
+type ScrollDirection = "prev" | "next" | "start" | "end";
+
 const HALF_CYCLE_MS = 48_000;
 const PING_PONG_PERIOD = HALF_CYCLE_MS * 2;
+const MARQUEE_ID = "sewp-vi-competencies-marquee";
 
 function pingPongPhase(elapsedMs: number): number {
   const elapsed = elapsedMs % PING_PONG_PERIOD;
@@ -43,6 +47,7 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
   const marqueeRef = useRef<HTMLDivElement>(null);
   const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 });
   const touchScrollingRef = useRef(false);
+  const keyboardFocusedRef = useRef(false);
   const autoScrollRef = useRef({
     cycleStart: 0,
     lastPhase: 0
@@ -80,6 +85,36 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
     autoScroll.lastPhase = ratio;
   }, [getMaxScroll]);
 
+  const scrollMarquee = useCallback(
+    (direction: ScrollDirection) => {
+      const marquee = marqueeRef.current;
+      if (!marquee) {
+        return;
+      }
+
+      const maxScroll = getMaxScroll();
+      const step = Math.max(marquee.clientWidth * 0.85, 200);
+
+      switch (direction) {
+        case "prev":
+          marquee.scrollLeft = Math.max(0, marquee.scrollLeft - step);
+          break;
+        case "next":
+          marquee.scrollLeft = Math.min(maxScroll, marquee.scrollLeft + step);
+          break;
+        case "start":
+          marquee.scrollLeft = 0;
+          break;
+        case "end":
+          marquee.scrollLeft = maxScroll;
+          break;
+      }
+
+      syncAnimationFromScroll();
+    },
+    [getMaxScroll, syncAnimationFromScroll]
+  );
+
   useEffect(() => {
     if (reduceMotion) {
       return;
@@ -95,7 +130,8 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
     let rafId = 0;
 
     const tick = (now: number) => {
-      const isPaused = dragState.current.active || touchScrollingRef.current;
+      const isPaused =
+        dragState.current.active || touchScrollingRef.current || keyboardFocusedRef.current;
 
       if (!isPaused) {
         const maxScroll = getMaxScroll();
@@ -173,9 +209,44 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
     }, 120);
   };
 
+  const handleMarqueeFocus = () => {
+    keyboardFocusedRef.current = true;
+  };
+
+  const handleMarqueeBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget;
+
+    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+      keyboardFocusedRef.current = false;
+      syncAnimationFromScroll();
+    }
+  };
+
+  const handleMarqueeKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case "ArrowLeft":
+        event.preventDefault();
+        scrollMarquee("prev");
+        break;
+      case "ArrowRight":
+        event.preventDefault();
+        scrollMarquee("next");
+        break;
+      case "Home":
+        event.preventDefault();
+        scrollMarquee("start");
+        break;
+      case "End":
+        event.preventDefault();
+        scrollMarquee("end");
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <section className="sewp-vi-competencies" aria-labelledby="sewp-vi-competencies-heading">
-
       <motion.div
         className="sewp-vi-competencies__inner"
         variants={containerVariants}
@@ -193,29 +264,59 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
       </motion.div>
 
       <motion.div
-        ref={marqueeRef}
-        className="sewp-vi-competencies__marquee"
+        className="sewp-vi-competencies__marquee-shell"
         variants={itemVariants}
         transition={itemTransition}
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        aria-label="Core competencies"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={endDrag}
-        onPointerCancel={endDrag}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onTouchCancel={handleTouchEnd}
+        onFocusCapture={handleMarqueeFocus}
+        onBlurCapture={handleMarqueeBlur}
       >
-        <div className="sewp-vi-competencies__marquee-track">
-          {section.items.map((item) => (
-            <div key={item.id} className="sewp-vi-competencies__marquee-item">
-              <CompetencyCard item={item} />
-            </div>
-          ))}
+        <button
+          type="button"
+          className="sewp-vi-competencies__marquee-btn sewp-vi-competencies__marquee-btn--prev"
+          aria-controls={MARQUEE_ID}
+          aria-label="Show previous core competencies"
+          onClick={() => scrollMarquee("prev")}
+        >
+          <ChevronLeft size={20} strokeWidth={2} aria-hidden="true" />
+        </button>
+
+        <div
+          ref={marqueeRef}
+          id={MARQUEE_ID}
+          className="sewp-vi-competencies__marquee"
+          role="region"
+          aria-labelledby="sewp-vi-competencies-heading"
+          tabIndex={0}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
+          onKeyDown={handleMarqueeKeyDown}
+        >
+          <div className="sewp-vi-competencies__marquee-track">
+            {section.items.map((item) => (
+              <div key={item.id} className="sewp-vi-competencies__marquee-item">
+                <CompetencyCard item={item} />
+              </div>
+            ))}
+          </div>
         </div>
+
+        <button
+          type="button"
+          className="sewp-vi-competencies__marquee-btn sewp-vi-competencies__marquee-btn--next"
+          aria-controls={MARQUEE_ID}
+          aria-label="Show next core competencies"
+          onClick={() => scrollMarquee("next")}
+        >
+          <ChevronRight size={20} strokeWidth={2} aria-hidden="true" />
+        </button>
       </motion.div>
     </section>
   );

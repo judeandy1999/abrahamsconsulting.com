@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
+import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { NasaSewpViCategoryAIcon } from "./NasaSewpViCategoryAIcon";
 import { IconArrowRight } from "./NavIcons";
 import { useMarketingMotionConfig } from "./marketing-motion";
@@ -36,10 +37,14 @@ function CapabilityColumn({ items }: { items: CapabilityItem[] }) {
 }
 
 function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]["items"][number] }) {
+  const vehicleLabel = `${item.title}${item.badge ? ` (${item.badge})` : ""}. ${item.description}`;
+  const isExternal = Boolean(item.href?.startsWith("http"));
+  const linkAriaLabel = isExternal ? accessibleExternalLinkLabel(vehicleLabel) : vehicleLabel;
+
   const content = (
     <>
-      <span className="sewp-vi-cap-veh__vehicle-logo-wrap" aria-hidden="true">
-        <Image src={item.logoSrc} alt="" width={88} height={88} className="sewp-vi-cap-veh__vehicle-logo" />
+      <span className="sewp-vi-cap-veh__vehicle-logo-wrap">
+        <Image src={item.logoSrc} alt="" aria-hidden="true" width={88} height={88} className="sewp-vi-cap-veh__vehicle-logo" />
       </span>
       <span className="sewp-vi-cap-veh__vehicle-copy">
         <span className="sewp-vi-cap-veh__vehicle-title">{item.title}</span>
@@ -53,8 +58,6 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
   );
 
   if (item.href) {
-    const isExternal = item.href.startsWith("http");
-
     if (isExternal) {
       return (
         <a
@@ -62,6 +65,7 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
           className="sewp-vi-cap-veh__vehicle-card sewp-vi-cap-veh__vehicle-card--link"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={linkAriaLabel}
         >
           {content}
         </a>
@@ -69,7 +73,11 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
     }
 
     return (
-      <Link href={item.href} className="sewp-vi-cap-veh__vehicle-card sewp-vi-cap-veh__vehicle-card--link">
+      <Link
+        href={item.href}
+        className="sewp-vi-cap-veh__vehicle-card sewp-vi-cap-veh__vehicle-card--link"
+        aria-label={linkAriaLabel}
+      >
         {content}
       </Link>
     );
@@ -87,7 +95,7 @@ export function NasaSewpViCapabilitiesVehiclesSection({
   const rightCapabilities = capabilities.items.slice(CAPABILITY_COLUMN_SPLIT);
 
   return (
-    <section className="sewp-vi-cap-veh" aria-labelledby="sewp-vi-category-a-heading">
+    <div className="sewp-vi-cap-veh">
       <motion.div
         className="sewp-vi-cap-veh__inner"
         variants={containerVariants}
@@ -95,7 +103,12 @@ export function NasaSewpViCapabilitiesVehiclesSection({
         whileInView="visible"
         viewport={viewport}
       >
-        <motion.div className="sewp-vi-cap-veh__capabilities" variants={itemVariants} transition={itemTransition}>
+        <motion.section
+          className="sewp-vi-cap-veh__capabilities"
+          aria-labelledby="sewp-vi-category-a-heading"
+          variants={itemVariants}
+          transition={itemTransition}
+        >
           <header className="sewp-vi-cap-veh__header">
             <p className="sewp-vi-cap-veh__eyebrow">{capabilities.eyebrow}</p>
             <h2 id="sewp-vi-category-a-heading" className="sewp-vi-cap-veh__title">
@@ -108,13 +121,13 @@ export function NasaSewpViCapabilitiesVehiclesSection({
             <CapabilityColumn items={leftCapabilities} />
             <CapabilityColumn items={rightCapabilities} />
           </div>
-        </motion.div>
+        </motion.section>
 
-        <motion.div
+        <motion.section
           className="sewp-vi-cap-veh__vehicles"
+          aria-labelledby="sewp-vi-vehicles-heading"
           variants={itemVariants}
           transition={itemTransition}
-          aria-labelledby="sewp-vi-vehicles-heading"
         >
           <header className="sewp-vi-cap-veh__header">
             <p className="sewp-vi-cap-veh__eyebrow">{vehicles.eyebrow}</p>
@@ -131,8 +144,8 @@ export function NasaSewpViCapabilitiesVehiclesSection({
               </li>
             ))}
           </ul>
-        </motion.div>
+        </motion.section>
       </motion.div>
-    </section>
+    </div>
   );
 }

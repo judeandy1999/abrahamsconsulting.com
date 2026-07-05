@@ -1,15 +1,14 @@
+import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-
-type OrderingGuide = NonNullable<NasaSewpViPageContent["resources"]["orderingGuide"]>;
+import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 
 type NasaSewpViOrderingGuideCardProps = {
-  guide: OrderingGuide;
-  className?: string;
+  section: NasaSewpViPageContent["electronicOrderingGuide"];
 };
 
 function IconDownload() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M12 3v10m0 0 4-4m-4 4-4-4M5 19h14"
         stroke="currentColor"
@@ -21,32 +20,40 @@ function IconDownload() {
   );
 }
 
-export function NasaSewpViOrderingGuideCard({ guide, className }: NasaSewpViOrderingGuideCardProps) {
-  const cardClassName = ["sewp-vi-ordering-guide", className].filter(Boolean).join(" ");
-
-  if (guide.isAvailable) {
-    return (
-      <a
-        href={guide.href}
-        className={`${cardClassName} sewp-vi-ordering-guide--available`}
-        download
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span className="sewp-vi-ordering-guide__icon" aria-hidden="true">
-          <IconDownload />
-        </span>
-        <span className="sewp-vi-ordering-guide__label">{guide.label}</span>
-      </a>
-    );
-  }
+export function NasaSewpViOrderingGuideCard({ section }: NasaSewpViOrderingGuideCardProps) {
+  const { download, accessibility } = section;
+  const orderingGuideAvailable = download.isAvailable === true;
+  const vpatAvailable = accessibility.vpat.isAvailable === true;
 
   return (
-    <div className={`${cardClassName} sewp-vi-ordering-guide--coming-soon`} aria-disabled="true">
-      <span className="sewp-vi-ordering-guide__icon" aria-hidden="true">
-        <IconDownload />
-      </span>
-      <span className="sewp-vi-ordering-guide__label">{guide.comingSoonLabel}</span>
-    </div>
+    <article className="sewp-vi-ordering-guide" aria-labelledby="sewp-vi-ordering-guide-download-heading">
+      <div className="sewp-vi-ordering-guide__visual">
+        <Image
+          src={download.illustrationSrc}
+          alt={download.illustrationAlt}
+          width={200}
+          height={200}
+          className="sewp-vi-ordering-guide__illustration"
+        />
+      </div>
+
+      <div className="sewp-vi-ordering-guide__body">
+        <h3 id="sewp-vi-ordering-guide-download-heading" className="sewp-vi-ordering-guide__title">
+          {download.title}
+        </h3>
+        <p className="sewp-vi-ordering-guide__description">{download.description}</p>
+
+        <a
+          href={download.href}
+          className="btn btn--primary sewp-vi-ordering-guide__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={accessibleExternalLinkLabel(download.downloadLabel)}
+        >
+          <IconDownload />
+          {download.downloadLabel}
+        </a>
+      </div>
+    </article>
   );
 }

@@ -65,7 +65,7 @@ export default function TrustPage() {
         <MarketingMotionItem>
           <p>
             Explore <Link href="/services">service capabilities</Link> or{" "}
-            <Link href="/consultation">start a consultation</Link> after reviewing qualification signals.
+            <Link href="/contact-us">start a consultation</Link> after reviewing qualification signals.
           </p>
         </MarketingMotionItem>
 

@@ -58,17 +58,17 @@ export const launchPageSeoContent = [
       "Review certifications, qualification signals, case snapshots, and partner indicators before engaging Abrahams Consulting."
   },
   {
-    routeKey: "consultation",
-    path: "/consultation",
-    title: "Request a Consultation",
+    routeKey: "contact-us",
+    path: "/contact-us",
+    title: "Contact Us",
     description:
-      "Start a consultation to align Abrahams Consulting services and contract vehicles with your mission priorities and procurement context."
+      "Contact Abrahams Consulting about NASA SEWP VI, solutions, and agency support. Reach our team by email, phone, or the contact form."
   },
   {
-    routeKey: "consultation-success",
-    path: "/consultation/success",
-    title: "Consultation Request Received",
+    routeKey: "contact-us-success",
+    path: "/contact-us/success",
+    title: "Message Received",
     description:
-      "Your consultation request was received. Abrahams Consulting will review your submission and follow up with next steps."
+      "Your message was received. Abrahams Consulting will review your submission and follow up with next steps."
   }
 ] as const satisfies readonly LaunchPageSeo[];

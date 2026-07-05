@@ -25,7 +25,7 @@ function CompanyInfoColumn({ items }: { items: CompanyInfoItem[] }) {
             <dt className="sewp-vi-company-info__label">{item.label}</dt>
             <dd className="sewp-vi-company-info__value">
               {item.href ? (
-                <a href={item.href} className="sewp-vi-company-info__link">
+                <a href={item.href} className="sewp-vi-company-info__link" aria-label={`${item.label}: ${item.value}`}>
                   {item.value}
                 </a>
               ) : (

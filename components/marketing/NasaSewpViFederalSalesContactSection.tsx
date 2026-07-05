@@ -3,6 +3,7 @@
 import { Headset, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
+import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { IconArrowRight } from "./NavIcons";
 import { pillarIconProps } from "./pillarIconProps";
 import { useMarketingMotionConfig } from "./marketing-motion";
@@ -40,9 +41,13 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
               </header>
 
               <div className="sewp-vi-federal-contact__actions">
-                <a href={federalMailto} className="btn btn--primary sewp-vi-federal-contact__cta">
+                <a
+                  href={federalMailto}
+                  className="btn btn--primary sewp-vi-federal-contact__cta"
+                  aria-label={`${section.ctaLabel} via email`}
+                >
                   {section.ctaLabel}
-                  <IconArrowRight className="btn__icon" />
+                  <IconArrowRight className="btn__icon" aria-hidden="true" />
                 </a>
               </div>
             </motion.div>
@@ -54,7 +59,7 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
                 </span>
                 <div className="sewp-vi-federal-contact__method-copy">
                   <p className="sewp-vi-federal-contact__method-label">Email</p>
-                  <a href={federalMailto} className="sewp-vi-federal-contact__method-value">
+                  <a href={federalMailto} className="sewp-vi-federal-contact__method-value" aria-label={`Email Federal Sales at ${section.email}`}>
                     {section.email}
                   </a>
                 </div>
@@ -68,7 +73,11 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
                   <p className="sewp-vi-federal-contact__method-label">Phone</p>
                   <div className="sewp-vi-federal-contact__method-value">
                     {section.phones.map((phone) => (
-                      <a key={phone} href={`tel:${phone.replace(/[^\d+]/g, "")}`}>
+                      <a
+                        key={phone}
+                        href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                        aria-label={`Call Federal Sales at ${phone}`}
+                      >
                         {phone}
                       </a>
                     ))}

@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           <h1>{service.title}</h1>
           <p>{service.summary}</p>
           <div className="marketing-main__actions">
-            <Link href="/consultation">{service.consultationCtaLabel}</Link>
+            <Link href="/contact-us">{service.consultationCtaLabel}</Link>
             <Link href="/contracts">{service.procurementLinkText}</Link>
             <Link href="/services">Back to all services</Link>
             <Link href="/trust">Review trust credentials</Link>

@@ -3,14 +3,13 @@ import type { NasaSewpViPageContent } from "./schema";
 /** Replace PDFs in public/documents/nasa-sewp-vi/ — no code changes required when files are added. */
 export const NASA_SEWP_VI_DOCUMENTS = {
   capabilityStatement: "/documents/nasa-sewp-vi/capability-statement.pdf",
-  orderingGuide: "/documents/nasa-sewp-vi/ordering-guide.pdf"
+  orderingGuide: "/documents/nasa-sewp-vi/ordering-guide.pdf",
+  orderingGuideVpat: "/documents/nasa-sewp-vi/ordering-guide-vpat.pdf"
 } as const;
 
 export const NASA_SEWP_VI_HERO_ASSETS = {
   visualImageSrc: "/images/nasa-sewp-vi/hero-visual.webp",
-  visualImageAlt: "Earth at night with a digital network overlay representing global connectivity",
-  nasaLogoSrc: "/images/nasa-sewp-vi/nasa-logo.svg",
-  nasaLogoAlt: "NASA"
+  nasaLogoSrc: "/images/nasa-sewp-vi/nasa-logo.svg"
 } as const;
 
 export const NASA_SEWP_VI_OVERVIEW_ASSETS = {
@@ -23,6 +22,21 @@ export const NASA_SEWP_VI_WHY_ASSETS = {
 
 export const NASA_SEWP_VI_COMPETENCIES_ASSETS = {
   backgroundImageSrc: "/images/nasa-sewp-vi/contract-overview-bg.webp"
+} as const;
+
+export const NASA_SEWP_VI_EORDERING_ASSETS = {
+  documentIllustrationSrc: "/images/nasa-sewp-vi/ordering-guide-document.webp",
+  documentIllustrationAlt: "SEWP VI Electronic Ordering Guide PDF download"
+} as const;
+
+export const NASA_SEWP_VI_GWAC_ASSETS = {
+  headerGraphicSrc: "/images/nasa-sewp-vi/gwac-shield-graphic.webp",
+  headerGraphicAlt: "NASA SEWP VI GWAC contract identification"
+} as const;
+
+export const NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS = {
+  headerGraphicSrc: "/images/nasa-sewp-vi/fair-opportunity-document-graphic.webp",
+  headerGraphicAlt: "NASA SEWP VI Fair Opportunity Clause reference"
 } as const;
 
 export const NASA_SEWP_VI_CERTIFICATION_LOGOS = {
@@ -287,7 +301,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         badge: "Prime Contractor",
         description: "Strategic, enterprise-wide solutions for federal agencies through NASA SEWP VI.",
         logoSrc: "/images/nasa-sewp-vi/nasa-logo.svg",
-        logoAlt: "NASA",
+        logoAlt: "NASA SEWP VI contract vehicle",
         href: "#sewp-vi-overview-heading"
       },
       {
@@ -296,17 +310,190 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         description:
           "Authorized contract holder delivering IT solutions to New York State agencies and public entities.",
         logoSrc: "/images/nasa-sewp-vi/nys-seal.svg",
-        logoAlt: "New York State",
+        logoAlt: "New York State OGS contract vehicle",
         href: "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
       }
     ]
   },
-  orderingProcess: {
-    title: "Ordering Through NASA SEWP VI",
-    steps: [
-      { id: "contact", description: "Contact Abrahams Consulting's Federal Sales Team." },
-      { id: "quote", description: "Request a quote through NASA SEWP VI." },
-      { id: "procure", description: "Procure eligible IT products through the SEWP ordering process." }
+  electronicOrderingGuide: {
+    title: "Electronic Ordering Guide",
+    intro:
+      "Our Electronic Ordering Guide provides federal agencies with step-by-step instructions for placing orders through the NASA SEWP VI contract with Abrahams Consulting LLC.",
+    download: {
+      title: "Download the Ordering Guide",
+      description: "Access the official SEWP VI Electronic Ordering Guide in PDF format.",
+      downloadLabel: "Download PDF",
+      comingSoonLabel: "Coming Soon",
+      href: NASA_SEWP_VI_DOCUMENTS.orderingGuide,
+      illustrationSrc: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationSrc,
+      illustrationAlt: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationAlt
+    },
+    accessibility: {
+      title: "Section 508 Accessibility",
+      description:
+        "The Electronic Ordering Guide PDF is published as a Section 508-compliant document for federal accessibility requirements.",
+      requirements: [
+        "Tagged PDF with semantic structure",
+        "Logical reading order throughout the document",
+        "Alternative text on all meaningful images",
+        "Document bookmarks for major sections"
+      ],
+      vpat: {
+        title: "Accessibility Conformance Report (VPAT)",
+        description:
+          "Review the Voluntary Product Accessibility Template (VPAT) Accessibility Conformance Report (ACR) for the Electronic Ordering Guide.",
+        downloadLabel: "Download VPAT ACR",
+        comingSoonLabel: "VPAT ACR coming soon",
+        href: NASA_SEWP_VI_DOCUMENTS.orderingGuideVpat
+      }
+    }
+  },
+  gwacIdentificationStatement: {
+    title: "GWAC Identification Statement",
+    intro:
+      "Abrahams Consulting LLC is an awardee of the NASA Solutions for Enterprise-Wide Procurement VI (SEWP VI) contract, a multiple-award Government-Wide Acquisition Contract (GWAC) managed by NASA.",
+    headerGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
+    headerGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
+    whatIsGwac: {
+      title: "What is a GWAC?",
+      description:
+        "A Government-Wide Acquisition Contract (GWAC) is a long-term, multi-award contract vehicle that federal agencies can use to streamline the procurement of commercial products and services.",
+      highlights: [
+        "Available to all Federal Agencies",
+        "Streamlined Procurement Process",
+        "Vetted & Pre-Competed Solutions"
+      ]
+    },
+    commitment: {
+      title: "Our Commitment",
+      description:
+        "As a SEWP VI contract holder, Abrahams Consulting LLC delivers best-in-class solutions through a compliant, efficient, and customer-focused procurement process."
+    },
+    facts: [
+      {
+        id: "contract-vehicle",
+        icon: "globe",
+        label: "Contract Vehicle",
+        value: "NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)"
+      },
+      {
+        id: "contract-period",
+        icon: "calendar",
+        label: "Contract Period",
+        value: "May 1, 2025 – April 30, 2035"
+      },
+      {
+        id: "contract-type",
+        icon: "users",
+        label: "Contract Type",
+        value: "Government-Wide Acquisition Contract (GWAC)"
+      }
+    ]
+  },
+  fairOpportunityClause: {
+    title: "Fair Opportunity Clause",
+    titleAccentWord: "Fair",
+    intro:
+      "The Fair Opportunity Clause below is from the NASA SEWP VI contract. It is posted verbatim as required by the contract.",
+    headerGraphicSrc: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicSrc,
+    headerGraphicAlt: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicAlt,
+    clause: {
+      label: "FAIR OPPORTUNITY CLAUSE",
+      badgeGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
+      badgeGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+        "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      ]
+    }
+  },
+  programManagerContact: {
+    titlePrimary: "Program Manager",
+    titleSecondary: "Contact Information",
+    intro:
+      "For questions about the SEWP VI contract, product offerings, orders, or general inquiries, please contact our Program Manager.",
+    helpCallout: {
+      title: "We're Here to Help",
+      description: "Our Program Manager is your primary point of contact for all SEWP VI related matters."
+    },
+    details: [
+      {
+        id: "office-hours",
+        icon: "clock",
+        label: "Office Hours",
+        value: "Monday – Friday | 8:00 AM – 5:00 PM ET"
+      },
+      {
+        id: "contract",
+        icon: "globe",
+        label: "Contract",
+        value: "NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)"
+      },
+      {
+        id: "address",
+        icon: "map-pin",
+        label: "Address",
+        value: "172-61 Highland Ave\nJamaica, NY 11432"
+      }
+    ],
+    profile: {
+      name: "Full Name",
+      role: "PROGRAM MANAGER",
+      contacts: [
+        {
+          id: "direct-phone",
+          icon: "phone",
+          label: "Direct Phone",
+          value: "(000) 000-0000",
+          href: "tel:+10000000000"
+        },
+        {
+          id: "mobile-phone",
+          icon: "smartphone",
+          label: "Mobile Phone",
+          value: "(000) 000-0000",
+          href: "tel:+10000000000"
+        },
+        {
+          id: "email",
+          icon: "mail",
+          label: "Email Address",
+          value: "federal.sales@abrahamsconsulting.com",
+          href: "mailto:federal.sales@abrahamsconsulting.com"
+        },
+        {
+          id: "company",
+          icon: "building",
+          label: "Company",
+          value: "Abrahams Consulting LLC"
+        }
+      ]
+    }
+  },
+  externalResourceLinks: {
+    heading: "External Resources",
+    cards: [
+      {
+        id: "nasa-sewp-homepage",
+        title: "Visit the NASA SEWP Homepage",
+        description:
+          "Learn more about the NASA Solutions for Enterprise-Wide Procurement (SEWP VI) contract, contract details, news, and valuable resources for federal agencies.",
+        ctaLabel: "Go to sewp.nasa.gov",
+        href: "https://www.sewp.nasa.gov",
+        redirectNote: "You will be redirected to the official NASA SEWP website."
+      },
+      {
+        id: "abrahams-corporate-homepage",
+        title: "Visit Abrahams Consulting Corporate Homepage",
+        description:
+          "Explore our corporate website to learn more about Abrahams Consulting LLC, our solutions, capabilities, and commitment to delivering exceptional value.",
+        ctaLabel: "Visit abrahamsconsulting.com",
+        href: "https://abrahamsconsulting.com",
+        redirectNote: "You will be redirected to the Abrahams Consulting website."
+      }
     ]
   },
   pastPerformance: {
@@ -411,11 +598,6 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     capabilityStatement: {
       label: "Capability Statement (PDF)",
       href: NASA_SEWP_VI_DOCUMENTS.capabilityStatement
-    },
-    orderingGuide: {
-      label: "Ordering Guide (PDF)",
-      comingSoonLabel: "Ordering Guide (Coming Soon)",
-      href: NASA_SEWP_VI_DOCUMENTS.orderingGuide
     }
   },
   federalSalesContact: {

@@ -100,6 +100,7 @@ export function MainNav({ site }: MainNavProps) {
         <button
           type="button"
           className="main-nav__toggle"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls={menuId}
           onClick={() => setMenuOpen((open) => !open)}
@@ -113,7 +114,7 @@ export function MainNav({ site }: MainNavProps) {
         </button>
 
         <div id={menuId} className={`main-nav__panel${menuOpen ? " is-open" : ""}`}>
-          <nav aria-label="Marketing primary navigation" className="main-nav__links">
+          <nav id="site-navigation" aria-label="Marketing primary navigation" className="main-nav__links">
             <ul>
               {site.navigation.map((item) => {
                 const itemKey = `${item.href}-${item.label}`;

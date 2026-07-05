@@ -17,13 +17,14 @@ test("schema defines trust content with certifications, case snapshots, and part
   assert.match(source, /imageSrc|imageAlt|imageWidth|imageHeight/);
 });
 
-test("schema defines consultation qualification field metadata", async () => {
+test("schema defines contact page HubSpot form metadata", async () => {
   const schemaSource = await readFile(SCHEMA_FILE, "utf8");
   const siteSource = await readFile(SITE_FILE, "utf8");
 
-  assert.match(schemaSource, /consultationFormSchema|consultationFieldSchema/);
-  assert.match(schemaSource, /honeypotFieldName/);
-  assert.match(siteSource, /qualificationSummary|organization/);
+  assert.match(schemaSource, /hubspotFormSchema|contactPageSchema/);
+  assert.match(schemaSource, /portalId|formId|region/);
+  assert.match(siteSource, /hubspotForm/);
+  assert.match(siteSource, /44647552|7b2491d8-74db-49db-b377-eae6eccdd2fe/);
 });
 
 test("trust content module provides certifications and at least two case snapshots", async () => {
@@ -46,14 +47,13 @@ test("trust content includes performance-safe partner indicator metadata", async
   assert.match(source, /imageHeight/);
 });
 
-test("site content exposes consultation form field definitions", async () => {
+test("site content exposes HubSpot contact form configuration", async () => {
   const source = await readFile(SITE_FILE, "utf8");
 
-  assert.match(source, /consultationForm/);
-  assert.match(source, /fields:\s*\[/);
-  assert.match(source, /honeypotFieldName/);
-  assert.match(source, /email/);
-  assert.match(source, /organization/);
+  assert.match(source, /hubspotForm/);
+  assert.match(source, /portalId:\s*"44647552"/);
+  assert.match(source, /formId:\s*"7b2491d8-74db-49db-b377-eae6eccdd2fe"/);
+  assert.match(source, /region:\s*"na1"/);
 });
 
 test("marketing content loader wires trust dataset", async () => {

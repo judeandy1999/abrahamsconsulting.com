@@ -2,19 +2,27 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const CONSULTATION_PAGE = "app/(marketing)/consultation/page.tsx";
-const SUCCESS_PAGE = "app/(marketing)/consultation/success/page.tsx";
+const HUBSPOT_FORM = "components/marketing/HubSpotContactForm.tsx";
+const CONSULTATION_PAGE = "components/marketing/ContactUsPageContent.tsx";
+const SUCCESS_PAGE = "app/(marketing)/contact-us/success/page.tsx";
 const LEAD_ROUTE = "app/api/lead/route.ts";
 const SEND_EMAIL = "lib/lead/send-lead-email.ts";
 const ENV_EXAMPLE = ".env.example";
 
-test("consultation page posts qualified form to lead API", async () => {
-  const source = await readFile(CONSULTATION_PAGE, "utf8");
+test("contact page embeds HubSpot form with portal and form ids", async () => {
+  const pageSource = await readFile(CONSULTATION_PAGE, "utf8");
+  const hubspotSource = await readFile(HUBSPOT_FORM, "utf8");
 
-  assert.match(source, /action="\/api\/lead"|action=\{\s*"\/api\/lead"\s*\}/);
-  assert.match(source, /method="POST"|method=\{\s*"POST"\s*\}/);
-  assert.match(source, /consultationForm|loadMarketingContent/);
-  assert.match(source, /organization|qualificationSummary/);
+  assert.match(pageSource, /HubSpotContactForm|hubspotForm/);
+  assert.match(pageSource, /contactPage|loadMarketingContent/);
+  assert.match(hubspotSource, /hbspt\.forms\.create/);
+  assert.match(hubspotSource, /portalId|formId|region/);
+});
+
+test("HubSpot embed loads the official forms script", async () => {
+  const source = await readFile(HUBSPOT_FORM, "utf8");
+
+  assert.match(source, /js\.hsforms\.net\/forms\/embed\/v2\.js/);
 });
 
 test("lead API validates submissions and applies honeypot anti-spam", async () => {
@@ -29,7 +37,7 @@ test("lead API validates submissions and applies honeypot anti-spam", async () =
 test("lead API routes successful submissions to consultation success", async () => {
   const source = await readFile(LEAD_ROUTE, "utf8");
 
-  assert.match(source, /consultation\/success|\/consultation\/success/);
+  assert.match(source, /contact-us\/success|\/contact-us\/success/);
 });
 
 test("email delivery adapter keeps secrets server-side", async () => {

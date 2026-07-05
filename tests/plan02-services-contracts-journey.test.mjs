@@ -40,12 +40,12 @@ test("service detail route supports static params and consultation CTA", async (
   const source = await readFile(SERVICE_DETAIL_FILE, "utf8");
 
   assert.match(source, /export async function generateStaticParams\(\)/);
-  assert.match(source, /href="\/consultation"/);
+  assert.match(source, /href="\/contact-us"/);
 });
 
 test("contracts route links to services and consultation journeys", async () => {
   const source = await readFile(CONTRACTS_FILE, "utf8");
 
   assert.match(source, /href="\/services"/);
-  assert.match(source, /href="\/consultation"/);
+  assert.match(source, /href="\/contact-us"/);
 });

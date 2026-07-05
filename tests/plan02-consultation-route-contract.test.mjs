@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const CONSULTATION_ROUTE_FILE = "app/(marketing)/consultation/page.tsx";
+const CONSULTATION_ROUTE_FILE = "app/(marketing)/contact-us/page.tsx";
 const SITEMAP_FILE = "app/sitemap.ts";
 const SEO_ROUTES_FILE = "lib/seo/routes.ts";
 const SEO_CONTENT_FILE = "src/content/seo.ts";
@@ -11,7 +11,7 @@ test("consultation route is static and exports registry-backed metadata", async 
   const source = await readFile(CONSULTATION_ROUTE_FILE, "utf8");
 
   assert.match(source, /export const dynamic = "force-static";/);
-  assert.match(source, /getStaticPageSeo\("\/consultation"\)/);
+  assert.match(source, /getStaticPageSeo\("\/contact-us"\)/);
   assert.match(source, /buildMarketingMetadata/);
 });
 
@@ -22,5 +22,5 @@ test("marketing sitemap includes consultation route", async () => {
 
   assert.match(sitemapSource, /getLaunchSitemapEntries/);
   assert.match(routesSource, /getLaunchRoutePaths/);
-  assert.match(seoContentSource, /path:\s*"\/consultation"/);
+  assert.match(seoContentSource, /path:\s*"\/contact-us"/);
 });

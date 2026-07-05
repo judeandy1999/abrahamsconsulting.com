@@ -7,9 +7,14 @@ import { NasaSewpViCapabilitiesVehiclesSection } from "./NasaSewpViCapabilitiesV
 import { NasaSewpViCertificationsSection } from "./NasaSewpViCertificationsSection";
 import { NasaSewpViCompanyInformationSection } from "./NasaSewpViCompanyInformationSection";
 import { NasaSewpViContractOverviewSection } from "./NasaSewpViContractOverviewSection";
+import { NasaSewpViElectronicOrderingGuideSection } from "./NasaSewpViElectronicOrderingGuideSection";
+import { NasaSewpViExternalResourceLinksSection } from "./NasaSewpViExternalResourceLinksSection";
+import { NasaSewpViFairOpportunityClauseSection } from "./NasaSewpViFairOpportunityClauseSection";
+import { NasaSewpViGwacIdentificationSection } from "./NasaSewpViGwacIdentificationSection";
 import { NasaSewpViCoreCompetenciesSection } from "./NasaSewpViCoreCompetenciesSection";
 import { NasaSewpViFederalSalesContactSection } from "./NasaSewpViFederalSalesContactSection";
 import { NasaSewpViPastPerformanceSection } from "./NasaSewpViPastPerformanceSection";
+import { NasaSewpViProgramManagerContactSection } from "./NasaSewpViProgramManagerContactSection";
 import { NasaSewpViWhyChooseSection } from "./NasaSewpViWhyChooseSection";
 
 type NasaSewpViBodyProps = {
@@ -21,7 +26,17 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
     <>
       <NasaSewpViContractOverviewSection section={content.contractOverview} />
 
+      <NasaSewpViElectronicOrderingGuideSection section={content.electronicOrderingGuide} />
+
+      <NasaSewpViGwacIdentificationSection section={content.gwacIdentificationStatement} />
+
+      <NasaSewpViFairOpportunityClauseSection section={content.fairOpportunityClause} />
+
       <NasaSewpViAboutSewpSection section={content.aboutSewp} />
+
+      <NasaSewpViProgramManagerContactSection section={content.programManagerContact} />
+
+      <NasaSewpViExternalResourceLinksSection section={content.externalResourceLinks} />
 
       <NasaSewpViAboutCompanySection section={content.aboutCompany} />
 
@@ -34,7 +49,7 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         vehicles={content.contractVehicles}
       />
 
-      <NasaSewpViPastPerformanceSection section={content.pastPerformance} />
+      {/*<NasaSewpViPastPerformanceSection section={content.pastPerformance} />*/}
 
       <NasaSewpViCompanyInformationSection section={content.companyInformation} />
 

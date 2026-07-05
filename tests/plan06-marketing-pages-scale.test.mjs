@@ -7,8 +7,8 @@ const MARKETING_PAGES = [
   "app/(marketing)/services/[slug]/page.tsx",
   "app/(marketing)/contracts/page.tsx",
   "app/(marketing)/trust/page.tsx",
-  "app/(marketing)/consultation/page.tsx",
-  "app/(marketing)/consultation/success/page.tsx",
+  "app/(marketing)/contact-us/page.tsx",
+  "app/(marketing)/contact-us/success/page.tsx",
   "app/(marketing)/about/page.tsx"
 ];
 
