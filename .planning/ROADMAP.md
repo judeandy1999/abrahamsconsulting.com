@@ -20,15 +20,14 @@ Milestone v1.4 adds the **Electronic Ordering Guide** section to `/nasa-sewp-vi`
 **Requirements**: EOG-01 through EOG-08
 **Success Criteria** (what must be TRUE):
   1. User scrolls past Contract Overview on `/nasa-sewp-vi` and sees the Electronic Ordering Guide section with title, intro, and four feature bullets.
-  2. User sees a download card with Last Updated, Version, and a working **Download PDF** button when `ordering-guide.pdf` exists in `public/documents/nasa-sewp-vi/`.
+  2. User sees a download card with card title, supporting text, and a working **Download PDF** button when `ordering-guide.pdf` exists in `public/documents/nasa-sewp-vi/` (no Last Updated/Version rows per D-09).
   3. User sees a clear coming-soon/disabled state when the PDF file is absent — no 404 download link.
-  4. Layout matches the approved mockup on desktop (two columns) and stacks cleanly on mobile.
+  4. Layout matches the approved mockup on desktop (two columns) and stacks cleanly on mobile (download card first).
   5. Content passes `npm run content:check`, typecheck, lint, and production build.
-**Plans** (to be created via `/gsd-plan-phase 9`):
-  1. Content schema + `electronicOrderingGuide` module in `nasa-sewp-vi.ts` (title, intro, features, card copy, lastUpdated, version)
-  2. `NasaSewpViElectronicOrderingGuideSection` component (left feature list + right download card; extend/replace stub card)
-  3. Wire into `NasaSewpViBody` after `NasaSewpViContractOverviewSection`; CSS in `globals.css`; remove or consolidate duplicate `orderingProcess` / resources ordering UI if redundant
-**Status**: Not started
+**Plans:** 1 plan
+Plans:
+- [ ] 09-01-PLAN.md — Content schema, section component, download card, CSS, and body wiring for Electronic Ordering Guide
+**Status**: Planned
 
 ### Phase 8: NASA SEWP VI Federal Contract Page
 **Goal**: Federal buyers and NASA SEWP PMO reviewers can access accurate Abrahams Consulting SEWP VI Prime contract information, download resources, and contact federal sales.
@@ -48,7 +47,7 @@ Milestone v1.4 adds the **Electronic Ordering Guide** section to `/nasa-sewp-vi`
 | 6. Marketing Pages Scale & Quality Verification | 1/1 | Complete | 2026-06-01 |
 | 7. Executive Recruiting Hiring Profiles | — | Complete | 2026-06-23 |
 | 8. NASA SEWP VI Federal Contract Page | — | Complete | 2026-06-23 |
-| 9. NASA SEWP VI Electronic Ordering Guide | 0/1 | Not started | — |
+| 9. NASA SEWP VI Electronic Ordering Guide | 0/1 | Planned | — |
 
 ## v1.0 Archive
 
