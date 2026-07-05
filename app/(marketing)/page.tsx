@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import "../styles/pages/home-sections.css";
 import { AwardBanner } from "../../components/marketing/AwardBanner";
-import { HomeAboutSection } from "../../components/marketing/HomeAboutSection";
 import { HomeCertificationBar } from "../../components/marketing/HomeCertificationBar";
-import { HomeConsultingServicesSection } from "../../components/marketing/HomeConsultingServicesSection";
-import { HomeFederalCapabilitiesSection } from "../../components/marketing/HomeFederalCapabilitiesSection";
 import { HomeHero } from "../../components/marketing/HomeHero";
+import { HomeAboutSection } from "../../components/marketing/HomeAboutSection";
+import { HomeFederalCapabilitiesSection } from "../../components/marketing/HomeFederalCapabilitiesSection";
 import { HomeSolutionsSection } from "../../components/marketing/HomeSolutionsSection";
+import { HomeConsultingServicesSection } from "../../components/marketing/HomeConsultingServicesSection";
 import { HomeWhyChooseSection } from "../../components/marketing/HomeWhyChooseSection";
 import { loadMarketingContent } from "../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../lib/seo/metadata";
@@ -17,12 +17,26 @@ export const dynamic = "force-static";
 export const metadata: Metadata = buildMarketingMetadata(getStaticPageSeo("/")!);
 
 export default function HomePage() {
-  const { site, services, contracts } = loadMarketingContent();
-  const featuredServices = services.slice(0, 2);
-  const featuredContracts = contracts.slice(0, 2);
+  const { site } = loadMarketingContent();
 
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        href="/images/hero-logo-mobile.webp"
+        type="image/webp"
+        media="(max-width: 960px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/hero-logo.webp"
+        type="image/webp"
+        media="(min-width: 961px)"
+        fetchPriority="high"
+      />
       <main id="main-content" className="marketing-main">
         <AwardBanner site={site} />
         <HomeHero site={site} />

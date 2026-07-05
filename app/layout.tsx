@@ -1,4 +1,3 @@
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -25,10 +24,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body className={inter.variable}>
         <script dangerouslySetInnerHTML={{ __html: BFCACHE_RECOVERY_SCRIPT }} />
-        <AppRouterCacheProvider>
-          {children}
-          <SpeedInsights />
-        </AppRouterCacheProvider>
+        {children}
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+import "../styles/marketing-responsive.css";
 import { MarketingFooter } from "../../components/marketing/MarketingFooter";
 import { MarketingHeader } from "../../components/marketing/MarketingHeader";
 import { JsonLdScript } from "../../components/seo/JsonLdScript";

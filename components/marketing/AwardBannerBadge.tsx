@@ -1,11 +1,10 @@
-"use client";
-
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import { Trophy } from "lucide-react";
+import { pillarIconProps } from "./pillarIconProps";
 
 type AwardBannerBadgeProps = {
   className?: string;
 };
 
 export function AwardBannerBadge({ className }: AwardBannerBadgeProps) {
-  return <EmojiEventsIcon className={className} fontSize="inherit" aria-hidden />;
+  return <Trophy {...pillarIconProps} className={className} aria-hidden />;
 }

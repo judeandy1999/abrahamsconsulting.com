@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../styles/pages/marketing-secondary.css";
 import { ConsultingServicesPackageSection } from "../../../components/marketing/ConsultingServicesPackageSection";
 import { ConsultingServicesSection } from "../../../components/marketing/ConsultingServicesSection";
 import { SolutionsHero } from "../../../components/marketing/SolutionsHero";

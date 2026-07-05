@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../styles/pages/marketing-secondary.css";
 import { ExecutiveRecruitingHero } from "../../../components/marketing/ExecutiveRecruitingHero";
 import { ExecutiveRecruitingHiringCta } from "../../../components/marketing/ExecutiveRecruitingHiringCta";
 import { ExecutiveRecruitingHiringProfilesSection } from "../../../components/marketing/ExecutiveRecruitingHiringProfilesSection";

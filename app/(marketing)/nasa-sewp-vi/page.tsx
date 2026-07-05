@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "../../styles/pages/marketing-secondary.css";
+import "../../styles/pages/sewp-vi.css";
 import { NasaSewpViBody } from "../../../components/marketing/NasaSewpViBody";
 import { NasaSewpViHero } from "../../../components/marketing/NasaSewpViHero";
 import { loadMarketingContent } from "../../../lib/content/load-content";

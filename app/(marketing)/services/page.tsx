@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../styles/pages/marketing-secondary.css";
 import { SolutionShowcaseRow } from "../../../components/marketing/SolutionShowcaseRow";
 import { SolutionsHero } from "../../../components/marketing/SolutionsHero";
 import { loadMarketingContent } from "../../../lib/content/load-content";

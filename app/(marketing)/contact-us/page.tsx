@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../styles/pages/contact-us.css";
 import { ContactUsPageContent } from "../../../components/marketing/ContactUsPageContent";
 import { buildMarketingMetadata } from "../../../lib/seo/metadata";
 import { getStaticPageSeo } from "../../../lib/seo/page-seo";

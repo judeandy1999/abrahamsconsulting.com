@@ -1,8 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { SiteContent } from "../../src/content/schema";
-import { useMarketingMotionConfig } from "./marketing-motion";
 import { AwardBannerBadge } from "./AwardBannerBadge";
 import { IconArrowRight } from "./NavIcons";
 
@@ -12,45 +8,32 @@ type AwardBannerProps = {
 
 export function AwardBanner({ site }: AwardBannerProps) {
   const { awardBanner } = site;
-  const { containerVariants, horizontalItemVariants, itemTransition, viewport } = useMarketingMotionConfig();
 
   return (
     <section className="award-banner" aria-label="Contract award announcement">
-      <motion.div
-        className="award-banner__inner"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-      >
-        <motion.div className="award-banner__badge" aria-hidden="true" variants={horizontalItemVariants} transition={itemTransition}>
+      <div className="award-banner__inner">
+        <div className="award-banner__badge" aria-hidden="true">
           <AwardBannerBadge className="award-banner__badge-icon" />
-        </motion.div>
+        </div>
 
-        <motion.span className="award-banner__rule" aria-hidden="true" variants={horizontalItemVariants} transition={itemTransition} />
+        <span className="award-banner__rule" aria-hidden="true" />
 
-        <motion.p className="award-banner__headline" variants={horizontalItemVariants} transition={itemTransition}>
-          {awardBanner.headline}
-        </motion.p>
+        <p className="award-banner__headline">{awardBanner.headline}</p>
 
-        <motion.span className="award-banner__rule" aria-hidden="true" variants={horizontalItemVariants} transition={itemTransition} />
+        <span className="award-banner__rule" aria-hidden="true" />
 
-        <motion.p className="award-banner__description" variants={horizontalItemVariants} transition={itemTransition}>
-          {awardBanner.description}
-        </motion.p>
+        <p className="award-banner__description">{awardBanner.description}</p>
 
-        <motion.a
+        <a
           href={awardBanner.href}
           className="award-banner__cta"
           target="_blank"
           rel="noopener noreferrer"
-          variants={horizontalItemVariants}
-          transition={itemTransition}
         >
           {awardBanner.ctaLabel}
           <IconArrowRight className="award-banner__cta-icon award-banner__cta-icon--arrow" />
-        </motion.a>
-      </motion.div>
+        </a>
+      </div>
     </section>
   );
 }

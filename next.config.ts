@@ -3,9 +3,19 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ["framer-motion", "lucide-react"]
+  },
   images: {
     formats: ["image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/vi/**"
+      }
+    ]
   },
   async redirects() {
     return [
