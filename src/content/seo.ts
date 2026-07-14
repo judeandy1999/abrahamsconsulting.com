@@ -58,6 +58,13 @@ export const launchPageSeoContent = [
       "Review certifications, qualification signals, case snapshots, and partner indicators before engaging Abrahams Consulting."
   },
   {
+    routeKey: "blog",
+    path: "/blog",
+    title: "TechTonic Times | Abrahams Consulting",
+    description:
+      "Security, networking, storage, IT staffing, and managed services insights from Abrahams Consulting."
+  },
+  {
     routeKey: "contact-us",
     path: "/contact-us",
     title: "Contact Us",

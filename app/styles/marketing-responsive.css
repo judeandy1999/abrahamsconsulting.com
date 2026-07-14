@@ -527,6 +527,7 @@ body.nav-menu-open {
 
   .certification-bar__media {
     padding: 0 0 1.5rem;
+    padding-left: 0;
   }
 
   .certification-bar__rule {

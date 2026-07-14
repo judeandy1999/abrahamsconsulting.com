@@ -62,7 +62,7 @@ export const siteContent: SiteContent = {
     },
     {
       label: "Blog",
-      href: "https://www.abrahamsconsulting.com/blog/"
+      href: "/blog"
     },
     {
       label: "EVA",

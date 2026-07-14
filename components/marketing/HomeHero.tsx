@@ -54,7 +54,7 @@ export function HomeHero({ site }: HomeHeroProps) {
               height={520}
               priority
               fetchPriority="high"
-              sizes="520px"
+              sizes="(max-width: 960px) min(100vw, 400px), 520px"
               className="home-hero__logo"
             />
           </picture>

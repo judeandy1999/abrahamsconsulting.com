@@ -2,9 +2,39 @@
 .marketing-main--solutions,
 .marketing-main--executive-recruiting,
 .marketing-main--consulting-services,
-.marketing-main--sewp-vi {
+.marketing-main--sewp-vi,
+.marketing-main--blog {
   background: var(--color-white);
   overflow-x: clip;
+}
+
+/* Blog — ContentMX microsite embed */
+.blog-embed {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 3rem;
+}
+
+.blog-embed__frame {
+  display: block;
+  width: 100%;
+  min-height: 1000px;
+  height: 1000px;
+  overflow: hidden;
+  border: 0;
+  background: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .blog-embed {
+    padding-inline: 1rem;
+  }
+
+  .blog-embed__frame {
+    min-height: calc(100vh - 7rem);
+    height: calc(100vh - 7rem);
+  }
 }
 
 .marketing-main--sewp-vi [class*="__wrap"],
