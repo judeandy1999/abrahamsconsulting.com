@@ -349,9 +349,13 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     }
   },
   gwacIdentificationStatement: {
-    title: "GWAC Identification Statement",
+    title: "Official GWAC Identification Statement",
     intro:
-      "Abrahams Consulting LLC is an awardee of the NASA Solutions for Enterprise-Wide Procurement VI (SEWP VI) contract, a multiple-award Government-Wide Acquisition Contract (GWAC) managed by NASA.",
+      "Abrahams Consulting is an awardee under the NASA Solutions for Enterprise-Wide Procurement (SEWP) VI Government-Wide Acquisition Contract (GWAC), a multi-award contract vehicle available to federal agencies for the acquisition of information technology products and services.",
+    referenceLinks: [
+      { label: "nasa.gov", href: "https://www.nasa.gov" },
+      { label: "sewp.nasa.gov", href: "https://www.sewp.nasa.gov" }
+    ],
     headerGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
     headerGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
     whatIsGwac: {
@@ -394,30 +398,97 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     title: "Fair Opportunity Clause",
     titleAccentWord: "Fair",
     intro:
-      "The Fair Opportunity Clause below is from the NASA SEWP VI contract. It is posted verbatim as required by the contract.",
+      "Abrahams Consulting's commitment to NASA SEWP VI Fair Opportunity policies, equitable vendor access, and transparent procurement compliance.",
     headerGraphicSrc: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicSrc,
     headerGraphicAlt: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicAlt,
     clause: {
-      label: "FAIR OPPORTUNITY CLAUSE",
+      label: "FAIR OPPORTUNITY & COMPLIANCE COMMITMENT",
       badgeGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
       badgeGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
-      paragraphs: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-        "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
-      ]
+      leadParagraph:
+        "Abrahams Consulting fully aligns with NASA SEWP VI Fair Opportunity policies, ensuring equitable access for all vendors, particularly MWBEs and small businesses. Our structured compliance framework prevents favoritism, promotes transparency, and guarantees subcontracting goal fulfillment through:",
+      sections: [
+        {
+          id: "ctoas",
+          title: "Competitive Task Order Allocation System (CTOAS)",
+          bullets: [
+            {
+              label: "Fair Vendor Selection",
+              text: "AI-driven system evaluates vendors based on past performance, technical capability, and compliance history."
+            },
+            {
+              label: "Automated Matching & Scoring",
+              text: "Ensures unbiased task order allocation based on predefined criteria."
+            },
+            {
+              label: "Bias Prevention Measures",
+              text: "Flags favoritism risks, enforces vendor rotation, and ensures diverse engagement."
+            }
+          ]
+        },
+        {
+          id: "fair-opportunity-portal",
+          title: "NASA SEWP VI Fair Opportunity Portal",
+          bullets: [
+            {
+              label: "Transparent Bidding System",
+              text: "Vendors register, undergo compliance certification, and submit proposals via an AI-driven evaluation process."
+            },
+            {
+              label: "Equal Access",
+              text: "Real-time notifications and open competition ensure MWBE and small business participation."
+            },
+            {
+              label: "Compliance Audits",
+              text: "Tracks bid status, selection justifications, and prevents conflicts of interest."
+            }
+          ]
+        },
+        {
+          id: "ipot",
+          title: "Independent Procurement Oversight Team (IPOT)",
+          bullets: [
+            {
+              label: "Unbiased Task Order Audits",
+              text: "Independent auditors verify fair vendor selection, MWBE consideration, and correct bid scoring."
+            },
+            {
+              label: "Post-Award Reporting",
+              text: "Quarterly compliance reports submitted to NASA to maintain procurement integrity."
+            }
+          ]
+        },
+        {
+          id: "mwbe-utilization",
+          title: "MWBE & Small Business Utilization Plan",
+          bullets: [
+            {
+              label: "Quarterly NASA Reports",
+              text: "Tracks MWBE engagement, ensuring compliance with subcontracting targets."
+            },
+            {
+              label: "Automated Compliance Tracking",
+              text: "AI-powered dashboard monitors MWBE participation with real-time alerts."
+            },
+            {
+              label: "Corrective Action Plans",
+              text: "Adjusts allocations when MWBE participation falls short, requiring improvement plans from non-compliant vendors."
+            }
+          ]
+        }
+      ],
+      outcome:
+        "Ensuring full compliance with NASA SEWP VI Fair Opportunity rules, fostering diversity, and maintaining procurement transparency."
     }
   },
   programManagerContact: {
     titlePrimary: "Program Manager",
     titleSecondary: "Contact Information",
     intro:
-      "For questions about the SEWP VI contract, product offerings, orders, or general inquiries, please contact our Program Manager.",
+      "For ordering assistance, contract inquiries, and SEWP VI support, please contact:",
     helpCallout: {
-      title: "We're Here to Help",
-      description: "Our Program Manager is your primary point of contact for all SEWP VI related matters."
+      title: "SEWP VI Program Manager Contact",
+      description: "Your primary point of contact for SEWP VI ordering assistance, contract inquiries, and program support."
     },
     details: [
       {
@@ -431,44 +502,31 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         icon: "globe",
         label: "Contract",
         value: "NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)"
-      },
-      {
-        id: "address",
-        icon: "map-pin",
-        label: "Address",
-        value: "172-61 Highland Ave\nJamaica, NY 11432"
       }
     ],
     profile: {
-      name: "Full Name",
-      role: "PROGRAM MANAGER",
+      name: "Maybelline Magnet",
+      role: "SEWP VI PROGRAM MANAGER",
       contacts: [
-        {
-          id: "direct-phone",
-          icon: "phone",
-          label: "Direct Phone",
-          value: "(000) 000-0000",
-          href: "tel:+10000000000"
-        },
-        {
-          id: "mobile-phone",
-          icon: "smartphone",
-          label: "Mobile Phone",
-          value: "(000) 000-0000",
-          href: "tel:+10000000000"
-        },
-        {
-          id: "email",
-          icon: "mail",
-          label: "Email Address",
-          value: "federal.sales@abrahamsconsulting.com",
-          href: "mailto:federal.sales@abrahamsconsulting.com"
-        },
         {
           id: "company",
           icon: "building",
           label: "Company",
-          value: "Abrahams Consulting LLC"
+          value: "Abrahams Consulting, LLC"
+        },
+        {
+          id: "direct-phone",
+          icon: "phone",
+          label: "Direct Phone",
+          value: "301-638-8731 ext. 2179",
+          href: "tel:+13016388731,2179"
+        },
+        {
+          id: "email",
+          icon: "mail",
+          label: "Email",
+          value: "sewp.pm@abrahamsconsulting.com",
+          href: "mailto:sewp.pm@abrahamsconsulting.com"
         }
       ]
     }

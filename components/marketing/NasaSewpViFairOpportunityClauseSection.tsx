@@ -52,11 +52,26 @@ export function NasaSewpViFairOpportunityClauseSection({
           </header>
 
           <div className="sewp-vi-fair-opportunity__clause-body">
-            {section.clause.paragraphs.map((paragraph, index) => (
-              <p key={index} className="sewp-vi-fair-opportunity__clause-paragraph">
-                {paragraph}
-              </p>
-            ))}
+            <p className="sewp-vi-fair-opportunity__clause-paragraph">{section.clause.leadParagraph}</p>
+
+            <ol className="sewp-vi-fair-opportunity__clause-sections">
+              {section.clause.sections.map((clauseSection) => (
+                <li key={clauseSection.id} className="sewp-vi-fair-opportunity__clause-section">
+                  <h4 className="sewp-vi-fair-opportunity__clause-section-title">{clauseSection.title}</h4>
+                  <ul className="sewp-vi-fair-opportunity__clause-bullets">
+                    {clauseSection.bullets.map((bullet) => (
+                      <li key={bullet.label} className="sewp-vi-fair-opportunity__clause-bullet">
+                        <strong>{bullet.label}:</strong> {bullet.text}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+
+            <p className="sewp-vi-fair-opportunity__clause-outcome">
+              <strong>Outcome:</strong> {section.clause.outcome}
+            </p>
           </div>
         </motion.article>
       </motion.div>

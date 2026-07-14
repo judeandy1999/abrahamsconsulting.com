@@ -29,7 +29,22 @@ export function NasaSewpViGwacIdentificationSection({
             <h2 id="sewp-vi-gwac-heading" className="sewp-vi-gwac__title">
               {section.title}
             </h2>
-            <p className="sewp-vi-gwac__intro">{section.intro}</p>
+            <p className="sewp-vi-gwac__intro">
+              {section.intro}{" "}
+              {section.referenceLinks.map((link, index) => (
+                <span key={link.href}>
+                  {index > 0 ? ", " : null}
+                  <a
+                    href={link.href}
+                    className="sewp-vi-gwac__intro-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </span>
+              ))}
+            </p>
           </div>
           <div className="sewp-vi-gwac__header-graphic">
             <Image

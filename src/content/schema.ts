@@ -490,6 +490,14 @@ export const nasaSewpViPageSchema = z.object({
   gwacIdentificationStatement: z.object({
     title: z.string().min(1),
     intro: z.string().min(1),
+    referenceLinks: z
+      .array(
+        z.object({
+          label: z.string().min(1),
+          href: z.string().url()
+        })
+      )
+      .min(1),
     headerGraphicSrc: z.string().min(1),
     headerGraphicAlt: z.string().min(1),
     whatIsGwac: z.object({
@@ -522,7 +530,24 @@ export const nasaSewpViPageSchema = z.object({
       label: z.string().min(1),
       badgeGraphicSrc: z.string().min(1),
       badgeGraphicAlt: z.string().min(1),
-      paragraphs: z.array(z.string().min(1)).min(1)
+      leadParagraph: z.string().min(1),
+      sections: z
+        .array(
+          z.object({
+            id: z.string().min(1),
+            title: z.string().min(1),
+            bullets: z
+              .array(
+                z.object({
+                  label: z.string().min(1),
+                  text: z.string().min(1)
+                })
+              )
+              .min(1)
+          })
+        )
+        .min(1),
+      outcome: z.string().min(1)
     })
   }),
   programManagerContact: z.object({
@@ -542,7 +567,8 @@ export const nasaSewpViPageSchema = z.object({
           value: z.string().min(1)
         })
       )
-      .length(3),
+      .min(2)
+      .max(3),
     profile: z.object({
       name: z.string().min(1),
       role: z.string().min(1),
@@ -556,7 +582,8 @@ export const nasaSewpViPageSchema = z.object({
             href: z.string().min(1).optional()
           })
         )
-        .length(4)
+        .min(3)
+        .max(4)
     })
   }),
   externalResourceLinks: z.object({

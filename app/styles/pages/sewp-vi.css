@@ -1932,6 +1932,18 @@
   color: var(--color-slate);
 }
 
+.sewp-vi-gwac__intro-link {
+  color: var(--color-blue-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color 0.2s ease;
+}
+
+.sewp-vi-gwac__intro-link:hover,
+.sewp-vi-gwac__intro-link:focus-visible {
+  color: #042551;
+}
+
 .sewp-vi-gwac__header-graphic {
   display: flex;
   justify-content: flex-end;
@@ -2333,6 +2345,55 @@
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--color-slate);
+}
+
+.sewp-vi-fair-opportunity__clause-sections {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.sewp-vi-fair-opportunity__clause-section {
+  padding-left: 0.25rem;
+}
+
+.sewp-vi-fair-opportunity__clause-section-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #042551;
+}
+
+.sewp-vi-fair-opportunity__clause-bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+  list-style: disc;
+}
+
+.sewp-vi-fair-opportunity__clause-bullet {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.sewp-vi-fair-opportunity__clause-bullet strong {
+  color: #042551;
+}
+
+.sewp-vi-fair-opportunity__clause-outcome {
+  margin: 0;
+  padding-top: 0.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-slate);
+}
+
+.sewp-vi-fair-opportunity__clause-outcome strong {
+  color: #042551;
 }
 
 .sewp-vi-pm-contact {
