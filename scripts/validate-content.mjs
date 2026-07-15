@@ -567,36 +567,7 @@ const nasaSewpViPageSchema = z.object({
   }),
   gwacIdentificationStatement: z.object({
     title: z.string().min(1),
-    intro: z.string().min(1),
-    referenceLinks: z
-      .array(
-        z.object({
-          label: z.string().min(1),
-          href: z.string().url()
-        })
-      )
-      .min(1),
-    headerGraphicSrc: z.string().min(1),
-    headerGraphicAlt: z.string().min(1),
-    whatIsGwac: z.object({
-      title: z.string().min(1),
-      description: z.string().min(1),
-      highlights: z.array(z.string().min(1)).length(3)
-    }),
-    commitment: z.object({
-      title: z.string().min(1),
-      description: z.string().min(1)
-    }),
-    facts: z
-      .array(
-        z.object({
-          id: z.string().min(1),
-          icon: z.enum(["globe", "calendar", "users"]),
-          label: z.string().min(1),
-          value: z.string().min(1)
-        })
-      )
-      .length(3)
+    statement: z.string().min(1)
   }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),

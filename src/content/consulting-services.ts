@@ -112,19 +112,19 @@ export const consultingServicesPageContent: ConsultingServicesPageContent = {
         id: "capabilities-services",
         icon: "capabilities-services",
         title: "Capabilities Statement Services",
-        href: "https://abrahamsconsulting.com/capabilities-statement-services-3"
+        href: "/capabilities-statement-services"
       },
       {
         id: "capabilities-federal",
         icon: "capabilities-federal",
         title: "Capabilities Statement Federal",
-        href: "https://abrahamsconsulting.com/capabilities-statement-federal"
+        href: "/capabilities-statement-federal"
       },
       {
         id: "capabilities-products",
         icon: "capabilities-products",
         title: "Capabilities Statement Products",
-        href: "https://abrahamsconsulting.com/capabilities-statement-products-2"
+        href: "/capabilities-statement-products"
       }
     ]
   }

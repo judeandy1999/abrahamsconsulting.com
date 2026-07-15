@@ -2,6 +2,7 @@
 .marketing-main--solutions,
 .marketing-main--executive-recruiting,
 .marketing-main--consulting-services,
+.marketing-main--cap-stmt-services,
 .marketing-main--sewp-vi,
 .marketing-main--contracts,
 .marketing-main--clients,
@@ -3940,6 +3941,432 @@ body.nav-menu-open {
 
   .certifications-page__cta-button {
     justify-content: center;
+  }
+}
+
+/* Capabilities Statement Services */
+.cap-stmt-services__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 0 1.75rem;
+}
+
+.cap-stmt-services__section-title {
+  margin: 0 0 1rem;
+  color: var(--color-section-heading);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.cap-stmt-services__intro {
+  padding: 3rem 0 2.5rem;
+  background: var(--color-white);
+}
+
+.cap-stmt-services__intro-grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.4fr);
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+
+.cap-stmt-services__people {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.cap-stmt-services__person-name {
+  display: block;
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.cap-stmt-services__person-role {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.cap-stmt-services__contact-meta {
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cap-stmt-services__contact-meta div {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.cap-stmt-services__contact-meta dt {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cap-stmt-services__contact-meta dd {
+  margin: 0;
+  color: var(--color-text-body);
+}
+
+.cap-stmt-services__contact-meta a {
+  color: var(--color-blue-primary);
+  text-decoration: none;
+}
+
+.cap-stmt-services__contact-meta a:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.cap-stmt-services__certs-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.cap-stmt-services__certs-link {
+  color: var(--color-blue-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cap-stmt-services__certs-link:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.cap-stmt-services__file-link {
+  color: var(--color-blue-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cap-stmt-services__file-link:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.cap-stmt-services__cert-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cap-stmt-services__cert-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.5rem;
+  padding: 0.65rem;
+  background: var(--color-section-alt-bg);
+  transition: background-color 160ms ease;
+}
+
+.cap-stmt-services__cert-link:hover {
+  background: #e8eef4;
+}
+
+.cap-stmt-services__cert-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 3.5rem;
+  object-fit: contain;
+}
+
+.cap-stmt-services__focus {
+  padding: 0 0 2.5rem;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-section-alt-bg) 100%);
+}
+
+.cap-stmt-services__focus-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cap-stmt-services__focus-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.5rem;
+  padding: 1rem 1.25rem;
+  color: var(--color-white);
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-navy-banner) 0%, var(--color-blue-background) 100%);
+}
+
+.cap-stmt-services__focus-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cap-stmt-services__overview {
+  padding: 2.75rem 0;
+  background: var(--color-section-alt-bg);
+}
+
+.cap-stmt-services__overview-inner {
+  max-width: 52rem;
+}
+
+.cap-stmt-services__overview-body {
+  margin: 0;
+  color: var(--color-text-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.cap-stmt-services__services-partners {
+  padding: 3rem 0;
+  background: var(--color-white);
+}
+
+.cap-stmt-services__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+
+.cap-stmt-services__service-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.75rem;
+}
+
+.cap-stmt-services__product-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.75rem;
+}
+
+.cap-stmt-services__product-category-title {
+  margin: 0 0 0.5rem;
+  color: var(--color-navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cap-stmt-services__section-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cap-stmt-services__section-title a:hover {
+  color: var(--color-blue-primary);
+  text-decoration: underline;
+}
+
+.cap-stmt-services__service-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--color-text-body);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.cap-stmt-services__service-list a {
+  color: var(--color-blue-primary);
+  text-decoration: none;
+}
+
+.cap-stmt-services__service-list a:hover {
+  text-decoration: underline;
+}
+
+.cap-stmt-services__partner-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cap-stmt-services__partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.25rem;
+  padding: 0.5rem;
+  background: var(--color-section-alt-bg);
+}
+
+.cap-stmt-services__partner-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+.cap-stmt-services__performance {
+  padding: 3rem 0;
+  background: var(--color-section-alt-bg);
+}
+
+.cap-stmt-services__performance-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.cap-stmt-services__performance-list li {
+  position: relative;
+  padding: 0 0 0 1.35rem;
+  color: var(--color-text-body);
+  font-size: 1.0125rem;
+  line-height: 1.65;
+}
+
+.cap-stmt-services__performance-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  left: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--color-blue-primary);
+}
+
+.cap-stmt-services__naics {
+  padding: 3rem 0;
+  background: var(--color-white);
+}
+
+.cap-stmt-services__naics-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+
+.cap-stmt-services__naics-item {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.cap-stmt-services__naics-code {
+  color: var(--color-navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cap-stmt-services__naics-label {
+  color: var(--color-text-body);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.cap-stmt-services__cta {
+  padding: 0 0 3.5rem;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-section-alt-bg) 100%);
+}
+
+.cap-stmt-services__cta-inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 2rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  background: linear-gradient(105deg, var(--color-navy-banner) 0%, var(--color-blue-background) 100%);
+  color: var(--color-white);
+}
+
+.cap-stmt-services__cta-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cap-stmt-services__cta-description {
+  margin: 0;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+}
+
+.cap-stmt-services__cta-button {
+  flex-shrink: 0;
+}
+
+.cap-stmt-services__cta-button-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+@media (max-width: 960px) {
+  .cap-stmt-services__intro-grid,
+  .cap-stmt-services__split,
+  .cap-stmt-services__focus-list,
+  .cap-stmt-services__naics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-stmt-services__cert-grid,
+  .cap-stmt-services__partner-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cap-stmt-services__cta-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .cap-stmt-services__cta-button {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .cap-stmt-services__cert-grid,
+  .cap-stmt-services__partner-grid,
+  .cap-stmt-services__service-columns,
+  .cap-stmt-services__product-categories {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cap-stmt-services__contact-meta div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 }
 

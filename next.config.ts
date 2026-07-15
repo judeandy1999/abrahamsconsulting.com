@@ -20,6 +20,26 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/capabilities-statement-services-3",
+        destination: "/capabilities-statement-services",
+        permanent: true
+      },
+      {
+        source: "/capabilities-statement-services-3/",
+        destination: "/capabilities-statement-services",
+        permanent: true
+      },
+      {
+        source: "/capabilities-statement-products-2",
+        destination: "/capabilities-statement-products",
+        permanent: true
+      },
+      {
+        source: "/capabilities-statement-products-2/",
+        destination: "/capabilities-statement-products",
+        permanent: true
+      },
+      {
         source: "/consultation",
         destination: "/contact-us",
         permanent: true

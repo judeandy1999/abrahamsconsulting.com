@@ -30,6 +30,27 @@ export const launchPageSeoContent = [
       "Explore Abrahams Consulting managed services, professional services, and cloud services—including SOC/NOC operations, staffing, and Cloud7 secure cloud delivery."
   },
   {
+    routeKey: "capabilities-statement-services",
+    path: "/capabilities-statement-services",
+    title: "Capabilities Statement Services",
+    description:
+      "Review Abrahams Consulting services capabilities, certifications, vendor partners, past performance, and NAICS codes for enterprise and government engagement."
+  },
+  {
+    routeKey: "capabilities-statement-products",
+    path: "/capabilities-statement-products",
+    title: "Capabilities Statement Products",
+    description:
+      "Review Abrahams Consulting product offerings across systems, network, software, office, and peripherals—plus certifications, partners, and past performance."
+  },
+  {
+    routeKey: "capabilities-statement-federal",
+    path: "/capabilities-statement-federal",
+    title: "Capabilities Statement Federal",
+    description:
+      "Review Abrahams Consulting federal capabilities as an MWBE serving federal, state, local, and education buyers—including services, partners, past performance, and NAICS codes."
+  },
+  {
     routeKey: "executive-recruiting",
     path: "/executive-recruiting",
     title: "IT Executive Recruiting",

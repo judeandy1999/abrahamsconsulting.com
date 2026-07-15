@@ -1,3 +1,6 @@
+import { capabilitiesStatementFederalPageContent } from "../../src/content/capabilities-statement-federal";
+import { capabilitiesStatementProductsPageContent } from "../../src/content/capabilities-statement-products";
+import { capabilitiesStatementServicesPageContent } from "../../src/content/capabilities-statement-services";
 import { certificationsPageContent } from "../../src/content/certifications";
 import { clientsPageContent } from "../../src/content/clients";
 import { contractsContent, contractsPageContent } from "../../src/content/contracts";
@@ -22,6 +25,9 @@ export function loadMarketingContent(): MarketingContent {
     solutionsPage: solutionsPageContent,
     executiveRecruitingPage: executiveRecruitingPageContent,
     consultingServicesPage: consultingServicesPageContent,
+    capabilitiesStatementServicesPage: capabilitiesStatementServicesPageContent,
+    capabilitiesStatementProductsPage: capabilitiesStatementProductsPageContent,
+    capabilitiesStatementFederalPage: capabilitiesStatementFederalPageContent,
     nasaSewpViPage: loadNasaSewpViPageContent()
   });
 }

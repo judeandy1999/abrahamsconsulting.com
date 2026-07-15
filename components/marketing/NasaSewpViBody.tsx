@@ -2,19 +2,17 @@
 
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NasaSewpViAboutCompanySection } from "./NasaSewpViAboutCompanySection";
-import { NasaSewpViAboutSewpSection } from "./NasaSewpViAboutSewpSection";
 import { NasaSewpViCapabilitiesVehiclesSection } from "./NasaSewpViCapabilitiesVehiclesSection";
 import { NasaSewpViCertificationsSection } from "./NasaSewpViCertificationsSection";
 import { NasaSewpViCompanyInformationSection } from "./NasaSewpViCompanyInformationSection";
 import { NasaSewpViContractOverviewSection } from "./NasaSewpViContractOverviewSection";
 import { NasaSewpViElectronicOrderingGuideSection } from "./NasaSewpViElectronicOrderingGuideSection";
 import { NasaSewpViExternalResourceLinksSection } from "./NasaSewpViExternalResourceLinksSection";
-import { NasaSewpViFairOpportunityClauseSection } from "./NasaSewpViFairOpportunityClauseSection";
-import { NasaSewpViGwacIdentificationSection } from "./NasaSewpViGwacIdentificationSection";
 import { NasaSewpViCoreCompetenciesSection } from "./NasaSewpViCoreCompetenciesSection";
 import { NasaSewpViFederalSalesContactSection } from "./NasaSewpViFederalSalesContactSection";
 import { NasaSewpViPastPerformanceSection } from "./NasaSewpViPastPerformanceSection";
 import { NasaSewpViProgramManagerContactSection } from "./NasaSewpViProgramManagerContactSection";
+import { NasaSewpViStatementsTableSection } from "./NasaSewpViStatementsTableSection";
 import { NasaSewpViWhyChooseSection } from "./NasaSewpViWhyChooseSection";
 
 type NasaSewpViBodyProps = {
@@ -28,11 +26,11 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
 
       <NasaSewpViElectronicOrderingGuideSection section={content.electronicOrderingGuide} />
 
-      <NasaSewpViGwacIdentificationSection section={content.gwacIdentificationStatement} />
-
-      <NasaSewpViFairOpportunityClauseSection section={content.fairOpportunityClause} />
-
-      <NasaSewpViAboutSewpSection section={content.aboutSewp} />
+      <NasaSewpViStatementsTableSection
+        gwac={content.gwacIdentificationStatement}
+        aboutSewp={content.aboutSewp}
+        fairOpportunity={content.fairOpportunityClause}
+      />
 
       <NasaSewpViProgramManagerContactSection section={content.programManagerContact} />
 

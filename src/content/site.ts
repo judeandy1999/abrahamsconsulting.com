@@ -11,23 +11,23 @@ export const siteContent: SiteContent = {
   },
   socialLinks: [
     {
-      platform: "linkedin",
-      href: "https://www.linkedin.com/company/abrahams-consulting-llc",
-      label: "LinkedIn"
-    },
-    {
       platform: "facebook",
-      href: "https://www.facebook.com/AbrahamsConsultingLLC",
+      href: "https://www.facebook.com/Abrahamsconsulting/",
       label: "Facebook"
     },
     {
+      platform: "linkedin",
+      href: "https://www.linkedin.com/in/angela-gibson-itil-5067093/",
+      label: "LinkedIn"
+    },
+    {
       platform: "twitter",
-      href: "https://twitter.com/AbrahamsConsult",
+      href: "https://twitter.com/abrahamsconsult",
       label: "X (Twitter)"
     },
     {
       platform: "youtube",
-      href: "https://www.youtube.com/@AbrahamsConsulting",
+      href: "https://www.youtube.com/channel/UCQh3fZ_2Uaj3d2weFIgyM4w",
       label: "YouTube"
     }
   ],

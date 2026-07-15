@@ -350,49 +350,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   },
   gwacIdentificationStatement: {
     title: "Official GWAC Identification Statement",
-    intro:
-      "Abrahams Consulting is an awardee under the NASA Solutions for Enterprise-Wide Procurement (SEWP) VI Government-Wide Acquisition Contract (GWAC), a multi-award contract vehicle available to federal agencies for the acquisition of information technology products and services.",
-    referenceLinks: [
-      { label: "nasa.gov", href: "https://www.nasa.gov" },
-      { label: "sewp.nasa.gov", href: "https://www.sewp.nasa.gov" }
-    ],
-    headerGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
-    headerGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
-    whatIsGwac: {
-      title: "What is a GWAC?",
-      description:
-        "A Government-Wide Acquisition Contract (GWAC) is a long-term, multi-award contract vehicle that federal agencies can use to streamline the procurement of commercial products and services.",
-      highlights: [
-        "Available to all Federal Agencies",
-        "Streamlined Procurement Process",
-        "Vetted & Pre-Competed Solutions"
-      ]
-    },
-    commitment: {
-      title: "Our Commitment",
-      description:
-        "As a SEWP VI contract holder, Abrahams Consulting LLC delivers best-in-class solutions through a compliant, efficient, and customer-focused procurement process."
-    },
-    facts: [
-      {
-        id: "contract-vehicle",
-        icon: "globe",
-        label: "Contract Vehicle",
-        value: "NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)"
-      },
-      {
-        id: "contract-period",
-        icon: "calendar",
-        label: "Contract Period",
-        value: "May 1, 2025 – April 30, 2035"
-      },
-      {
-        id: "contract-type",
-        icon: "users",
-        label: "Contract Type",
-        value: "Government-Wide Acquisition Contract (GWAC)"
-      }
-    ]
+    statement:
+      "Abrahams Consulting LLC’s NASA Solutions for Enterprise-Wide Procurement (SEWP) VI Contract, Contract No. 80TECH26D1658, is part of a multi-award Government-Wide Acquisition Contract (GWAC). Abrahams Consulting LLC is a contract holder under Category A—Information Technology, Communications, and Audio-Visual (ITC/AV) Solutions."
   },
   fairOpportunityClause: {
     title: "Fair Opportunity Clause",

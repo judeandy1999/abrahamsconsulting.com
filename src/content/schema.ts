@@ -622,36 +622,7 @@ export const nasaSewpViPageSchema = z.object({
   }),
   gwacIdentificationStatement: z.object({
     title: z.string().min(1),
-    intro: z.string().min(1),
-    referenceLinks: z
-      .array(
-        z.object({
-          label: z.string().min(1),
-          href: z.string().url()
-        })
-      )
-      .min(1),
-    headerGraphicSrc: z.string().min(1),
-    headerGraphicAlt: z.string().min(1),
-    whatIsGwac: z.object({
-      title: z.string().min(1),
-      description: z.string().min(1),
-      highlights: z.array(z.string().min(1)).length(3)
-    }),
-    commitment: z.object({
-      title: z.string().min(1),
-      description: z.string().min(1)
-    }),
-    facts: z
-      .array(
-        z.object({
-          id: z.string().min(1),
-          icon: z.enum(["globe", "calendar", "users"]),
-          label: z.string().min(1),
-          value: z.string().min(1)
-        })
-      )
-      .length(3)
+    statement: z.string().min(1)
   }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),
@@ -894,6 +865,204 @@ export const consultingServicesPageSchema = z.object({
   })
 });
 
+const capabilitiesStatementServiceLinkSchema = z.object({
+  label: z.string().min(1, "Capabilities statement service label is required"),
+  href: z.string().min(1).optional()
+});
+
+export const capabilitiesStatementServicesPageSchema = z.object({
+  hero: segmentedPageHeroSchema,
+  contacts: z.object({
+    people: z
+      .array(
+        z.object({
+          name: z.string().min(1, "Contact person name is required"),
+          role: z.string().min(1, "Contact person role is required")
+        })
+      )
+      .min(1, "Capabilities statement contacts require at least one person"),
+    phone: z.string().min(1, "Capabilities statement phone is required"),
+    cell: z.string().min(1, "Capabilities statement cell is required"),
+    fax: z.string().min(1, "Capabilities statement fax is required"),
+    email: z.string().email("Capabilities statement email must be valid"),
+    websiteLabel: z.string().min(1, "Capabilities statement website label is required"),
+    websiteHref: z.string().min(1, "Capabilities statement website href is required")
+  }),
+  certifications: z.object({
+    title: z.string().min(1, "Capabilities statement certifications title is required"),
+    href: z.string().min(1, "Capabilities statement certifications href is required"),
+    items: z.array(certificationLogoSchema).min(1, "Capabilities statement requires at least one certification logo")
+  }),
+  focusAreas: z
+    .array(
+      z.object({
+        id: z.string().min(1, "Focus area id is required"),
+        title: z.string().min(1, "Focus area title is required")
+      })
+    )
+    .length(3, "Capabilities statement requires three focus areas"),
+  overview: z.object({
+    title: z.string().min(1, "Capabilities statement overview title is required"),
+    body: z.string().min(1, "Capabilities statement overview body is required")
+  }),
+  services: z.object({
+    title: z.string().min(1, "Capabilities statement services title is required"),
+    columns: z
+      .array(z.array(capabilitiesStatementServiceLinkSchema).min(1))
+      .length(2, "Capabilities statement services require two columns")
+  }),
+  partners: z.object({
+    title: z.string().min(1, "Capabilities statement partners title is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Partner id is required"),
+          name: z.string().min(1, "Partner name is required"),
+          imageSrc: z.string().min(1, "Partner image source is required")
+        })
+      )
+      .min(1, "Capabilities statement requires at least one partner logo")
+  }),
+  pastPerformance: z.object({
+    title: z.string().min(1, "Past performance title is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Past performance id is required"),
+          body: z.string().min(1, "Past performance body is required")
+        })
+      )
+      .min(1, "Past performance requires at least one item")
+  }),
+  naics: z.object({
+    title: z.string().min(1, "NAICS title is required"),
+    items: z
+      .array(
+        z.object({
+          code: z.string().min(1, "NAICS code is required"),
+          label: z.string().min(1, "NAICS label is required")
+        })
+      )
+      .min(1, "NAICS section requires at least one code")
+  }),
+  cta: z.object({
+    title: z.string().min(1, "Capabilities statement CTA title is required"),
+    description: z.string().min(1, "Capabilities statement CTA description is required"),
+    buttonLabel: z.string().min(1, "Capabilities statement CTA button label is required"),
+    href: z.string().min(1, "Capabilities statement CTA href is required")
+  })
+});
+
+const capabilitiesStatementSharedFields = {
+  hero: segmentedPageHeroSchema,
+  contacts: z.object({
+    people: z
+      .array(
+        z.object({
+          name: z.string().min(1, "Contact person name is required"),
+          role: z.string().min(1, "Contact person role is required")
+        })
+      )
+      .min(1, "Capabilities statement contacts require at least one person"),
+    phone: z.string().min(1, "Capabilities statement phone is required"),
+    cell: z.string().min(1, "Capabilities statement cell is required"),
+    fax: z.string().min(1, "Capabilities statement fax is required"),
+    email: z.string().email("Capabilities statement email must be valid"),
+    websiteLabel: z.string().min(1, "Capabilities statement website label is required"),
+    websiteHref: z.string().min(1, "Capabilities statement website href is required")
+  }),
+  certifications: z.object({
+    title: z.string().min(1, "Capabilities statement certifications title is required"),
+    href: z.string().min(1, "Capabilities statement certifications href is required"),
+    items: z.array(certificationLogoSchema).min(1, "Capabilities statement requires at least one certification logo")
+  }),
+  focusAreas: z
+    .array(
+      z.object({
+        id: z.string().min(1, "Focus area id is required"),
+        title: z.string().min(1, "Focus area title is required")
+      })
+    )
+    .length(3, "Capabilities statement requires three focus areas"),
+  overview: z.object({
+    title: z.string().min(1, "Capabilities statement overview title is required"),
+    body: z.string().min(1, "Capabilities statement overview body is required")
+  }),
+  partners: z.object({
+    title: z.string().min(1, "Capabilities statement partners title is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Partner id is required"),
+          name: z.string().min(1, "Partner name is required"),
+          imageSrc: z.string().min(1, "Partner image source is required")
+        })
+      )
+      .min(1, "Capabilities statement requires at least one partner logo")
+  }),
+  pastPerformance: z.object({
+    title: z.string().min(1, "Past performance title is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Past performance id is required"),
+          body: z.string().min(1, "Past performance body is required")
+        })
+      )
+      .min(1, "Past performance requires at least one item")
+  }),
+  naics: z.object({
+    title: z.string().min(1, "NAICS title is required"),
+    items: z
+      .array(
+        z.object({
+          code: z.string().min(1, "NAICS code is required"),
+          label: z.string().min(1, "NAICS label is required")
+        })
+      )
+      .min(1, "NAICS section requires at least one code")
+  }),
+  cta: z.object({
+    title: z.string().min(1, "Capabilities statement CTA title is required"),
+    description: z.string().min(1, "Capabilities statement CTA description is required"),
+    buttonLabel: z.string().min(1, "Capabilities statement CTA button label is required"),
+    href: z.string().min(1, "Capabilities statement CTA href is required")
+  })
+} as const;
+
+export const capabilitiesStatementProductsPageSchema = z.object({
+  ...capabilitiesStatementSharedFields,
+  products: z.object({
+    title: z.string().min(1, "Capabilities statement products title is required"),
+    href: z.string().url("Capabilities statement products href must be a valid URL").optional(),
+    categories: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Product category id is required"),
+          title: z.string().min(1, "Product category title is required"),
+          items: z.array(z.string().min(1)).min(1, "Product category requires at least one item")
+        })
+      )
+      .min(1, "Capabilities statement products require at least one category")
+  })
+});
+
+const capabilitiesStatementServicesCatalogSchema = z.object({
+  title: z.string().min(1, "Capabilities statement services title is required"),
+  columns: z
+    .array(z.array(capabilitiesStatementServiceLinkSchema).min(1))
+    .length(2, "Capabilities statement services require two columns")
+});
+
+export const capabilitiesStatementFederalPageSchema = z.object({
+  ...capabilitiesStatementSharedFields,
+  statementFile: z.object({
+    label: z.string().min(1, "Capabilities statement file label is required"),
+    href: z.string().min(1, "Capabilities statement file href is required")
+  }),
+  services: capabilitiesStatementServicesCatalogSchema
+});
+
 export const executiveRecruitingPageSchema = z.object({
   hero: z.object({
     eyebrow: z.string().min(1, "Executive recruiting eyebrow is required"),
@@ -958,6 +1127,9 @@ export const marketingContentSchema = z.object({
   solutionsPage: solutionsPageSchema,
   executiveRecruitingPage: executiveRecruitingPageSchema,
   consultingServicesPage: consultingServicesPageSchema,
+  capabilitiesStatementServicesPage: capabilitiesStatementServicesPageSchema,
+  capabilitiesStatementProductsPage: capabilitiesStatementProductsPageSchema,
+  capabilitiesStatementFederalPage: capabilitiesStatementFederalPageSchema,
   nasaSewpViPage: nasaSewpViPageSchema
 });
 
@@ -982,6 +1154,9 @@ export type SolutionsPageContent = z.infer<typeof solutionsPageSchema>;
 export type SegmentedPageHero = z.infer<typeof segmentedPageHeroSchema>;
 export type ExecutiveRecruitingPageContent = z.infer<typeof executiveRecruitingPageSchema>;
 export type ConsultingServicesPageContent = z.infer<typeof consultingServicesPageSchema>;
+export type CapabilitiesStatementServicesPageContent = z.infer<typeof capabilitiesStatementServicesPageSchema>;
+export type CapabilitiesStatementProductsPageContent = z.infer<typeof capabilitiesStatementProductsPageSchema>;
+export type CapabilitiesStatementFederalPageContent = z.infer<typeof capabilitiesStatementFederalPageSchema>;
 export type NasaSewpViPageContent = z.infer<typeof nasaSewpViPageSchema>;
 export type MarketingContent = z.infer<typeof marketingContentSchema>;
 export type LaunchPageSeo = z.infer<typeof launchPageSeoSchema>;
