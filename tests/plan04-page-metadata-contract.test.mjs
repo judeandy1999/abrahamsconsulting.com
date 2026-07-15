@@ -12,6 +12,8 @@ const STATIC_LAUNCH_PATHS = [
   "/executive-recruiting",
   "/nasa-sewp-vi",
   "/contracts",
+  "/clients",
+  "/certifications",
   "/trust",
   "/contact-us",
   "/contact-us/success"
@@ -24,6 +26,8 @@ const ROUTE_FILES_BY_PATH = {
   "/executive-recruiting": "app/(marketing)/executive-recruiting/page.tsx",
   "/nasa-sewp-vi": "app/(marketing)/nasa-sewp-vi/page.tsx",
   "/contracts": "app/(marketing)/contracts/page.tsx",
+  "/clients": "app/(marketing)/clients/page.tsx",
+  "/certifications": "app/(marketing)/certifications/page.tsx",
   "/trust": "app/(marketing)/trust/page.tsx",
   "/contact-us": "app/(marketing)/contact-us/page.tsx",
   "/contact-us/success": "app/(marketing)/contact-us/success/page.tsx"

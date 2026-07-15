@@ -46,9 +46,23 @@ export const launchPageSeoContent = [
   {
     routeKey: "contracts",
     path: "/contracts",
-    title: "Contract Vehicles & Procurement",
+    title: "Contract Vehicles",
     description:
-      "Review procurement-ready contract vehicles that help agencies and prime partners engage Abrahams Consulting quickly and compliantly."
+      "Review Abrahams Consulting contract vehicles including NASA SEWP VI, New York State OGS / PBITS, and GSA partner line cards."
+  },
+  {
+    routeKey: "clients",
+    path: "/clients",
+    title: "Clients",
+    description:
+      "Explore Abrahams Consulting clients across local government, state government, education, and federal organizations."
+  },
+  {
+    routeKey: "certifications",
+    path: "/certifications",
+    title: "Certifications",
+    description:
+      "Review Abrahams Consulting industry and government certifications, including federal and state and local credentials."
   },
   {
     routeKey: "trust",

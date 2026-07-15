@@ -383,6 +383,33 @@ body.nav-menu-open {
     margin-left: auto;
   }
 
+  .main-nav__utility-links {
+    display: block;
+    width: 100%;
+  }
+
+  .main-nav__utility-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-nav__utility-links > ul > li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .main-nav__utility-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
   .main-nav__panel {
     display: none;
     flex-direction: column;

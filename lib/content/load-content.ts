@@ -1,4 +1,6 @@
-import { contractsContent } from "../../src/content/contracts";
+import { certificationsPageContent } from "../../src/content/certifications";
+import { clientsPageContent } from "../../src/content/clients";
+import { contractsContent, contractsPageContent } from "../../src/content/contracts";
 import { consultingServicesPageContent } from "../../src/content/consulting-services";
 import { executiveRecruitingPageContent } from "../../src/content/executive-recruiting";
 import { marketingContentSchema, type MarketingContent } from "../../src/content/schema";
@@ -13,6 +15,9 @@ export function loadMarketingContent(): MarketingContent {
     site: siteContent,
     services: servicesContent,
     contracts: contractsContent,
+    contractsPage: contractsPageContent,
+    clientsPage: clientsPageContent,
+    certificationsPage: certificationsPageContent,
     trust: trustContent,
     solutionsPage: solutionsPageContent,
     executiveRecruitingPage: executiveRecruitingPageContent,

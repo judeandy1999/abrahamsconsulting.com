@@ -7,7 +7,9 @@ const STATIC_EXPORT = /export const dynamic = "force-static";/;
 const routeFiles = [
   "app/(marketing)/page.tsx",
   "app/(marketing)/services/page.tsx",
-  "app/(marketing)/contracts/page.tsx"
+  "app/(marketing)/contracts/page.tsx",
+  "app/(marketing)/clients/page.tsx",
+  "app/(marketing)/certifications/page.tsx"
 ];
 
 for (const routeFile of routeFiles) {

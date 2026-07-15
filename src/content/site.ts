@@ -37,6 +37,20 @@ export const siteContent: SiteContent = {
     ctaLabel: "Learn More",
     href: "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
   },
+  utilityLinks: [
+    {
+      label: "Contract Vehicles",
+      href: "/contracts"
+    },
+    {
+      label: "Certifications",
+      href: "/certifications"
+    },
+    {
+      label: "Clients",
+      href: "/clients"
+    }
+  ],
   navigation: [
     {
       label: "Solutions",

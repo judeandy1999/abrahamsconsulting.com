@@ -173,6 +173,36 @@ textarea:focus-visible {
   opacity: 0.5;
 }
 
+.utility-bar__end {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.utility-bar__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.85rem;
+}
+
+.utility-bar__nav-link {
+  color: var(--color-text-on-dark);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.utility-bar__nav-link:hover,
+.utility-bar__nav-link:focus-visible {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
 .utility-bar__social {
   display: flex;
   align-items: center;
@@ -200,6 +230,10 @@ textarea:focus-visible {
   display: block;
   width: 1.125rem;
   height: 1.125rem;
+}
+
+.main-nav__utility-links {
+  display: none;
 }
 
 .main-nav {

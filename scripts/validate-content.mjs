@@ -827,6 +827,8 @@ async function validateProjectContent() {
     const siteModule = await importTsDataModule("src/content/site.ts");
     const servicesModule = await importTsDataModule("src/content/services.ts");
     const contractsModule = await importTsDataModule("src/content/contracts.ts");
+    const clientsModule = await importTsDataModule("src/content/clients.ts");
+    const certificationsModule = await importTsDataModule("src/content/certifications.ts");
     const trustModule = await importTsDataModule("src/content/trust.ts");
     const solutionsModule = await importTsDataModule("src/content/solutions.ts");
     const executiveRecruitingModule = await importTsDataModule("src/content/executive-recruiting.ts");
@@ -837,6 +839,9 @@ async function validateProjectContent() {
       site: siteModule.siteContent,
       services: servicesModule.servicesContent,
       contracts: contractsModule.contractsContent,
+      contractsPage: contractsModule.contractsPageContent,
+      clientsPage: clientsModule.clientsPageContent,
+      certificationsPage: certificationsModule.certificationsPageContent,
       trust: trustModule.trustContent,
       solutionsPage: solutionsModule.solutionsPageContent,
       executiveRecruitingPage: executiveRecruitingModule.executiveRecruitingPageContent,

@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const HEADER_FILE = "components/marketing/MainNav.tsx";
+const SITE_HEADER_FILE = "components/marketing/MarketingHeader.tsx";
 const SITE_FILE = "src/content/site.ts";
 const SERVICES_FILE = "app/(marketing)/services/page.tsx";
 const SERVICE_DETAIL_FILE = "app/(marketing)/services/[slug]/page.tsx";
@@ -10,17 +11,28 @@ const CONTRACTS_FILE = "app/(marketing)/contracts/page.tsx";
 
 test("marketing navigation exposes solutions dropdown and legacy-aligned destinations", async () => {
   const headerSource = await readFile(HEADER_FILE, "utf8");
+  const siteHeaderSource = await readFile(SITE_HEADER_FILE, "utf8");
   const siteSource = await readFile(SITE_FILE, "utf8");
 
   assert.match(headerSource, /site\.navigation/);
   assert.match(headerSource, /main-nav__dropdown/);
   assert.match(headerSource, /aria-haspopup="true"/);
+  assert.match(headerSource, /site\.utilityLinks/);
+  assert.match(siteHeaderSource, /utility-bar__links/);
+  assert.match(siteHeaderSource, /site\.utilityLinks/);
+  assert.match(siteSource, /utilityLinks:/);
   assert.match(siteSource, /label: "Solutions"/);
   assert.match(siteSource, /"\/services"/);
   assert.match(siteSource, /children:/);
   assert.match(siteSource, /"\/executive-recruiting"/);
   assert.match(siteSource, /IT Executive Recruiting/);
   assert.match(siteSource, /Consulting Services/);
+  assert.match(siteSource, /Contract Vehicles/);
+  assert.match(siteSource, /"\/contracts"/);
+  assert.match(siteSource, /Certifications/);
+  assert.match(siteSource, /"\/certifications"/);
+  assert.match(siteSource, /Clients/);
+  assert.match(siteSource, /"\/clients"/);
   assert.match(siteSource, /Manufacturer Store/);
   assert.match(siteSource, /"Blog"/);
   assert.match(siteSource, /"EVA"/);
@@ -43,9 +55,19 @@ test("service detail route supports static params and consultation CTA", async (
   assert.match(source, /href="\/contact-us"/);
 });
 
-test("contracts route links to services and consultation journeys", async () => {
+test("contracts route renders contract vehicles hub with journey CTAs", async () => {
   const source = await readFile(CONTRACTS_FILE, "utf8");
+  const contractsContent = await readFile("src/content/contracts.ts", "utf8");
 
-  assert.match(source, /href="\/services"/);
-  assert.match(source, /href="\/contact-us"/);
+  assert.match(source, /ContractVehiclesBody/);
+  assert.match(source, /SolutionsHero/);
+  assert.match(source, /contractsPage/);
+  assert.match(contractsContent, /servicesHref: "\/services"/);
+  assert.match(contractsContent, /consultationHref: "\/contact-us"/);
+  assert.match(contractsContent, /nasa-sewp-vi/);
+  assert.match(contractsContent, /nys-ogs-pbits/);
+  assert.match(contractsContent, /gsa-commvault/);
+  assert.match(contractsContent, /gsa-synnex/);
+  assert.match(contractsContent, /gsa-hp/);
+  assert.doesNotMatch(contractsContent, /STARS III|stars-iii|Stars III/i);
 });

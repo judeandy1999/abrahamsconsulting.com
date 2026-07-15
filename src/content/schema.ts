@@ -77,6 +77,14 @@ export const siteContentSchema = z.object({
     emailIcon: z.literal("mail")
   }),
   socialLinks: z.array(socialLinkSchema).min(1, "At least one social link is required"),
+  utilityLinks: z
+    .array(
+      z.object({
+        label: z.string().min(1, "Utility link label is required"),
+        href: z.string().min(1, "Utility link href is required")
+      })
+    )
+    .min(1, "At least one utility link is required"),
   awardBanner: z.object({
     headline: z.string().min(1, "Award banner headline is required"),
     description: z.string().min(1, "Award banner description is required"),
@@ -307,6 +315,131 @@ const solutionShowcaseSchema = z.object({
 export const segmentedPageHeroSchema = z.object({
   segments: z.array(z.string().min(1)).min(1, "Hero requires at least one segment"),
   description: z.string().min(1, "Hero description is required")
+});
+
+const contractVehicleCardSchema = z.object({
+  id: z.string().min(1, "Contract vehicle id is required"),
+  title: z.string().min(1, "Contract vehicle title is required"),
+  badge: z.string().min(1).optional(),
+  description: z.string().min(1, "Contract vehicle description is required"),
+  logoSrc: z.string().min(1, "Contract vehicle logo source is required"),
+  logoAlt: z.string().min(1, "Contract vehicle logo alt is required"),
+  href: z.string().min(1).optional(),
+  ctaLabel: z.string().min(1).optional(),
+  comingSoon: z.boolean().optional()
+});
+
+const contractLineCardSchema = z.object({
+  id: z.string().min(1, "Contract line card id is required"),
+  title: z.string().min(1, "Contract line card title is required"),
+  description: z.string().min(1).optional(),
+  badgeSrc: z.string().min(1, "Contract line card badge source is required"),
+  badgeAlt: z.string().min(1, "Contract line card badge alt is required"),
+  partnerLogoSrc: z.string().min(1, "Contract line card partner logo source is required"),
+  partnerLogoAlt: z.string().min(1, "Contract line card partner logo alt is required"),
+  href: z.string().min(1).optional(),
+  ctaLabel: z.string().min(1, "Contract line card CTA label is required"),
+  comingSoon: z.boolean().optional()
+});
+
+export const contractsPageSchema = z.object({
+  hero: segmentedPageHeroSchema,
+  primaryVehicles: z.object({
+    eyebrow: z.string().min(1, "Primary vehicles eyebrow is required"),
+    title: z.string().min(1, "Primary vehicles title is required"),
+    description: z.string().min(1, "Primary vehicles description is required"),
+    items: z.array(contractVehicleCardSchema).min(2, "At least two primary vehicles are required")
+  }),
+  gsaLineCards: z.object({
+    eyebrow: z.string().min(1).optional(),
+    title: z.string().min(1, "GSA line cards title is required"),
+    description: z.string().min(1).optional(),
+    items: z.array(contractLineCardSchema).min(1, "At least one GSA line card is required")
+  }),
+  cta: z.object({
+    title: z.string().min(1, "Contracts CTA title is required"),
+    description: z.string().min(1, "Contracts CTA description is required"),
+    servicesLabel: z.string().min(1, "Contracts CTA services label is required"),
+    servicesHref: z.string().min(1, "Contracts CTA services href is required"),
+    consultationLabel: z.string().min(1, "Contracts CTA consultation label is required"),
+    consultationHref: z.string().min(1, "Contracts CTA consultation href is required")
+  })
+});
+
+const clientLogoSchema = z.object({
+  id: z.string().min(1, "Client logo id is required"),
+  name: z.string().min(1, "Client logo name is required"),
+  imageSrc: z.string().min(1, "Client logo image source is required"),
+  imageAlt: z.string().min(1, "Client logo image alt is required"),
+  filter: z.string().min(1).optional()
+});
+
+const clientCategoryFilterSchema = z.object({
+  id: z.string().min(1, "Client category filter id is required"),
+  label: z.string().min(1, "Client category filter label is required")
+});
+
+const clientCategorySchema = z.object({
+  id: z.string().min(1, "Client category id is required"),
+  title: z.string().min(1, "Client category title is required"),
+  description: z.string().min(1, "Client category description is required"),
+  icon: z.enum(["local-government", "state-government", "education", "federal"]),
+  filters: z.array(clientCategoryFilterSchema).optional(),
+  clients: z.array(clientLogoSchema).min(1, "Client category requires at least one logo")
+});
+
+export const clientsPageSchema = z.object({
+  hero: z.object({
+    title: z.string().min(1, "Clients hero title is required"),
+    description: z.string().min(1, "Clients hero description is required")
+  }),
+  commitment: z.object({
+    title: z.string().min(1, "Clients commitment title is required"),
+    description: z.string().min(1, "Clients commitment description is required")
+  }),
+  categories: z.array(clientCategorySchema).min(4, "Clients page requires at least four categories"),
+  cta: z.object({
+    title: z.string().min(1, "Clients CTA title is required"),
+    description: z.string().min(1, "Clients CTA description is required"),
+    buttonLabel: z.string().min(1, "Clients CTA button label is required"),
+    href: z.string().min(1, "Clients CTA href is required")
+  })
+});
+
+const certificationLogoSchema = z.object({
+  id: z.string().min(1, "Certification logo id is required"),
+  name: z.string().min(1, "Certification logo name is required"),
+  imageSrc: z.string().min(1, "Certification logo image source is required"),
+  imageAlt: z.string().min(1, "Certification logo image alt is required"),
+  href: z.string().min(1).optional()
+});
+
+const certificationGroupSchema = z.object({
+  id: z.string().min(1, "Certification group id is required"),
+  title: z.string().min(1, "Certification group title is required"),
+  items: z.array(certificationLogoSchema).min(1, "Certification group requires at least one logo")
+});
+
+const certificationSectionSchema = z.object({
+  id: z.string().min(1, "Certification section id is required"),
+  title: z.string().min(1, "Certification section title is required"),
+  icon: z.enum(["industry", "government"]),
+  items: z.array(certificationLogoSchema).optional(),
+  groups: z.array(certificationGroupSchema).optional()
+});
+
+export const certificationsPageSchema = z.object({
+  hero: z.object({
+    title: z.string().min(1, "Certifications hero title is required"),
+    description: z.string().min(1, "Certifications hero description is required")
+  }),
+  sections: z.array(certificationSectionSchema).min(1, "Certifications page requires at least one section"),
+  cta: z.object({
+    title: z.string().min(1, "Certifications CTA title is required"),
+    description: z.string().min(1, "Certifications CTA description is required"),
+    buttonLabel: z.string().min(1, "Certifications CTA button label is required"),
+    href: z.string().min(1, "Certifications CTA href is required")
+  })
 });
 
 export const solutionsPageSchema = z.object({
@@ -818,6 +951,9 @@ export const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
   contracts: z.array(contractItemSchema).min(1, "At least one contract entry is required"),
+  contractsPage: contractsPageSchema,
+  clientsPage: clientsPageSchema,
+  certificationsPage: certificationsPageSchema,
   trust: trustContentSchema,
   solutionsPage: solutionsPageSchema,
   executiveRecruitingPage: executiveRecruitingPageSchema,
@@ -835,6 +971,9 @@ export type ConsultationForm = ContactForm;
 export type SiteContent = z.infer<typeof siteContentSchema>;
 export type ServiceItem = z.infer<typeof serviceItemSchema>;
 export type ContractItem = z.infer<typeof contractItemSchema>;
+export type ContractsPageContent = z.infer<typeof contractsPageSchema>;
+export type ClientsPageContent = z.infer<typeof clientsPageSchema>;
+export type CertificationsPageContent = z.infer<typeof certificationsPageSchema>;
 export type Certification = z.infer<typeof certificationSchema>;
 export type CaseSnapshot = z.infer<typeof caseSnapshotSchema>;
 export type PartnerIndicator = z.infer<typeof partnerIndicatorSchema>;

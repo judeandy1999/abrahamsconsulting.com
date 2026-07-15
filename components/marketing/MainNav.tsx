@@ -114,6 +114,18 @@ export function MainNav({ site }: MainNavProps) {
         </button>
 
         <div id={menuId} className={`main-nav__panel${menuOpen ? " is-open" : ""}`}>
+          <nav className="main-nav__utility-links" aria-label="Utility navigation">
+            <ul>
+              {site.utilityLinks.map((link) => (
+                <li key={link.href}>
+                  <NavLink href={link.href} onClick={closeMenus}>
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           <nav id="site-navigation" aria-label="Marketing primary navigation" className="main-nav__links">
             <ul>
               {site.navigation.map((item) => {

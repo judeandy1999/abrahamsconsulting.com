@@ -4,8 +4,8 @@ milestone: v1.4
 milestone_name: NASA SEWP VI Electronic Ordering Guide
 status: complete
 stopped_at: Phase 9 complete
-last_updated: "2026-07-05T12:00:00.000Z"
-last_activity: 2026-07-05 -- Phase 9 execution complete
+last_updated: "2026-07-15T09:40:00.000Z"
+last_activity: 2026-07-15 -- Quick task 260715-7im Clients page complete
 progress:
   total_phases: 1
   completed_phases: 1
@@ -21,14 +21,14 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-06-23)
 
 **Core value:** Deliver a fast, SEO-strong website that clearly communicates offerings and drives high-intent consultation leads.
-**Current focus:** Milestone v1.4 complete — NASA SEWP VI Electronic Ordering Guide section shipped
+**Current focus:** Milestone v1.4 complete; Contract Vehicles hub shipped via quick task
 
 ## Current Position
 
 Phase: 9 — NASA SEWP VI Electronic Ordering Guide
 Plan: 09-01 (complete)
 Status: Milestone v1.4 complete
-Last activity: 2026-07-05 — Phase 9 execution complete
+Last activity: 2026-07-15 — Quick task 260715-7im Clients page complete
 
 ## Performance Metrics
 
@@ -43,6 +43,14 @@ Last activity: 2026-07-05 — Phase 9 execution complete
 - [Phase 8] Active contract vehicles limited to NASA SEWP VI (Prime) and NY State OGS / PBITS per source documents.
 - [Phase 9] Electronic Ordering Guide section placed immediately after Contract Overview; no Last Updated/Version on download card (D-09).
 - [Phase 9] Single ordering guide download location via `electronicOrderingGuide.download`; legacy `orderingProcess` removed.
+- [Quick 260715-74a] `/contracts` hub shows SEWP VI + OGS/PBITS + GSA line cards (Commvault, Synnex, HP Coming Soon); no STARS III; no partners gallery; nav label Contract Vehicles.
+
+### Quick Tasks Completed
+
+| ID | Slug | Date | Status |
+|---|---|---|---|
+| 260715-74a | rebuild-contracts-as-contract-vehicles-h | 2026-07-15 | complete |
+| 260715-7im | add-clients-page-matching-mockup-layout- | 2026-07-15 | complete |
 
 ### Pending Todos
 
@@ -56,5 +64,5 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-05
-Stopped at: Phase 9 complete — milestone v1.4 shipped
+Last session: 2026-07-15
+Stopped at: Quick task 260715-7im complete — Clients page on /clients
