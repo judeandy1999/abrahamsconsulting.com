@@ -65,7 +65,7 @@ export function NasaSewpViStatementsTableSection({
       >
         <motion.div variants={itemVariants} transition={itemTransition}>
           <h2 id="sewp-vi-statements-heading" className="sewp-vi-statements__title">
-            Contract Statements
+            NASA SEWP VI Details
           </h2>
 
           <div className="sewp-vi-statements__table-wrap">

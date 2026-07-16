@@ -106,7 +106,7 @@ VPAT Path: /documents/nasa-sewp-vi/ordering-guide-vpat.pdf
 4. CONTRACT STATEMENTS
 ================================================================================
 
-Section Heading (hardcoded on page): Contract Statements
+Section Heading (hardcoded on page): NASA SEWP VI Details
 Caption: Official identification, policy statements, program manager contact, and external resources for Abrahams Consulting LLC NASA SEWP VI
 
 
