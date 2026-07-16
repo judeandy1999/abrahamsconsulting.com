@@ -85,7 +85,6 @@ export function NasaSewpViStatementsTableSection({
                   <td>
                     <div className="sewp-vi-statements__profile">
                       <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
-                      <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
 
                       <dl className="sewp-vi-statements__meta">
                         {programManager.profile.contacts.map((contact) => (
