@@ -1918,6 +1918,99 @@
   margin: 1.15rem 0 0;
 }
 
+.sewp-vi-statements__meta {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+}
+
+.sewp-vi-statements__meta-row {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 8.5rem) minmax(0, 1fr);
+  gap: 0.65rem 1rem;
+  align-items: baseline;
+}
+
+.sewp-vi-statements__meta dt {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #042551;
+}
+
+.sewp-vi-statements__meta dd {
+  margin: 0;
+}
+
+.sewp-vi-statements__profile {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(4, 37, 81, 0.1);
+}
+
+.sewp-vi-statements__profile-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.sewp-vi-statements__profile-role {
+  margin: 0.2rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.sewp-vi-statements__link {
+  color: var(--color-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.sewp-vi-statements__link:hover,
+.sewp-vi-statements__link:focus-visible {
+  color: var(--color-red);
+}
+
+.sewp-vi-statements__resources {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.sewp-vi-statements__resource-action {
+  margin: 0.65rem 0 0;
+}
+
+.sewp-vi-statements__resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.sewp-vi-statements__resource-link:hover,
+.sewp-vi-statements__resource-link:focus-visible {
+  color: var(--color-red);
+}
+
+.sewp-vi-statements__resource-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: var(--color-slate);
+}
+
 .sewp-vi-ordering-guide {
   display: grid;
   gap: 1.5rem;
@@ -3083,6 +3176,11 @@
   .sewp-vi-statements__table tbody td {
     padding: 0.75rem 1rem;
     border-top: 0;
+  }
+
+  .sewp-vi-statements__meta-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
   }
 
   .sewp-vi-pm-contact__inner {

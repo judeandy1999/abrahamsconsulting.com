@@ -4,8 +4,8 @@ milestone: v1.4
 milestone_name: NASA SEWP VI Electronic Ordering Guide
 status: complete
 stopped_at: Phase 9 complete
-last_updated: "2026-07-15T09:40:00.000Z"
-last_activity: 2026-07-15 -- Quick task 260715-fli SEWP statements table complete
+last_updated: "2026-07-16T12:40:00.000Z"
+last_activity: 2026-07-16 -- Quick task 260716-by7 SEWP statements table PM + resources
 progress:
   total_phases: 1
   completed_phases: 1
@@ -28,7 +28,7 @@ See: `.planning/PROJECT.md` (updated 2026-06-23)
 Phase: 9 — NASA SEWP VI Electronic Ordering Guide
 Plan: 09-01 (complete)
 Status: Milestone v1.4 complete
-Last activity: 2026-07-15 — Quick task 260715-fli SEWP statements table complete
+Last activity: 2026-07-16 — Quick task 260716-by7 SEWP statements table PM + resources
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Last activity: 2026-07-15 — Quick task 260715-fli SEWP statements table comple
 | 260715-8q5 | recreate-capabilities-statement-federal | 2026-07-15 | complete |
 | 260715-e7p | simplify-sewp-gwac-statement-layout-and- | 2026-07-15 | complete |
 | 260715-fli | restyle-sewp-gwac-fair-opportunity-and-a | 2026-07-15 | complete |
+| 260716-by7 | add-program-manager-contact-and-external | 2026-07-16 | complete |
 
 ### Pending Todos
 
@@ -69,5 +70,5 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-15
-Stopped at: Quick task 260715-fli complete — SEWP GWAC / Fair Opportunity / About as one table
+Last session: 2026-07-16
+Stopped at: Quick task 260716-by7 complete — PM Contact + External Resources in statements table

@@ -1,22 +1,58 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
+import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViStatementsTableSectionProps = {
   gwac: NasaSewpViPageContent["gwacIdentificationStatement"];
   aboutSewp: NasaSewpViPageContent["aboutSewp"];
   fairOpportunity: NasaSewpViPageContent["fairOpportunityClause"];
+  programManager: NasaSewpViPageContent["programManagerContact"];
+  externalResources: NasaSewpViPageContent["externalResourceLinks"];
 };
+
+function ContactValue({
+  value,
+  href,
+  ariaLabel
+}: {
+  value: string;
+  href?: string;
+  ariaLabel?: string;
+}) {
+  if (href) {
+    return (
+      <a href={href} className="sewp-vi-statements__link" aria-label={ariaLabel ?? value}>
+        {value}
+      </a>
+    );
+  }
+
+  return (
+    <>
+      {value.split("\n").map((line, index) => (
+        <span key={index}>
+          {index > 0 ? <br /> : null}
+          {line}
+        </span>
+      ))}
+    </>
+  );
+}
 
 export function NasaSewpViStatementsTableSection({
   gwac,
   aboutSewp,
-  fairOpportunity
+  fairOpportunity,
+  programManager,
+  externalResources
 }: NasaSewpViStatementsTableSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const clause = fairOpportunity.clause;
+  const programManagerTitle = `${programManager.titlePrimary} ${programManager.titleSecondary}`;
 
   return (
     <section className="sewp-vi-statements" aria-labelledby="sewp-vi-statements-heading">
@@ -35,7 +71,8 @@ export function NasaSewpViStatementsTableSection({
           <div className="sewp-vi-statements__table-wrap">
             <table className="sewp-vi-statements__table">
               <caption className="sewp-vi-statements__caption">
-                Official identification and policy statements for Abrahams Consulting LLC NASA SEWP VI
+                Official identification, policy statements, program manager contact, and external
+                resources for Abrahams Consulting LLC NASA SEWP VI
               </caption>
               <tbody>
                 <tr>
@@ -78,6 +115,71 @@ export function NasaSewpViStatementsTableSection({
                     <p className="sewp-vi-statements__outcome">
                       <strong>Outcome:</strong> {clause.outcome}
                     </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{programManagerTitle}</th>
+                  <td>
+                    <p className="sewp-vi-statements__paragraph">{programManager.intro}</p>
+
+                    <dl className="sewp-vi-statements__meta">
+                      {programManager.details.map((detail) => (
+                        <div key={detail.id} className="sewp-vi-statements__meta-row">
+                          <dt>{detail.label}</dt>
+                          <dd>
+                            <ContactValue value={detail.value} />
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+
+                    <div className="sewp-vi-statements__profile">
+                      <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
+                      <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
+
+                      <dl className="sewp-vi-statements__meta">
+                        {programManager.profile.contacts.map((contact) => (
+                          <div key={contact.id} className="sewp-vi-statements__meta-row">
+                            <dt>{contact.label}</dt>
+                            <dd>
+                              <ContactValue
+                                value={contact.value}
+                                href={contact.href}
+                                ariaLabel={`${contact.label}: ${contact.value}`}
+                              />
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{externalResources.heading}</th>
+                  <td>
+                    <ul className="sewp-vi-statements__resources">
+                      {externalResources.cards.map((card) => (
+                        <li key={card.id} className="sewp-vi-statements__resource">
+                          <h3 className="sewp-vi-statements__subsection-title">{card.title}</h3>
+                          <p className="sewp-vi-statements__paragraph">{card.description}</p>
+                          <p className="sewp-vi-statements__resource-action">
+                            <a
+                              href={card.href}
+                              className="sewp-vi-statements__resource-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={accessibleExternalLinkLabel(card.ctaLabel)}
+                            >
+                              <ExternalLink size={16} strokeWidth={1.75} aria-hidden="true" />
+                              {card.ctaLabel}
+                            </a>
+                          </p>
+                          <p className="sewp-vi-statements__resource-note">{card.redirectNote}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </td>
                 </tr>
               </tbody>

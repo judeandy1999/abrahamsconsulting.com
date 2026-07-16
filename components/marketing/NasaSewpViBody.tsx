@@ -7,11 +7,9 @@ import { NasaSewpViCertificationsSection } from "./NasaSewpViCertificationsSecti
 import { NasaSewpViCompanyInformationSection } from "./NasaSewpViCompanyInformationSection";
 import { NasaSewpViContractOverviewSection } from "./NasaSewpViContractOverviewSection";
 import { NasaSewpViElectronicOrderingGuideSection } from "./NasaSewpViElectronicOrderingGuideSection";
-import { NasaSewpViExternalResourceLinksSection } from "./NasaSewpViExternalResourceLinksSection";
 import { NasaSewpViCoreCompetenciesSection } from "./NasaSewpViCoreCompetenciesSection";
 import { NasaSewpViFederalSalesContactSection } from "./NasaSewpViFederalSalesContactSection";
 import { NasaSewpViPastPerformanceSection } from "./NasaSewpViPastPerformanceSection";
-import { NasaSewpViProgramManagerContactSection } from "./NasaSewpViProgramManagerContactSection";
 import { NasaSewpViStatementsTableSection } from "./NasaSewpViStatementsTableSection";
 import { NasaSewpViWhyChooseSection } from "./NasaSewpViWhyChooseSection";
 
@@ -30,11 +28,9 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         gwac={content.gwacIdentificationStatement}
         aboutSewp={content.aboutSewp}
         fairOpportunity={content.fairOpportunityClause}
+        programManager={content.programManagerContact}
+        externalResources={content.externalResourceLinks}
       />
-
-      <NasaSewpViProgramManagerContactSection section={content.programManagerContact} />
-
-      <NasaSewpViExternalResourceLinksSection section={content.externalResourceLinks} />
 
       <NasaSewpViAboutCompanySection section={content.aboutCompany} />
 
