@@ -39,7 +39,7 @@ export const siteContent: SiteContent = {
   },
   utilityLinks: [
     {
-      label: "Primary Contract Vehicles",
+      label: "Contract Vehicles",
       href: "/contracts"
     },
     {
@@ -93,12 +93,12 @@ export const siteContent: SiteContent = {
       "Abrahams Consulting helps public sector agencies modernize infrastructure, strengthen cybersecurity, and streamline procurement through trusted technology partnerships and contract vehicles.",
     features: [
       { icon: "shield", label: "Certified Minority-Owned Business" },
-      { icon: "document", label: "NYS & Government Primary Contract Vehicles" },
+      { icon: "document", label: "NYS & Government Contract Vehicles" },
       { icon: "lock", label: "Cybersecurity & Cloud Specialists" },
       { icon: "people", label: "Public Sector Procurement Expertise" }
     ],
     primaryCtaLabel: "REQUEST A CONSULTATION",
-    secondaryCtaLabel: "VIEW PRIMARY CONTRACT VEHICLES"
+    secondaryCtaLabel: "VIEW CONTRACT VEHICLES"
   },
   certificationStrip: {
     title: "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
@@ -163,7 +163,7 @@ export const siteContent: SiteContent = {
       {
         id: "procurement",
         icon: "procurement",
-        title: "IT PROCUREMENT & PRIMARY CONTRACT VEHICLES",
+        title: "IT PROCUREMENT & CONTRACT VEHICLES",
         description:
           "Simplify purchasing through approved government contracts and procurement expertise."
       },
@@ -282,8 +282,8 @@ export const siteContent: SiteContent = {
     copyrightName: "Technology Consultant Abrahams Consulting LLC"
   },
   consultationCta: {
-    label: "Contact Us",
-    path: "/contact-us"
+    label: "Schedule a Consultation",
+    path: "https://info.abrahamsconsulting.com/meetings/abrahams-meeting/abrahams-consulting-professional-services"
   },
   nasaSewpViCta: {
     label: "NASA SEWP VI",

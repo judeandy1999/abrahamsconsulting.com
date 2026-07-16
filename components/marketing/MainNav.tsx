@@ -200,9 +200,15 @@ export function MainNav({ site }: MainNavProps) {
             <Link href={site.nasaSewpViCta.path} className="main-nav__cta main-nav__cta--secondary" onClick={closeMenus}>
               {site.nasaSewpViCta.label}
             </Link>
-            <Link href={site.consultationCta.path} className="main-nav__cta" onClick={closeMenus}>
+            <a
+              href={site.consultationCta.path}
+              className="main-nav__cta"
+              onClick={closeMenus}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               SCHEDULE A CONSULTATION
-            </Link>
+            </a>
           </div>
         </div>
       </div>

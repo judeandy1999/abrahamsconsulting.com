@@ -34,10 +34,15 @@ export function HomeHero({ site }: HomeHeroProps) {
           </ul>
 
           <div className="home-hero__actions">
-            <Link href={site.consultationCta.path} className="btn btn--primary">
+            <a
+              href={site.consultationCta.path}
+              className="btn btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {homeHero.primaryCtaLabel}
               <IconArrowRight className="btn__icon" />
-            </Link>
+            </a>
             <Link href="/contracts" className="btn btn--secondary">
               {homeHero.secondaryCtaLabel}
             </Link>

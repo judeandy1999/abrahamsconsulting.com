@@ -157,8 +157,8 @@
       "copyrightName": "Abrahams Consulting LLC"
     },
     "consultationCta": {
-      "label": "Contact Us",
-      "path": "/contact-us"
+      "label": "Schedule a Consultation",
+      "path": "https://info.abrahamsconsulting.com/meetings/abrahams-meeting/abrahams-consulting-professional-services"
     },
     "nasaSewpViCta": {
       "label": "NASA SEWP VI",

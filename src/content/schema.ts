@@ -168,7 +168,7 @@ export const siteContentSchema = z.object({
   }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
-    path: z.literal("/contact-us")
+    path: z.string().min(1, "Consultation CTA path is required")
   }),
   nasaSewpViCta: z.object({
     label: z.string().min(1, "NASA SEWP VI CTA label is required"),
