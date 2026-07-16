@@ -4,8 +4,8 @@ milestone: v1.4
 milestone_name: NASA SEWP VI Electronic Ordering Guide
 status: complete
 stopped_at: Phase 9 complete
-last_updated: "2026-07-16T12:45:00.000Z"
-last_activity: 2026-07-16 -- Quick task 260716-c0w image alt text complete
+last_updated: "2026-07-16T13:45:00.000Z"
+last_activity: 2026-07-16 -- Quick task 260716-d4z website content revisions complete
 progress:
   total_phases: 1
   completed_phases: 1
@@ -58,6 +58,7 @@ Last activity: 2026-07-16 — Quick task 260716-c0w image alt text complete
 | 260715-fli | restyle-sewp-gwac-fair-opportunity-and-a | 2026-07-15 | complete |
 | 260716-by7 | add-program-manager-contact-and-external | 2026-07-16 | complete |
 | 260716-c0w | add-alt-text-to-all-images-currently-usi | 2026-07-16 | complete |
+| 260716-d4z | website-content-revisions-remove-wosb-8a | 2026-07-16 | complete |
 
 ### Pending Todos
 
