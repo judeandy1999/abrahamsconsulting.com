@@ -13,28 +13,10 @@ export const capabilitiesStatementSharedCertifications = {
       imageAlt: "DBE certification logo"
     },
     {
-      id: "stars-iii",
-      name: "8(a) STARS III",
-      imageSrc: cert("stars-iii.png"),
-      imageAlt: "GSA 8(a) STARS III logo"
-    },
-    {
       id: "itil",
       name: "ITIL",
       imageSrc: cert("itil.jpg"),
       imageAlt: "ITIL Training Organization accreditation logo"
-    },
-    {
-      id: "sba",
-      name: "SBA",
-      imageSrc: cert("sba.jpg"),
-      imageAlt: "Certified Small Business, SBA logo"
-    },
-    {
-      id: "sba-wosb",
-      name: "SBA WOSB",
-      imageSrc: cert("sba-wosb.jpg"),
-      imageAlt: "SBA Woman Owned Small Business logo"
     },
     {
       id: "sca",
@@ -78,6 +60,8 @@ export const capabilitiesStatementSharedCertifications = {
       imageSrc: cert("wbe.jpg"),
       imageAlt: "New York City and Nassau County WBE logo"
     }
+    // TODO(business): Add New Jersey Certification logo once asset is provided at
+    // public/images/certifications/new-jersey.jpg
   ]
 };
 
@@ -97,8 +81,8 @@ export const capabilitiesStatementSharedContactBase = {
 
 export const capabilitiesStatementSharedFocusAreas = [
   { id: "managed-it", title: "Managed IT Services" },
-  { id: "cloud", title: "Cloud Services" },
-  { id: "staffing", title: "Technical Staffing" }
+  { id: "staffing", title: "Technical Staffing" },
+  { id: "executive-recruiting", title: "Executive Recruiting" }
 ];
 
 export const capabilitiesStatementSharedOverview = {

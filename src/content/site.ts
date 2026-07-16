@@ -39,7 +39,7 @@ export const siteContent: SiteContent = {
   },
   utilityLinks: [
     {
-      label: "Contract Vehicles",
+      label: "Primary Contract Vehicles",
       href: "/contracts"
     },
     {
@@ -63,7 +63,7 @@ export const siteContent: SiteContent = {
       ]
     },
     {
-      label: "IT Executive Recruiting",
+      label: "Executive Recruiting",
       href: "/executive-recruiting"
     },
     {
@@ -71,6 +71,7 @@ export const siteContent: SiteContent = {
       href: "/consulting-services"
     },
     {
+      // TODO: Future work may replace CMC Engage branding with Abrahams Consulting branding.
       label: "Manufacturer Store",
       href: "https://cmcengage.com/6702"
     },
@@ -79,6 +80,7 @@ export const siteContent: SiteContent = {
       href: "/blog"
     },
     {
+      // TODO: Verify whether the menu title should remain "EVA" or become "EVA Speaks".
       label: "EVA",
       href: "https://evespeaks.com/virtual-assistance-services/"
     }
@@ -91,18 +93,19 @@ export const siteContent: SiteContent = {
       "Abrahams Consulting helps public sector agencies modernize infrastructure, strengthen cybersecurity, and streamline procurement through trusted technology partnerships and contract vehicles.",
     features: [
       { icon: "shield", label: "Certified Minority-Owned Business" },
-      { icon: "document", label: "NYS & Government Contract Vehicles" },
+      { icon: "document", label: "NYS & Government Primary Contract Vehicles" },
       { icon: "lock", label: "Cybersecurity & Cloud Specialists" },
       { icon: "people", label: "Public Sector Procurement Expertise" }
     ],
     primaryCtaLabel: "REQUEST A CONSULTATION",
-    secondaryCtaLabel: "VIEW CONTRACT VEHICLES"
+    secondaryCtaLabel: "VIEW PRIMARY CONTRACT VEHICLES"
   },
   certificationStrip: {
     title: "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
     imageSrc: "/images/Abrahams-certifications.webp",
+    // TODO: Regenerate Abrahams-certifications.webp without SBA WOSB / 8(a) / STARS III marks.
     imageAlt:
-      "Certification and partnership logos: NQA ISO 9001, SBA EDWOSB, SBA 8(a), ITIL, Empire State Development MWBE, and OMNIA Partners"
+      "Certification and partnership logos: NQA ISO 9001, ITIL, Empire State Development MWBE, and OMNIA Partners"
   },
   homeAbout: {
     eyebrow: "Who we are",
@@ -118,30 +121,25 @@ export const siteContent: SiteContent = {
       { id: "aruba", name: "Aruba", imageSrc: "/images/companies/arubaLogo.svg" },
       { id: "hp", name: "HP", imageSrc: "/images/companies/hpLogo-150x150.webp" },
       { id: "accellion", name: "Accellion", imageSrc: "/images/companies/Accellion-Logo-150x150.webp" },
-      { id: "ibm", name: "IBM", imageSrc: "/images/companies/IBM-150x150.webp" },
       { id: "dell", name: "Dell", imageSrc: "/images/companies/Dell-150x150.webp" },
       { id: "vmware", name: "VMware", imageSrc: "/images/companies/VmWare-150x150.webp" },
       { id: "red-hat", name: "Red Hat", imageSrc: "/images/companies/redhatlogo00.webp" },
       { id: "lenovo", name: "Lenovo", imageSrc: "/images/companies/Lenovo-150x150.webp" },
-      { id: "trustwave", name: "Trustwave", imageSrc: "/images/companies/trustwave-150x150.webp" },
       { id: "opswat", name: "OPSWAT", imageSrc: "/images/companies/Opswat-Logo-150x150.webp" },
       { id: "vertiv", name: "Vertiv", imageSrc: "/images/companies/Vertiv-150x150.webp" },
       { id: "lexmark", name: "Lexmark", imageSrc: "/images/companies/LexmarkLogo-150x150.webp" },
       { id: "xerox", name: "Xerox", imageSrc: "/images/companies/Xerox-150x150.webp" },
       { id: "cloudinary", name: "Cloudinary", imageSrc: "/images/companies/Cloudinary.webp" },
       { id: "device42", name: "Device42", imageSrc: "/images/companies/device42-150x150.webp" },
-      { id: "nintex", name: "Nintex", imageSrc: "/images/companies/nintex-process-platform-150x150.webp" },
-      { id: "stars-iii", name: "Stars III", imageSrc: "/images/companies/StarsIII-150x150.webp" }
+      { id: "nintex", name: "Nintex", imageSrc: "/images/companies/nintex-process-platform-150x150.webp" }
     ]
   },
   homeFederalCapabilities: {
     heading: "FEDERAL CAPABILITIES",
     body:
-      "Abrahams Consulting LLC has expanded its Federal Capabilities as an 8 (a) Woman Owned Small Business with the award of the 8 (a) STARS GSA contract vehicle in February 2022. Learn more about it ",
+      "Abrahams Consulting LLC has expanded its federal capabilities as a NASA SEWP VI Prime Contractor under Category A – ITC/AV Solutions. Learn more about it ",
     linkLabel: "here.",
-    linkHref: "https://bit.ly/AbrahamsGSASTARSIII",
-    videoEmbedUrl: "https://www.youtube.com/embed/QrHVjEpjMIs?modestbranding=1&rel=0",
-    videoTitle: "GSA's 8(a)STARS III Overview"
+    linkHref: "/nasa-sewp-vi"
   },
   homeSolutions: {
     title: "OUR SOLUTIONS",
@@ -165,7 +163,7 @@ export const siteContent: SiteContent = {
       {
         id: "procurement",
         icon: "procurement",
-        title: "IT PROCUREMENT & CONTRACT VEHICLES",
+        title: "IT PROCUREMENT & PRIMARY CONTRACT VEHICLES",
         description:
           "Simplify purchasing through approved government contracts and procurement expertise."
       },
@@ -199,11 +197,11 @@ export const siteContent: SiteContent = {
           "Providing the responsibility for maintaining, and anticipating need for, a range of processes and functions in order to improve operations and cut expenses."
       },
       {
-        id: "cloud-services",
-        icon: "cloud-services",
-        title: "CLOUD SERVICES",
+        id: "executive-recruiting",
+        icon: "executive-recruiting",
+        title: "EXECUTIVE RECRUITING",
         description:
-          "Having a secured cloud tech solutions can prevent your business data from being penetrated by unwanted attacks, stealing sensitive data and unauthorized user access or use."
+          "Identify visionary technology leaders through a forensic, data-driven executive search process tailored to public-sector and enterprise needs."
       },
       {
         id: "professional-services",
@@ -222,7 +220,7 @@ export const siteContent: SiteContent = {
       {
         id: "experience",
         icon: "experience",
-        value: "15+",
+        value: "20+",
         label: "Years of Experience in IT Solutions"
       },
       {
@@ -254,11 +252,6 @@ export const siteContent: SiteContent = {
     badgesTitle: "Our Badge",
     badges: [
       {
-        id: "pmi-2023",
-        name: "PMI Member 2023",
-        imageSrc: "/images/footer/PMI-Member-Badge_2023-qdfcldxld65ue7w8fr3nnaxys0d4exgx4nd3c77je0.webp"
-      },
-      {
         id: "nqa-iso9001",
         name: "NQA ISO 9001 Quality Management",
         imageSrc: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp"
@@ -280,7 +273,7 @@ export const siteContent: SiteContent = {
       }
     ],
     connectTitle: "Connect",
-    address: "30 Broad Street, NY NY 10004 14th Floor",
+    address: "40 Wall Street, New York, NY",
     phones: ["877-541-1938", "646-558-3887"],
     contactCtaLabel: "CONTACT US",
     contactCtaHref: "/contact-us",
@@ -325,7 +318,7 @@ export const siteContent: SiteContent = {
       {
         id: "office",
         label: "Our Office",
-        value: "30 Broad Street, NY NY 10004\n14th Floor",
+        value: "40 Wall Street\nNew York, NY",
         icon: "map-pin"
       }
     ],

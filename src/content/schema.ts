@@ -117,9 +117,9 @@ export const siteContentSchema = z.object({
     heading: z.string().min(1, "Federal capabilities heading is required"),
     body: z.string().min(1, "Federal capabilities body is required"),
     linkLabel: z.string().min(1, "Federal capabilities link label is required"),
-    linkHref: z.string().url("Federal capabilities link must be a valid URL"),
-    videoEmbedUrl: z.string().url("Federal capabilities video embed URL must be valid"),
-    videoTitle: z.string().min(1, "Federal capabilities video title is required")
+    linkHref: z.string().min(1, "Federal capabilities link is required"),
+    videoEmbedUrl: z.string().url("Federal capabilities video embed URL must be valid").optional(),
+    videoTitle: z.string().min(1, "Federal capabilities video title is required").optional()
   }),
   homeSolutions: z.object({
     title: z.string().min(1, "Home solutions title is required"),
@@ -145,7 +145,7 @@ export const siteContentSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1, "Consulting service item id is required"),
-          icon: z.enum(["managed-services", "cloud-services", "professional-services"]),
+          icon: z.enum(["managed-services", "cloud-services", "professional-services", "executive-recruiting"]),
           title: z.string().min(1, "Consulting service item title is required"),
           description: z.string().min(1, "Consulting service item description is required")
         })
@@ -503,7 +503,7 @@ export const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum(["wosb", "established", "federal-partner"]),
+          icon: z.enum(["mwbe", "established", "federal-partner"]),
           title: z.string().min(1),
           description: z.string().min(1)
         })
@@ -517,7 +517,7 @@ export const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum(["handshake", "wosb", "experience", "iso", "ai", "federal"]),
+          icon: z.enum(["handshake", "mwbe", "experience", "iso", "ai", "federal"]),
           title: z.string().min(1),
           description: z.string().min(1)
         })
@@ -819,7 +819,12 @@ const executiveRecruitingCardSchema = z.object({
   learnMoreHref: z.string().min(1, "Executive recruiting card learn more href is required")
 });
 
-const consultingServiceIconSchema = z.enum(["managed-services", "cloud-services", "professional-services"]);
+const consultingServiceIconSchema = z.enum([
+  "managed-services",
+  "cloud-services",
+  "professional-services",
+  "executive-recruiting"
+]);
 
 const consultingServiceModalSectionSchema = z.object({
   title: z.string().min(1, "Consulting service modal section title is required"),

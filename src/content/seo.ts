@@ -53,7 +53,7 @@ export const launchPageSeoContent = [
   {
     routeKey: "executive-recruiting",
     path: "/executive-recruiting",
-    title: "IT Executive Recruiting",
+    title: "Executive Recruiting",
     description:
       "Identify visionary C-Suite and VP-level technology leaders through Abrahams Consulting's forensic, data-driven executive search process."
   },
@@ -67,9 +67,9 @@ export const launchPageSeoContent = [
   {
     routeKey: "contracts",
     path: "/contracts",
-    title: "Contract Vehicles",
+    title: "Primary Contract Vehicles",
     description:
-      "Review Abrahams Consulting contract vehicles including NASA SEWP VI, New York State OGS / PBITS, and GSA partner line cards."
+      "Review Abrahams Consulting primary contract vehicles including NASA SEWP VI, New York State OGS / PBITS, and GSA partner line cards."
   },
   {
     routeKey: "clients",

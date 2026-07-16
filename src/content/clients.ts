@@ -27,10 +27,10 @@ export const clientsPageContent: ClientsPageContent = {
           imageAlt: "NYC Environmental Protection logo"
         },
         {
-          id: "nyc-doit",
-          name: "NYC Department of IT & Telecommunications",
+          id: "nyc-oti",
+          name: "Office of Technology and Innovation (OTI)",
           imageSrc: img("nyc-doit.png"),
-          imageAlt: "NYC Department of IT and Telecommunications logo"
+          imageAlt: "NYC Office of Technology and Innovation logo"
         },
         {
           id: "nyc-dot",
@@ -168,13 +168,6 @@ export const clientsPageContent: ClientsPageContent = {
           filter: "city-colleges"
         },
         {
-          id: "bmcc",
-          name: "BMCC",
-          imageSrc: img("bmcc.jpg"),
-          imageAlt: "Borough of Manhattan Community College logo",
-          filter: "city-colleges"
-        },
-        {
           id: "hunter",
           name: "Hunter College",
           imageSrc: img("hunter.jpg"),
@@ -250,6 +243,7 @@ export const clientsPageContent: ClientsPageContent = {
           imageAlt: "U.S. Department of Transportation logo",
           filter: "civilian"
         },
+        // TODO: Replace DoDEA listing with the confirmed specific Department of Defense agency once business confirms.
         {
           id: "federal-dodea",
           name: "Department of Defense Education Activity",

@@ -80,7 +80,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       },
       { id: "uei", icon: "uei", label: "UEI", value: "XXCXV1SXKNA5" },
       { id: "cage", icon: "cage", label: "CAGE Code", value: "6KZZ4" },
-      { id: "business-size", icon: "business-size", label: "Business Size", value: "Woman-Owned Small Business" },
+      { id: "business-size", icon: "business-size", label: "Business Size", value: "Minority Woman-Owned Small Business Enterprise (MWBE)" },
       { id: "founded", icon: "founded", label: "Founded", value: "2006" }
     ]
   },
@@ -96,15 +96,15 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     eyebrow: "About Us",
     title: "About Abrahams Consulting",
     paragraphs: [
-      "Abrahams Consulting LLC is a Woman-Owned Small Business delivering full-lifecycle Enterprise IT Services since 2006.",
+      "Abrahams Consulting LLC is a Minority Woman-Owned Small Business Enterprise (MWBE) delivering full-lifecycle Enterprise IT Services since 2006.",
       "With the award of the NASA SEWP VI Prime Contract, Abrahams Consulting has expanded its proven delivery model into the federal marketplace while continuing to deliver enterprise technology solutions backed by nearly two decades of experience."
     ],
     highlights: [
       {
-        id: "wosb",
-        icon: "wosb",
-        title: "Woman-Owned Small Business",
-        description: "Certified WOSB delivering enterprise IT services with proven commercial and public-sector experience."
+        id: "mwbe",
+        icon: "mwbe",
+        title: "Certified MWBE",
+        description: "Certified Minority Woman-Owned Small Business Enterprise delivering enterprise IT services with proven commercial and public-sector experience."
       },
       {
         id: "established",
@@ -132,10 +132,10 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         description: "Authorized NASA SEWP VI Prime Contractor under Category A – ITC/AV Solutions."
       },
       {
-        id: "wosb",
-        icon: "wosb",
-        title: "Woman-Owned Small Business",
-        description: "Proudly a certified Woman-Owned Small Business (WOSB)."
+        id: "mwbe",
+        icon: "mwbe",
+        title: "Certified MWBE",
+        description: "Proudly a certified Minority Woman-Owned Small Business Enterprise (MWBE)."
       },
       {
         id: "experience",
@@ -196,7 +196,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       {
         id: "staffing",
         icon: "staffing",
-        title: "IT Executive Recruiting & Technical Staffing",
+        title: "Executive Recruiting & Technical Staffing",
         description: "Connecting you with top IT talent to build strong teams and drive your mission forward."
       },
       {
@@ -297,7 +297,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     eyebrow: "OUR CONTRACT VEHICLES",
     title: "Contract Vehicles",
     description:
-      "Streamlined procurement through our active contract vehicles to help you save time, reduce risk, and stay compliant.",
+      "Streamlined procurement through our active primary contract vehicles to help you save time, reduce risk, and stay compliant.",
     items: [
       {
         id: "nasa-sewp-vi",
@@ -594,7 +594,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "business-size",
         icon: "business-size",
         label: "Business Size",
-        value: "Woman-Owned Small Business"
+        value: "Minority Woman-Owned Small Business Enterprise (MWBE)"
       },
       { id: "founded", icon: "founded", label: "Founded", value: "2006" }
     ]

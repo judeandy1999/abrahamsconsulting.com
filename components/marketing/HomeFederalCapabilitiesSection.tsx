@@ -12,6 +12,7 @@ type HomeFederalCapabilitiesSectionProps = {
 
 export function HomeFederalCapabilitiesSection({ site }: HomeFederalCapabilitiesSectionProps) {
   const { homeFederalCapabilities } = site;
+  const showVideo = Boolean(homeFederalCapabilities.videoEmbedUrl && homeFederalCapabilities.videoTitle);
 
   return (
     <section className="home-federal" aria-labelledby="home-federal-heading">
@@ -22,23 +23,20 @@ export function HomeFederalCapabilitiesSection({ site }: HomeFederalCapabilities
 
         <p className="home-federal__text">
           {homeFederalCapabilities.body}
-          <a
-            className="home-federal__link"
-            href={homeFederalCapabilities.linkHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="home-federal__link" href={homeFederalCapabilities.linkHref}>
             {homeFederalCapabilities.linkLabel}
           </a>
         </p>
 
-        <div className="home-federal__video">
-          <YouTubeFacade
-            embedUrl={homeFederalCapabilities.videoEmbedUrl}
-            title={homeFederalCapabilities.videoTitle}
-            className="home-federal__video-frame"
-          />
-        </div>
+        {showVideo ? (
+          <div className="home-federal__video">
+            <YouTubeFacade
+              embedUrl={homeFederalCapabilities.videoEmbedUrl!}
+              title={homeFederalCapabilities.videoTitle!}
+              className="home-federal__video-frame"
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

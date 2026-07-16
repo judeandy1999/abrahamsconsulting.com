@@ -10,7 +10,7 @@ type NasaSewpViAboutHighlightIconProps = {
 
 export function NasaSewpViAboutHighlightIcon({ name }: NasaSewpViAboutHighlightIconProps) {
   switch (name) {
-    case "wosb":
+    case "mwbe":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="8.25" r="3.25" stroke="currentColor" strokeWidth="1.5" />

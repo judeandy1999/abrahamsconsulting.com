@@ -30,7 +30,7 @@ export const contractsContent: ContractItem[] = [
   },
   {
     code: "GSA-LINE-CARDS",
-    name: "Contract Vehicles",
+    name: "GSA Partner Line Cards",
     description: "GSA schedule line cards for select technology partners, including Commvault, Synnex, and HP.",
     servicesLinkText: "Browse services that align to GSA catalogs",
     consultationCtaLabel: "Request GSA procurement guidance"
@@ -39,7 +39,7 @@ export const contractsContent: ContractItem[] = [
 
 export const contractsPageContent: ContractsPageContent = {
   hero: {
-    segments: ["Contract Vehicles"],
+    segments: ["Primary Contract Vehicles"],
     description:
       "Streamlined procurement through Abrahams Consulting's active contract vehicles—helping agencies and enterprise buyers save time, reduce risk, and stay compliant."
   },
@@ -74,7 +74,7 @@ export const contractsPageContent: ContractsPageContent = {
     ]
   },
   gsaLineCards: {
-    title: "Contract Vehicles",
+    title: "GSA Partner Line Cards",
     items: [
       {
         id: "gsa-commvault",

@@ -3821,6 +3821,12 @@ body.nav-menu-open {
   gap: 0.85rem;
 }
 
+.certifications-page__logo-grid--centered {
+  grid-template-columns: minmax(0, 18rem);
+  justify-content: center;
+  width: 100%;
+}
+
 .certifications-page__card > .certifications-page__logo-grid {
   grid-template-columns: 1fr;
   max-width: 18rem;

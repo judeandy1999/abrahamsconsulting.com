@@ -32,28 +32,10 @@ export const certificationsPageContent: CertificationsPageContent = {
           title: "Federal Certification",
           items: [
             {
-              id: "sba",
-              name: "SBA Certified",
-              imageSrc: img("sba.jpg"),
-              imageAlt: "Certified Small Business, SBA logo"
-            },
-            {
-              id: "stars-iii",
-              name: "8(a) STARS III",
-              imageSrc: img("stars-iii.png"),
-              imageAlt: "GSA 8(a) STARS III logo"
-            },
-            {
               id: "dbe-federal",
               name: "DBE Certified",
               imageSrc: img("dbe.jpg"),
               imageAlt: "DBE certification logo"
-            },
-            {
-              id: "sba-wosb",
-              name: "SBA WOSB",
-              imageSrc: img("sba-wosb.jpg"),
-              imageAlt: "SBA Woman Owned Small Business logo"
             }
           ]
         },
@@ -97,6 +79,8 @@ export const certificationsPageContent: CertificationsPageContent = {
               imageSrc: img("sca.jpg"),
               imageAlt: "SCA approved certification logo"
             },
+            // TODO(business): Add New Jersey Certification logo once asset is provided at
+            // public/images/certifications/new-jersey.jpg (do not add Washington DC certification).
             {
               id: "port-ny-nj",
               name: "The Port Authority of NY & NJ",

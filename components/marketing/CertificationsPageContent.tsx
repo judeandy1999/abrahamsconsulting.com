@@ -34,8 +34,16 @@ function SectionIcon({ name }: { name: "industry" | "government" | "cta" }) {
 }
 
 function LogoGrid({ items }: { items: CertLogo[] }) {
+  const centered = items.length === 1;
+
   return (
-    <ul className="certifications-page__logo-grid">
+    <ul
+      className={
+        centered
+          ? "certifications-page__logo-grid certifications-page__logo-grid--centered"
+          : "certifications-page__logo-grid"
+      }
+    >
       {items.map((item) => {
         const image = (
           <Image

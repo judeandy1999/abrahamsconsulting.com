@@ -22,7 +22,7 @@ export function NasaSewpViWhyIcon({ name }: NasaSewpViWhyIconProps) {
           />
         </svg>
       );
-    case "wosb":
+    case "mwbe":
       return (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="9" r="3.25" stroke="currentColor" strokeWidth="1.5" />
