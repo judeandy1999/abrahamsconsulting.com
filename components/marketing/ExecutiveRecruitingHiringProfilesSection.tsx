@@ -99,7 +99,7 @@ export function ExecutiveRecruitingHiringProfilesSection({ section }: ExecutiveR
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {section.scheduleLabel}
+                {activeProfile.learnMoreLabel}
                 <IconArrowRight className="exec-recruiting-profiles__cta-icon" />
               </Link>
             </div>
