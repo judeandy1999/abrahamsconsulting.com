@@ -10,7 +10,7 @@ Removed SBA WOSB / 8(a) / STARS III references and related assets; updated homep
 ## Key outcomes
 - Global removal of SBA WOSB, 8(a), STARS III badges/copy/partners
 - Homepage: 20+ years, Executive Recruiting card, SEWP-focused federal section, PMI removed, IBM/Trustwave/Stars III partners removed
-- Nav/SEO: Primary Contract Vehicles, Executive Recruiting
+- Nav/SEO: Contract Vehicles, Executive Recruiting
 - Certifications: federal row is DBE-only (centered); SCA kept; NJ pending asset
 - Clients: OTI added (replacing DoITT label), BMCC removed, DoD TODO
 - Contact: 40 Wall Street, New York, NY

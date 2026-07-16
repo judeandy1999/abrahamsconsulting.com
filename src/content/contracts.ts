@@ -39,13 +39,13 @@ export const contractsContent: ContractItem[] = [
 
 export const contractsPageContent: ContractsPageContent = {
   hero: {
-    segments: ["Primary Contract Vehicles"],
+    segments: ["Contract Vehicles"],
     description:
       "Streamlined procurement through Abrahams Consulting's active contract vehicles—helping agencies and enterprise buyers save time, reduce risk, and stay compliant."
   },
   primaryVehicles: {
     eyebrow: "ACTIVE VEHICLES",
-    title: "Primary Contract Vehicles",
+    title: "Contract Vehicles",
     description:
       "Use these vehicles to procure IT products and related services with Abrahams Consulting as your trusted partner.",
     items: [

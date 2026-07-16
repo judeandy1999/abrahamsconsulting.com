@@ -67,9 +67,9 @@ export const launchPageSeoContent = [
   {
     routeKey: "contracts",
     path: "/contracts",
-    title: "Primary Contract Vehicles",
+    title: "Contract Vehicles",
     description:
-      "Review Abrahams Consulting primary contract vehicles including NASA SEWP VI, New York State OGS / PBITS, and GSA partner line cards."
+      "Review Abrahams Consulting Contract Vehicles including NASA SEWP VI, New York State OGS / PBITS, and GSA partner line cards."
   },
   {
     routeKey: "clients",
