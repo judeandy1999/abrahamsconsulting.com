@@ -85,17 +85,6 @@ export function NasaSewpViStatementsTableSection({
                   <td>
                     <p className="sewp-vi-statements__paragraph">{programManager.intro}</p>
 
-                    <dl className="sewp-vi-statements__meta">
-                      {programManager.details.map((detail) => (
-                        <div key={detail.id} className="sewp-vi-statements__meta-row">
-                          <dt>{detail.label}</dt>
-                          <dd>
-                            <ContactValue value={detail.value} />
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-
                     <div className="sewp-vi-statements__profile">
                       <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
                       <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
@@ -115,6 +104,17 @@ export function NasaSewpViStatementsTableSection({
                         ))}
                       </dl>
                     </div>
+
+                    <dl className="sewp-vi-statements__meta sewp-vi-statements__meta--secondary">
+                      {programManager.details.map((detail) => (
+                        <div key={detail.id} className="sewp-vi-statements__meta-row">
+                          <dt>{detail.label}</dt>
+                          <dd>
+                            <ContactValue value={detail.value} />
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
                   </td>
                 </tr>
 

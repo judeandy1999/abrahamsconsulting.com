@@ -1945,9 +1945,7 @@
 }
 
 .sewp-vi-statements__profile {
-  margin-top: 1.15rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(4, 37, 81, 0.1);
+  margin-top: 1rem;
 }
 
 .sewp-vi-statements__profile-name {
@@ -1965,6 +1963,12 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-slate);
+}
+
+.sewp-vi-statements__meta--secondary {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(4, 37, 81, 0.1);
 }
 
 .sewp-vi-statements__link {
