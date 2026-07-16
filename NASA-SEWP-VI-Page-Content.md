@@ -191,18 +191,20 @@ Badge Graphic Alt: NASA SEWP VI GWAC contract identification
 Heading: External Resources
 
 Card 1
-Title: Visit the NASA SEWP Homepage
 Description: Learn more about the NASA Solutions for Enterprise-Wide Procurement (SEWP VI) contract, contract details, news, and valuable resources for federal agencies.
 CTA Label: Go to sewp.nasa.gov
 URL: https://www.sewp.nasa.gov
-Redirect Note: You will be redirected to the official NASA SEWP website.
 
 Card 2
-Title: Visit Abrahams Consulting Corporate Homepage
 Description: Explore our corporate website to learn more about Abrahams Consulting LLC, our solutions, capabilities, and commitment to delivering exceptional value.
 CTA Label: Visit abrahamsconsulting.com
 URL: https://abrahamsconsulting.com
-Redirect Note: You will be redirected to the Abrahams Consulting website.
+
+Content also has (not currently shown on page):
+Card 1 Title: Visit the NASA SEWP Homepage
+Card 1 Redirect Note: You will be redirected to the official NASA SEWP website.
+Card 2 Title: Visit Abrahams Consulting Corporate Homepage
+Card 2 Redirect Note: You will be redirected to the Abrahams Consulting website.
 
 
 ================================================================================

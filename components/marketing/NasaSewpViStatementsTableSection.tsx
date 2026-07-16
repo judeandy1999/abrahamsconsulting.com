@@ -162,7 +162,6 @@ export function NasaSewpViStatementsTableSection({
                     <ul className="sewp-vi-statements__resources">
                       {externalResources.cards.map((card) => (
                         <li key={card.id} className="sewp-vi-statements__resource">
-                          <h3 className="sewp-vi-statements__subsection-title">{card.title}</h3>
                           <p className="sewp-vi-statements__paragraph">{card.description}</p>
                           <p className="sewp-vi-statements__resource-action">
                             <a
@@ -176,7 +175,6 @@ export function NasaSewpViStatementsTableSection({
                               {card.ctaLabel}
                             </a>
                           </p>
-                          <p className="sewp-vi-statements__resource-note">{card.redirectNote}</p>
                         </li>
                       ))}
                     </ul>
