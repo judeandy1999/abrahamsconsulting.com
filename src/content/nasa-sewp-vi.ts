@@ -9,11 +9,15 @@ export const NASA_SEWP_VI_DOCUMENTS = {
 
 export const NASA_SEWP_VI_HERO_ASSETS = {
   visualImageSrc: "/images/nasa-sewp-vi/hero-visual.webp",
-  nasaLogoSrc: "/images/nasa-sewp-vi/nasa-logo.svg"
+  visualImageAlt:
+    "Federal agency technology environment representing NASA SEWP VI IT products and solutions",
+  nasaLogoSrc: "/images/nasa-sewp-vi/nasa-logo.svg",
+  nasaLogoAlt: "NASA logo"
 } as const;
 
 export const NASA_SEWP_VI_OVERVIEW_ASSETS = {
-  backgroundImageSrc: "/images/nasa-sewp-vi/contract-overview-bg.webp"
+  backgroundImageSrc: "/images/nasa-sewp-vi/contract-overview-bg.webp",
+  backgroundImageAlt: "Abstract technology network background for the NASA SEWP VI contract overview"
 } as const;
 
 export const NASA_SEWP_VI_WHY_ASSETS = {

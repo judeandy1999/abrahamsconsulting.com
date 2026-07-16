@@ -127,7 +127,7 @@ export function PartnerLogoCarousel({ logos }: PartnerLogoCarouselProps) {
                   <div key={logo.id} className="home-about__carousel-cell">
                     <Image
                       src={logo.imageSrc}
-                      alt=""
+                      alt={`${logo.name} logo`}
                       width={240}
                       height={135}
                       sizes="(max-width: 640px) 30vw, (max-width: 960px) 26vw, 180px"
@@ -135,7 +135,6 @@ export function PartnerLogoCarousel({ logos }: PartnerLogoCarouselProps) {
                       unoptimized={logo.imageSrc.endsWith(".svg")}
                       className="home-about__carousel-logo"
                     />
-                    <span className="sr-only">{logo.name}</span>
                   </div>
                 ))}
               </li>

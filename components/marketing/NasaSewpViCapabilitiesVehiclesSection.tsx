@@ -44,7 +44,13 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
   const content = (
     <>
       <span className="sewp-vi-cap-veh__vehicle-logo-wrap">
-        <Image src={item.logoSrc} alt="" aria-hidden="true" width={88} height={88} className="sewp-vi-cap-veh__vehicle-logo" />
+        <Image
+          src={item.logoSrc}
+          alt={item.logoAlt}
+          width={88}
+          height={88}
+          className="sewp-vi-cap-veh__vehicle-logo"
+        />
       </span>
       <span className="sewp-vi-cap-veh__vehicle-copy">
         <span className="sewp-vi-cap-veh__vehicle-title">{item.title}</span>

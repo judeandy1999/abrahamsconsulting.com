@@ -44,12 +44,12 @@ export function HomeHero({ site }: HomeHeroProps) {
           </div>
         </div>
 
-        <div className="home-hero__visual" aria-hidden="true">
+        <div className="home-hero__visual">
           <picture>
             <source media="(max-width: 960px)" srcSet="/images/hero-logo-mobile.webp" type="image/webp" />
             <Image
               src="/images/hero-logo.webp"
-              alt=""
+              alt={`${site.name} logo`}
               width={520}
               height={520}
               priority

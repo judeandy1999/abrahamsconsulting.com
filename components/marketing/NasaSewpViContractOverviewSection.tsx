@@ -40,10 +40,10 @@ export function NasaSewpViContractOverviewSection({ section }: NasaSewpViContrac
 
   return (
     <section className="sewp-vi-overview" aria-labelledby="sewp-vi-overview-heading">
-      <div className="sewp-vi-overview__bg-wrap" aria-hidden="true">
+      <div className="sewp-vi-overview__bg-wrap">
         <Image
           src={NASA_SEWP_VI_OVERVIEW_ASSETS.backgroundImageSrc}
-          alt=""
+          alt={NASA_SEWP_VI_OVERVIEW_ASSETS.backgroundImageAlt}
           width={640}
           height={480}
           className="sewp-vi-overview__bg"

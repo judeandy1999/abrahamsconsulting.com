@@ -30,8 +30,7 @@ function PrimaryVehicleCard({ item }: { item: PrimaryVehicle }) {
       <span className="contract-vehicles__vehicle-logo-wrap">
         <Image
           src={item.logoSrc}
-          alt=""
-          aria-hidden="true"
+          alt={item.logoAlt}
           width={88}
           height={88}
           className="contract-vehicles__vehicle-logo"
@@ -85,16 +84,14 @@ function GsaLineCard({ item }: { item: LineCard }) {
       <span className="contract-vehicles__line-card-badges">
         <Image
           src={item.badgeSrc}
-          alt=""
-          aria-hidden="true"
+          alt={item.badgeAlt}
           width={72}
           height={72}
           className="contract-vehicles__line-card-gsa"
         />
         <Image
           src={item.partnerLogoSrc}
-          alt=""
-          aria-hidden="true"
+          alt={item.partnerLogoAlt}
           width={120}
           height={56}
           className="contract-vehicles__line-card-partner"

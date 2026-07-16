@@ -39,7 +39,9 @@ CTA Label: Download Capability Statement
 CTA Link: /documents/nasa-sewp-vi/capability-statement.pdf
 
 Hero Visual Image: /images/nasa-sewp-vi/hero-visual.webp
+Hero Visual Alt: Federal agency technology environment representing NASA SEWP VI IT products and solutions
 NASA Logo Image: /images/nasa-sewp-vi/nasa-logo.svg
+NASA Logo Alt: NASA logo
 
 
 ================================================================================
@@ -50,6 +52,7 @@ Title: Contract Overview
 Description: Abrahams Consulting LLC is an awarded contractor under the NASA SEWP VI Government-Wide Acquisition Contract (GWAC) for Category A – ITC/AV Solutions.
 
 Background Image: /images/nasa-sewp-vi/contract-overview-bg.webp
+Background Image Alt: Abstract technology network background for the NASA SEWP VI contract overview
 
 Contract Number: 80TECH26D1658
 Category: Category A – ITC/AV Solutions

@@ -68,7 +68,7 @@ export function YouTubeFacade({ embedUrl, title, className }: YouTubeFacadeProps
     >
       <Image
         src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
-        alt=""
+        alt={`${title} video thumbnail`}
         fill
         sizes="(max-width: 960px) 100vw, 52rem"
         className="youtube-facade__poster"

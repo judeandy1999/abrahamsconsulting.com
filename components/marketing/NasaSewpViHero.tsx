@@ -123,12 +123,12 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
         </motion.div>
       </div>
 
-      <div className="sewp-vi-hero__visual" aria-hidden="true">
-        <div className="sewp-vi-hero__visual-accent" />
+      <div className="sewp-vi-hero__visual">
+        <div className="sewp-vi-hero__visual-accent" aria-hidden="true" />
         <div className="sewp-vi-hero__visual-frame">
           <Image
             src={NASA_SEWP_VI_HERO_ASSETS.visualImageSrc}
-            alt=""
+            alt={NASA_SEWP_VI_HERO_ASSETS.visualImageAlt}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -137,7 +137,7 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
         </div>
         <Image
           src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
-          alt=""
+          alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
           width={96}
           height={96}
           className="sewp-vi-hero__nasa-logo"
