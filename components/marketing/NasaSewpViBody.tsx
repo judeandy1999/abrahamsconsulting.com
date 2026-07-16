@@ -11,6 +11,7 @@ import { NasaSewpViCoreCompetenciesSection } from "./NasaSewpViCoreCompetenciesS
 import { NasaSewpViFederalSalesContactSection } from "./NasaSewpViFederalSalesContactSection";
 import { NasaSewpViPastPerformanceSection } from "./NasaSewpViPastPerformanceSection";
 import { NasaSewpViStatementsTableSection } from "./NasaSewpViStatementsTableSection";
+import { NasaSewpViObtainQuoteSection } from "./NasaSewpViObtainQuoteSection";
 import { NasaSewpViWhyChooseSection } from "./NasaSewpViWhyChooseSection";
 
 type NasaSewpViBodyProps = {
@@ -31,6 +32,8 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         programManager={content.programManagerContact}
         externalResources={content.externalResourceLinks}
       />
+
+      <NasaSewpViObtainQuoteSection section={content.obtainQuote} />
 
       <NasaSewpViAboutCompanySection section={content.aboutCompany} />
 

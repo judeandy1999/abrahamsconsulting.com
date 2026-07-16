@@ -764,6 +764,54 @@ export const nasaSewpViPageSchema = z.object({
       href: z.string().min(1)
     })
   }),
+  obtainQuote: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    intro: z.string().min(1),
+    toolLabel: z.string().min(1),
+    toolHref: z.string().url(),
+    processHeading: z.string().min(1),
+    steps: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          icon: z.enum(["prepare", "submit", "review", "quote", "secure"]),
+          title: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .length(5),
+    salesAssistance: z.object({
+      title: z.string().min(1),
+      intro: z.string().min(1),
+      primary: z.object({
+        label: z.string().min(1),
+        name: z.string().min(1),
+        role: z.string().min(1),
+        telephone: z.string().min(1),
+        email: z.string().email()
+      }),
+      alternate: z.object({
+        label: z.string().min(1),
+        name: z.string().min(1),
+        role: z.string().min(1),
+        telephone: z.string().min(1),
+        email: z.string().email()
+      }),
+      responseTime: z.object({
+        title: z.string().min(1),
+        description: z.string().min(1)
+      }),
+      important: z.object({
+        title: z.string().min(1),
+        description: z.string().min(1)
+      })
+    }),
+    formsRequirements: z.object({
+      title: z.string().min(1),
+      paragraphs: z.array(z.string().min(1)).min(2).max(4)
+    })
+  }),
   federalSalesContact: z.object({
     title: z.string().min(1),
     prompt: z.string().min(1),

@@ -621,6 +621,87 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       href: NASA_SEWP_VI_DOCUMENTS.capabilityStatement
     }
   },
+  obtainQuote: {
+    eyebrow: "HOW TO OBTAIN A QUOTE",
+    title: "NASA Solutions for Enterprise-Wide Procurement (SEWP) VI",
+    intro:
+      "Federal agencies and authorized users may request quotes for hardware, software, or related services through the NASA SEWP Quote Request Tool, available through the NASA SEWP website at",
+    toolLabel: "https://www.sewp.nasa.gov/",
+    toolHref: "https://www.sewp.nasa.gov/",
+    processHeading: "Quote Request Process",
+    steps: [
+      {
+        id: "prepare",
+        icon: "prepare",
+        title: "Prepare the requirement",
+        description:
+          "Identify the requested hardware, software, solution, or related service. Include specifications, quantities, delivery location, required delivery date, requested response date, and applicable agency instructions."
+      },
+      {
+        id: "submit",
+        icon: "submit",
+        title: "Submit through NASA SEWP",
+        description:
+          "Submit the requirement through the NASA SEWP Quote Request Tool as a Request for Quote (RFQ), Request for Information (RFI), or Market Research Request (MRR), as applicable."
+      },
+      {
+        id: "review",
+        icon: "review",
+        title: "Scope and catalog review",
+        description:
+          "Abrahams Consulting LLC will review the request and determine whether the requested offerings are within the scope of Contract No. 80TECH26D1658 and available in the SEWP database of record."
+      },
+      {
+        id: "quote",
+        icon: "quote",
+        title: "Official quote submission",
+        description:
+          "For a request issued through the NASA SEWP Quote Request Tool, Abrahams Consulting will submit its official response through the applicable SEWP quoting system. The quote will state its validity period."
+      },
+      {
+        id: "secure",
+        icon: "secure",
+        title: "Special handling",
+        description:
+          "For classified, sensitive, or specially handled information, Abrahams Consulting will follow the secure submission instructions provided by the requesting agency and permitted by NASA SEWP procedures."
+      }
+    ],
+    salesAssistance: {
+      title: "Sales Assistance",
+      intro: "For assistance with an upcoming quote request or identifying in-scope offerings, contact:",
+      primary: {
+        label: "Primary Sales Representative",
+        name: "TBD",
+        role: "Federal Sales Support",
+        telephone: "TBD",
+        email: "federal.sales@abrahamsconsulting.com"
+      },
+      alternate: {
+        label: "Alternate Sales Representative",
+        name: "Angela Gibson",
+        role: "Technology Consultant / Partner",
+        telephone: "718-979-1371",
+        email: "agibson@abrahamsconsulting.com"
+      },
+      responseTime: {
+        title: "Response Time",
+        description:
+          "Abrahams Consulting will respond within the timeframe specified in the applicable NASA SEWP request. Customers with an urgent or time-sensitive requirement should contact the sales representatives listed above."
+      },
+      important: {
+        title: "Important",
+        description:
+          "A courtesy copy of a quote may be provided by email only after the official response has been uploaded through the SEWP quoting system, and the courtesy copy must match the official submission."
+      }
+    },
+    formsRequirements: {
+      title: "Forms and Submission Requirements",
+      paragraphs: [
+        "No separate Abrahams Consulting quote-request form is required when an agency submits its request through the NASA SEWP Quote Request Tool. Abrahams Consulting may quote only products, solutions, and services available under Contract No. 80TECH26D1658 in the SEWP database of record at the time of quote submission.",
+        "When a request originates through the NASA SEWP Quote Request Tool, the official quote response will be submitted through the SEWP system."
+      ]
+    }
+  },
   federalSalesContact: {
     title: "Federal Sales Contact",
     prompt: "Need assistance with a NASA SEWP VI procurement?",

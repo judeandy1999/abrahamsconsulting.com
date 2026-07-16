@@ -208,7 +208,63 @@ Card 2 Redirect Note: You will be redirected to the Abrahams Consulting website.
 
 
 ================================================================================
-5. ABOUT ABRAHAMS CONSULTING
+5. HOW TO OBTAIN A QUOTE
+================================================================================
+
+Eyebrow: HOW TO OBTAIN A QUOTE
+Title: NASA Solutions for Enterprise-Wide Procurement (SEWP) VI
+Intro: Federal agencies and authorized users may request quotes for hardware, software, or related services through the NASA SEWP Quote Request Tool, available through the NASA SEWP website at
+Tool Label / URL: https://www.sewp.nasa.gov/
+
+Process Heading: Quote Request Process
+
+Step 1 — Prepare the requirement
+Identify the requested hardware, software, solution, or related service. Include specifications, quantities, delivery location, required delivery date, requested response date, and applicable agency instructions.
+
+Step 2 — Submit through NASA SEWP
+Submit the requirement through the NASA SEWP Quote Request Tool as a Request for Quote (RFQ), Request for Information (RFI), or Market Research Request (MRR), as applicable.
+
+Step 3 — Scope and catalog review
+Abrahams Consulting LLC will review the request and determine whether the requested offerings are within the scope of Contract No. 80TECH26D1658 and available in the SEWP database of record.
+
+Step 4 — Official quote submission
+For a request issued through the NASA SEWP Quote Request Tool, Abrahams Consulting will submit its official response through the applicable SEWP quoting system. The quote will state its validity period.
+
+Step 5 — Special handling
+For classified, sensitive, or specially handled information, Abrahams Consulting will follow the secure submission instructions provided by the requesting agency and permitted by NASA SEWP procedures.
+
+--- Sales Assistance ---
+
+Title: Sales Assistance
+Intro: For assistance with an upcoming quote request or identifying in-scope offerings, contact:
+
+Primary Sales Representative
+Name: TBD
+Role: Federal Sales Support
+Telephone: TBD
+Email: federal.sales@abrahamsconsulting.com
+
+Alternate Sales Representative
+Name: Angela Gibson
+Role: Technology Consultant / Partner
+Telephone: 718-979-1371
+Email: agibson@abrahamsconsulting.com
+
+Response Time
+Abrahams Consulting will respond within the timeframe specified in the applicable NASA SEWP request. Customers with an urgent or time-sensitive requirement should contact the sales representatives listed above.
+
+Important
+A courtesy copy of a quote may be provided by email only after the official response has been uploaded through the SEWP quoting system, and the courtesy copy must match the official submission.
+
+--- Forms and Submission Requirements ---
+
+Title: Forms and Submission Requirements
+Paragraph 1: No separate Abrahams Consulting quote-request form is required when an agency submits its request through the NASA SEWP Quote Request Tool. Abrahams Consulting may quote only products, solutions, and services available under Contract No. 80TECH26D1658 in the SEWP database of record at the time of quote submission.
+Paragraph 2: When a request originates through the NASA SEWP Quote Request Tool, the official quote response will be submitted through the SEWP system.
+
+
+================================================================================
+6. ABOUT ABRAHAMS CONSULTING
 ================================================================================
 
 Eyebrow: About Us
@@ -229,7 +285,7 @@ Description: Expanding deep enterprise expertise into federal technology procure
 
 
 ================================================================================
-6. WHY ABRAHAMS CONSULTING
+7. WHY ABRAHAMS CONSULTING
 ================================================================================
 
 Title: Why Abrahams Consulting
@@ -255,7 +311,7 @@ Providing a streamlined, low-fee procurement vehicle to maximize value for feder
 
 
 ================================================================================
-7. CORE COMPETENCIES
+8. CORE COMPETENCIES
 ================================================================================
 
 Eyebrow: WHAT WE DO BEST
@@ -294,7 +350,7 @@ Responsive support whenever you need it, keeping your users productive and satis
 
 
 ================================================================================
-8. CATEGORY A CAPABILITIES
+9. CATEGORY A CAPABILITIES
 ================================================================================
 
 Eyebrow: OUR CAPABILITIES
@@ -330,7 +386,7 @@ Expert services and products to optimize performance.
 
 
 ================================================================================
-9. CONTRACT VEHICLES
+10. CONTRACT VEHICLES
 ================================================================================
 
 Eyebrow: OUR CONTRACT VEHICLES
@@ -352,7 +408,7 @@ Link: https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf
 
 
 ================================================================================
-10. REPRESENTATIVE EXPERIENCE / PAST PERFORMANCE
+11. REPRESENTATIVE EXPERIENCE / PAST PERFORMANCE
 ================================================================================
 
 NOTE: This section is in the content file but is currently COMMENTED OUT / HIDDEN on the live page.
@@ -370,7 +426,7 @@ Description: Trusted by public sector organizations to deliver innovative IT sol
 
 
 ================================================================================
-11. COMPANY INFORMATION
+12. COMPANY INFORMATION
 ================================================================================
 
 Title: Company Information
@@ -396,7 +452,7 @@ Founded: 2006
 
 
 ================================================================================
-12. CERTIFICATIONS & CONTRACT STATUS
+13. CERTIFICATIONS & CONTRACT STATUS
 ================================================================================
 
 Title: Certifications & Contract Status
@@ -420,7 +476,7 @@ Maryland SBR: /images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6
 
 
 ================================================================================
-13. FEDERAL SALES CONTACT
+14. FEDERAL SALES CONTACT
 ================================================================================
 
 Title: Federal Sales Contact
@@ -437,7 +493,7 @@ Phone
 
 
 ================================================================================
-14. RESOURCES / DOCUMENTS
+15. RESOURCES / DOCUMENTS
 ================================================================================
 
 Capability Statement Label: Capability Statement (PDF)

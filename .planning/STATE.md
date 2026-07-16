@@ -4,8 +4,8 @@ milestone: v1.4
 milestone_name: NASA SEWP VI Electronic Ordering Guide
 status: complete
 stopped_at: Phase 9 complete
-last_updated: "2026-07-16T13:45:00.000Z"
-last_activity: 2026-07-16 -- Quick task 260716-d4z website content revisions complete
+last_updated: "2026-07-16T14:20:00.000Z"
+last_activity: 2026-07-16 -- Quick task 260716-e1q How to Obtain a Quote section complete
 progress:
   total_phases: 1
   completed_phases: 1
@@ -28,7 +28,7 @@ See: `.planning/PROJECT.md` (updated 2026-06-23)
 Phase: 9 — NASA SEWP VI Electronic Ordering Guide
 Plan: 09-01 (complete)
 Status: Milestone v1.4 complete
-Last activity: 2026-07-16 — Quick task 260716-c0w image alt text complete
+Last activity: 2026-07-16 — Quick task 260716-e1q How to Obtain a Quote section complete
 
 ## Performance Metrics
 
@@ -59,6 +59,7 @@ Last activity: 2026-07-16 — Quick task 260716-c0w image alt text complete
 | 260716-by7 | add-program-manager-contact-and-external | 2026-07-16 | complete |
 | 260716-c0w | add-alt-text-to-all-images-currently-usi | 2026-07-16 | complete |
 | 260716-d4z | website-content-revisions-remove-wosb-8a | 2026-07-16 | complete |
+| 260716-e1q | add-how-to-obtain-a-quote-section-after- | 2026-07-16 | complete |
 
 ### Pending Todos
 
