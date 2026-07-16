@@ -116,28 +116,7 @@ Title: Official GWAC Identification Statement
 Statement: Abrahams Consulting LLC’s NASA Solutions for Enterprise-Wide Procurement (SEWP) VI Contract, Contract No. 80TECH26D1658, is part of a multi-award Government-Wide Acquisition Contract (GWAC). Abrahams Consulting LLC is a contract holder under Category A—Information Technology, Communications, and Audio-Visual (ITC/AV) Solutions.
 
 
---- Row 2: Program Manager Contact Information ---
-
-Title: Program Manager Contact Information
-
-Name: Maybelline Magnet
-Company: Abrahams Consulting, LLC
-Direct Phone: 301-638-8731 ext. 2179
-Direct Phone Link: tel:+13016388731,2179
-Email: sewp.pm@abrahamsconsulting.com
-Email Link: mailto:sewp.pm@abrahamsconsulting.com
-
-Intro: For ordering assistance, contract inquiries, and SEWP VI support, please contact:
-Office Hours: Monday – Friday | 8:00 AM – 5:00 PM ET
-Contract: NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)
-
-Content also has (not currently shown on page):
-Role: SEWP VI PROGRAM MANAGER
-Help Callout Title: SEWP VI Program Manager Contact
-Help Callout Description: Your primary point of contact for SEWP VI ordering assistance, contract inquiries, and program support.
-
-
---- Row 3: About NASA SEWP VI ---
+--- Row 2: About NASA SEWP VI ---
 
 Title: About NASA SEWP VI
 
@@ -149,7 +128,7 @@ Content also has (not currently shown on page):
 Eyebrow: NASA SEWP VI
 
 
---- Row 4: Fair Opportunity Clause ---
+--- Row 3: Fair Opportunity Clause ---
 
 Title: Fair Opportunity Clause
 Intro: Abrahams Consulting's commitment to NASA SEWP VI Fair Opportunity policies, equitable vendor access, and transparent procurement compliance.
@@ -184,6 +163,27 @@ Header Graphic: /images/nasa-sewp-vi/fair-opportunity-document-graphic.webp
 Header Graphic Alt: NASA SEWP VI Fair Opportunity Clause reference
 Badge Graphic: /images/nasa-sewp-vi/gwac-shield-graphic.webp
 Badge Graphic Alt: NASA SEWP VI GWAC contract identification
+
+
+--- Row 4: Program Manager Contact Information ---
+
+Title: Program Manager Contact Information
+
+Name: Maybelline Magnet
+Company: Abrahams Consulting, LLC
+Direct Phone: 301-638-8731 ext. 2179
+Direct Phone Link: tel:+13016388731,2179
+Email: sewp.pm@abrahamsconsulting.com
+Email Link: mailto:sewp.pm@abrahamsconsulting.com
+
+Intro: For ordering assistance, contract inquiries, and SEWP VI support, please contact:
+Office Hours: Monday – Friday | 8:00 AM – 5:00 PM ET
+Contract: NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)
+
+Content also has (not currently shown on page):
+Role: SEWP VI PROGRAM MANAGER
+Help Callout Title: SEWP VI Program Manager Contact
+Help Callout Description: Your primary point of contact for SEWP VI ordering assistance, contract inquiries, and program support.
 
 
 --- Row 5: External Resources ---
