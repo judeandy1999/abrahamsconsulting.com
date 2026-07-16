@@ -119,7 +119,6 @@ Statement: Abrahams Consulting LLC’s NASA Solutions for Enterprise-Wide Procur
 --- Row 2: Program Manager Contact Information ---
 
 Title: Program Manager Contact Information
-Intro: For ordering assistance, contract inquiries, and SEWP VI support, please contact:
 
 Name: Maybelline Magnet
 Role: SEWP VI PROGRAM MANAGER
@@ -129,6 +128,7 @@ Direct Phone Link: tel:+13016388731,2179
 Email: sewp.pm@abrahamsconsulting.com
 Email Link: mailto:sewp.pm@abrahamsconsulting.com
 
+Intro: For ordering assistance, contract inquiries, and SEWP VI support, please contact:
 Office Hours: Monday – Friday | 8:00 AM – 5:00 PM ET
 Contract: NASA SEWP VI (Solutions for Enterprise-Wide Procurement VI)
 

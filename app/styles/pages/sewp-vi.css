@@ -1945,7 +1945,7 @@
 }
 
 .sewp-vi-statements__profile {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .sewp-vi-statements__profile-name {
@@ -1966,9 +1966,15 @@
 }
 
 .sewp-vi-statements__meta--secondary {
+  display: grid;
+  gap: 1rem;
   margin-top: 1.15rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(4, 37, 81, 0.1);
+}
+
+.sewp-vi-statements__meta--secondary > .sewp-vi-statements__meta {
+  margin-top: 0;
 }
 
 .sewp-vi-statements__link {
