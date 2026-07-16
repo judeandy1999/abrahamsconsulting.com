@@ -93,26 +93,15 @@ export function ExecutiveRecruitingHiringProfilesSection({ section }: ExecutiveR
                 ))}
               </ul>
 
-              <div className="exec-recruiting-profiles__actions">
-                <Link
-                  href={activeProfile.learnMoreHref}
-                  className="exec-recruiting-profiles__cta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {activeProfile.learnMoreLabel}
-                  <IconArrowRight className="exec-recruiting-profiles__cta-icon" />
-                </Link>
-                <Link
-                  href={section.scheduleHref}
-                  className="exec-recruiting-profiles__cta exec-recruiting-profiles__cta--schedule"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {section.scheduleLabel}
-                  <IconArrowRight className="exec-recruiting-profiles__cta-icon" />
-                </Link>
-              </div>
+              <Link
+                href={section.scheduleHref}
+                className="exec-recruiting-profiles__cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {section.scheduleLabel}
+                <IconArrowRight className="exec-recruiting-profiles__cta-icon" />
+              </Link>
             </div>
 
             <div className="exec-recruiting-profiles__panel-media">
