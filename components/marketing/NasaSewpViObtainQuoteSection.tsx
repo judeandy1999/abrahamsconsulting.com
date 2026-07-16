@@ -3,7 +3,6 @@
 import { Clock, Database, FileCheck, FileSearch, Lock, ListChecks, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { pillarIconProps } from "./pillarIconProps";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
@@ -93,22 +92,9 @@ export function NasaSewpViObtainQuoteSection({ section }: NasaSewpViObtainQuoteS
         viewport={viewport}
       >
         <motion.header className="sewp-vi-obtain-quote__header" variants={itemVariants} transition={itemTransition}>
-          <p className="sewp-vi-obtain-quote__eyebrow">{section.eyebrow}</p>
           <h2 id="sewp-vi-obtain-quote-heading" className="sewp-vi-obtain-quote__title">
             {section.title}
           </h2>
-          <p className="sewp-vi-obtain-quote__intro">
-            {section.intro}{" "}
-            <a
-              href={section.toolHref}
-              className="sewp-vi-obtain-quote__link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={accessibleExternalLinkLabel(section.toolLabel)}
-            >
-              {section.toolLabel}
-            </a>
-          </p>
         </motion.header>
 
         <motion.div variants={itemVariants} transition={itemTransition}>

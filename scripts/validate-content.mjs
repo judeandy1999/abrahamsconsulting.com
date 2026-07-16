@@ -96,7 +96,7 @@ const siteContentSchema = z.object({
   }),
   consultationCta: z.object({
     label: z.string().min(1, "Consultation CTA label is required"),
-    path: z.literal("/contact-us")
+    path: z.string().min(1, "Consultation CTA path is required")
   }),
   nasaSewpViCta: z.object({
     label: z.string().min(1, "NASA SEWP VI CTA label is required"),
@@ -448,7 +448,7 @@ const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum(["wosb", "established", "federal-partner"]),
+          icon: z.enum(["mwbe", "established", "federal-partner"]),
           title: z.string().min(1),
           description: z.string().min(1)
         })
@@ -462,7 +462,7 @@ const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum(["handshake", "wosb", "experience", "iso", "ai", "federal"]),
+          icon: z.enum(["handshake", "mwbe", "experience", "iso", "ai", "federal"]),
           title: z.string().min(1),
           description: z.string().min(1)
         })

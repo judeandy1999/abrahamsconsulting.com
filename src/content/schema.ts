@@ -765,11 +765,7 @@ export const nasaSewpViPageSchema = z.object({
     })
   }),
   obtainQuote: z.object({
-    eyebrow: z.string().min(1),
     title: z.string().min(1),
-    intro: z.string().min(1),
-    toolLabel: z.string().min(1),
-    toolHref: z.string().url(),
     processHeading: z.string().min(1),
     steps: z
       .array(

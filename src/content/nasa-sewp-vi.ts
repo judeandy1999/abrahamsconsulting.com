@@ -622,12 +622,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     }
   },
   obtainQuote: {
-    eyebrow: "HOW TO OBTAIN A QUOTE",
-    title: "NASA Solutions for Enterprise-Wide Procurement (SEWP) VI",
-    intro:
-      "Federal agencies and authorized users may request quotes for hardware, software, or related services through the NASA SEWP Quote Request Tool, available through the NASA SEWP website at",
-    toolLabel: "https://www.sewp.nasa.gov/",
-    toolHref: "https://www.sewp.nasa.gov/",
+    title: "How to Obtain a Quote",
     processHeading: "Quote Request Process",
     steps: [
       {

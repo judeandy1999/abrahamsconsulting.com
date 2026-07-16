@@ -211,10 +211,7 @@ Card 2 Redirect Note: You will be redirected to the Abrahams Consulting website.
 5. HOW TO OBTAIN A QUOTE
 ================================================================================
 
-Eyebrow: HOW TO OBTAIN A QUOTE
-Title: NASA Solutions for Enterprise-Wide Procurement (SEWP) VI
-Intro: Federal agencies and authorized users may request quotes for hardware, software, or related services through the NASA SEWP Quote Request Tool, available through the NASA SEWP website at
-Tool Label / URL: https://www.sewp.nasa.gov/
+Title: How to Obtain a Quote
 
 Process Heading: Quote Request Process
 
