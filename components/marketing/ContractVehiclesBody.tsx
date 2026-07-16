@@ -170,31 +170,8 @@ export function ContractVehiclesBody({ content }: ContractVehiclesBodyProps) {
               </li>
             ))}
           </ul>
-        </motion.div>
-      </motion.section>
 
-      <motion.section
-        className="contract-vehicles__gsa"
-        aria-labelledby="contract-vehicles-gsa-heading"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-      >
-        <motion.div className="contract-vehicles__inner" variants={itemVariants} transition={itemTransition}>
-          <header className="contract-vehicles__header">
-            {content.gsaLineCards.eyebrow ? (
-              <p className="contract-vehicles__eyebrow">{content.gsaLineCards.eyebrow}</p>
-            ) : null}
-            <h2 id="contract-vehicles-gsa-heading" className="contract-vehicles__title">
-              {content.gsaLineCards.title}
-            </h2>
-            {content.gsaLineCards.description ? (
-              <p className="contract-vehicles__description">{content.gsaLineCards.description}</p>
-            ) : null}
-          </header>
-
-          <ul className="contract-vehicles__line-card-grid">
+          <ul className="contract-vehicles__line-card-grid contract-vehicles__line-card-grid--merged">
             {content.gsaLineCards.items.map((item) => (
               <li key={item.id}>
                 <GsaLineCard item={item} />

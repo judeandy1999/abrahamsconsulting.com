@@ -3116,6 +3116,12 @@ body.nav-menu-open {
   gap: 1.25rem;
 }
 
+.contract-vehicles__line-card-grid--merged {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
 .contract-vehicles__line-card {
   display: flex;
   flex-direction: column;
