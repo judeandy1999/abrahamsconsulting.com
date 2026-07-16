@@ -148,20 +148,18 @@ export function ContractVehiclesBody({ content }: ContractVehiclesBodyProps) {
     <div className="contract-vehicles">
       <motion.section
         className="contract-vehicles__primary"
-        aria-labelledby="contract-vehicles-primary-heading"
+        aria-label={content.primaryVehicles.title}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
       >
         <motion.div className="contract-vehicles__inner" variants={itemVariants} transition={itemTransition}>
-          <header className="contract-vehicles__header">
-            <p className="contract-vehicles__eyebrow">{content.primaryVehicles.eyebrow}</p>
-            <h2 id="contract-vehicles-primary-heading" className="contract-vehicles__title">
-              {content.primaryVehicles.title}
-            </h2>
-            <p className="contract-vehicles__description">{content.primaryVehicles.description}</p>
-          </header>
+          {content.primaryVehicles.eyebrow ? (
+            <header className="contract-vehicles__header">
+              <p className="contract-vehicles__eyebrow">{content.primaryVehicles.eyebrow}</p>
+            </header>
+          ) : null}
 
           <ul className="contract-vehicles__vehicle-list">
             {content.primaryVehicles.items.map((item) => (
