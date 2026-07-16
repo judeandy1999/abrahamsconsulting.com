@@ -445,13 +445,20 @@
   flex-shrink: 0;
 }
 
+.exec-recruiting-profiles__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
 .exec-recruiting-profiles__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   width: fit-content;
-  margin-top: 0.75rem;
+  margin-top: 0;
   padding: 0.9rem 1.5rem;
   border-radius: 0.35rem;
   background: #042551;
@@ -459,11 +466,22 @@
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .exec-recruiting-profiles__cta:hover {
   background: #031d3d;
+}
+
+.exec-recruiting-profiles__cta--schedule {
+  background: transparent;
+  color: #042551;
+  border: 1.5px solid #042551;
+}
+
+.exec-recruiting-profiles__cta--schedule:hover {
+  background: #042551;
+  color: var(--color-white);
 }
 
 .exec-recruiting-profiles__cta-icon {

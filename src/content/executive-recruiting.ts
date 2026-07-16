@@ -85,6 +85,8 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
     title: "Which IT Leadership Hiring Profile Fits You?",
     description:
       "Answer a few practical questions and receive a tailored recommendation with actionable insights. Discover which executive search approach will drive the best results for your organization.",
+    scheduleLabel: "SCHEDULE A CONSULTATION",
+    scheduleHref: EXECUTIVE_RECRUITING_MEETING_URL,
     profiles: [
       {
         id: "advisory-alignment",

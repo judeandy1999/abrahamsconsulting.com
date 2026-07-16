@@ -1101,6 +1101,8 @@ export const executiveRecruitingPageSchema = z.object({
     eyebrow: z.string().min(1, "Hiring profiles section eyebrow is required"),
     title: z.string().min(1, "Hiring profiles section title is required"),
     description: z.string().min(1, "Hiring profiles section description is required"),
+    scheduleLabel: z.string().min(1, "Hiring profiles schedule label is required"),
+    scheduleHref: z.string().min(1, "Hiring profiles schedule href is required"),
     profiles: z.array(executiveRecruitingHiringProfileSchema).length(4, "Hiring profiles section requires four profiles")
   }),
   hiringProfileCta: z.object({
