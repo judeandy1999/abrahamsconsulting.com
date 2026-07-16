@@ -81,44 +81,6 @@ export function NasaSewpViStatementsTableSection({
                 </tr>
 
                 <tr>
-                  <th scope="row">{aboutSewp.title}</th>
-                  <td>
-                    {aboutSewp.paragraphs.map((paragraph) => (
-                      <p key={paragraph} className="sewp-vi-statements__paragraph">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">{fairOpportunity.title}</th>
-                  <td>
-                    <p className="sewp-vi-statements__paragraph">{fairOpportunity.intro}</p>
-                    <p className="sewp-vi-statements__paragraph">{clause.leadParagraph}</p>
-
-                    <div className="sewp-vi-statements__subsections">
-                      {clause.sections.map((section) => (
-                        <div key={section.id} className="sewp-vi-statements__subsection">
-                          <h3 className="sewp-vi-statements__subsection-title">{section.title}</h3>
-                          <ul className="sewp-vi-statements__list">
-                            {section.bullets.map((bullet) => (
-                              <li key={bullet.label}>
-                                <strong>{bullet.label}:</strong> {bullet.text}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className="sewp-vi-statements__outcome">
-                      <strong>Outcome:</strong> {clause.outcome}
-                    </p>
-                  </td>
-                </tr>
-
-                <tr>
                   <th scope="row">{programManagerTitle}</th>
                   <td>
                     <p className="sewp-vi-statements__paragraph">{programManager.intro}</p>
@@ -153,6 +115,44 @@ export function NasaSewpViStatementsTableSection({
                         ))}
                       </dl>
                     </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{aboutSewp.title}</th>
+                  <td>
+                    {aboutSewp.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="sewp-vi-statements__paragraph">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{fairOpportunity.title}</th>
+                  <td>
+                    <p className="sewp-vi-statements__paragraph">{fairOpportunity.intro}</p>
+                    <p className="sewp-vi-statements__paragraph">{clause.leadParagraph}</p>
+
+                    <div className="sewp-vi-statements__subsections">
+                      {clause.sections.map((section) => (
+                        <div key={section.id} className="sewp-vi-statements__subsection">
+                          <h3 className="sewp-vi-statements__subsection-title">{section.title}</h3>
+                          <ul className="sewp-vi-statements__list">
+                            {section.bullets.map((bullet) => (
+                              <li key={bullet.label}>
+                                <strong>{bullet.label}:</strong> {bullet.text}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="sewp-vi-statements__outcome">
+                      <strong>Outcome:</strong> {clause.outcome}
+                    </p>
                   </td>
                 </tr>
 
