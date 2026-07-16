@@ -2083,9 +2083,9 @@
 
 .sewp-vi-obtain-quote__step {
   position: relative;
-  display: grid;
-  gap: 0.65rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding-top: 0.25rem;
 }
@@ -2093,10 +2093,20 @@
 .sewp-vi-obtain-quote__step:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 1.65rem;
+  top: calc(0.25rem + 1.625rem);
   left: calc(50% + 1.85rem);
   right: calc(-50% + 0.6rem);
   border-top: 1.5px dashed rgba(4, 37, 81, 0.22);
+}
+
+.sewp-vi-obtain-quote__step-header {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.65rem;
+  width: 100%;
+  height: calc(3.25rem + 0.65rem + 1.75rem);
+  margin-bottom: 0.65rem;
 }
 
 .sewp-vi-obtain-quote__step-icon {
@@ -2105,6 +2115,7 @@
   justify-content: center;
   width: 3.25rem;
   height: 3.25rem;
+  overflow: hidden;
   border-radius: 999px;
   background: #e8f1fb;
   color: var(--color-blue);
@@ -2113,6 +2124,7 @@
 .sewp-vi-obtain-quote__step-icon svg {
   width: 1.35rem;
   height: 1.35rem;
+  flex-shrink: 0;
 }
 
 .sewp-vi-obtain-quote__step-number {
@@ -2126,10 +2138,12 @@
   color: var(--color-white);
   font-size: 0.8125rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .sewp-vi-obtain-quote__step-title {
-  margin: 0;
+  margin: 0 0 0.45rem;
+  width: 100%;
   font-size: 0.9875rem;
   font-weight: 700;
   line-height: 1.35;
@@ -2138,6 +2152,7 @@
 
 .sewp-vi-obtain-quote__step-description {
   margin: 0;
+  width: 100%;
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--color-slate);
@@ -3262,33 +3277,22 @@
   }
 
   .sewp-vi-obtain-quote__step {
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-areas:
-      "icon number"
-      "icon title"
-      "icon description";
-    column-gap: 0.85rem;
-    row-gap: 0.35rem;
     align-items: start;
-    justify-items: start;
     text-align: left;
   }
 
-  .sewp-vi-obtain-quote__step-icon {
-    grid-area: icon;
-  }
-
-  .sewp-vi-obtain-quote__step-number {
-    grid-area: number;
-    justify-self: start;
+  .sewp-vi-obtain-quote__step-header {
+    grid-template-columns: auto auto;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+    gap: 0.75rem;
+    height: auto;
+    margin-bottom: 0.45rem;
   }
 
   .sewp-vi-obtain-quote__step-title {
-    grid-area: title;
-  }
-
-  .sewp-vi-obtain-quote__step-description {
-    grid-area: description;
+    margin-bottom: 0.35rem;
   }
 
   .sewp-vi-obtain-quote__contacts {

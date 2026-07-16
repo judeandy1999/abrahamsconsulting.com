@@ -102,12 +102,14 @@ export function NasaSewpViObtainQuoteSection({ section }: NasaSewpViObtainQuoteS
           <ol className="sewp-vi-obtain-quote__steps">
             {section.steps.map((step, index) => (
               <li key={step.id} className="sewp-vi-obtain-quote__step">
-                <span className="sewp-vi-obtain-quote__step-icon" aria-hidden="true">
-                  <StepIcon name={step.icon} />
-                </span>
-                <span className="sewp-vi-obtain-quote__step-number" aria-hidden="true">
-                  {index + 1}
-                </span>
+                <div className="sewp-vi-obtain-quote__step-header">
+                  <span className="sewp-vi-obtain-quote__step-icon" aria-hidden="true">
+                    <StepIcon name={step.icon} />
+                  </span>
+                  <span className="sewp-vi-obtain-quote__step-number" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                </div>
                 <h4 className="sewp-vi-obtain-quote__step-title">{step.title}</h4>
                 <p className="sewp-vi-obtain-quote__step-description">{step.description}</p>
               </li>
