@@ -273,7 +273,7 @@ export const siteContent: SiteContent = {
       }
     ],
     connectTitle: "Connect",
-    address: "40 Wall Street, New York, NY",
+    address: "30 Broad Street, NY NY 10004 14th Floor",
     phones: ["877-541-1938", "646-558-3887"],
     contactCtaLabel: "CONTACT US",
     contactCtaHref: "/contact-us",
