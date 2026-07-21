@@ -29,6 +29,8 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         gwac={content.gwacIdentificationStatement}
         aboutSewp={content.aboutSewp}
         fairOpportunity={content.fairOpportunityClause}
+        postDeliverySupport={content.postDeliverySupport}
+        orderTroubleshooting={content.orderTroubleshooting}
         programManager={content.programManagerContact}
         externalResources={content.externalResourceLinks}
       />

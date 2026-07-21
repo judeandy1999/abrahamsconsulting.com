@@ -10,16 +10,15 @@ type CertificationIconName = NasaSewpViPageContent["certifications"]["items"][nu
 
 type NasaSewpViCertificationIconProps = {
   name: CertificationIconName;
-  label: string;
 };
 
-export function NasaSewpViCertificationIcon({ name, label }: NasaSewpViCertificationIconProps) {
+export function NasaSewpViCertificationIcon({ name }: NasaSewpViCertificationIconProps) {
   switch (name) {
     case "nasa-sewp-vi":
       return (
         <Image
           src={NASA_SEWP_VI_CERTIFICATION_LOGOS.nasa}
-          alt={label}
+          alt=""
           width={40}
           height={40}
           className="sewp-vi-certifications__cert-logo"
@@ -31,7 +30,7 @@ export function NasaSewpViCertificationIcon({ name, label }: NasaSewpViCertifica
       return (
         <Image
           src={NASA_SEWP_VI_CERTIFICATION_LOGOS.iso9001}
-          alt={label}
+          alt=""
           width={40}
           height={40}
           className="sewp-vi-certifications__cert-logo"
@@ -47,7 +46,7 @@ export function NasaSewpViCertificationIcon({ name, label }: NasaSewpViCertifica
       return (
         <Image
           src={NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandMbe}
-          alt={label}
+          alt=""
           width={40}
           height={40}
           className="sewp-vi-certifications__cert-logo"
@@ -57,7 +56,7 @@ export function NasaSewpViCertificationIcon({ name, label }: NasaSewpViCertifica
       return (
         <Image
           src={NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandSbr}
-          alt={label}
+          alt=""
           width={40}
           height={40}
           className="sewp-vi-certifications__cert-logo"

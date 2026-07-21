@@ -35,7 +35,7 @@ Description: Abrahams Consulting LLC provides IT products and related technology
 Contract Number: 80TECH26D1658
 Category: Category A – ITC/AV Solutions
 
-CTA Label: Download Capability Statement
+CTA Label: Download Capability Statement (PDF)
 CTA Link: /documents/nasa-sewp-vi/capability-statement.pdf
 
 Hero Visual Image: /images/nasa-sewp-vi/hero-visual.webp
@@ -107,7 +107,7 @@ VPAT Path: /documents/nasa-sewp-vi/ordering-guide-vpat.pdf
 ================================================================================
 
 Section Heading (hardcoded on page): NASA SEWP VI Details
-Caption: Official identification, policy statements, program manager contact, and external resources for Abrahams Consulting LLC NASA SEWP VI
+Caption: Official identification, policy statements, post-delivery support, order troubleshooting, program manager contact, and external resources for Abrahams Consulting LLC NASA SEWP VI
 
 
 --- Row 1: Official GWAC Identification Statement ---
@@ -165,7 +165,54 @@ Badge Graphic: /images/nasa-sewp-vi/gwac-shield-graphic.webp
 Badge Graphic Alt: NASA SEWP VI GWAC contract identification
 
 
---- Row 4: Program Manager Contact Information ---
+--- Row 4: Post-Delivery Support Information ---
+
+Title: Post-Delivery Support Information
+
+Intro: Abrahams Consulting, LLC provides post-delivery support for installation, warranty, technical support, software support, and other order-related issues associated with products and services purchased under its NASA SEWP VI Contract.
+
+Installation: Installation services may be provided when they directly support an in-scope ITC/AV product solution and are identified in the applicable quotation or Delivery Order.
+
+Basic Warranty: Abrahams Consulting will provide conforming products and services in accordance with the applicable terms of the SEWP VI Contract, including FAR 52.212-4. Applicable OEM or publisher warranties may provide additional product-specific coverage identified in the quotation, Delivery Order, or warranty documentation.
+
+Extended Warranty: Extended warranty or maintenance coverage may be offered when available. Applicable coverage, pricing, and terms will be identified in the quotation or order documentation.
+
+Technical and Software Support: Customers requiring technical or software support should contact Abrahams Consulting and provide the Delivery Order number, product or software information, and a description of the issue. Abrahams Consulting will review the request and coordinate the appropriate technical support or escalation.
+
+Primary Support Contact
+Name: Jay Dela Piedra
+Title: Technical and Post-Delivery Support
+Telephone: 646-564-3844 ext 1009
+Telephone Link: tel:+16465643844,1009
+Email: JPiedra@abrahamsconsulting.com
+Email Link: mailto:JPiedra@abrahamsconsulting.com
+Support Hours: Monday–Friday, 8:00 AM – 5:00 PM Eastern Time
+
+
+--- Row 5: Order Troubleshooting Information ---
+
+Title: Order Troubleshooting Information
+
+Paragraph 1: Customers should report delayed, damaged, missing, incorrect, or otherwise nonconforming products or orders to Abrahams Consulting and provide the Delivery Order number, SEWP Tracking Number (if available), affected items, and a description of the issue.
+
+Paragraph 2: Abrahams Consulting, LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact.
+
+Order Support Contact
+Name: Jude Convencido
+Telephone: 718-979-1371
+Telephone Link: tel:+17189791371
+Email: jconvencido@abrahamsconsulting.com
+Email Link: mailto:jconvencido@abrahamsconsulting.com
+
+Escalation Contact
+Name: Maybelline Magnet
+Telephone: 301-638-8731 ext. 2179
+Telephone Link: tel:+13016388731,2179
+Email: sewp.pm@abrahamsconsulting.com
+Email Link: mailto:sewp.pm@abrahamsconsulting.com
+
+
+--- Row 6: Program Manager Contact Information ---
 
 Title: Program Manager Contact Information
 
@@ -186,7 +233,7 @@ Help Callout Title: SEWP VI Program Manager Contact
 Help Callout Description: Your primary point of contact for SEWP VI ordering assistance, contract inquiries, and program support.
 
 
---- Row 5: External Resources ---
+--- Row 7: External Resources ---
 
 Heading: External Resources
 

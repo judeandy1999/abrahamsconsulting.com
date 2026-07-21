@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
-import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
+import { accessibleExternalPdfLinkLabel, withPdfLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViHeroProps = {
@@ -73,14 +73,13 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
 
           <motion.h1 id="sewp-vi-hero-heading" className="sewp-vi-hero__title" variants={itemVariants} transition={itemTransition}>
             {hero.title}
-          </motion.h1>
-
-          <motion.p className="sewp-vi-hero__subtitle" variants={itemVariants} transition={itemTransition}>
-            <span className="sewp-vi-hero__subtitle-divider" aria-hidden="true">
-              |
+            <span className="sewp-vi-hero__subtitle">
+              <span className="sewp-vi-hero__subtitle-divider" aria-hidden="true">
+                |
+              </span>
+              {hero.subtitle}
             </span>
-            {hero.subtitle}
-          </motion.p>
+          </motion.h1>
 
           <motion.p className="sewp-vi-hero__description" variants={itemVariants} transition={itemTransition}>
             {hero.description}
@@ -114,10 +113,10 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
               download
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={accessibleExternalLinkLabel(hero.capabilityStatementCtaLabel)}
+              aria-label={accessibleExternalPdfLinkLabel(hero.capabilityStatementCtaLabel)}
             >
               <IconDownload />
-              {hero.capabilityStatementCtaLabel}
+              {withPdfLinkLabel(hero.capabilityStatementCtaLabel)}
             </a>
           </motion.div>
         </motion.div>

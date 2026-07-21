@@ -10,6 +10,8 @@ type NasaSewpViStatementsTableSectionProps = {
   gwac: NasaSewpViPageContent["gwacIdentificationStatement"];
   aboutSewp: NasaSewpViPageContent["aboutSewp"];
   fairOpportunity: NasaSewpViPageContent["fairOpportunityClause"];
+  postDeliverySupport: NasaSewpViPageContent["postDeliverySupport"];
+  orderTroubleshooting: NasaSewpViPageContent["orderTroubleshooting"];
   programManager: NasaSewpViPageContent["programManagerContact"];
   externalResources: NasaSewpViPageContent["externalResourceLinks"];
 };
@@ -47,12 +49,15 @@ export function NasaSewpViStatementsTableSection({
   gwac,
   aboutSewp,
   fairOpportunity,
+  postDeliverySupport,
+  orderTroubleshooting,
   programManager,
   externalResources
 }: NasaSewpViStatementsTableSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const clause = fairOpportunity.clause;
   const programManagerTitle = `${programManager.titlePrimary} ${programManager.titleSecondary}`;
+  const supportContact = postDeliverySupport.primaryContact;
 
   return (
     <section className="sewp-vi-statements" aria-labelledby="sewp-vi-statements-heading">
@@ -71,8 +76,9 @@ export function NasaSewpViStatementsTableSection({
           <div className="sewp-vi-statements__table-wrap">
             <table className="sewp-vi-statements__table">
               <caption className="sewp-vi-statements__caption">
-                Official identification, policy statements, program manager contact, and external
-                resources for Abrahams Consulting LLC NASA SEWP VI
+                Official identification, policy statements, post-delivery support, order
+                troubleshooting, program manager contact, and external resources for Abrahams
+                Consulting LLC NASA SEWP VI
               </caption>
               <tbody>
                 <tr>
@@ -115,6 +121,78 @@ export function NasaSewpViStatementsTableSection({
                     <p className="sewp-vi-statements__outcome">
                       <strong>Outcome:</strong> {clause.outcome}
                     </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{postDeliverySupport.title}</th>
+                  <td>
+                    <p className="sewp-vi-statements__paragraph">{postDeliverySupport.intro}</p>
+
+                    <div className="sewp-vi-statements__subsections">
+                      {postDeliverySupport.topics.map((topic) => (
+                        <div key={topic.id} className="sewp-vi-statements__subsection">
+                          <h3 className="sewp-vi-statements__subsection-title">{topic.title}</h3>
+                          <p className="sewp-vi-statements__paragraph">{topic.description}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="sewp-vi-statements__profile">
+                      <p className="sewp-vi-statements__subsection-title">{supportContact.heading}</p>
+                      <p className="sewp-vi-statements__profile-name">{supportContact.name}</p>
+                      <p className="sewp-vi-statements__profile-role">{supportContact.role}</p>
+
+                      <dl className="sewp-vi-statements__meta">
+                        {supportContact.contacts.map((contact) => (
+                          <div key={contact.id} className="sewp-vi-statements__meta-row">
+                            <dt>{contact.label}</dt>
+                            <dd>
+                              <ContactValue
+                                value={contact.value}
+                                href={contact.href}
+                                ariaLabel={`${contact.label}: ${contact.value}`}
+                              />
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">{orderTroubleshooting.title}</th>
+                  <td>
+                    {orderTroubleshooting.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="sewp-vi-statements__paragraph">
+                        {paragraph}
+                      </p>
+                    ))}
+
+                    <div className="sewp-vi-statements__contact-grid">
+                      {orderTroubleshooting.contacts.map((contactGroup) => (
+                        <div key={contactGroup.id} className="sewp-vi-statements__profile">
+                          <p className="sewp-vi-statements__subsection-title">{contactGroup.heading}</p>
+                          <p className="sewp-vi-statements__profile-name">{contactGroup.name}</p>
+
+                          <dl className="sewp-vi-statements__meta">
+                            {contactGroup.contacts.map((contact) => (
+                              <div key={contact.id} className="sewp-vi-statements__meta-row">
+                                <dt>{contact.label}</dt>
+                                <dd>
+                                  <ContactValue
+                                    value={contact.value}
+                                    href={contact.href}
+                                    ariaLabel={`${contact.label}: ${contact.value}`}
+                                  />
+                                </dd>
+                              </div>
+                            ))}
+                          </dl>
+                        </div>
+                      ))}
+                    </div>
                   </td>
                 </tr>
 

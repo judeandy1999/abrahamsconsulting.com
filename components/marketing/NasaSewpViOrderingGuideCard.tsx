@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
+import { accessibleExternalPdfLinkLabel, withPdfLinkLabel } from "../../lib/accessibility/accessible-external-label";
 
 type NasaSewpViOrderingGuideCardProps = {
   section: NasaSewpViPageContent["electronicOrderingGuide"];
@@ -48,10 +48,10 @@ export function NasaSewpViOrderingGuideCard({ section }: NasaSewpViOrderingGuide
           className="btn btn--primary sewp-vi-ordering-guide__cta"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={accessibleExternalLinkLabel(download.downloadLabel)}
+          aria-label={accessibleExternalPdfLinkLabel(download.downloadLabel)}
         >
           <IconDownload />
-          {download.downloadLabel}
+          {withPdfLinkLabel(download.downloadLabel)}
         </a>
       </div>
     </article>

@@ -654,6 +654,57 @@ export const nasaSewpViPageSchema = z.object({
       outcome: z.string().min(1)
     })
   }),
+  postDeliverySupport: z.object({
+    title: z.string().min(1),
+    intro: z.string().min(1),
+    topics: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          title: z.string().min(1),
+          description: z.string().min(1)
+        })
+      )
+      .min(1),
+    primaryContact: z.object({
+      heading: z.string().min(1),
+      name: z.string().min(1),
+      role: z.string().min(1),
+      contacts: z
+        .array(
+          z.object({
+            id: z.string().min(1),
+            label: z.string().min(1),
+            value: z.string().min(1),
+            href: z.string().min(1).optional()
+          })
+        )
+        .min(1)
+    })
+  }),
+  orderTroubleshooting: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(1)).min(1),
+    contacts: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          heading: z.string().min(1),
+          name: z.string().min(1),
+          contacts: z
+            .array(
+              z.object({
+                id: z.string().min(1),
+                label: z.string().min(1),
+                value: z.string().min(1),
+                href: z.string().min(1).optional()
+              })
+            )
+            .min(1)
+        })
+      )
+      .min(1)
+  }),
   programManagerContact: z.object({
     titlePrimary: z.string().min(1),
     titleSecondary: z.string().min(1),

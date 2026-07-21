@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
+import { accessibleExternalLinkLabel, accessibleExternalPdfLinkLabel, withPdfLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { NasaSewpViCategoryAIcon } from "./NasaSewpViCategoryAIcon";
 import { IconArrowRight } from "./NavIcons";
 import { useMarketingMotionConfig } from "./marketing-motion";
@@ -37,23 +37,32 @@ function CapabilityColumn({ items }: { items: CapabilityItem[] }) {
 }
 
 function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]["items"][number] }) {
-  const vehicleLabel = `${item.title}${item.badge ? ` (${item.badge})` : ""}. ${item.description}`;
+  const isPdf = Boolean(item.href?.toLowerCase().endsWith(".pdf"));
+  const baseLabel = `${item.title}${item.badge ? ` (${item.badge})` : ""}. ${item.description}`;
+  const vehicleLabel = isPdf ? withPdfLinkLabel(baseLabel) : baseLabel;
   const isExternal = Boolean(item.href?.startsWith("http"));
-  const linkAriaLabel = isExternal ? accessibleExternalLinkLabel(vehicleLabel) : vehicleLabel;
+  const linkAriaLabel = isExternal
+    ? isPdf
+      ? accessibleExternalPdfLinkLabel(baseLabel)
+      : accessibleExternalLinkLabel(baseLabel)
+    : vehicleLabel;
 
   const content = (
     <>
       <span className="sewp-vi-cap-veh__vehicle-logo-wrap">
         <Image
           src={item.logoSrc}
-          alt={item.logoAlt}
+          alt=""
           width={88}
           height={88}
           className="sewp-vi-cap-veh__vehicle-logo"
         />
       </span>
       <span className="sewp-vi-cap-veh__vehicle-copy">
-        <span className="sewp-vi-cap-veh__vehicle-title">{item.title}</span>
+        <span className="sewp-vi-cap-veh__vehicle-title">
+          {item.title}
+          {isPdf ? <span className="sewp-vi-cap-veh__vehicle-file-type"> (PDF)</span> : null}
+        </span>
         {item.badge ? <span className="sewp-vi-cap-veh__vehicle-badge">{item.badge}</span> : null}
         <span className="sewp-vi-cap-veh__vehicle-desc">{item.description}</span>
       </span>
@@ -116,9 +125,9 @@ export function NasaSewpViCapabilitiesVehiclesSection({
           transition={itemTransition}
         >
           <header className="sewp-vi-cap-veh__header">
-            <p className="sewp-vi-cap-veh__eyebrow">{capabilities.eyebrow}</p>
             <h2 id="sewp-vi-category-a-heading" className="sewp-vi-cap-veh__title">
-              {capabilities.title}
+              <span className="sewp-vi-cap-veh__eyebrow">{capabilities.eyebrow}</span>
+              <span className="sewp-vi-cap-veh__title-text">{capabilities.title}</span>
             </h2>
             <p className="sewp-vi-cap-veh__description">{capabilities.description}</p>
           </header>
@@ -136,9 +145,9 @@ export function NasaSewpViCapabilitiesVehiclesSection({
           transition={itemTransition}
         >
           <header className="sewp-vi-cap-veh__header">
-            <p className="sewp-vi-cap-veh__eyebrow">{vehicles.eyebrow}</p>
             <h2 id="sewp-vi-vehicles-heading" className="sewp-vi-cap-veh__title">
-              {vehicles.title}
+              <span className="sewp-vi-cap-veh__eyebrow">{vehicles.eyebrow}</span>
+              <span className="sewp-vi-cap-veh__title-text">{vehicles.title}</span>
             </h2>
             <p className="sewp-vi-cap-veh__description">{vehicles.description}</p>
           </header>

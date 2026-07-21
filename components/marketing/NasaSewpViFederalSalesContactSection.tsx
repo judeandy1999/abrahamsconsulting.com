@@ -3,7 +3,6 @@
 import { Headset, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { IconArrowRight } from "./NavIcons";
 import { pillarIconProps } from "./pillarIconProps";
 import { useMarketingMotionConfig } from "./marketing-motion";
@@ -59,9 +58,7 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
                 </span>
                 <div className="sewp-vi-federal-contact__method-copy">
                   <p className="sewp-vi-federal-contact__method-label">Email</p>
-                  <a href={federalMailto} className="sewp-vi-federal-contact__method-value" aria-label={`Email Federal Sales at ${section.email}`}>
-                    {section.email}
-                  </a>
+                  <p className="sewp-vi-federal-contact__method-value">{section.email}</p>
                 </div>
               </motion.article>
 

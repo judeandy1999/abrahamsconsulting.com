@@ -31,8 +31,8 @@ export function NasaSewpViCertificationsSection({ section }: NasaSewpViCertifica
           {section.items.map((item) => (
             <motion.li key={item.id} className="sewp-vi-certifications__item" variants={itemVariants} transition={itemTransition}>
               <article className="sewp-vi-certifications__card">
-                <span className="sewp-vi-certifications__icon">
-                  <NasaSewpViCertificationIcon name={item.icon} label={item.label} />
+                <span className="sewp-vi-certifications__icon" aria-hidden="true">
+                  <NasaSewpViCertificationIcon name={item.icon} />
                 </span>
                 <h3 className="sewp-vi-certifications__label">{item.label}</h3>
               </article>

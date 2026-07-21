@@ -59,7 +59,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       "Abrahams Consulting LLC provides IT products and related technology solutions through its NASA SEWP VI Prime Contract under Category A – ITC/AV Solutions.",
     contractNumber: "80TECH26D1658",
     category: "Category A – ITC/AV Solutions",
-    capabilityStatementCtaLabel: "Download Capability Statement"
+    capabilityStatementCtaLabel: "Download Capability Statement (PDF)"
   },
   contractOverview: {
     eyebrow: "NASA SEWP VI — PRIME CONTRACTOR",
@@ -443,6 +443,108 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       outcome:
         "Ensuring full compliance with NASA SEWP VI Fair Opportunity rules, fostering diversity, and maintaining procurement transparency."
     }
+  },
+  postDeliverySupport: {
+    title: "Post-Delivery Support Information",
+    intro:
+      "Abrahams Consulting, LLC provides post-delivery support for installation, warranty, technical support, software support, and other order-related issues associated with products and services purchased under its NASA SEWP VI Contract.",
+    topics: [
+      {
+        id: "installation",
+        title: "Installation",
+        description:
+          "Installation services may be provided when they directly support an in-scope ITC/AV product solution and are identified in the applicable quotation or Delivery Order."
+      },
+      {
+        id: "basic-warranty",
+        title: "Basic Warranty",
+        description:
+          "Abrahams Consulting will provide conforming products and services in accordance with the applicable terms of the SEWP VI Contract, including FAR 52.212-4. Applicable OEM or publisher warranties may provide additional product-specific coverage identified in the quotation, Delivery Order, or warranty documentation."
+      },
+      {
+        id: "extended-warranty",
+        title: "Extended Warranty",
+        description:
+          "Extended warranty or maintenance coverage may be offered when available. Applicable coverage, pricing, and terms will be identified in the quotation or order documentation."
+      },
+      {
+        id: "technical-software-support",
+        title: "Technical and Software Support",
+        description:
+          "Customers requiring technical or software support should contact Abrahams Consulting and provide the Delivery Order number, product or software information, and a description of the issue. Abrahams Consulting will review the request and coordinate the appropriate technical support or escalation."
+      }
+    ],
+    primaryContact: {
+      heading: "Primary Support Contact",
+      name: "Jay Dela Piedra",
+      role: "Technical and Post-Delivery Support",
+      contacts: [
+        {
+          id: "telephone",
+          label: "Telephone",
+          value: "646-564-3844 ext 1009",
+          href: "tel:+16465643844,1009"
+        },
+        {
+          id: "email",
+          label: "Email",
+          value: "JPiedra@abrahamsconsulting.com",
+          href: "mailto:JPiedra@abrahamsconsulting.com"
+        },
+        {
+          id: "support-hours",
+          label: "Support Hours",
+          value: "Monday–Friday, 8:00 AM – 5:00 PM Eastern Time"
+        }
+      ]
+    }
+  },
+  orderTroubleshooting: {
+    title: "Order Troubleshooting Information",
+    paragraphs: [
+      "Customers should report delayed, damaged, missing, incorrect, or otherwise nonconforming products or orders to Abrahams Consulting and provide the Delivery Order number, SEWP Tracking Number (if available), affected items, and a description of the issue.",
+      "Abrahams Consulting, LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact."
+    ],
+    contacts: [
+      {
+        id: "order-support",
+        heading: "Order Support Contact",
+        name: "Jude Convencido",
+        contacts: [
+          {
+            id: "telephone",
+            label: "Telephone",
+            value: "718-979-1371",
+            href: "tel:+17189791371"
+          },
+          {
+            id: "email",
+            label: "Email",
+            value: "jconvencido@abrahamsconsulting.com",
+            href: "mailto:jconvencido@abrahamsconsulting.com"
+          }
+        ]
+      },
+      {
+        id: "escalation",
+        heading: "Escalation Contact",
+        name: "Maybelline Magnet",
+        contacts: [
+          {
+            id: "telephone",
+            label: "Telephone",
+            value: "301-638-8731 ext. 2179",
+            href: "tel:+13016388731,2179"
+          },
+          {
+            id: "email",
+            label: "Email",
+            value: "sewp.pm@abrahamsconsulting.com",
+            href: "mailto:sewp.pm@abrahamsconsulting.com"
+          }
+        ]
+      }
+    ]
   },
   programManagerContact: {
     titlePrimary: "Program Manager",
