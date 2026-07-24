@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardCheck, Clock, FileSearch, PackageCheck, Send } from "lucide-react";
+import { ChevronDown, ClipboardCheck, Clock, FileSearch, PackageCheck, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { pillarIconProps } from "./pillarIconProps";
@@ -115,28 +115,38 @@ export function NasaSewpViObtainQuoteSection({ section, embedded = false }: Nasa
         </ol>
       </div>
 
-      <div className="sewp-vi-obtain-quote__assistance">
-        <h3 className="sewp-vi-obtain-quote__assistance-title">{salesAssistance.title}</h3>
-        <p className="sewp-vi-obtain-quote__assistance-intro">{salesAssistance.intro}</p>
+      <details className="sewp-vi-obtain-quote__assistance">
+        <summary className="sewp-vi-obtain-quote__assistance-summary">
+          <span className="sewp-vi-obtain-quote__assistance-summary-text">
+            <h3 className="sewp-vi-obtain-quote__assistance-title">{salesAssistance.title}</h3>
+          </span>
+          <span className="sewp-vi-obtain-quote__assistance-chevron" aria-hidden="true">
+            <ChevronDown {...pillarIconProps} />
+          </span>
+        </summary>
 
-        <div className="sewp-vi-obtain-quote__contacts sewp-vi-obtain-quote__contacts--single">
-          <ContactCard {...salesAssistance.contact} />
+        <div className="sewp-vi-obtain-quote__assistance-body">
+          <p className="sewp-vi-obtain-quote__assistance-intro">{salesAssistance.intro}</p>
+
+          <div className="sewp-vi-obtain-quote__contacts sewp-vi-obtain-quote__contacts--single">
+            <ContactCard {...salesAssistance.contact} />
+          </div>
+
+          <p className="sewp-vi-obtain-quote__disclaimer">{salesAssistance.disclaimer}</p>
+
+          <ul className="sewp-vi-obtain-quote__notes">
+            <li className="sewp-vi-obtain-quote__note">
+              <span className="sewp-vi-obtain-quote__note-icon" aria-hidden="true">
+                <Clock {...pillarIconProps} />
+              </span>
+              <div>
+                <p className="sewp-vi-obtain-quote__note-title">{salesAssistance.responseTime.title}</p>
+                <p className="sewp-vi-obtain-quote__note-text">{salesAssistance.responseTime.description}</p>
+              </div>
+            </li>
+          </ul>
         </div>
-
-        <p className="sewp-vi-obtain-quote__disclaimer">{salesAssistance.disclaimer}</p>
-
-        <ul className="sewp-vi-obtain-quote__notes">
-          <li className="sewp-vi-obtain-quote__note">
-            <span className="sewp-vi-obtain-quote__note-icon" aria-hidden="true">
-              <Clock {...pillarIconProps} />
-            </span>
-            <div>
-              <p className="sewp-vi-obtain-quote__note-title">{salesAssistance.responseTime.title}</p>
-              <p className="sewp-vi-obtain-quote__note-text">{salesAssistance.responseTime.description}</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+      </details>
 
       <div className="sewp-vi-obtain-quote__forms">
         <h3 className="sewp-vi-obtain-quote__forms-title">{formsRequirements.title}</h3>

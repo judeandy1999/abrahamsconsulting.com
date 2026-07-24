@@ -350,10 +350,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   fairOpportunityClause: {
     title: "Fair Opportunity Clause",
     paragraphs: [
-      "In accordance with FAR 16.505(b), federal agencies and authorized buyers must provide eligible NASA SEWP Contract Holders within the applicable Contract Group or set-aside a fair opportunity to be considered for orders, unless an authorized exception to Fair Opportunity applies.",
-      "NASA recommends using the SEWP Quote Request Tool (QRT) to support Fair Opportunity and streamline the acquisition process. Through the QRT, agencies can conduct market research and submit Requests for Information (RFIs) and Requests for Quotes (RFQs) to eligible Contract Holders.",
-      "There is no requirement to obtain three quotes when Fair Opportunity has been provided to all eligible Contract Holders within the applicable Group or set-aside. The Ordering Contracting Officer is responsible for determining the appropriate acquisition approach and documenting the order in accordance with FAR 16.505(b), applicable agency policies, and NASA SEWP ordering procedures.",
-      "Abrahams Consulting is available to assist federal customers with product and solution inquiries, technical requirements, pricing and availability, quote requests, and acquisition support through our NASA SEWP contract."
+      "Contractors will be provided a fair opportunity at the individual-order level as appropriate under FAR 16.505(b), including through the NASA SEWP RFQ tools. Selection documentation is not required to accompany the order; the issuing procurement office must maintain that documentation in its acquisition file.",
+      "The ordering contracting officer is responsible for providing eligible SEWP VI contract holders within the applicable category or fair-opportunity grouping an opportunity to be considered, unless an authorized exception applies."
     ],
     officialGuidance: {
       prefix: "For official Fair Opportunity requirements and NASA SEWP ordering guidance, please visit the ",
@@ -371,25 +369,25 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "installation",
         title: "Installation",
         description:
-          "Installation services may be provided when they directly support an in-scope ITC/AV product solution and are identified in the applicable quotation or Delivery Order."
+          "Installation services may be provided using the applicable Service CLINs when the services directly support the installation or implementation of an in-scope ITC/AV solution. Applicable services, pricing, and terms will be identified in the quotation and delivery order."
       },
       {
         id: "basic-warranty",
         title: "Basic Warranty",
         description:
-          "Abrahams Consulting will provide conforming products and services in accordance with the applicable terms of the SEWP VI Contract, including FAR 52.212-4. Applicable OEM or publisher warranties may provide additional product-specific coverage identified in the quotation, Delivery Order, or warranty documentation."
+          "Abrahams Consulting LLC will provide products and services that conform to the applicable contract and order requirements. In accordance with FAR 52.212-4, the Government may require repair or replacement of nonconforming supplies or reperformance of nonconforming services at no increase in contract price. Applicable OEM or publisher warranty coverage will be identified in the quotation, delivery order, or warranty documentation."
       },
       {
         id: "extended-warranty",
         title: "Extended Warranty",
         description:
-          "Extended warranty or maintenance coverage may be offered when available. Applicable coverage, pricing, and terms will be identified in the quotation or order documentation."
+          "Extended warranty coverage may be purchased at any time during the applicable standard commercial warranty period, up to and including the end of that period. Available coverage, pricing, period, and other terms will be identified in the quotation or order documentation. At the Government’s discretion, monthly maintenance may be ordered in lieu of extended warranty coverage where applicable."
       },
       {
         id: "technical-software-support",
         title: "Technical and Software Support",
         description:
-          "Customers requiring technical or software support should contact Abrahams Consulting and provide the Delivery Order number, product or software information, and a description of the issue. Abrahams Consulting will review the request and coordinate the appropriate technical support or escalation."
+          "Customers requiring technical or software support should contact Abrahams Consulting LLC and provide the delivery-order number, relevant product or software information, and a description of the issue. Abrahams Consulting LLC will review the request and coordinate appropriate support or escalation in accordance with the applicable warranty, maintenance, licensing, and order terms."
       }
     ],
     primaryContact: {
@@ -432,7 +430,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           {
             id: "telephone",
             label: "Telephone",
-            value: "(646) 564-3828, ext. 2180",
+            value: "(646) 564-3828 ext 2180",
             href: "tel:+16465643828,2180"
           },
           {
