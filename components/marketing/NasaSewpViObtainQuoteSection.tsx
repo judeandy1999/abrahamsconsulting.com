@@ -8,6 +8,7 @@ import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViObtainQuoteSectionProps = {
   section: NasaSewpViPageContent["obtainQuote"];
+  embedded?: boolean;
 };
 
 type StepIconName = NasaSewpViPageContent["obtainQuote"]["steps"][number]["icon"];
@@ -85,9 +86,72 @@ function StepCard({ step, index }: { step: Step; index: number }) {
   );
 }
 
-export function NasaSewpViObtainQuoteSection({ section }: NasaSewpViObtainQuoteSectionProps) {
+export function NasaSewpViObtainQuoteSection({ section, embedded = false }: NasaSewpViObtainQuoteSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const { salesAssistance, formsRequirements } = section;
+
+  const content = (
+    <>
+      <header className="sewp-vi-obtain-quote__header">
+        {embedded ? null : (
+          <h2 id="sewp-vi-obtain-quote-heading" className="sewp-vi-obtain-quote__title">
+            {section.title}
+          </h2>
+        )}
+        <p className="sewp-vi-obtain-quote__program">{section.programName}</p>
+        {section.intro.map((paragraph) => (
+          <p key={paragraph} className="sewp-vi-obtain-quote__intro">
+            {paragraph}
+          </p>
+        ))}
+      </header>
+
+      <div>
+        <h3 className="sewp-vi-obtain-quote__process-heading">{section.processHeading}</h3>
+        <ol className="sewp-vi-obtain-quote__steps">
+          {section.steps.map((step, index) => (
+            <StepCard key={step.id} step={step} index={index} />
+          ))}
+        </ol>
+      </div>
+
+      <div className="sewp-vi-obtain-quote__assistance">
+        <h3 className="sewp-vi-obtain-quote__assistance-title">{salesAssistance.title}</h3>
+        <p className="sewp-vi-obtain-quote__assistance-intro">{salesAssistance.intro}</p>
+
+        <div className="sewp-vi-obtain-quote__contacts sewp-vi-obtain-quote__contacts--single">
+          <ContactCard {...salesAssistance.contact} />
+        </div>
+
+        <p className="sewp-vi-obtain-quote__disclaimer">{salesAssistance.disclaimer}</p>
+
+        <ul className="sewp-vi-obtain-quote__notes">
+          <li className="sewp-vi-obtain-quote__note">
+            <span className="sewp-vi-obtain-quote__note-icon" aria-hidden="true">
+              <Clock {...pillarIconProps} />
+            </span>
+            <div>
+              <p className="sewp-vi-obtain-quote__note-title">{salesAssistance.responseTime.title}</p>
+              <p className="sewp-vi-obtain-quote__note-text">{salesAssistance.responseTime.description}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div className="sewp-vi-obtain-quote__forms">
+        <h3 className="sewp-vi-obtain-quote__forms-title">{formsRequirements.title}</h3>
+        {formsRequirements.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="sewp-vi-obtain-quote__forms-text">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </>
+  );
+
+  if (embedded) {
+    return <div className="sewp-vi-obtain-quote sewp-vi-obtain-quote--embedded">{content}</div>;
+  }
 
   return (
     <section className="sewp-vi-obtain-quote" aria-labelledby="sewp-vi-obtain-quote-heading">
@@ -98,57 +162,8 @@ export function NasaSewpViObtainQuoteSection({ section }: NasaSewpViObtainQuoteS
         whileInView="visible"
         viewport={viewport}
       >
-        <motion.header className="sewp-vi-obtain-quote__header" variants={itemVariants} transition={itemTransition}>
-          <h2 id="sewp-vi-obtain-quote-heading" className="sewp-vi-obtain-quote__title">
-            {section.title}
-          </h2>
-          <p className="sewp-vi-obtain-quote__program">{section.programName}</p>
-          {section.intro.map((paragraph) => (
-            <p key={paragraph} className="sewp-vi-obtain-quote__intro">
-              {paragraph}
-            </p>
-          ))}
-        </motion.header>
-
         <motion.div variants={itemVariants} transition={itemTransition}>
-          <h3 className="sewp-vi-obtain-quote__process-heading">{section.processHeading}</h3>
-          <ol className="sewp-vi-obtain-quote__steps">
-            {section.steps.map((step, index) => (
-              <StepCard key={step.id} step={step} index={index} />
-            ))}
-          </ol>
-        </motion.div>
-
-        <motion.div className="sewp-vi-obtain-quote__assistance" variants={itemVariants} transition={itemTransition}>
-          <h3 className="sewp-vi-obtain-quote__assistance-title">{salesAssistance.title}</h3>
-          <p className="sewp-vi-obtain-quote__assistance-intro">{salesAssistance.intro}</p>
-
-          <div className="sewp-vi-obtain-quote__contacts sewp-vi-obtain-quote__contacts--single">
-            <ContactCard {...salesAssistance.contact} />
-          </div>
-
-          <p className="sewp-vi-obtain-quote__disclaimer">{salesAssistance.disclaimer}</p>
-
-          <ul className="sewp-vi-obtain-quote__notes">
-            <li className="sewp-vi-obtain-quote__note">
-              <span className="sewp-vi-obtain-quote__note-icon" aria-hidden="true">
-                <Clock {...pillarIconProps} />
-              </span>
-              <div>
-                <p className="sewp-vi-obtain-quote__note-title">{salesAssistance.responseTime.title}</p>
-                <p className="sewp-vi-obtain-quote__note-text">{salesAssistance.responseTime.description}</p>
-              </div>
-            </li>
-          </ul>
-        </motion.div>
-
-        <motion.div className="sewp-vi-obtain-quote__forms" variants={itemVariants} transition={itemTransition}>
-          <h3 className="sewp-vi-obtain-quote__forms-title">{formsRequirements.title}</h3>
-          {formsRequirements.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="sewp-vi-obtain-quote__forms-text">
-              {paragraph}
-            </p>
-          ))}
+          {content}
         </motion.div>
       </motion.div>
     </section>
