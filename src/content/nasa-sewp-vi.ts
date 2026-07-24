@@ -388,6 +388,12 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         title: "Technical and Software Support",
         description:
           "Customers requiring technical or software support should contact Abrahams Consulting LLC and provide the delivery-order number, relevant product or software information, and a description of the issue. Abrahams Consulting LLC will review the request and coordinate appropriate support or escalation in accordance with the applicable warranty, maintenance, licensing, and order terms."
+      },
+      {
+        id: "returns-and-replacement",
+        title: "Returns and Replacement",
+        description:
+          "Abrahams Consulting will acknowledge return requests, review the applicable order and warranty information, and coordinate with the relevant manufacturer or authorized distributor. Return authorization, shipping arrangements, repair, replacement, credit eligibility, and processing timeframes are subject to the applicable manufacturer or distributor policies, product availability, and the terms of the delivery order."
       }
     ],
     primaryContact: {
