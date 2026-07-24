@@ -596,7 +596,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "phone",
         icon: "phone",
         label: "Phone",
-        value: "877-541-1938\n646-558-3887"
+        value: "516-405-2175"
       },
       {
         id: "federal-sales",
@@ -691,7 +691,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         label: "SEWP VI Sales Contact",
         name: "John Luis B. Marquez",
         role: "Catalog Support Specialist – Federal Sales Liaison",
-        telephone: "516-405-2175 ext. 2175",
+        telephone: "516-405-2175",
         email: "federal.sales@abrahamsconsulting.com"
       },
       disclaimer:
@@ -716,7 +716,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     prompt: "Need assistance with a NASA SEWP VI procurement?",
     subtitle: "Contact our Federal Sales Team.",
     email: "federal.sales@abrahamsconsulting.com",
-    phones: ["516-405-2175 ext. 2175"],
+    phones: ["516-405-2175"],
     ctaLabel: "Contact Federal Sales"
   }
 };
