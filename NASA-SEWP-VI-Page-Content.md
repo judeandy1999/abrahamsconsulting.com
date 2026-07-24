@@ -131,38 +131,18 @@ Eyebrow: NASA SEWP VI
 --- Row 3: Fair Opportunity Clause ---
 
 Title: Fair Opportunity Clause
-Intro: Abrahams Consulting's commitment to NASA SEWP VI Fair Opportunity policies, equitable vendor access, and transparent procurement compliance.
 
-Lead Paragraph: Abrahams Consulting fully aligns with NASA SEWP VI Fair Opportunity policies, ensuring equitable access for all vendors, particularly MWBEs and small businesses. Our structured compliance framework prevents favoritism, promotes transparency, and guarantees subcontracting goal fulfillment through:
+Paragraph 1: In accordance with FAR 16.505(b), federal agencies and authorized buyers must provide eligible NASA SEWP Contract Holders within the applicable Contract Group or set-aside a fair opportunity to be considered for orders, unless an authorized exception to Fair Opportunity applies.
 
-Competitive Task Order Allocation System (CTOAS)
-- Fair Vendor Selection: AI-driven system evaluates vendors based on past performance, technical capability, and compliance history.
-- Automated Matching & Scoring: Ensures unbiased task order allocation based on predefined criteria.
-- Bias Prevention Measures: Flags favoritism risks, enforces vendor rotation, and ensures diverse engagement.
+Paragraph 2: NASA recommends using the SEWP Quote Request Tool (QRT) to support Fair Opportunity and streamline the acquisition process. Through the QRT, agencies can conduct market research and submit Requests for Information (RFIs) and Requests for Quotes (RFQs) to eligible Contract Holders.
 
-NASA SEWP VI Fair Opportunity Portal
-- Transparent Bidding System: Vendors register, undergo compliance certification, and submit proposals via an AI-driven evaluation process.
-- Equal Access: Real-time notifications and open competition ensure MWBE and small business participation.
-- Compliance Audits: Tracks bid status, selection justifications, and prevents conflicts of interest.
+Paragraph 3: There is no requirement to obtain three quotes when Fair Opportunity has been provided to all eligible Contract Holders within the applicable Group or set-aside. The Ordering Contracting Officer is responsible for determining the appropriate acquisition approach and documenting the order in accordance with FAR 16.505(b), applicable agency policies, and NASA SEWP ordering procedures.
 
-Independent Procurement Oversight Team (IPOT)
-- Unbiased Task Order Audits: Independent auditors verify fair vendor selection, MWBE consideration, and correct bid scoring.
-- Post-Award Reporting: Quarterly compliance reports submitted to NASA to maintain procurement integrity.
+Paragraph 4: Abrahams Consulting is available to assist federal customers with product and solution inquiries, technical requirements, pricing and availability, quote requests, and acquisition support through our NASA SEWP contract.
 
-MWBE & Small Business Utilization Plan
-- Quarterly NASA Reports: Tracks MWBE engagement, ensuring compliance with subcontracting targets.
-- Automated Compliance Tracking: AI-powered dashboard monitors MWBE participation with real-time alerts.
-- Corrective Action Plans: Adjusts allocations when MWBE participation falls short, requiring improvement plans from non-compliant vendors.
-
-Outcome: Ensuring full compliance with NASA SEWP VI Fair Opportunity rules, fostering diversity, and maintaining procurement transparency.
-
-Content also has (not currently shown on page):
-Title Accent Word: Fair
-Clause Label: FAIR OPPORTUNITY & COMPLIANCE COMMITMENT
-Header Graphic: /images/nasa-sewp-vi/fair-opportunity-document-graphic.webp
-Header Graphic Alt: NASA SEWP VI Fair Opportunity Clause reference
-Badge Graphic: /images/nasa-sewp-vi/gwac-shield-graphic.webp
-Badge Graphic Alt: NASA SEWP VI GWAC contract identification
+Closing: For official Fair Opportunity requirements and NASA SEWP ordering guidance, please visit the NASA SEWP website.
+Link Label: NASA SEWP website
+URL: https://www.sewp.nasa.gov/sewpv/fairopportunity.shtml
 
 
 --- Row 4: Post-Delivery Support Information ---

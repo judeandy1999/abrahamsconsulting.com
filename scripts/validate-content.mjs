@@ -571,32 +571,12 @@ const nasaSewpViPageSchema = z.object({
   }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),
-    titleAccentWord: z.string().min(1),
-    intro: z.string().min(1),
-    headerGraphicSrc: z.string().min(1),
-    headerGraphicAlt: z.string().min(1),
-    clause: z.object({
-      label: z.string().min(1),
-      badgeGraphicSrc: z.string().min(1),
-      badgeGraphicAlt: z.string().min(1),
-      leadParagraph: z.string().min(1),
-      sections: z
-        .array(
-          z.object({
-            id: z.string().min(1),
-            title: z.string().min(1),
-            bullets: z
-              .array(
-                z.object({
-                  label: z.string().min(1),
-                  text: z.string().min(1)
-                })
-              )
-              .min(1)
-          })
-        )
-        .min(1),
-      outcome: z.string().min(1)
+    paragraphs: z.array(z.string().min(1)).min(1),
+    officialGuidance: z.object({
+      prefix: z.string().min(1),
+      linkLabel: z.string().min(1),
+      href: z.string().url(),
+      suffix: z.string()
     })
   }),
   postDeliverySupport: z.object({

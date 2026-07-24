@@ -11,6 +11,15 @@ type NasaSewpViFederalSalesContactSectionProps = {
   section: NasaSewpViPageContent["federalSalesContact"];
 };
 
+function telephoneHref(telephone: string): string {
+  const extensionMatch = telephone.match(/ext\.?\s*(\d+)/i);
+  const baseDigits = telephone.replace(/ext\.?\s*\d+/i, "").replace(/[^\d+]/g, "");
+  if (extensionMatch) {
+    return `tel:${baseDigits},${extensionMatch[1]}`;
+  }
+  return `tel:${baseDigits}`;
+}
+
 export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFederalSalesContactSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const federalMailto = `mailto:${section.email}`;
@@ -72,7 +81,7 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
                     {section.phones.map((phone) => (
                       <a
                         key={phone}
-                        href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                        href={telephoneHref(phone)}
                         aria-label={`Call Federal Sales at ${phone}`}
                       >
                         {phone}

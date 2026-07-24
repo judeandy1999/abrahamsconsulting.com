@@ -626,32 +626,12 @@ export const nasaSewpViPageSchema = z.object({
   }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),
-    titleAccentWord: z.string().min(1),
-    intro: z.string().min(1),
-    headerGraphicSrc: z.string().min(1),
-    headerGraphicAlt: z.string().min(1),
-    clause: z.object({
-      label: z.string().min(1),
-      badgeGraphicSrc: z.string().min(1),
-      badgeGraphicAlt: z.string().min(1),
-      leadParagraph: z.string().min(1),
-      sections: z
-        .array(
-          z.object({
-            id: z.string().min(1),
-            title: z.string().min(1),
-            bullets: z
-              .array(
-                z.object({
-                  label: z.string().min(1),
-                  text: z.string().min(1)
-                })
-              )
-              .min(1)
-          })
-        )
-        .min(1),
-      outcome: z.string().min(1)
+    paragraphs: z.array(z.string().min(1)).min(1),
+    officialGuidance: z.object({
+      prefix: z.string().min(1),
+      linkLabel: z.string().min(1),
+      href: z.string().url(),
+      suffix: z.string()
     })
   }),
   postDeliverySupport: z.object({
@@ -817,39 +797,31 @@ export const nasaSewpViPageSchema = z.object({
   }),
   obtainQuote: z.object({
     title: z.string().min(1),
+    programName: z.string().min(1),
+    intro: z.array(z.string().min(1)).min(1).max(4),
     processHeading: z.string().min(1),
     steps: z
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum(["prepare", "submit", "review", "quote", "secure"]),
+          icon: z.enum(["prepare", "submit", "evaluate", "order"]),
           title: z.string().min(1),
           description: z.string().min(1)
         })
       )
-      .length(5),
+      .length(4),
     salesAssistance: z.object({
       title: z.string().min(1),
       intro: z.string().min(1),
-      primary: z.object({
+      contact: z.object({
         label: z.string().min(1),
         name: z.string().min(1),
         role: z.string().min(1),
         telephone: z.string().min(1),
         email: z.string().email()
       }),
-      alternate: z.object({
-        label: z.string().min(1),
-        name: z.string().min(1),
-        role: z.string().min(1),
-        telephone: z.string().min(1),
-        email: z.string().email()
-      }),
+      disclaimer: z.string().min(1),
       responseTime: z.object({
-        title: z.string().min(1),
-        description: z.string().min(1)
-      }),
-      important: z.object({
         title: z.string().min(1),
         description: z.string().min(1)
       })

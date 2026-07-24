@@ -7,6 +7,7 @@ import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViStatementsTableSectionProps = {
+  contractOverview: NasaSewpViPageContent["contractOverview"];
   gwac: NasaSewpViPageContent["gwacIdentificationStatement"];
   aboutSewp: NasaSewpViPageContent["aboutSewp"];
   fairOpportunity: NasaSewpViPageContent["fairOpportunityClause"];
@@ -46,6 +47,7 @@ function ContactValue({
 }
 
 export function NasaSewpViStatementsTableSection({
+  contractOverview,
   gwac,
   aboutSewp,
   fairOpportunity,
@@ -55,9 +57,9 @@ export function NasaSewpViStatementsTableSection({
   externalResources
 }: NasaSewpViStatementsTableSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
-  const clause = fairOpportunity.clause;
   const programManagerTitle = `${programManager.titlePrimary} ${programManager.titleSecondary}`;
   const supportContact = postDeliverySupport.primaryContact;
+  const fairOpportunityGuidance = fairOpportunity.officialGuidance;
 
   return (
     <section className="sewp-vi-statements" aria-labelledby="sewp-vi-statements-heading">
@@ -76,11 +78,31 @@ export function NasaSewpViStatementsTableSection({
           <div className="sewp-vi-statements__table-wrap">
             <table className="sewp-vi-statements__table">
               <caption className="sewp-vi-statements__caption">
-                Official identification, policy statements, post-delivery support, order
-                troubleshooting, program manager contact, and external resources for Abrahams
+                Contract overview, official identification, policy statements, post-delivery support,
+                order troubleshooting, program manager contact, and external resources for Abrahams
                 Consulting LLC NASA SEWP VI
               </caption>
               <tbody>
+                <tr>
+                  <th scope="row" id="sewp-vi-overview-heading">
+                    {contractOverview.title}
+                  </th>
+                  <td>
+                    <p className="sewp-vi-statements__paragraph">{contractOverview.description}</p>
+
+                    <dl className="sewp-vi-statements__meta">
+                      {contractOverview.items.map((item) => (
+                        <div key={item.id} className="sewp-vi-statements__meta-row">
+                          <dt>{item.label}</dt>
+                          <dd>
+                            <ContactValue value={item.value} />
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </td>
+                </tr>
+
                 <tr>
                   <th scope="row">{gwac.title}</th>
                   <td>{gwac.statement}</td>
@@ -100,26 +122,23 @@ export function NasaSewpViStatementsTableSection({
                 <tr>
                   <th scope="row">{fairOpportunity.title}</th>
                   <td>
-                    <p className="sewp-vi-statements__paragraph">{fairOpportunity.intro}</p>
-                    <p className="sewp-vi-statements__paragraph">{clause.leadParagraph}</p>
-
-                    <div className="sewp-vi-statements__subsections">
-                      {clause.sections.map((section) => (
-                        <div key={section.id} className="sewp-vi-statements__subsection">
-                          <h3 className="sewp-vi-statements__subsection-title">{section.title}</h3>
-                          <ul className="sewp-vi-statements__list">
-                            {section.bullets.map((bullet) => (
-                              <li key={bullet.label}>
-                                <strong>{bullet.label}:</strong> {bullet.text}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className="sewp-vi-statements__outcome">
-                      <strong>Outcome:</strong> {clause.outcome}
+                    {fairOpportunity.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="sewp-vi-statements__paragraph">
+                        {paragraph}
+                      </p>
+                    ))}
+                    <p className="sewp-vi-statements__paragraph">
+                      {fairOpportunityGuidance.prefix}
+                      <a
+                        href={fairOpportunityGuidance.href}
+                        className="sewp-vi-statements__link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={accessibleExternalLinkLabel(fairOpportunityGuidance.linkLabel)}
+                      >
+                        {fairOpportunityGuidance.linkLabel}
+                      </a>
+                      {fairOpportunityGuidance.suffix}
                     </p>
                   </td>
                 </tr>
@@ -219,8 +238,6 @@ export function NasaSewpViStatementsTableSection({
                     </div>
 
                     <div className="sewp-vi-statements__meta sewp-vi-statements__meta--secondary">
-                      <p className="sewp-vi-statements__paragraph">{programManager.intro}</p>
-
                       <dl className="sewp-vi-statements__meta">
                         {programManager.details.map((detail) => (
                           <div key={detail.id} className="sewp-vi-statements__meta-row">

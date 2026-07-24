@@ -33,16 +33,6 @@ export const NASA_SEWP_VI_EORDERING_ASSETS = {
   documentIllustrationAlt: "SEWP VI Electronic Ordering Guide PDF download"
 } as const;
 
-export const NASA_SEWP_VI_GWAC_ASSETS = {
-  headerGraphicSrc: "/images/nasa-sewp-vi/gwac-shield-graphic.webp",
-  headerGraphicAlt: "NASA SEWP VI GWAC contract identification"
-} as const;
-
-export const NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS = {
-  headerGraphicSrc: "/images/nasa-sewp-vi/fair-opportunity-document-graphic.webp",
-  headerGraphicAlt: "NASA SEWP VI Fair Opportunity Clause reference"
-} as const;
-
 export const NASA_SEWP_VI_CERTIFICATION_LOGOS = {
   nasa: "/images/nasa-sewp-vi/nasa-logo.svg",
   iso9001: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp",
@@ -359,95 +349,23 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   },
   fairOpportunityClause: {
     title: "Fair Opportunity Clause",
-    titleAccentWord: "Fair",
-    intro:
-      "Abrahams Consulting's commitment to NASA SEWP VI Fair Opportunity policies, equitable vendor access, and transparent procurement compliance.",
-    headerGraphicSrc: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicSrc,
-    headerGraphicAlt: NASA_SEWP_VI_FAIR_OPPORTUNITY_ASSETS.headerGraphicAlt,
-    clause: {
-      label: "FAIR OPPORTUNITY & COMPLIANCE COMMITMENT",
-      badgeGraphicSrc: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicSrc,
-      badgeGraphicAlt: NASA_SEWP_VI_GWAC_ASSETS.headerGraphicAlt,
-      leadParagraph:
-        "Abrahams Consulting fully aligns with NASA SEWP VI Fair Opportunity policies, ensuring equitable access for all vendors, particularly MWBEs and small businesses. Our structured compliance framework prevents favoritism, promotes transparency, and guarantees subcontracting goal fulfillment through:",
-      sections: [
-        {
-          id: "ctoas",
-          title: "Competitive Task Order Allocation System (CTOAS)",
-          bullets: [
-            {
-              label: "Fair Vendor Selection",
-              text: "AI-driven system evaluates vendors based on past performance, technical capability, and compliance history."
-            },
-            {
-              label: "Automated Matching & Scoring",
-              text: "Ensures unbiased task order allocation based on predefined criteria."
-            },
-            {
-              label: "Bias Prevention Measures",
-              text: "Flags favoritism risks, enforces vendor rotation, and ensures diverse engagement."
-            }
-          ]
-        },
-        {
-          id: "fair-opportunity-portal",
-          title: "NASA SEWP VI Fair Opportunity Portal",
-          bullets: [
-            {
-              label: "Transparent Bidding System",
-              text: "Vendors register, undergo compliance certification, and submit proposals via an AI-driven evaluation process."
-            },
-            {
-              label: "Equal Access",
-              text: "Real-time notifications and open competition ensure MWBE and small business participation."
-            },
-            {
-              label: "Compliance Audits",
-              text: "Tracks bid status, selection justifications, and prevents conflicts of interest."
-            }
-          ]
-        },
-        {
-          id: "ipot",
-          title: "Independent Procurement Oversight Team (IPOT)",
-          bullets: [
-            {
-              label: "Unbiased Task Order Audits",
-              text: "Independent auditors verify fair vendor selection, MWBE consideration, and correct bid scoring."
-            },
-            {
-              label: "Post-Award Reporting",
-              text: "Quarterly compliance reports submitted to NASA to maintain procurement integrity."
-            }
-          ]
-        },
-        {
-          id: "mwbe-utilization",
-          title: "MWBE & Small Business Utilization Plan",
-          bullets: [
-            {
-              label: "Quarterly NASA Reports",
-              text: "Tracks MWBE engagement, ensuring compliance with subcontracting targets."
-            },
-            {
-              label: "Automated Compliance Tracking",
-              text: "AI-powered dashboard monitors MWBE participation with real-time alerts."
-            },
-            {
-              label: "Corrective Action Plans",
-              text: "Adjusts allocations when MWBE participation falls short, requiring improvement plans from non-compliant vendors."
-            }
-          ]
-        }
-      ],
-      outcome:
-        "Ensuring full compliance with NASA SEWP VI Fair Opportunity rules, fostering diversity, and maintaining procurement transparency."
+    paragraphs: [
+      "In accordance with FAR 16.505(b), federal agencies and authorized buyers must provide eligible NASA SEWP Contract Holders within the applicable Contract Group or set-aside a fair opportunity to be considered for orders, unless an authorized exception to Fair Opportunity applies.",
+      "NASA recommends using the SEWP Quote Request Tool (QRT) to support Fair Opportunity and streamline the acquisition process. Through the QRT, agencies can conduct market research and submit Requests for Information (RFIs) and Requests for Quotes (RFQs) to eligible Contract Holders.",
+      "There is no requirement to obtain three quotes when Fair Opportunity has been provided to all eligible Contract Holders within the applicable Group or set-aside. The Ordering Contracting Officer is responsible for determining the appropriate acquisition approach and documenting the order in accordance with FAR 16.505(b), applicable agency policies, and NASA SEWP ordering procedures.",
+      "Abrahams Consulting is available to assist federal customers with product and solution inquiries, technical requirements, pricing and availability, quote requests, and acquisition support through our NASA SEWP contract."
+    ],
+    officialGuidance: {
+      prefix: "For official Fair Opportunity requirements and NASA SEWP ordering guidance, please visit the ",
+      linkLabel: "NASA SEWP website",
+      href: "https://www.sewp.nasa.gov/sewpv/fairopportunity.shtml",
+      suffix: "."
     }
   },
   postDeliverySupport: {
     title: "Post-Delivery Support Information",
     intro:
-      "Abrahams Consulting, LLC provides post-delivery support for installation, warranty, technical support, software support, and other order-related issues associated with products and services purchased under its NASA SEWP VI Contract.",
+      "Abrahams Consulting LLC provides post-delivery support for installation, warranty, technical support, software support, and other order-related issues associated with products and services purchased under its NASA SEWP VI Contract.",
     topics: [
       {
         id: "installation",
@@ -482,7 +400,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         {
           id: "telephone",
           label: "Telephone",
-          value: "646-564-3844 ext 1009",
+          value: "(646) 564-3844, ext. 1009",
           href: "tel:+16465643844,1009"
         },
         {
@@ -503,7 +421,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     title: "Order Troubleshooting Information",
     paragraphs: [
       "Customers should report delayed, damaged, missing, incorrect, or otherwise nonconforming products or orders to Abrahams Consulting and provide the Delivery Order number, SEWP Tracking Number (if available), affected items, and a description of the issue.",
-      "Abrahams Consulting, LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact."
+      "Abrahams Consulting LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact."
     ],
     contacts: [
       {
@@ -514,8 +432,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           {
             id: "telephone",
             label: "Telephone",
-            value: "718-979-1371",
-            href: "tel:+17189791371"
+            value: "(646) 564-3828, ext. 2180",
+            href: "tel:+16465643828,2180"
           },
           {
             id: "email",
@@ -533,7 +451,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           {
             id: "telephone",
             label: "Telephone",
-            value: "301-638-8731 ext. 2179",
+            value: "(301) 638-8731, ext. 2179",
             href: "tel:+13016388731,2179"
           },
           {
@@ -577,13 +495,13 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           id: "company",
           icon: "building",
           label: "Company",
-          value: "Abrahams Consulting, LLC"
+          value: "Abrahams Consulting LLC"
         },
         {
           id: "direct-phone",
           icon: "phone",
           label: "Direct Phone",
-          value: "301-638-8731 ext. 2179",
+          value: "(301) 638-8731, ext. 2179",
           href: "tel:+13016388731,2179"
         },
         {
@@ -725,76 +643,66 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   },
   obtainQuote: {
     title: "How to Obtain a Quote",
+    programName: "NASA Solutions for Enterprise-Wide Procurement (SEWP) VI",
+    intro: [
+      "All quotes are provided in accordance with the NASA SEWP VI Fair Opportunity procedures and applicable Federal Acquisition Regulation (FAR) requirements.",
+      "Customers may contact Abrahams Consulting’s Federal Sales team for product information and pre-RFQ assistance. Competitive quote requests should be submitted through NASA SEWP’s Quote Request Tool."
+    ],
     processHeading: "Quote Request Process",
     steps: [
       {
         id: "prepare",
         icon: "prepare",
-        title: "Prepare the requirement",
+        title: "Prepare Your Requirement",
         description:
-          "Identify the requested hardware, software, solution, or related service. Include specifications, quantities, delivery location, required delivery date, requested response date, and applicable agency instructions."
+          "Identify the required products or services, specifications, quantities, delivery information, evaluation criteria, and response deadline."
       },
       {
         id: "submit",
         icon: "submit",
-        title: "Submit through NASA SEWP",
+        title: "Submit Your Request through NASA SEWP",
         description:
-          "Submit the requirement through the NASA SEWP Quote Request Tool as a Request for Quote (RFQ), Request for Information (RFI), or Market Research Request (MRR), as applicable."
+          "Submit competitive Requests for Quote through NASA SEWP’s Quote Request Tool (QRT). Ordering agencies are responsible for providing eligible contract holders a fair opportunity to be considered in accordance with FAR 16.505(b)."
       },
       {
-        id: "review",
-        icon: "review",
-        title: "Scope and catalog review",
+        id: "evaluate",
+        icon: "evaluate",
+        title: "Evaluate Quotations",
         description:
-          "Abrahams Consulting LLC will review the request and determine whether the requested offerings are within the scope of Contract No. 80TECH26D1658 and available in the SEWP database of record."
+          "Evaluate the quotations using the criteria stated in the request and document the selection in accordance with applicable acquisition procedures."
       },
       {
-        id: "quote",
-        icon: "quote",
-        title: "Official quote submission",
+        id: "order",
+        icon: "order",
+        title: "Place the Order",
         description:
-          "For a request issued through the NASA SEWP Quote Request Tool, Abrahams Consulting will submit its official response through the applicable SEWP quoting system. The quote will state its validity period."
-      },
-      {
-        id: "secure",
-        icon: "secure",
-        title: "Special handling",
-        description:
-          "For classified, sensitive, or specially handled information, Abrahams Consulting will follow the secure submission instructions provided by the requesting agency and permitted by NASA SEWP procedures."
+          "Submit the delivery order through the applicable NASA SEWP ordering process. Reference Abrahams Consulting LLC’s Contract 80TECH26D1658 and the selected quotation."
       }
     ],
     salesAssistance: {
-      title: "Sales Assistance",
-      intro: "For assistance with an upcoming quote request or identifying in-scope offerings, contact:",
-      primary: {
-        label: "Primary Sales Representative",
-        name: "TBD",
-        role: "Federal Sales Support",
-        telephone: "TBD",
+      title: "Need Assistance Before Issuing an RFQ?",
+      intro:
+        "Customers may contact Abrahams Consulting LLC for product information, capability questions, or assistance developing their requirements:",
+      contact: {
+        label: "SEWP VI Sales Contact",
+        name: "John Luis B. Marquez",
+        role: "Catalog Support Specialist – Federal Sales Liaison",
+        telephone: "516-405-2175 ext. 2175",
         email: "federal.sales@abrahamsconsulting.com"
       },
-      alternate: {
-        label: "Alternate Sales Representative",
-        name: "Angela Gibson",
-        role: "Technology Consultant / Partner",
-        telephone: "718-979-1371",
-        email: "agibson@abrahamsconsulting.com"
-      },
+      disclaimer:
+        "Pre-RFQ assistance is optional. It does not constitute a formal quotation or independently satisfy the ordering agency’s applicable fair-opportunity obligations.",
       responseTime: {
         title: "Response Time",
         description:
-          "Abrahams Consulting will respond within the timeframe specified in the applicable NASA SEWP request. Customers with an urgent or time-sensitive requirement should contact the sales representatives listed above."
-      },
-      important: {
-        title: "Important",
-        description:
-          "A courtesy copy of a quote may be provided by email only after the official response has been uploaded through the SEWP quoting system, and the courtesy copy must match the official submission."
+          "Customers with urgent or time-sensitive requirements should identify the required response date in the NASA SEWP Quote Request Tool and may also contact the sales representatives listed above for coordination."
       }
     },
     formsRequirements: {
       title: "Forms and Submission Requirements",
       paragraphs: [
-        "No separate Abrahams Consulting quote-request form is required when an agency submits its request through the NASA SEWP Quote Request Tool. Abrahams Consulting may quote only products, solutions, and services available under Contract No. 80TECH26D1658 in the SEWP database of record at the time of quote submission.",
+        "No separate Abrahams Consulting quote-request form is required when an agency submits its request through the NASA SEWP Quote Request Tool.",
+        "Abrahams Consulting may quote only products, solutions, and services available under Contract No. 80TECH26D1658 in the SEWP database of record at the time of quote submission.",
         "When a request originates through the NASA SEWP Quote Request Tool, the official quote response will be submitted through the SEWP system."
       ]
     }
@@ -804,7 +712,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     prompt: "Need assistance with a NASA SEWP VI procurement?",
     subtitle: "Contact our Federal Sales Team.",
     email: "federal.sales@abrahamsconsulting.com",
-    phones: ["877-541-1938", "646-558-3887"],
+    phones: ["516-405-2175 ext. 2175"],
     ctaLabel: "Contact Federal Sales"
   }
 };
