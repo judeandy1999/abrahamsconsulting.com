@@ -9,6 +9,7 @@ import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViCoreCompetenciesSectionProps = {
   section: NasaSewpViPageContent["coreCompetencies"];
+  embedded?: boolean;
 };
 
 type CompetencyItem = NasaSewpViPageContent["coreCompetencies"]["items"][number];
@@ -41,7 +42,33 @@ function CompetencyCard({ item }: { item: CompetencyItem }) {
   );
 }
 
-export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCompetenciesSectionProps) {
+function EmbeddedCoreCompetencies({
+  section
+}: {
+  section: NasaSewpViPageContent["coreCompetencies"];
+}) {
+  return (
+    <div className="sewp-vi-competencies sewp-vi-competencies--embedded" aria-label={section.title}>
+      <p className="sewp-vi-competencies__description sewp-vi-competencies__description--embedded">
+        {section.description}
+      </p>
+
+      <ul className="sewp-vi-competencies__grid">
+        {section.items.map((item) => (
+          <li key={item.id} className="sewp-vi-competencies__grid-item">
+            <CompetencyCard item={item} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function CoreCompetenciesMarquee({
+  section
+}: {
+  section: NasaSewpViPageContent["coreCompetencies"];
+}) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const reduceMotion = useReducedMotion();
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -288,7 +315,7 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
           id={MARQUEE_ID}
           className="sewp-vi-competencies__marquee"
           role="region"
-          aria-labelledby="sewp-vi-competencies-heading"
+          aria-label={section.title}
           tabIndex={0}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
@@ -320,4 +347,15 @@ export function NasaSewpViCoreCompetenciesSection({ section }: NasaSewpViCoreCom
       </motion.div>
     </section>
   );
+}
+
+export function NasaSewpViCoreCompetenciesSection({
+  section,
+  embedded = false
+}: NasaSewpViCoreCompetenciesSectionProps) {
+  if (embedded) {
+    return <EmbeddedCoreCompetencies section={section} />;
+  }
+
+  return <CoreCompetenciesMarquee section={section} />;
 }

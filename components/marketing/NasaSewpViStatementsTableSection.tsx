@@ -2,8 +2,10 @@
 
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useId, useState, type KeyboardEvent } from "react";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
+import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
 import { NasaSewpViObtainQuoteSection } from "./NasaSewpViObtainQuoteSection";
 import { useMarketingMotionConfig } from "./marketing-motion";
@@ -222,6 +224,15 @@ export function NasaSewpViStatementsTableSection({
           <h2 id="sewp-vi-statements-heading" className="sewp-vi-statements__title">
             {aboutSewp.title}
           </h2>
+          <span className="sewp-vi-statements__logo">
+            <Image
+              src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
+              alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
+              width={112}
+              height={112}
+              className="sewp-vi-statements__logo-image"
+            />
+          </span>
           {aboutSewp.paragraphs.map((paragraph) => (
             <p key={paragraph} className="sewp-vi-statements__intro">
               {paragraph}

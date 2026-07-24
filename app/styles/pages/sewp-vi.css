@@ -64,8 +64,26 @@
   top: 1.5rem;
   right: 1.5rem;
   z-index: 3;
-  width: auto;
-  height: 3.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  aspect-ratio: 1 / 1;
+  padding: 0.4rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.18);
+}
+
+.sewp-vi-hero__nasa-logo-image {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 .sewp-vi-hero__eyebrow {
@@ -968,7 +986,7 @@
 .sewp-vi-cap-veh__vehicle-logo {
   display: block;
   width: 4.25rem;
-  height: auto;
+  height: 4.25rem;
   max-height: 4.25rem;
   object-fit: contain;
 }
@@ -1416,9 +1434,10 @@
 .sewp-vi-certifications__cert-logo {
   display: block;
   width: 2.25rem;
-  height: auto;
+  height: 2.25rem;
   max-height: 2.25rem;
   object-fit: contain;
+  border-radius: 999px;
 }
 
 .sewp-vi-certifications__label {
@@ -1816,11 +1835,14 @@
 }
 
 .sewp-vi-statements__header {
+  display: grid;
+  justify-items: center;
   margin-bottom: 1.75rem;
+  text-align: center;
 }
 
 .sewp-vi-statements__title {
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: clamp(1.5rem, 2.8vw, 2rem);
   font-weight: 700;
   line-height: 1.2;
@@ -1833,16 +1855,41 @@
   display: block;
   width: 2.75rem;
   height: 3px;
-  margin-top: 0.65rem;
+  margin: 0.65rem auto 0;
   background: var(--color-red);
 }
 
-.sewp-vi-statements__intro {
-  margin: 0.85rem 0 0;
+.sewp-vi-statements__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  aspect-ratio: 1 / 1;
+  margin-top: 1.15rem;
+  padding: 0.45rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.12);
+}
+
+.sewp-vi-statements__logo-image {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
   max-width: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+.sewp-vi-statements__intro {
+  margin: 1rem auto 0;
+  max-width: 48rem;
   font-size: 0.9875rem;
   line-height: 1.65;
   color: var(--color-slate);
+  text-align: center;
 }
 
 .sewp-vi-statements__caption {
@@ -1889,7 +1936,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 0.75rem;
-  padding: 0.8rem 0.9rem;
+  padding: 0.85rem 0.95rem;
   border: 0;
   border-radius: 0.5rem;
   border-left: 3px solid transparent;
@@ -1897,7 +1944,7 @@
   color: #042551;
   font: inherit;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.35;
   text-align: left;
   cursor: pointer;
@@ -1978,35 +2025,39 @@
 .sewp-vi-statements__topic-tablist {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid rgba(4, 37, 81, 0.12);
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  border-bottom: 0;
+  background: transparent;
 }
 
 .sewp-vi-statements__topic-tab {
   appearance: none;
-  margin: 0 0 -1px;
-  padding: 0.65rem 0.9rem;
-  border: 0;
-  border-bottom: 3px solid transparent;
-  border-radius: 0.4rem 0.4rem 0 0;
-  background: transparent;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  background: var(--color-white);
   color: rgba(4, 37, 81, 0.72);
   font: inherit;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.35;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.04);
   transition:
     color 0.2s ease,
     background 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .sewp-vi-statements__topic-tab:hover,
 .sewp-vi-statements__topic-tab:focus-visible {
   color: #042551;
-  background: rgba(0, 102, 175, 0.06);
+  border-color: rgba(0, 102, 175, 0.28);
+  background: var(--color-white);
 }
 
 .sewp-vi-statements__topic-tab:focus-visible {
@@ -2016,12 +2067,15 @@
 
 .sewp-vi-statements__topic-tab--active {
   color: #042551;
-  border-bottom-color: var(--color-red);
-  background: rgba(0, 102, 175, 0.06);
+  border-color: rgba(0, 102, 175, 0.35);
+  border-bottom: 3px solid var(--color-red);
+  background: var(--color-white);
+  box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
 }
 
 .sewp-vi-statements__topic-panel {
-  padding-top: 1rem;
+  margin-top: 1rem;
+  padding-top: 0;
 }
 
 .sewp-vi-statements__contact-grid {
@@ -2158,6 +2212,256 @@
   margin: 0.35rem 0 0;
   font-size: 0.875rem;
   color: rgba(4, 37, 81, 0.65);
+}
+
+.sewp-vi-company-hub {
+  position: relative;
+  padding-top: 3.5rem;
+  background: var(--color-section-alt-bg, #f4f7fa);
+}
+
+.sewp-vi-company-hub__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 0 1.75rem 4rem;
+}
+
+.sewp-vi-company-hub__header {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.sewp-vi-company-hub__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #042551;
+}
+
+.sewp-vi-company-hub__title::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin: 0.65rem auto 0;
+  background: var(--color-red);
+}
+
+.sewp-vi-company-hub__intro {
+  margin: 0.85rem auto 0;
+  font-size: 0.9875rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+  text-align: center;
+}
+
+.sewp-vi-company-hub__highlights {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.sewp-vi-company-hub__highlight {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  padding: 1rem 1.05rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.sewp-vi-company-hub__highlight-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: #e8f1fb;
+  color: var(--color-blue-primary, var(--color-blue));
+}
+
+.sewp-vi-company-hub__highlight-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #042551;
+}
+
+.sewp-vi-company-hub__highlight-desc {
+  margin: 0.3rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-slate);
+}
+
+.sewp-vi-company-hub__tablist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  border-bottom: 0;
+  background: transparent;
+}
+
+.sewp-vi-company-hub__tab {
+  appearance: none;
+  margin: 0;
+  padding: 0.8rem 1.05rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  background: var(--color-white);
+  color: rgba(4, 37, 81, 0.72);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.04);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sewp-vi-company-hub__tab:hover,
+.sewp-vi-company-hub__tab:focus-visible {
+  color: #042551;
+  border-color: rgba(0, 102, 175, 0.28);
+  background: var(--color-white);
+}
+
+.sewp-vi-company-hub__tab:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.sewp-vi-company-hub__tab--active {
+  color: #042551;
+  border-color: rgba(0, 102, 175, 0.35);
+  border-bottom: 3px solid var(--color-red);
+  background: var(--color-white);
+  box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
+}
+
+.sewp-vi-company-hub__panel {
+  min-width: 0;
+  margin-top: 1.25rem;
+  padding: 1.5rem 1.6rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 32px rgba(11, 31, 58, 0.05);
+  overflow: hidden;
+}
+
+.sewp-vi-company-hub__caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sewp-vi-why--embedded,
+.sewp-vi-company-info--embedded,
+.sewp-vi-certifications--embedded,
+.sewp-vi-cap-veh--embedded,
+.sewp-vi-competencies--embedded {
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+}
+
+.sewp-vi-why--embedded .sewp-vi-why__description {
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.sewp-vi-why--embedded .sewp-vi-why__grid {
+  margin: 0;
+}
+
+.sewp-vi-company-info--embedded .sewp-vi-company-info__columns {
+  margin: 0;
+}
+
+.sewp-vi-certifications--embedded .sewp-vi-certifications__list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 1rem 0.75rem;
+  overflow: visible;
+}
+
+.sewp-vi-certifications--embedded .sewp-vi-certifications__item {
+  flex: none;
+  min-width: 0;
+  padding: 0;
+}
+
+.sewp-vi-certifications--embedded .sewp-vi-certifications__item:not(:last-child)::after {
+  display: none;
+}
+
+.sewp-vi-cap-veh--embedded .sewp-vi-cap-veh__inner {
+  max-width: none;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.sewp-vi-cap-veh--embedded .sewp-vi-cap-veh__vehicles {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.sewp-vi-cap-veh--embedded .sewp-vi-cap-veh__description {
+  margin: 0 0 1.15rem;
+  text-align: center;
+}
+
+.sewp-vi-competencies--embedded {
+  padding-bottom: 0;
+}
+
+.sewp-vi-competencies__description--embedded {
+  margin: 0 0 1.15rem;
+  padding: 0;
+  font-size: 0.9875rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+  text-align: center;
+}
+
+.sewp-vi-competencies__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.sewp-vi-competencies__grid-item {
+  min-width: 0;
+}
+
+.sewp-vi-competencies__grid-item .sewp-vi-competencies__card {
+  width: 100%;
+  height: 100%;
 }
 
 .sewp-vi-obtain-quote {
@@ -3163,6 +3467,24 @@
     position: static;
   }
 
+  .sewp-vi-company-hub__highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .sewp-vi-company-hub__tablist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .sewp-vi-company-hub__tab {
+    text-align: center;
+  }
+
+  .sewp-vi-company-hub__tab--active {
+    border-bottom: 3px solid var(--color-red);
+  }
+
   .sewp-vi-obtain-quote__steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem 1.25rem;
@@ -3706,21 +4028,15 @@
   .sewp-vi-statements__topic-tablist {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.35rem;
-    border-bottom: 0;
+    gap: 0.5rem;
   }
 
   .sewp-vi-statements__topic-tab {
-    margin: 0;
-    border: 1px solid rgba(4, 37, 81, 0.12);
-    border-radius: 0.5rem;
-    border-bottom-width: 1px;
-    text-align: left;
+    text-align: center;
   }
 
   .sewp-vi-statements__topic-tab--active {
-    border-color: rgba(0, 102, 175, 0.35);
-    border-bottom-color: var(--color-red);
+    border-bottom: 3px solid var(--color-red);
   }
 
   .sewp-vi-statements__meta-row {

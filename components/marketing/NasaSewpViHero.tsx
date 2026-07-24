@@ -134,13 +134,15 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
             className="sewp-vi-hero__image"
           />
         </div>
-        <Image
-          src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
-          alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-          width={96}
-          height={96}
-          className="sewp-vi-hero__nasa-logo"
-        />
+        <span className="sewp-vi-hero__nasa-logo">
+          <Image
+            src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
+            alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
+            width={96}
+            height={96}
+            className="sewp-vi-hero__nasa-logo-image"
+          />
+        </span>
       </div>
     </section>
   );

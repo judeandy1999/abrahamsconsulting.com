@@ -12,6 +12,8 @@ import { useMarketingMotionConfig } from "./marketing-motion";
 type NasaSewpViCapabilitiesVehiclesSectionProps = {
   capabilities: NasaSewpViPageContent["categoryACapabilities"];
   vehicles: NasaSewpViPageContent["contractVehicles"];
+  view?: "all" | "capabilities" | "vehicles";
+  embedded?: boolean;
 };
 
 type CapabilityItem = NasaSewpViPageContent["categoryACapabilities"]["items"][number];
@@ -103,14 +105,18 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
 
 export function NasaSewpViCapabilitiesVehiclesSection({
   capabilities,
-  vehicles
+  vehicles,
+  view = "all",
+  embedded = false
 }: NasaSewpViCapabilitiesVehiclesSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const leftCapabilities = capabilities.items.slice(0, CAPABILITY_COLUMN_SPLIT);
   const rightCapabilities = capabilities.items.slice(CAPABILITY_COLUMN_SPLIT);
+  const showCapabilities = view === "all" || view === "capabilities";
+  const showVehicles = view === "all" || view === "vehicles";
 
   return (
-    <div className="sewp-vi-cap-veh">
+    <div className={`sewp-vi-cap-veh${embedded ? " sewp-vi-cap-veh--embedded" : ""}`}>
       <motion.div
         className="sewp-vi-cap-veh__inner"
         variants={containerVariants}
@@ -118,48 +124,62 @@ export function NasaSewpViCapabilitiesVehiclesSection({
         whileInView="visible"
         viewport={viewport}
       >
-        <motion.section
-          className="sewp-vi-cap-veh__capabilities"
-          aria-labelledby="sewp-vi-category-a-heading"
-          variants={itemVariants}
-          transition={itemTransition}
-        >
-          <header className="sewp-vi-cap-veh__header">
-            <h2 id="sewp-vi-category-a-heading" className="sewp-vi-cap-veh__title">
-              <span className="sewp-vi-cap-veh__eyebrow">{capabilities.eyebrow}</span>
-              <span className="sewp-vi-cap-veh__title-text">{capabilities.title}</span>
-            </h2>
-            <p className="sewp-vi-cap-veh__description">{capabilities.description}</p>
-          </header>
+        {showCapabilities ? (
+          <motion.section
+            className="sewp-vi-cap-veh__capabilities"
+            aria-labelledby={embedded ? undefined : "sewp-vi-category-a-heading"}
+            aria-label={embedded ? capabilities.title : undefined}
+            variants={itemVariants}
+            transition={itemTransition}
+          >
+            {embedded ? (
+              <p className="sewp-vi-cap-veh__description">{capabilities.description}</p>
+            ) : (
+              <header className="sewp-vi-cap-veh__header">
+                <h2 id="sewp-vi-category-a-heading" className="sewp-vi-cap-veh__title">
+                  <span className="sewp-vi-cap-veh__eyebrow">{capabilities.eyebrow}</span>
+                  <span className="sewp-vi-cap-veh__title-text">{capabilities.title}</span>
+                </h2>
+                <p className="sewp-vi-cap-veh__description">{capabilities.description}</p>
+              </header>
+            )}
 
-          <div className="sewp-vi-cap-veh__capability-columns">
-            <CapabilityColumn items={leftCapabilities} />
-            <CapabilityColumn items={rightCapabilities} />
-          </div>
-        </motion.section>
+            <div className="sewp-vi-cap-veh__capability-columns">
+              <CapabilityColumn items={leftCapabilities} />
+              <CapabilityColumn items={rightCapabilities} />
+            </div>
+          </motion.section>
+        ) : null}
 
-        <motion.section
-          className="sewp-vi-cap-veh__vehicles"
-          aria-labelledby="sewp-vi-vehicles-heading"
-          variants={itemVariants}
-          transition={itemTransition}
-        >
-          <header className="sewp-vi-cap-veh__header">
-            <h2 id="sewp-vi-vehicles-heading" className="sewp-vi-cap-veh__title">
-              <span className="sewp-vi-cap-veh__eyebrow">{vehicles.eyebrow}</span>
-              <span className="sewp-vi-cap-veh__title-text">{vehicles.title}</span>
-            </h2>
-            <p className="sewp-vi-cap-veh__description">{vehicles.description}</p>
-          </header>
+        {showVehicles ? (
+          <motion.section
+            className="sewp-vi-cap-veh__vehicles"
+            aria-labelledby={embedded ? undefined : "sewp-vi-vehicles-heading"}
+            aria-label={embedded ? vehicles.title : undefined}
+            variants={itemVariants}
+            transition={itemTransition}
+          >
+            {embedded ? (
+              <p className="sewp-vi-cap-veh__description">{vehicles.description}</p>
+            ) : (
+              <header className="sewp-vi-cap-veh__header">
+                <h2 id="sewp-vi-vehicles-heading" className="sewp-vi-cap-veh__title">
+                  <span className="sewp-vi-cap-veh__eyebrow">{vehicles.eyebrow}</span>
+                  <span className="sewp-vi-cap-veh__title-text">{vehicles.title}</span>
+                </h2>
+                <p className="sewp-vi-cap-veh__description">{vehicles.description}</p>
+              </header>
+            )}
 
-          <ul className="sewp-vi-cap-veh__vehicle-list">
-            {vehicles.items.map((item) => (
-              <li key={item.id} className="sewp-vi-cap-veh__vehicle-item">
-                <VehicleCard item={item} />
-              </li>
-            ))}
-          </ul>
-        </motion.section>
+            <ul className="sewp-vi-cap-veh__vehicle-list">
+              {vehicles.items.map((item) => (
+                <li key={item.id} className="sewp-vi-cap-veh__vehicle-item">
+                  <VehicleCard item={item} />
+                </li>
+              ))}
+            </ul>
+          </motion.section>
+        ) : null}
       </motion.div>
     </div>
   );
