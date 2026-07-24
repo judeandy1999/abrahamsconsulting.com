@@ -102,10 +102,9 @@ export const siteContent: SiteContent = {
   },
   certificationStrip: {
     title: "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
-    imageSrc: "/images/Abrahams-certifications.webp",
-    // TODO: Regenerate Abrahams-certifications.webp without SBA WOSB / 8(a) / STARS III marks.
+    imageSrc: "/images/abrahams-certifications-final-1.png",
     imageAlt:
-      "Certification and partnership logos: NQA ISO 9001, ITIL, Empire State Development MWBE, and OMNIA Partners"
+      "Certification and partnership logos: NQA ISO 9001, SBA 8(a) Certified, Empire State Development MWBE, ITIL, and OMNIA Partners"
   },
   homeAbout: {
     eyebrow: "Who we are",

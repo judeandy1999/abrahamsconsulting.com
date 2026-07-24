@@ -23,8 +23,8 @@ export function HomeCertificationBar({ site }: HomeCertificationBarProps) {
           <Image
             src={certificationStrip.imageSrc}
             alt={certificationStrip.imageAlt}
-            width={1200}
-            height={200}
+            width={1024}
+            height={341}
             loading="lazy"
             className="certification-bar__image"
             sizes="(max-width: 960px) 100vw, 900px"
