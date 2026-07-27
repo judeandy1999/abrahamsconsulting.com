@@ -41,7 +41,7 @@ const TABS: TabDefinition[] = [
   { id: "contract-overview", label: "Contract Overview" },
   { id: "obtain-quote", label: "How to Obtain a Quote" },
   { id: "gwac", label: "Official GWAC Identification Statement" },
-  { id: "fair-opportunity", label: "Fair Opportunity Clause" },
+  { id: "fair-opportunity", label: "Fair Opportunity" },
   { id: "post-delivery", label: "Post-Delivery Support Information" },
   { id: "order-troubleshooting", label: "Order Troubleshooting Information" },
   { id: "program-manager", label: "Program Manager Contact Information" },
@@ -177,7 +177,6 @@ export function NasaSewpViStatementsTableSection({
   const [activeTab, setActiveTab] = useState<TabId>("contract-overview");
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const supportContact = postDeliverySupport.primaryContact;
-  const fairOpportunityGuidance = fairOpportunity.officialGuidance;
   const activeIndex = TABS.findIndex((tab) => tab.id === activeTab);
 
   function focusTabAt(index: number) {
@@ -304,19 +303,6 @@ export function NasaSewpViStatementsTableSection({
                     {paragraph}
                   </p>
                 ))}
-                <p className="sewp-vi-statements__paragraph">
-                  {fairOpportunityGuidance.prefix}
-                  <a
-                    href={fairOpportunityGuidance.href}
-                    className="sewp-vi-statements__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={accessibleExternalLinkLabel(fairOpportunityGuidance.linkLabel)}
-                  >
-                    {fairOpportunityGuidance.linkLabel}
-                  </a>
-                  {fairOpportunityGuidance.suffix}
-                </p>
               </div>
             ) : null}
 

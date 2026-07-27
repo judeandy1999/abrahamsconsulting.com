@@ -128,21 +128,29 @@ Content also has (not currently shown on page):
 Eyebrow: NASA SEWP VI
 
 
---- Row 3: Fair Opportunity Clause ---
+--- Row 3: Fair Opportunity ---
 
-Title: Fair Opportunity Clause
+Title: Fair Opportunity
 
-Paragraph 1: In accordance with FAR 16.505(b), federal agencies and authorized buyers must provide eligible NASA SEWP Contract Holders within the applicable Contract Group or set-aside a fair opportunity to be considered for orders, unless an authorized exception to Fair Opportunity applies.
+Paragraph 1: Contractors will be provided a fair opportunity at the individual order level as appropriate per FAR Part 16.505(b), including the SEWP RFQ tools. No documentation for the order selection is required to be submitted with the order. All such documentation is to be maintained by the issuing procurement office.
 
-Paragraph 2: NASA recommends using the SEWP Quote Request Tool (QRT) to support Fair Opportunity and streamline the acquisition process. Through the QRT, agencies can conduct market research and submit Requests for Information (RFIs) and Requests for Quotes (RFQs) to eligible Contract Holders.
+Paragraph 2: The Contractor shall not market, quote or otherwise offer for sale, any IT Solutions not listed under this contract, until the said solutions are included in the SEWP database of record, and available to all Government end-users.
 
-Paragraph 3: There is no requirement to obtain three quotes when Fair Opportunity has been provided to all eligible Contract Holders within the applicable Group or set-aside. The Ordering Contracting Officer is responsible for determining the appropriate acquisition approach and documenting the order in accordance with FAR 16.505(b), applicable agency policies, and NASA SEWP ordering procedures.
+Paragraph 3: If the Government issues a Request For Information (RFI) as part of market research, the Contractor may provide items not yet listed on their SEWP contract as part of a market research quote if:
 
-Paragraph 4: Abrahams Consulting is available to assist federal customers with product and solution inquiries, technical requirements, pricing and availability, quote requests, and acquisition support through our NASA SEWP contract.
+Paragraph 4: all such items are clearly marked as not yet available on their SEWP contract; and
 
-Closing: For official Fair Opportunity requirements and NASA SEWP ordering guidance, please visit the NASA SEWP website.
-Link Label: NASA SEWP website
-URL: https://www.sewp.nasa.gov/sewpv/fairopportunity.shtml
+Paragraph 5: the contractor submits a technology refreshment request to add those products to their contract.
+
+Paragraph 6: If the Government issues a Request For Quote (RFQ) or a Market Research Request (MRR), the Contractor may only respond with items available on their Contract and the price of each item shall be the no greater than the price in Attachment F SEWP database of record at the time the quote is issued. If the Contractor has insufficient items on their contract to fully respond to the Formal RFQ, the Contractor must respond with a No Bid.
+
+Paragraph 7: Unless the RFQ specifically allows for partial quotes, the Contractor must respond fully to all requirements specified in the RFQ.
+
+Paragraph 8: When submitting a quote to a government end-user, the contractor must clearly state the length of time the quote is valid. The contractor shall honor any order submitted within the stated time period of a quote.
+
+Paragraph 9: When responding to an RFI or RFQ issued from the NASA SEWP RFQ on-line quoting system, the Contractor must respond as outlined in Attachment C: Contract Holder User Manual (CHUM).
+
+Paragraph 10: Contract Holders are prohibited from using Government information posted on the NASA SEWP Contract Holder Only Page, such as RFQs, RFIs, etc., for purposes other than proposing on SEWP requirements. This includes Contract Holders providing third parties with SEWP information and requirements for the purpose of assisting companies, that are not SEWP Contract Holders, with providing unsolicited proposals to meet agency requirements already posted to the NASA SEWP RFQ on-line quoting system.
 
 
 --- Row 4: Post-Delivery Support Information ---

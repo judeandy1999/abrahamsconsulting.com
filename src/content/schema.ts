@@ -626,13 +626,7 @@ export const nasaSewpViPageSchema = z.object({
   }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),
-    paragraphs: z.array(z.string().min(1)).min(1),
-    officialGuidance: z.object({
-      prefix: z.string().min(1),
-      linkLabel: z.string().min(1),
-      href: z.string().url(),
-      suffix: z.string()
-    })
+    paragraphs: z.array(z.string().min(1)).min(1)
   }),
   postDeliverySupport: z.object({
     title: z.string().min(1),
