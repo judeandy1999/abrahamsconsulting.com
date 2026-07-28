@@ -138,9 +138,9 @@ Paragraph 2: The Contractor shall not market, quote or otherwise offer for sale,
 
 Paragraph 3: If the Government issues a Request For Information (RFI) as part of market research, the Contractor may provide items not yet listed on their SEWP contract as part of a market research quote if:
 
-Paragraph 4: all such items are clearly marked as not yet available on their SEWP contract; and
+Paragraph 4: 1. all such items are clearly marked as not yet available on their SEWP contract; and
 
-Paragraph 5: the contractor submits a technology refreshment request to add those products to their contract.
+Paragraph 5: 2. the contractor submits a technology refreshment request to add those products to their contract.
 
 Paragraph 6: If the Government issues a Request For Quote (RFQ) or a Market Research Request (MRR), the Contractor may only respond with items available on their Contract and the price of each item shall be the no greater than the price in Attachment F SEWP database of record at the time the quote is issued. If the Contractor has insufficient items on their contract to fully respond to the Formal RFQ, the Contractor must respond with a No Bid.
 
@@ -159,13 +159,13 @@ Title: Post-Delivery Support Information
 
 Intro: Abrahams Consulting, LLC provides post-delivery support for installation, warranty, technical support, software support, and other order-related issues associated with products and services purchased under its NASA SEWP VI Contract.
 
-Installation: Installation services may be provided when they directly support an in-scope ITC/AV product solution and are identified in the applicable quotation or Delivery Order.
+Installation: Installation services may be provided using the applicable Service CLINs when the services directly support the installation or implementation of an in-scope ITC/AV solution. Applicable installation services will be quoted using the Service CLINs available under the contract and ordered through the applicable delivery order.
 
-Basic Warranty: Abrahams Consulting will provide conforming products and services in accordance with the applicable terms of the SEWP VI Contract, including FAR 52.212-4. Applicable OEM or publisher warranties may provide additional product-specific coverage identified in the quotation, Delivery Order, or warranty documentation.
+Basic Warranty: Abrahams Consulting LLC will tender for acceptance only products and services that conform to the applicable contract requirements. In accordance with FAR 52.212-4(a), the Government may require repair or replacement of nonconforming supplies or reperformance of nonconforming services at no increase in contract price. In accordance with FAR 52.212-4(o), delivered items are warranted to be merchantable and fit for the particular purpose described in the contract.
 
-Extended Warranty: Extended warranty or maintenance coverage may be offered when available. Applicable coverage, pricing, and terms will be identified in the quotation or order documentation.
+Extended Warranty: Extended warranty coverage may be purchased and begin at any time during the standard commercial warranty period, up to and including the end of that period. Coverage will be based on the applicable commercial warranty period. At the Government’s discretion, monthly maintenance may be ordered during a warranty period at a Discounted Monthly Extended Warranty amount in lieu of the extended warranty.
 
-Technical and Software Support: Customers requiring technical or software support should contact Abrahams Consulting and provide the Delivery Order number, product or software information, and a description of the issue. Abrahams Consulting will review the request and coordinate the appropriate technical support or escalation.
+Technical and Software Support: Customers requiring technical or software support should contact the designated Abrahams Consulting LLC support representative. Abrahams will review the request and coordinate appropriate support consistent with the applicable contract, delivery order, warranty, maintenance, and licensing terms.
 
 Primary Support Contact
 Name: Jay Dela Piedra
@@ -181,9 +181,9 @@ Support Hours: Monday–Friday, 8:00 AM – 5:00 PM Eastern Time
 
 Title: Order Troubleshooting Information
 
-Paragraph 1: Customers should report delayed, damaged, missing, incorrect, or otherwise nonconforming products or orders to Abrahams Consulting and provide the Delivery Order number, SEWP Tracking Number (if available), affected items, and a description of the issue.
+Paragraph 1: Customers should report problematic orders to Abrahams Consulting LLC and provide the delivery-order number, SEWP Tracking Number, if available, affected items, and a description of the issue. Abrahams Consulting LLC will review the matter and coordinate the appropriate resolution or escalation in accordance with the applicable order, warranty, and contract terms.
 
-Paragraph 2: Abrahams Consulting, LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact.
+Paragraph 2: If an item cannot be delivered within its applicable delivery time, Abrahams Consulting LLC will notify the issuing Contracting Officer and SEWP PMO within two business days after receipt of the order or manufacturer notification of the expected delivery date, as applicable under SEWP VI Terms and Conditions Section A.1.18(D).
 
 Order Support Contact
 Name: Jude Convencido
@@ -247,6 +247,10 @@ Card 2 Redirect Note: You will be redirected to the Abrahams Consulting website.
 ================================================================================
 
 Title: How to Obtain a Quote
+
+Intro 1: Ordering agencies are responsible for satisfying the applicable fair-opportunity requirements of FAR 16.505(b). Abrahams Consulting LLC will respond to quote requests in accordance with the NASA SEWP VI contract and applicable SEWP procedures.
+
+Intro 2: Customers may contact Abrahams Consulting LLC’s Federal Sales team for product information, capability questions, and optional pre-RFQ assistance. NASA SEWP recommends use of its Quote Request Tool (QRT) to obtain competitive quotations.
 
 Process Heading: Quote Request Process
 

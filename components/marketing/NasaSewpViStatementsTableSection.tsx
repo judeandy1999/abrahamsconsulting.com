@@ -3,7 +3,7 @@
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useId, useState, type KeyboardEvent } from "react";
+import { useId, useState, type KeyboardEvent, type ReactNode } from "react";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
@@ -298,11 +298,44 @@ export function NasaSewpViStatementsTableSection({
 
             {activeTab === "fair-opportunity" ? (
               <div>
-                {fairOpportunity.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="sewp-vi-statements__paragraph">
-                    {paragraph}
-                  </p>
-                ))}
+                {(() => {
+                  const blocks: ReactNode[] = [];
+                  let listItems: string[] = [];
+
+                  const flushList = (key: string) => {
+                    if (listItems.length === 0) {
+                      return;
+                    }
+
+                    blocks.push(
+                      <ol key={key} className="sewp-vi-statements__list">
+                        {listItems.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ol>
+                    );
+                    listItems = [];
+                  };
+
+                  fairOpportunity.paragraphs.forEach((paragraph, index) => {
+                    const numbered = paragraph.match(/^(\d+)\.\s+(.*)$/);
+
+                    if (numbered) {
+                      listItems.push(numbered[2]);
+                      return;
+                    }
+
+                    flushList(`fair-list-${index}`);
+                    blocks.push(
+                      <p key={paragraph} className="sewp-vi-statements__paragraph">
+                        {paragraph}
+                      </p>
+                    );
+                  });
+
+                  flushList("fair-list-end");
+                  return blocks;
+                })()}
               </div>
             ) : null}
 

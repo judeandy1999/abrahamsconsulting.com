@@ -353,8 +353,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       "Contractors will be provided a fair opportunity at the individual order level as appropriate per FAR Part 16.505(b), including the SEWP RFQ tools. No documentation for the order selection is required to be submitted with the order. All such documentation is to be maintained by the issuing procurement office.",
       "The Contractor shall not market, quote or otherwise offer for sale, any IT Solutions not listed under this contract, until the said solutions are included in the SEWP database of record, and available to all Government end-users.",
       "If the Government issues a Request For Information (RFI) as part of market research, the Contractor may provide items not yet listed on their SEWP contract as part of a market research quote if:",
-      "all such items are clearly marked as not yet available on their SEWP contract; and",
-      "the contractor submits a technology refreshment request to add those products to their contract.",
+      "1. all such items are clearly marked as not yet available on their SEWP contract; and",
+      "2. the contractor submits a technology refreshment request to add those products to their contract.",
       "If the Government issues a Request For Quote (RFQ) or a Market Research Request (MRR), the Contractor may only respond with items available on their Contract and the price of each item shall be the no greater than the price in Attachment F SEWP database of record at the time the quote is issued. If the Contractor has insufficient items on their contract to fully respond to the Formal RFQ, the Contractor must respond with a No Bid.",
       "Unless the RFQ specifically allows for partial quotes, the Contractor must respond fully to all requirements specified in the RFQ.",
       "When submitting a quote to a government end-user, the contractor must clearly state the length of time the quote is valid. The contractor shall honor any order submitted within the stated time period of a quote.",
@@ -371,31 +371,31 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "installation",
         title: "Installation",
         description:
-          "Installation services may be provided using the applicable Service CLINs when the services directly support the installation or implementation of an in-scope ITC/AV solution. Applicable services, pricing, and terms will be identified in the quotation and delivery order."
+          "Installation services may be provided using the applicable Service CLINs when the services directly support the installation or implementation of an in-scope ITC/AV solution. Applicable installation services will be quoted using the Service CLINs available under the contract and ordered through the applicable delivery order."
       },
       {
         id: "basic-warranty",
         title: "Basic Warranty",
         description:
-          "Abrahams Consulting LLC will provide products and services that conform to the applicable contract and order requirements. In accordance with FAR 52.212-4, the Government may require repair or replacement of nonconforming supplies or reperformance of nonconforming services at no increase in contract price. Applicable OEM or publisher warranty coverage will be identified in the quotation, delivery order, or warranty documentation."
+          "Abrahams Consulting LLC will tender for acceptance only products and services that conform to the applicable contract requirements. In accordance with FAR 52.212-4(a), the Government may require repair or replacement of nonconforming supplies or reperformance of nonconforming services at no increase in contract price. In accordance with FAR 52.212-4(o), delivered items are warranted to be merchantable and fit for the particular purpose described in the contract."
       },
       {
         id: "extended-warranty",
         title: "Extended Warranty",
         description:
-          "Extended warranty coverage may be purchased at any time during the applicable standard commercial warranty period, up to and including the end of that period. Available coverage, pricing, period, and other terms will be identified in the quotation or order documentation. At the Government’s discretion, monthly maintenance may be ordered in lieu of extended warranty coverage where applicable."
+          "Extended warranty coverage may be purchased and begin at any time during the standard commercial warranty period, up to and including the end of that period. Coverage will be based on the applicable commercial warranty period. At the Government’s discretion, monthly maintenance may be ordered during a warranty period at a Discounted Monthly Extended Warranty amount in lieu of the extended warranty."
       },
       {
         id: "technical-software-support",
         title: "Technical and Software Support",
         description:
-          "Customers requiring technical or software support should contact Abrahams Consulting LLC and provide the delivery-order number, relevant product or software information, and a description of the issue. Abrahams Consulting LLC will review the request and coordinate appropriate support or escalation in accordance with the applicable warranty, maintenance, licensing, and order terms."
+          "Customers requiring technical or software support should contact the designated Abrahams Consulting LLC support representative. Abrahams will review the request and coordinate appropriate support consistent with the applicable contract, delivery order, warranty, maintenance, and licensing terms."
       },
       {
         id: "returns-and-replacement",
         title: "Returns and Replacement",
         description:
-          "Abrahams Consulting will acknowledge return requests, review the applicable order and warranty information, and coordinate with the relevant manufacturer or authorized distributor. Return authorization, shipping arrangements, repair, replacement, credit eligibility, and processing timeframes are subject to the applicable manufacturer or distributor policies, product availability, and the terms of the delivery order."
+          "Customers requesting a return or reporting a nonconforming delivery should contact the designated Abrahams Consulting LLC support representative. Abrahams will review the applicable contract, delivery order, acceptance status, and warranty terms. In accordance with FAR 52.212-4(a), the Government may require repair or replacement of nonconforming supplies at no increase in contract price. Items returned before Government acceptance are not subject to restocking fees or other charges unless the return results from a Government-initiated change."
       }
     ],
     primaryContact: {
@@ -426,8 +426,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   orderTroubleshooting: {
     title: "Order Troubleshooting Information",
     paragraphs: [
-      "Customers should report delayed, damaged, missing, incorrect, or otherwise nonconforming products or orders to Abrahams Consulting and provide the Delivery Order number, SEWP Tracking Number (if available), affected items, and a description of the issue.",
-      "Abrahams Consulting LLC will review the reported issue and coordinate the appropriate status update, correction, repair, replacement, or other contractual remedy. If an item cannot be delivered within the required delivery time, Abrahams will notify the issuing Contracting Officer and SEWP PMO within two business days as required by the contract. Unresolved matters will be escalated to the designated escalation contact."
+      "Customers should report problematic orders to Abrahams Consulting LLC and provide the delivery-order number, SEWP Tracking Number, if available, affected items, and a description of the issue. Abrahams Consulting LLC will review the matter and coordinate the appropriate resolution or escalation in accordance with the applicable order, warranty, and contract terms.",
+      "If an item cannot be delivered within its applicable delivery time, Abrahams Consulting LLC will notify the issuing Contracting Officer and SEWP PMO within two business days after receipt of the order or manufacturer notification of the expected delivery date, as applicable under SEWP VI Terms and Conditions Section A.1.18(D)."
     ],
     contacts: [
       {
@@ -651,8 +651,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     title: "How to Obtain a Quote",
     programName: "NASA Solutions for Enterprise-Wide Procurement (SEWP) VI",
     intro: [
-      "All quotes are provided in accordance with the NASA SEWP VI Fair Opportunity procedures and applicable Federal Acquisition Regulation (FAR) requirements.",
-      "Customers may contact Abrahams Consulting’s Federal Sales team for product information and pre-RFQ assistance. Competitive quote requests should be submitted through NASA SEWP’s Quote Request Tool."
+      "Ordering agencies are responsible for satisfying the applicable fair-opportunity requirements of FAR 16.505(b). Abrahams Consulting LLC will respond to quote requests in accordance with the NASA SEWP VI contract and applicable SEWP procedures.",
+      "Customers may contact Abrahams Consulting LLC’s Federal Sales team for product information, capability questions, and optional pre-RFQ assistance. NASA SEWP recommends use of its Quote Request Tool (QRT) to obtain competitive quotations."
     ],
     processHeading: "Quote Request Process",
     steps: [
