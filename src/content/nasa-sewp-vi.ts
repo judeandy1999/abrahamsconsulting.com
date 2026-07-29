@@ -592,30 +592,22 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "headquarters",
         icon: "headquarters",
         label: "Headquarters",
-        value: "172-61 Highland Ave\nJamaica, NY 11432"
+        value: "30 Broad Street, NY NY 10004 14th Floor"
       },
       {
         id: "phone",
         icon: "phone",
         label: "Phone",
-        value: "516-405-2175"
+        value: "877-541-1938\n646-558-3887",
+        href: "tel:+18775411938"
       },
       {
-        id: "federal-sales",
-        icon: "federal-sales",
-        label: "Federal Sales",
-        value: "federal.sales@abrahamsconsulting.com",
-        href: "mailto:federal.sales@abrahamsconsulting.com"
+        id: "email",
+        icon: "email",
+        label: "Email",
+        value: "salessupportnys@abrahamsconsulting.com",
+        href: "mailto:salessupportnys@abrahamsconsulting.com"
       },
-      {
-        id: "website",
-        icon: "website",
-        label: "Website",
-        value: "www.abrahamsconsulting.com",
-        href: "https://www.abrahamsconsulting.com"
-      },
-      { id: "uei", icon: "uei", label: "UEI", value: "XXCXV1SXKNA5" },
-      { id: "cage", icon: "cage", label: "CAGE", value: "6KZZ4" },
       {
         id: "business-size",
         icon: "business-size",

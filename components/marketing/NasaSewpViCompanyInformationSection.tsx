@@ -12,7 +12,7 @@ type NasaSewpViCompanyInformationSectionProps = {
 
 type CompanyInfoItem = NasaSewpViPageContent["companyInformation"]["items"][number];
 
-const COLUMN_SPLIT = 4;
+const COLUMN_SPLIT = 3;
 
 function CompanyInfoColumn({ items }: { items: CompanyInfoItem[] }) {
   return (
@@ -27,10 +27,20 @@ function CompanyInfoColumn({ items }: { items: CompanyInfoItem[] }) {
             <dd className="sewp-vi-company-info__value">
               {item.href ? (
                 <a href={item.href} className="sewp-vi-company-info__link" aria-label={`${item.label}: ${item.value}`}>
-                  {item.value}
+                  {item.value.split("\n").map((line, index) => (
+                    <span key={line}>
+                      {index > 0 ? <br /> : null}
+                      {line}
+                    </span>
+                  ))}
                 </a>
               ) : (
-                item.value
+                item.value.split("\n").map((line, index) => (
+                  <span key={line}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </span>
+                ))
               )}
             </dd>
           </div>

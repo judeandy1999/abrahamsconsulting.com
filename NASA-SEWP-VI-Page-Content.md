@@ -467,23 +467,17 @@ Description: Trusted by public sector organizations to deliver innovative IT sol
 
 Title: Company Information
 
-Headquarters:
-172-61 Highland Ave
-Jamaica, NY 11432
+Headquarters: 30 Broad Street, NY NY 10004 14th Floor
 
 Phone:
 877-541-1938
 646-558-3887
+Phone Link: tel:+18775411938
 
-Federal Sales: federal.sales@abrahamsconsulting.com
-Federal Sales Link: mailto:federal.sales@abrahamsconsulting.com
+Email: salessupportnys@abrahamsconsulting.com
+Email Link: mailto:salessupportnys@abrahamsconsulting.com
 
-Website: www.abrahamsconsulting.com
-Website Link: https://www.abrahamsconsulting.com
-
-UEI: XXCXV1SXKNA5
-CAGE: 6KZZ4
-Business Size: Woman-Owned Small Business
+Business Size: Minority Woman-Owned Small Business Enterprise (MWBE)
 Founded: 2006
 
 

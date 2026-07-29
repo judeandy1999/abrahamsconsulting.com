@@ -742,22 +742,13 @@ export const nasaSewpViPageSchema = z.object({
       .array(
         z.object({
           id: z.string().min(1),
-          icon: z.enum([
-            "headquarters",
-            "phone",
-            "federal-sales",
-            "website",
-            "uei",
-            "cage",
-            "business-size",
-            "founded"
-          ]),
+          icon: z.enum(["headquarters", "phone", "email", "business-size", "founded"]),
           label: z.string().min(1),
           value: z.string().min(1),
-          href: z.string().url().optional()
+          href: z.string().min(1).optional()
         })
       )
-      .length(8)
+      .min(1)
   }),
   certifications: z.object({
     title: z.string().min(1),
