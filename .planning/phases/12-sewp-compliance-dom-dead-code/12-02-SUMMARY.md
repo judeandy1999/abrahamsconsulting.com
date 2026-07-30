@@ -72,7 +72,7 @@ Each task was committed atomically:
 2. **Task 2: Strip VPAT / coming-soon / isAvailable; keep Ordering Guide PDF download (SEWP-04)** - `99414fc` (feat)
 3. **Task 3: Build and assert Ordering Guide link present; VPAT / past-performance absent in HTML** - verification only (no code delta; no commit)
 
-**Plan metadata:** (pending docs commit)
+**Plan metadata:** `21ad864` (docs: complete plan)
 
 ## Files Created/Modified
 
