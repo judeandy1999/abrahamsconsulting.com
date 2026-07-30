@@ -317,7 +317,7 @@ export const siteContent: SiteContent = {
       {
         id: "office",
         label: "Our Office",
-        value: "40 Wall Street\nNew York, NY",
+        value: "30 Broad Street, NY NY 10004 14th Floor",
         icon: "map-pin"
       }
     ],
