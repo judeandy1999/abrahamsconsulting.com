@@ -52,7 +52,7 @@ Plans:
 
 </details>
 
-- [ ] **Phase 10: Security Hygiene** - Ignore `.env*`, delete orphan lead API, upgrade Next, add CSP+HSTS.
+- [x] **Phase 10: Security Hygiene** - Ignore `.env*`, delete orphan lead API, upgrade Next, add CSP+HSTS.
 - [ ] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link.
 - [ ] **Phase 12: SEWP Compliance DOM & Dead Code** - All statement panels in HTML; remove past performance and unused VPAT UI.
 
@@ -66,15 +66,16 @@ Plans:
 **Goal**: The production site and repository no longer expose common secret or spam-risk gaps, and responses ship hardened transport/content security headers.
 **Depends on**: Phase 9 (prior milestone complete)
 **Requirements**: SEC-01, SEC-02, SEC-03, SEC-04
+**Status**: Complete
 **Success Criteria** (what must be TRUE):
   1. A developer can confirm `.env*` is gitignored while `.env.example` remains tracked and commitable.
   2. `POST /api/lead` returns 404 (or the route no longer exists); contact submissions still succeed via HubSpot only.
   3. The app runs on a patched Next.js release that clears known high advisories for the current line (target `16.2.12` or newer patch); production build succeeds.
   4. Production responses include `Strict-Transport-Security` and a staged `Content-Security-Policy` that allows HubSpot, Google Analytics, YouTube, and blog-embed origins without breaking marketing pages.
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans executed
 Plans:
 - [x] 10-01-PLAN.md — Ignore .env*, delete orphan lead API, HubSpot-only contact tests
-- [ ] 10-02-PLAN.md — Pin Next 16.2.12; add HSTS + enforce allowlist CSP with preview smoke
+- [x] 10-02-PLAN.md — Pin Next 16.2.12; add HSTS + enforce allowlist CSP with preview smoke
 
 ### Phase 11: Content Consistency
 **Goal**: Visitors see one canonical NYC office address and are not sent to a missing Privacy Policy page.
@@ -109,7 +110,7 @@ Plans:
 | 7. Executive Recruiting Hiring Profiles | v1.2 | — | Complete | 2026-06-23 |
 | 8. NASA SEWP VI Federal Contract Page | v1.3 | — | Complete | 2026-06-23 |
 | 9. NASA SEWP VI Electronic Ordering Guide | v1.4 | 1/1 | Complete | 2026-07-05 |
-| 10. Security Hygiene | v1.5 | 1/2 | In Progress|  |
+| 10. Security Hygiene | v1.5 | 2/2 | Complete | 2026-07-30 |
 | 11. Content Consistency | v1.5 | 0/TBD | Not started | - |
 | 12. SEWP Compliance DOM & Dead Code | v1.5 | 0/TBD | Not started | - |
 

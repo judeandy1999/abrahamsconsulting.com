@@ -14,8 +14,8 @@ Prior milestones shipped through Phase 9 (Electronic Ordering Guide) and Contrac
 
 - [x] **SEC-01**: Repository ignores `.env*` files (while keeping `.env.example` tracked) so local secrets are not committed.
 - [x] **SEC-02**: Orphan `POST /api/lead` route and unused lead-email helpers are removed; contact leads remain HubSpot-only.
-- [ ] **SEC-03**: Next.js is upgraded to a patched release that clears known high advisories for the current line (target `16.2.12` or newer patch).
-- [ ] **SEC-04**: Production responses include `Strict-Transport-Security` and a staged `Content-Security-Policy` that allows required HubSpot, Google Analytics, YouTube, and blog-embed origins without breaking marketing pages.
+- [x] **SEC-03**: Next.js is upgraded to a patched release that clears known high advisories for the current line (target `16.2.12` or newer patch).
+- [x] **SEC-04**: Production responses include `Strict-Transport-Security` and a staged `Content-Security-Policy` that allows required HubSpot, Google Analytics, YouTube, and blog-embed origins without breaking marketing pages.
 
 ### Content Consistency
 
@@ -57,8 +57,8 @@ Deferred beyond v1.5.
 |-------------|-------|--------|
 | SEC-01 | Phase 10 | Complete |
 | SEC-02 | Phase 10 | Complete |
-| SEC-03 | Phase 10 | Pending |
-| SEC-04 | Phase 10 | Pending |
+| SEC-03 | Phase 10 | Complete |
+| SEC-04 | Phase 10 | Complete |
 | CNT-01 | Phase 11 | Pending |
 | CNT-02 | Phase 11 | Pending |
 | SEWP-01 | Phase 12 | Pending |
