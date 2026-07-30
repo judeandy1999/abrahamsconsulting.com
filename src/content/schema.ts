@@ -89,7 +89,15 @@ export const siteContentSchema = z.object({
     headline: z.string().min(1, "Award banner headline is required"),
     description: z.string().min(1, "Award banner description is required"),
     ctaLabel: z.string().min(1, "Award banner CTA label is required"),
-    href: z.string().url("Award banner link must be a valid URL")
+    href: z.string().min(1, "Award banner link is required")
+  }),
+  nasaSewpBanner: z.object({
+    headline: z.string().min(1, "NASA SEWP banner headline is required"),
+    description: z.string().min(1, "NASA SEWP banner description is required"),
+    ctaLabel: z.string().min(1, "NASA SEWP banner CTA label is required"),
+    href: z.string().min(1, "NASA SEWP banner link is required"),
+    imageSrc: z.string().min(1, "NASA SEWP banner image source is required"),
+    imageAlt: z.string().min(1, "NASA SEWP banner image alt text is required")
   }),
   navigation: z.array(navLinkSchema).min(1, "At least one navigation link is required"),
   homeHero: z.object({

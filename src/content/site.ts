@@ -37,6 +37,14 @@ export const siteContent: SiteContent = {
     ctaLabel: "Learn More",
     href: "https://online.ogs.ny.gov/purchase/snt/awardnotes/7360023269a.pdf"
   },
+  nasaSewpBanner: {
+    headline: "NASA SEWP VI Prime Contractor",
+    description: "Category A – ITC/AV Solutions. Explore contract details and federal support.",
+    ctaLabel: "View NASA SEWP VI",
+    href: "/nasa-sewp-vi",
+    imageSrc: "/images/nasa-sewp-vi/sewp-duck-logo.png",
+    imageAlt: "NASA SEWP duck logo"
+  },
   utilityLinks: [
     {
       label: "Contract Vehicles",

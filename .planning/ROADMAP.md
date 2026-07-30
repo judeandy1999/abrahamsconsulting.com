@@ -7,7 +7,7 @@
 - ✅ **v1.2 Executive Recruiting** - Phase 7 (shipped 2026-06-23)
 - ✅ **v1.3 NASA SEWP VI Page** - Phase 8 (shipped 2026-06-23)
 - ✅ **v1.4 Electronic Ordering Guide** - Phase 9 (shipped 2026-07-05)
-- 🚧 **v1.5 Site Hardening & SEWP Compliance** - Phases 10-12 (in progress)
+- ✅ **v1.5 Site Hardening & SEWP Compliance** - Phases 10-12 (shipped 2026-07-30)
 
 ## Overview
 
@@ -54,13 +54,14 @@ Plans:
 
 - [x] **Phase 10: Security Hygiene** - Ignore `.env*`, delete orphan lead API, upgrade Next, add CSP+HSTS.
 - [x] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link. (completed 2026-07-30)
-- [x] **Phase 12: SEWP Compliance DOM & Dead Code** - All statement panels in HTML; remove past performance and unused VPAT UI. (completed 2026-07-30)
+- [x] **Phase 12: SEWP Compliance DOM & Dead Code** - All statement panels in HTML; remove past performance and unused VPAT UI. (completed 2026-07-30)
 
 ## Phase Details
 
-### 🚧 v1.5 Site Hardening & SEWP Compliance (In Progress)
+### ✅ v1.5 Site Hardening & SEWP Compliance (Complete)
 
 **Milestone Goal:** Close security, address, and SEWP fetch/skim compliance gaps surfaced by full codebase vetting — without redesigning the site.
+**Status**: Complete (Phases 10–12 verified 2026-07-30)
 
 ### Phase 10: Security Hygiene
 **Goal**: The production site and repository no longer expose common secret or spam-risk gaps, and responses ship hardened transport/content security headers.
@@ -95,6 +96,7 @@ Plans:
 **Goal**: Fair Opportunity and Program Manager content survive fetch/skim audits without tab clicks, while unused past-performance and VPAT UI paths are gone and Ordering Guide download still works.
 **Depends on**: Phase 11
 **Requirements**: SEWP-01, SEWP-02, SEWP-03, SEWP-04
+**Status**: Complete (verified 2026-07-30)
 **Success Criteria** (what must be TRUE):
   1. A fetch/skim of `/nasa-sewp-vi` (no JavaScript tab interaction) finds Fair Opportunity clause text in the HTML.
   2. The same fetch/skim finds Program Manager contact for Maybelline Magnet (name, role, direct phone, `sewp.pm@` email) in the HTML.
@@ -106,6 +108,7 @@ Plans:
 - [x] 12-01-PLAN.md — Always-mount statement tabpanels with HTML `hidden` (SEWP-01, SEWP-02)
 - [x] 12-02-PLAN.md — Delete past-performance + VPAT/coming-soon dead code; keep OG PDF (SEWP-03, SEWP-04)
 **UI hint**: yes
+**Verification**: `.planning/phases/12-sewp-compliance-dom-dead-code/12-VERIFICATION.md` — passed 5/5
 
 ## Progress
 
@@ -139,4 +142,4 @@ Plans:
 **v1.5 coverage:** 10/10 requirements mapped ✓
 
 ---
-*Roadmap updated: 2026-07-30 — Phase 12 plans created (12-01, 12-02)*
+*Roadmap updated: 2026-07-30 — Phase 12 verified; v1.5 milestone complete*

@@ -6,5 +6,11 @@ type AwardBannerBadgeProps = {
 };
 
 export function AwardBannerBadge({ className }: AwardBannerBadgeProps) {
-  return <Trophy {...pillarIconProps} className={className} aria-hidden />;
+  return (
+    <Trophy
+      {...pillarIconProps}
+      className={["home-pillar__glyph", className].filter(Boolean).join(" ")}
+      aria-hidden
+    />
+  );
 }
