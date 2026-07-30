@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Site Hardening & SEWP Compliance
 status: ready
-stopped_at: Phase 11 verified — next Phase 12
-last_updated: "2026-07-30T14:10:00Z"
+stopped_at: Phase 12 planned — ready to execute
+last_updated: "2026-07-30T14:25:00Z"
 last_activity: 2026-07-30
 progress:
   total_phases: 3
   completed_phases: 2
-  total_plans: 3
+  total_plans: 5
   completed_plans: 3
   percent: 67
 ---
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-07-30)
 
 ## Current Position
 
-Phase: 12 of 12 (SEWP Compliance DOM & Dead Code) — not started
-Plan: TBD
-Status: Phase 11 verified — ready to plan/execute Phase 12
-Last activity: 2026-07-30 — Verified Phase 11 Content Consistency (passed 6/6)
+Phase: 12 of 12 (SEWP Compliance DOM & Dead Code) — planned
+Plan: 01 of 02
+Status: Phase 12 plans created — ready to execute
+Last activity: 2026-07-30 — Created 12-01 and 12-02 PLAN.md (always-mount panels + dead-code cleanup)
 
-Progress: [██████████] 67% phases (2/3); Phase 12 remaining in milestone
+Progress: [██████████] 67% phases (2/3); Phase 12 planned (0/2 plans executed)
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Recent for v1.5:
 - SEC-02: Hard-delete /api/lead + Resend helper; HubSpot-only contact
 - Phase 11: contact office = footer canonical string; remove privacyPolicy* from schema/content/footer; leave SEWP company info if already 30 Broad
 - Restored validate-content.mjs via schema.ts transpile (no mirrored Zod)
+- Phase 12 plan: HTML `hidden` always-mount for statement panels; delete past-performance orphans; strip VPAT/coming-soon/isAvailable; keep Ordering Guide PDF download
 
 ### Pending Todos
 
@@ -69,6 +70,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-30T14:10:00Z
-Stopped at: Phase 11 verified — next Phase 12
+Last session: 2026-07-30T14:25:00Z
+Stopped at: Phase 12 planned — ready to execute
 Resume file: None

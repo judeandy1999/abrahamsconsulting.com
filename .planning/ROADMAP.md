@@ -101,7 +101,10 @@ Plans:
   3. Unused past performance content, schema requirements, and related unused UI components are absent from the SEWP page pipeline.
   4. Unused VPAT / coming-soon availability UI paths that are not rendered are removed; Ordering Guide PDF download still works when the file is present.
   5. Tab UX still controls visual focus of statement panels (inactive panels may be CSS-hidden, not removed from DOM).
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 12-01-PLAN.md — Always-mount statement tabpanels with HTML `hidden` (SEWP-01, SEWP-02)
+- [ ] 12-02-PLAN.md — Delete past-performance + VPAT/coming-soon dead code; keep OG PDF (SEWP-03, SEWP-04)
 **UI hint**: yes
 
 ## Progress
@@ -116,7 +119,7 @@ Plans:
 | 9. NASA SEWP VI Electronic Ordering Guide | v1.4 | 1/1 | Complete | 2026-07-05 |
 | 10. Security Hygiene | v1.5 | 2/2 | Complete | 2026-07-30 |
 | 11. Content Consistency | v1.5 | 1/1 | Complete   | 2026-07-30 |
-| 12. SEWP Compliance DOM & Dead Code | v1.5 | 0/TBD | Not started | - |
+| 12. SEWP Compliance DOM & Dead Code | v1.5 | 0/2 | Not started | - |
 
 ## Coverage
 
