@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Site Hardening & SEWP Compliance
-status: ready_for_next_phase
-stopped_at: Phase 10 verified complete
-last_updated: "2026-07-30T13:30:00Z"
-last_activity: 2026-07-30 — Phase 10 Security Hygiene verified (SEC-01..04)
+status: ready_to_execute
+stopped_at: Phase 11 plan created — ready to execute
+last_updated: "2026-07-30T13:35:00Z"
+last_activity: 2026-07-30 — Phase 11 Content Consistency planned (11-01)
 progress:
   total_phases: 3
   completed_phases: 1
-  total_plans: 2
+  total_plans: 3
   completed_plans: 2
   percent: 33
 ---
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-30)
 
 **Core value:** Deliver a fast, SEO-strong website that clearly communicates offerings and drives high-intent consultation leads.
-**Current focus:** Phase 11 — Content Consistency (next)
+**Current focus:** Phase 11 — Content Consistency — execute 11-01
 
 ## Current Position
 
-Phase: 11 of 12 (Content Consistency) — ready to start
-Plan: — (Phase 10 complete)
-Status: Phase 10 verified passed; next is Phase 11
-Last activity: 2026-07-30 — Phase 10 Security Hygiene verified (SEC-01..04)
+Phase: 11 of 12 (Content Consistency) — planned
+Plan: 01 of 01 (ready to execute)
+Status: Phase 11 plan created; next is `/gsd-execute-phase 11`
+Last activity: 2026-07-30 — Phase 11 Content Consistency planned (11-01)
 
-Progress: [█████░░░░░] 33% (1/3 v1.5 phases complete)
+Progress: [█████░░░░░] 33% (1/3 v1.5 phases complete; Phase 11 planned)
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Recent for v1.5:
 - Phase 10: pin next/eslint-config-next to 16.2.12 only; enforce allowlist CSP (no nonces); HSTS with preload
 - SEC-01: .env* ignored with !.env.example kept tracked
 - SEC-02: Hard-delete /api/lead + Resend helper; HubSpot-only contact
+- Phase 11: contact office = footer canonical string; remove privacyPolicy* from schema/content/footer; leave SEWP company info if already 30 Broad
 
 ### Pending Todos
 
@@ -66,6 +67,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-30T13:30:00Z
-Stopped at: Phase 10 verified complete — next Phase 11 Content Consistency
+Last session: 2026-07-30T13:35:00Z
+Stopped at: Phase 11 plan created — ready to execute 11-01
 Resume file: None
