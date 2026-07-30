@@ -139,4 +139,4 @@ Plans:
 **v1.5 coverage:** 10/10 requirements mapped ✓
 
 ---
-*Roadmap updated: 2026-07-30 for milestone v1.5*
+*Roadmap updated: 2026-07-30 — Phase 12 plans created (12-01, 12-02)*
