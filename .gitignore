@@ -4,3 +4,7 @@ out
 coverage
 *.log
 dist
+
+# Local secrets stay untracked; keep the public template tracked
+.env*
+!.env.example
