@@ -445,13 +445,6 @@ export const solutionsPageSchema = z.object({
   showcases: z.array(solutionShowcaseSchema).min(2, "Solutions page requires at least two showcases")
 });
 
-const nasaSewpViPastPerformanceSchema = z.object({
-  id: z.string().min(1),
-  icon: z.enum(["government-building", "network", "ai-brain", "managed-services", "education", "justice"]),
-  organization: z.string().min(1),
-  description: z.string().optional()
-});
-
 export const nasaSewpViPageSchema = z.object({
   hero: z.object({
     eyebrow: z.string().min(1),
@@ -727,12 +720,6 @@ export const nasaSewpViPageSchema = z.object({
         })
       )
       .length(2)
-  }),
-  pastPerformance: z.object({
-    eyebrow: z.string().min(1),
-    title: z.string().min(1),
-    description: z.string().min(1),
-    items: z.array(nasaSewpViPastPerformanceSchema).length(6)
   }),
   companyInformation: z.object({
     title: z.string().min(1),

@@ -543,48 +543,6 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       }
     ]
   },
-  pastPerformance: {
-    eyebrow: "OUR EXPERIENCE",
-    title: "Representative Experience",
-    description:
-      "Trusted by public sector organizations to deliver innovative IT solutions that improve performance, strengthen infrastructure, and drive mission success.",
-    items: [
-      {
-        id: "nyc-oti",
-        icon: "government-building",
-        organization: "NYC OTI",
-        description: "Technical Staffing & AD Migration"
-      },
-      {
-        id: "fdny",
-        icon: "network",
-        organization: "FDNY",
-        description: "Network Infrastructure Upgrade"
-      },
-      {
-        id: "panynj",
-        icon: "ai-brain",
-        organization: "PANYNJ",
-        description: "AI Implementation & Automation"
-      },
-      {
-        id: "nyc-acs",
-        icon: "managed-services",
-        organization: "NYC ACS",
-        description: "Managed IT Services & Operations"
-      },
-      {
-        id: "nyc-doe",
-        icon: "education",
-        organization: "NYC DOE"
-      },
-      {
-        id: "nyc-law",
-        icon: "justice",
-        organization: "NYC Law Department"
-      }
-    ]
-  },
   companyInformation: {
     title: "Company Information",
     items: [
