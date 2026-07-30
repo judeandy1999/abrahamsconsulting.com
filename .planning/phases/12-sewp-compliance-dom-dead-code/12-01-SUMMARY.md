@@ -62,7 +62,7 @@ Each task was committed atomically:
 1. **Task 1: Always-mount statement tabpanels with HTML hidden** - `7ad63a6` (feat)
 2. **Task 2: Verify Fair Opportunity and Program Manager in SSR HTML without tab click** - verification only (no code delta; covered by Task 1 commit + build/curl)
 
-**Plan metadata:** (pending docs commit)
+**Plan metadata:** `e815a32` (docs: complete plan)
 
 ## Files Created/Modified
 
