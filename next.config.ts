@@ -1,5 +1,25 @@
 import type { NextConfig } from "next";
 
+// Source pattern: https://nextjs.org/docs/app/guides/content-security-policy (Without Nonces)
+const isDev = process.env.NODE_ENV === "development";
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://js.hsforms.net https://*.hsforms.net https://www.googletagmanager.com${isDev ? " https://va.vercel-scripts.com" : ""}`,
+  "style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com",
+  "img-src 'self' data: blob: https://i.ytimg.com https://*.hsforms.net https://*.hsforms.com https://www.googletagmanager.com https://*.google-analytics.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.hsforms.com https://*.hubapi.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com" +
+    (isDev ? " https://va.vercel-scripts.com https://vitals.vercel-insights.com" : ""),
+  "frame-src https://www.youtube.com https://youtube.com https://*.hsforms.com https://*.hsforms.net https://abrahams73.lll-ll.com",
+  "child-src https://*.hsforms.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self' https://*.hsforms.com https://*.hubspot.com",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests"
+].join("; ");
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -84,7 +104,12 @@ const nextConfig: NextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" }
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload"
+          },
+          { key: "Content-Security-Policy", value: contentSecurityPolicy }
         ]
       }
     ];
