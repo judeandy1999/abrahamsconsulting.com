@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { SiteContent } from "../../src/content/schema";
 import { FooterContactCta, FooterContactIcon } from "./FooterIcons";
 import { SocialIcon } from "./SocialIcons";
@@ -107,10 +106,6 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
       <div className="site-footer__bar">
         <div className="site-footer__bar-inner">
           <div className="site-footer__legal">
-            <Link href={footer.privacyPolicyHref}>{footer.privacyPolicyLabel}</Link>
-            <span className="site-footer__legal-divider" aria-hidden="true">
-              |
-            </span>
             <span>
               {footer.copyrightName} {year} © All Rights Reserved
             </span>

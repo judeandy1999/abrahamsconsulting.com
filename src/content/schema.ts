@@ -186,8 +186,6 @@ export const siteContentSchema = z.object({
     phones: z.array(z.string().min(1)).min(1, "At least one footer phone is required"),
     contactCtaLabel: z.string().min(1, "Footer contact CTA label is required"),
     contactCtaHref: z.string().min(1, "Footer contact CTA href is required"),
-    privacyPolicyLabel: z.string().min(1, "Footer privacy policy label is required"),
-    privacyPolicyHref: z.string().min(1, "Footer privacy policy href is required"),
     copyrightName: z.string().min(1, "Footer copyright name is required")
   }),
   contactPage: contactPageSchema

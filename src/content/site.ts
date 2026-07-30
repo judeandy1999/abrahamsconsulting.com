@@ -276,8 +276,6 @@ export const siteContent: SiteContent = {
     phones: ["877-541-1938", "646-558-3887"],
     contactCtaLabel: "CONTACT US",
     contactCtaHref: "/contact-us",
-    privacyPolicyLabel: "Privacy Policy",
-    privacyPolicyHref: "/about",
     copyrightName: "Technology Consultant Abrahams Consulting LLC"
   },
   consultationCta: {
