@@ -1,73 +1,75 @@
 # Requirements: Abrahams Consulting Website Revamp
 
-**Defined:** 2026-05-28
-**Updated:** 2026-07-05 (v1.4 Electronic Ordering Guide)
+**Defined:** 2026-07-30
+**Updated:** 2026-07-30 (v1.5 Site Hardening & SEWP Compliance)
 **Core Value:** Deliver a fast, SEO-strong website that clearly communicates Abrahams Consulting's offerings and drives high-intent consultation leads.
 
-## v1.0–v1.3 Requirements (Validated)
+## v1.0–v1.4 Requirements (Validated)
 
-Prior milestones shipped through Phase 8 (`/nasa-sewp-vi` federal contract page). See `.planning/ROADMAP.md` and phase summaries for details.
+Prior milestones shipped through Phase 9 (Electronic Ordering Guide) and Contract Vehicles hub quick tasks. See `.planning/ROADMAP.md` and phase summaries.
 
-## v1.4 Requirements — Electronic Ordering Guide
+## v1.5 Requirements — Site Hardening & SEWP Compliance
 
-Requirements for the NASA SEWP VI Electronic Ordering Guide section. Each maps to Phase 9.
+### Security Hygiene
 
-### Placement & Layout
+- [ ] **SEC-01**: Repository ignores `.env*` files (while keeping `.env.example` tracked) so local secrets are not committed.
+- [ ] **SEC-02**: Orphan `POST /api/lead` route and unused lead-email helpers are removed; contact leads remain HubSpot-only.
+- [ ] **SEC-03**: Next.js is upgraded to a patched release that clears known high advisories for the current line (target `16.2.12` or newer patch).
+- [ ] **SEC-04**: Production responses include `Strict-Transport-Security` and a staged `Content-Security-Policy` that allows required HubSpot, Google Analytics, YouTube, and blog-embed origins without breaking marketing pages.
 
-- [ ] **EOG-01**: User visiting `/nasa-sewp-vi` sees the Electronic Ordering Guide section immediately after the Contract Overview section.
-- [ ] **EOG-02**: Section uses a two-column layout matching the approved mockup — feature list and intro on the left, download card on the right.
-- [ ] **EOG-03**: User on tablet and mobile viewports sees the section stack vertically without broken layout or horizontal overflow.
+### Content Consistency
 
-### Content & UX
+- [ ] **CNT-01**: Contact page office address matches the footer canonical address: `30 Broad Street, NY NY 10004 14th Floor`.
+- [ ] **CNT-02**: Footer no longer exposes a Privacy Policy link (link removed; no privacy page added this milestone).
 
-- [ ] **EOG-04**: Section displays title "Electronic Ordering Guide", introductory copy, and four feature items (Easy to Download, Always Up to Date, Print-Ready Format, Required Before First Order) from the typed content module.
-- [ ] **EOG-05**: Download card displays heading, supporting text, **Download PDF** action, **Last Updated** date, and **Version** number from content.
-- [ ] **EOG-06**: When the ordering guide PDF is missing from `public/documents/nasa-sewp-vi/`, the download control shows a coming-soon/disabled state instead of a broken link.
+### SEWP Compliance & Dead Code
 
-### Maintainability & Quality
+- [ ] **SEWP-01**: On `/nasa-sewp-vi`, Fair Opportunity clause text is present in the initial HTML (no tab click required for a fetch/skim to find it), while tab UX may still control visual focus.
+- [ ] **SEWP-02**: On `/nasa-sewp-vi`, Program Manager contact for Maybelline Magnet (name, role, direct phone, `sewp.pm@` email) is present in the initial HTML without requiring a tab click.
+- [ ] **SEWP-03**: Unused past performance content, schema requirements, and related unused UI components are removed from the SEWP page pipeline.
+- [ ] **SEWP-04**: Unused VPAT / coming-soon availability UI paths that are not rendered are removed; Ordering Guide PDF download continues to work when the file is present.
 
-- [ ] **EOG-07**: PDF href remains configurable via `NASA_SEWP_VI_DOCUMENTS.orderingGuide`; replacing the file in `public/documents/nasa-sewp-vi/` updates availability without code changes.
-- [ ] **EOG-08**: Section passes content schema validation (`content:check`), uses accessible semantics for the download control, and matches existing NASA SEWP VI typography, spacing, icons, and motion patterns.
+## Future Requirements
 
-## v2 Requirements
+Deferred beyond v1.5.
 
-Deferred to future release. Tracked but not in current roadmap.
-
-### Growth & Expansion
-
-- **GROW-01**: User can filter capabilities by industry/service/contract profile through an interactive capability finder.
-- **GROW-02**: User can access a structured resource center for thought leadership and downloadable capability assets.
-- **GROW-03**: Internal team can run CTA/form conversion experiments with measurable outcomes.
-- **GROW-04**: Internal team can route and track leads through CRM/marketing automation integration.
-- **GROW-05**: User can browse localized non-English content experiences.
+- **GROW-01**: Interactive capability finder by industry/service/contract profile.
+- **GROW-02**: Structured resource center for thought leadership and downloadable assets.
+- **GROW-03**: CTA/form conversion experiments with measurable outcomes.
+- **GROW-04**: CRM/marketing automation lead routing.
+- **SEC-F01**: Blog embed sandbox / tighter third-party iframe policy.
+- **CNT-F01**: Dedicated Privacy Policy page if legal requires one later.
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Merging Contract Overview and Ordering Guide into one combined grid | Mockup is a distinct section; Contract Overview keeps its existing 10-field layout |
-| CMS for PDF or metadata management | v1 uses file replacement and content module fields |
-| Invented CHUM compliance claims | Copy must match approved mockup / official SEWP documentation |
-| Blog / RSS integration | Separate milestone |
-| Auto-sync Last Updated from PDF filesystem | Manual content field for v1.4; revisit if leadership wants automation |
+| New Privacy Policy page | User chose to remove the footer link instead of authoring a page |
+| VPAT Coming Soon UI / uploading VPAT PDF | No asset provided; unused paths removed rather than wired |
+| SEWP tab visual redesign | Keep existing tab UX; only change DOM presence for compliance skim |
+| Clients / executive recruiting crawlability | Not in confirmed v1.5 scope |
+| Dependency `"latest"` pin cleanup beyond Next upgrade | Can follow in a later hygiene pass |
+| CMS, i18n, AwardBanner redesign | Unrelated to hardening goals |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EOG-01 | Phase 9 | Pending |
-| EOG-02 | Phase 9 | Pending |
-| EOG-03 | Phase 9 | Pending |
-| EOG-04 | Phase 9 | Pending |
-| EOG-05 | Phase 9 | Pending |
-| EOG-06 | Phase 9 | Pending |
-| EOG-07 | Phase 9 | Pending |
-| EOG-08 | Phase 9 | Pending |
+| SEC-01 | TBD | Pending |
+| SEC-02 | TBD | Pending |
+| SEC-03 | TBD | Pending |
+| SEC-04 | TBD | Pending |
+| CNT-01 | TBD | Pending |
+| CNT-02 | TBD | Pending |
+| SEWP-01 | TBD | Pending |
+| SEWP-02 | TBD | Pending |
+| SEWP-03 | TBD | Pending |
+| SEWP-04 | TBD | Pending |
 
 **Coverage:**
-- v1.4 requirements: 8 total
-- Mapped to phases: 8
-- Unmapped: 0 ✓
+- v1.5 requirements: 10 total
+- Mapped to phases: 0 (pending roadmap)
+- Unmapped: 10
 
 ---
-*Requirements defined: 2026-07-05 for milestone v1.4*
+*Requirements defined: 2026-07-30 for milestone v1.5*
