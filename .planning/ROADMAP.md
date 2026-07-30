@@ -53,7 +53,7 @@ Plans:
 </details>
 
 - [x] **Phase 10: Security Hygiene** - Ignore `.env*`, delete orphan lead API, upgrade Next, add CSP+HSTS.
-- [x] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link. (completed 2026-07-30)
+- [x] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link. (completed 2026-07-30)
 - [ ] **Phase 12: SEWP Compliance DOM & Dead Code** - All statement panels in HTML; remove past performance and unused VPAT UI.
 
 ## Phase Details
@@ -81,6 +81,7 @@ Plans:
 **Goal**: Visitors see one canonical NYC office address and are not sent to a missing Privacy Policy page.
 **Depends on**: Phase 10
 **Requirements**: CNT-01, CNT-02
+**Status**: Complete
 **Success Criteria** (what must be TRUE):
   1. Contact page office address matches the footer: `30 Broad Street, NY NY 10004 14th Floor` (no `40 Wall` address remains on contact).
   2. Footer no longer shows a Privacy Policy link; no new privacy page is introduced.
@@ -88,6 +89,7 @@ Plans:
 Plans:
 - [x] 11-01-PLAN.md — Align contact to 30 Broad Street; remove Privacy Policy footer link (schema + UI)
 **UI hint**: yes
+
 
 ### Phase 12: SEWP Compliance DOM & Dead Code
 **Goal**: Fair Opportunity and Program Manager content survive fetch/skim audits without tab clicks, while unused past-performance and VPAT UI paths are gone and Ordering Guide download still works.

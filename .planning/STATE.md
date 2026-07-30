@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Site Hardening & SEWP Compliance
-status: verifying
-stopped_at: Completed 11-01-PLAN.md
-last_updated: "2026-07-30T14:03:18.297Z"
+status: ready
+stopped_at: Phase 11 verified — next Phase 12
+last_updated: "2026-07-30T14:10:00Z"
 last_activity: 2026-07-30
 progress:
   total_phases: 3
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-30)
 
 **Core value:** Deliver a fast, SEO-strong website that clearly communicates offerings and drives high-intent consultation leads.
-**Current focus:** Phase 11 — Content Consistency — ready for verification
+**Current focus:** Phase 12 — SEWP Compliance DOM & Dead Code
 
 ## Current Position
 
-Phase: 11 of 12 (Content Consistency) — complete, verifying
-Plan: 01 of 01 (executed)
-Status: Phase complete — ready for verification
-Last activity: 2026-07-30 — Executed 11-01 content consistency
+Phase: 12 of 12 (SEWP Compliance DOM & Dead Code) — not started
+Plan: TBD
+Status: Phase 11 verified — ready to plan/execute Phase 12
+Last activity: 2026-07-30 — Verified Phase 11 Content Consistency (passed 6/6)
 
-Progress: [██████████] 100% (plans); Phase 12 remaining in milestone
+Progress: [██████████] 67% phases (2/3); Phase 12 remaining in milestone
 
 ## Performance Metrics
 
@@ -55,9 +55,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Recent for v1.5:
 - SEC-01: .env* ignored with !.env.example kept tracked
 - SEC-02: Hard-delete /api/lead + Resend helper; HubSpot-only contact
 - Phase 11: contact office = footer canonical string; remove privacyPolicy* from schema/content/footer; leave SEWP company info if already 30 Broad
-- Contact office equals footer canonical 30 Broad string
 - Restored validate-content.mjs via schema.ts transpile (no mirrored Zod)
-- [Phase ?]: Contact office equals footer canonical 30 Broad string
 
 ### Pending Todos
 
@@ -71,6 +69,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-30T14:03:18.282Z
-Stopped at: Completed 11-01-PLAN.md
+Last session: 2026-07-30T14:10:00Z
+Stopped at: Phase 11 verified — next Phase 12
 Resume file: None
