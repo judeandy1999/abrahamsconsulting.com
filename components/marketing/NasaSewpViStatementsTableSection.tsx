@@ -210,6 +210,214 @@ export function NasaSewpViStatementsTableSection({
     }
   }
 
+  function renderStatementsPanel(tabId: TabId): ReactNode {
+    switch (tabId) {
+      case "contract-overview":
+        return (
+          <div id="sewp-vi-overview-heading">
+            <p className="sewp-vi-statements__paragraph">{contractOverview.description}</p>
+            <dl className="sewp-vi-statements__meta">
+              {contractOverview.items.map((item) => (
+                <div key={item.id} className="sewp-vi-statements__meta-row">
+                  <dt>{item.label}</dt>
+                  <dd>
+                    <ContactValue value={item.value} />
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        );
+
+      case "gwac":
+        return (
+          <div>
+            <p className="sewp-vi-statements__paragraph">{gwac.statement}</p>
+          </div>
+        );
+
+      case "fair-opportunity":
+        return (
+          <div>
+            {(() => {
+              const blocks: ReactNode[] = [];
+              let listItems: string[] = [];
+
+              const flushList = (key: string) => {
+                if (listItems.length === 0) {
+                  return;
+                }
+
+                blocks.push(
+                  <ol key={key} className="sewp-vi-statements__list">
+                    {listItems.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                );
+                listItems = [];
+              };
+
+              fairOpportunity.paragraphs.forEach((paragraph, index) => {
+                const numbered = paragraph.match(/^(\d+)\.\s+(.*)$/);
+
+                if (numbered) {
+                  listItems.push(numbered[2]);
+                  return;
+                }
+
+                flushList(`fair-list-${index}`);
+                blocks.push(
+                  <p key={paragraph} className="sewp-vi-statements__paragraph">
+                    {paragraph}
+                  </p>
+                );
+              });
+
+              flushList("fair-list-end");
+              return blocks;
+            })()}
+          </div>
+        );
+
+      case "post-delivery":
+        return (
+          <div>
+            <p className="sewp-vi-statements__paragraph">{postDeliverySupport.intro}</p>
+
+            <PostDeliveryTopics topics={postDeliverySupport.topics} />
+
+            <div className="sewp-vi-statements__profile">
+              <p className="sewp-vi-statements__subsection-title">{supportContact.heading}</p>
+              <p className="sewp-vi-statements__profile-name">{supportContact.name}</p>
+              <p className="sewp-vi-statements__profile-role">{supportContact.role}</p>
+
+              <dl className="sewp-vi-statements__meta">
+                {supportContact.contacts.map((contact) => (
+                  <div key={contact.id} className="sewp-vi-statements__meta-row">
+                    <dt>{contact.label}</dt>
+                    <dd>
+                      <ContactValue
+                        value={contact.value}
+                        href={contact.href}
+                        ariaLabel={`${contact.label}: ${contact.value}`}
+                      />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        );
+
+      case "order-troubleshooting":
+        return (
+          <div>
+            {orderTroubleshooting.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="sewp-vi-statements__paragraph">
+                {paragraph}
+              </p>
+            ))}
+
+            <div className="sewp-vi-statements__contact-grid">
+              {orderTroubleshooting.contacts.map((contactGroup) => (
+                <div key={contactGroup.id} className="sewp-vi-statements__profile">
+                  <p className="sewp-vi-statements__subsection-title">{contactGroup.heading}</p>
+                  <p className="sewp-vi-statements__profile-name">{contactGroup.name}</p>
+
+                  <dl className="sewp-vi-statements__meta">
+                    {contactGroup.contacts.map((contact) => (
+                      <div key={contact.id} className="sewp-vi-statements__meta-row">
+                        <dt>{contact.label}</dt>
+                        <dd>
+                          <ContactValue
+                            value={contact.value}
+                            href={contact.href}
+                            ariaLabel={`${contact.label}: ${contact.value}`}
+                          />
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+
+      case "program-manager":
+        return (
+          <div>
+            <div className="sewp-vi-statements__profile">
+              <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
+              <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
+
+              <dl className="sewp-vi-statements__meta">
+                {programManager.profile.contacts.map((contact) => (
+                  <div key={contact.id} className="sewp-vi-statements__meta-row">
+                    <dt>{contact.label}</dt>
+                    <dd>
+                      <ContactValue
+                        value={contact.value}
+                        href={contact.href}
+                        ariaLabel={`${contact.label}: ${contact.value}`}
+                      />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="sewp-vi-statements__meta sewp-vi-statements__meta--secondary">
+              <dl className="sewp-vi-statements__meta">
+                {programManager.details.map((detail) => (
+                  <div key={detail.id} className="sewp-vi-statements__meta-row">
+                    <dt>{detail.label}</dt>
+                    <dd>
+                      <ContactValue value={detail.value} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        );
+
+      case "external-resources":
+        return (
+          <div>
+            <ul className="sewp-vi-statements__resources">
+              {externalResources.cards.map((card) => (
+                <li key={card.id} className="sewp-vi-statements__resource">
+                  <p className="sewp-vi-statements__paragraph">{card.description}</p>
+                  <p className="sewp-vi-statements__resource-action">
+                    <a
+                      href={card.href}
+                      className="sewp-vi-statements__resource-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={accessibleExternalLinkLabel(card.ctaLabel)}
+                    >
+                      <ExternalLink size={16} strokeWidth={1.75} aria-hidden="true" />
+                      {card.ctaLabel}
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+
+      case "obtain-quote":
+        return <NasaSewpViObtainQuoteSection section={obtainQuote} embedded />;
+
+      default: {
+        const _exhaustive: never = tabId;
+        return _exhaustive;
+      }
+    }
+  }
+
   return (
     <section className="sewp-vi-statements" aria-labelledby="sewp-vi-statements-heading">
       <motion.div
@@ -268,204 +476,23 @@ export function NasaSewpViStatementsTableSection({
             </nav>
           </aside>
 
-          <div
-            id={`${baseId}-panel-${activeTab}`}
-            role="tabpanel"
-            aria-labelledby={`${baseId}-tab-${activeTab}`}
-            className="sewp-vi-statements__panel"
-          >
-            {activeTab === "contract-overview" ? (
-              <div id="sewp-vi-overview-heading">
-                <p className="sewp-vi-statements__paragraph">{contractOverview.description}</p>
-                <dl className="sewp-vi-statements__meta">
-                  {contractOverview.items.map((item) => (
-                    <div key={item.id} className="sewp-vi-statements__meta-row">
-                      <dt>{item.label}</dt>
-                      <dd>
-                        <ContactValue value={item.value} />
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            ) : null}
+          <div style={{ minWidth: 0 }}>
+            {TABS.map((tab) => {
+              const isActive = tab.id === activeTab;
 
-            {activeTab === "gwac" ? (
-              <div>
-                <p className="sewp-vi-statements__paragraph">{gwac.statement}</p>
-              </div>
-            ) : null}
-
-            {activeTab === "fair-opportunity" ? (
-              <div>
-                {(() => {
-                  const blocks: ReactNode[] = [];
-                  let listItems: string[] = [];
-
-                  const flushList = (key: string) => {
-                    if (listItems.length === 0) {
-                      return;
-                    }
-
-                    blocks.push(
-                      <ol key={key} className="sewp-vi-statements__list">
-                        {listItems.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ol>
-                    );
-                    listItems = [];
-                  };
-
-                  fairOpportunity.paragraphs.forEach((paragraph, index) => {
-                    const numbered = paragraph.match(/^(\d+)\.\s+(.*)$/);
-
-                    if (numbered) {
-                      listItems.push(numbered[2]);
-                      return;
-                    }
-
-                    flushList(`fair-list-${index}`);
-                    blocks.push(
-                      <p key={paragraph} className="sewp-vi-statements__paragraph">
-                        {paragraph}
-                      </p>
-                    );
-                  });
-
-                  flushList("fair-list-end");
-                  return blocks;
-                })()}
-              </div>
-            ) : null}
-
-            {activeTab === "post-delivery" ? (
-              <div>
-                <p className="sewp-vi-statements__paragraph">{postDeliverySupport.intro}</p>
-
-                <PostDeliveryTopics topics={postDeliverySupport.topics} />
-
-                <div className="sewp-vi-statements__profile">
-                  <p className="sewp-vi-statements__subsection-title">{supportContact.heading}</p>
-                  <p className="sewp-vi-statements__profile-name">{supportContact.name}</p>
-                  <p className="sewp-vi-statements__profile-role">{supportContact.role}</p>
-
-                  <dl className="sewp-vi-statements__meta">
-                    {supportContact.contacts.map((contact) => (
-                      <div key={contact.id} className="sewp-vi-statements__meta-row">
-                        <dt>{contact.label}</dt>
-                        <dd>
-                          <ContactValue
-                            value={contact.value}
-                            href={contact.href}
-                            ariaLabel={`${contact.label}: ${contact.value}`}
-                          />
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
+              return (
+                <div
+                  key={tab.id}
+                  id={`${baseId}-panel-${tab.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`${baseId}-tab-${tab.id}`}
+                  hidden={!isActive}
+                  className="sewp-vi-statements__panel"
+                >
+                  {renderStatementsPanel(tab.id)}
                 </div>
-              </div>
-            ) : null}
-
-            {activeTab === "order-troubleshooting" ? (
-              <div>
-                {orderTroubleshooting.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="sewp-vi-statements__paragraph">
-                    {paragraph}
-                  </p>
-                ))}
-
-                <div className="sewp-vi-statements__contact-grid">
-                  {orderTroubleshooting.contacts.map((contactGroup) => (
-                    <div key={contactGroup.id} className="sewp-vi-statements__profile">
-                      <p className="sewp-vi-statements__subsection-title">{contactGroup.heading}</p>
-                      <p className="sewp-vi-statements__profile-name">{contactGroup.name}</p>
-
-                      <dl className="sewp-vi-statements__meta">
-                        {contactGroup.contacts.map((contact) => (
-                          <div key={contact.id} className="sewp-vi-statements__meta-row">
-                            <dt>{contact.label}</dt>
-                            <dd>
-                              <ContactValue
-                                value={contact.value}
-                                href={contact.href}
-                                ariaLabel={`${contact.label}: ${contact.value}`}
-                              />
-                            </dd>
-                          </div>
-                        ))}
-                      </dl>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-
-            {activeTab === "program-manager" ? (
-              <div>
-                <div className="sewp-vi-statements__profile">
-                  <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
-                  <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
-
-                  <dl className="sewp-vi-statements__meta">
-                    {programManager.profile.contacts.map((contact) => (
-                      <div key={contact.id} className="sewp-vi-statements__meta-row">
-                        <dt>{contact.label}</dt>
-                        <dd>
-                          <ContactValue
-                            value={contact.value}
-                            href={contact.href}
-                            ariaLabel={`${contact.label}: ${contact.value}`}
-                          />
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-
-                <div className="sewp-vi-statements__meta sewp-vi-statements__meta--secondary">
-                  <dl className="sewp-vi-statements__meta">
-                    {programManager.details.map((detail) => (
-                      <div key={detail.id} className="sewp-vi-statements__meta-row">
-                        <dt>{detail.label}</dt>
-                        <dd>
-                          <ContactValue value={detail.value} />
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </div>
-            ) : null}
-
-            {activeTab === "external-resources" ? (
-              <div>
-                <ul className="sewp-vi-statements__resources">
-                  {externalResources.cards.map((card) => (
-                    <li key={card.id} className="sewp-vi-statements__resource">
-                      <p className="sewp-vi-statements__paragraph">{card.description}</p>
-                      <p className="sewp-vi-statements__resource-action">
-                        <a
-                          href={card.href}
-                          className="sewp-vi-statements__resource-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={accessibleExternalLinkLabel(card.ctaLabel)}
-                        >
-                          <ExternalLink size={16} strokeWidth={1.75} aria-hidden="true" />
-                          {card.ctaLabel}
-                        </a>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            {activeTab === "obtain-quote" ? (
-              <NasaSewpViObtainQuoteSection section={obtainQuote} embedded />
-            ) : null}
+              );
+            })}
           </div>
         </motion.div>
 
