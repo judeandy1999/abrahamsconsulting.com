@@ -73,7 +73,7 @@ Each task was committed atomically:
 1. **Task 1: Align contact office address to canonical 30 Broad** - `7e87a85` (fix)
 2. **Task 2: Remove Privacy Policy footer link end-to-end** - `6955ed7` (fix)
 
-**Plan metadata:** (pending docs commit)
+**Plan metadata:** `67a1210` (docs: complete plan)
 
 ## Files Created/Modified
 
