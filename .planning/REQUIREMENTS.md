@@ -24,8 +24,8 @@ Prior milestones shipped through Phase 9 (Electronic Ordering Guide) and Contrac
 
 ### SEWP Compliance & Dead Code
 
-- [ ] **SEWP-01**: On `/nasa-sewp-vi`, Fair Opportunity clause text is present in the initial HTML (no tab click required for a fetch/skim to find it), while tab UX may still control visual focus.
-- [ ] **SEWP-02**: On `/nasa-sewp-vi`, Program Manager contact for Maybelline Magnet (name, role, direct phone, `sewp.pm@` email) is present in the initial HTML without requiring a tab click.
+- [x] **SEWP-01**: On `/nasa-sewp-vi`, Fair Opportunity clause text is present in the initial HTML (no tab click required for a fetch/skim to find it), while tab UX may still control visual focus.
+- [x] **SEWP-02**: On `/nasa-sewp-vi`, Program Manager contact for Maybelline Magnet (name, role, direct phone, `sewp.pm@` email) is present in the initial HTML without requiring a tab click.
 - [ ] **SEWP-03**: Unused past performance content, schema requirements, and related unused UI components are removed from the SEWP page pipeline.
 - [ ] **SEWP-04**: Unused VPAT / coming-soon availability UI paths that are not rendered are removed; Ordering Guide PDF download continues to work when the file is present.
 
@@ -61,8 +61,8 @@ Deferred beyond v1.5.
 | SEC-04 | Phase 10 | Complete |
 | CNT-01 | Phase 11 | Complete |
 | CNT-02 | Phase 11 | Complete |
-| SEWP-01 | Phase 12 | Pending |
-| SEWP-02 | Phase 12 | Pending |
+| SEWP-01 | Phase 12 | Complete |
+| SEWP-02 | Phase 12 | Complete |
 | SEWP-03 | Phase 12 | Pending |
 | SEWP-04 | Phase 12 | Pending |
 

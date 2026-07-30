@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Site Hardening & SEWP Compliance
-status: ready
-stopped_at: Phase 12 planned — ready to execute
-last_updated: "2026-07-30T14:25:00Z"
+status: executing
+stopped_at: Completed 12-01-PLAN.md
+last_updated: "2026-07-30T14:47:22.619Z"
 last_activity: 2026-07-30
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 5
-  completed_plans: 3
+  completed_plans: 4
   percent: 67
 ---
 
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-07-30)
 ## Current Position
 
 Phase: 12 of 12 (SEWP Compliance DOM & Dead Code) — planned
-Plan: 01 of 02
-Status: Phase 12 plans created — ready to execute
-Last activity: 2026-07-30 — Created 12-01 and 12-02 PLAN.md (always-mount panels + dead-code cleanup)
+Plan: 2 of 02
+Status: Ready to execute
+Last activity: 2026-07-30
 
-Progress: [██████████] 67% phases (2/3); Phase 12 planned (0/2 plans executed)
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -39,6 +39,7 @@ Progress: [██████████] 67% phases (2/3); Phase 12 planned (0
 | 10 | 01 | 4min | 2 | 5 | 2026-07-30 |
 | 10 | 02 | 12min | 3 | 3 | 2026-07-30 |
 | 11 | 01 | 9min | 2 | 5 | 2026-07-30 |
+| Phase 12 P01 | 12min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -57,6 +58,8 @@ Decisions are logged in PROJECT.md Key Decisions table. Recent for v1.5:
 - Phase 11: contact office = footer canonical string; remove privacyPolicy* from schema/content/footer; leave SEWP company info if already 30 Broad
 - Restored validate-content.mjs via schema.ts transpile (no mirrored Zod)
 - Phase 12 plan: HTML `hidden` always-mount for statement panels; delete past-performance orphans; strip VPAT/coming-soon/isAvailable; keep Ordering Guide PDF download
+- [Phase 12]: HTML hidden always-mount for SEWP statement panels (SEWP-01/02)
+- [Phase 12]: Verify SEWP SSR HTML on port 3012 when parallel with plan 12-02
 
 ### Pending Todos
 
@@ -70,6 +73,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-07-30T14:25:00Z
-Stopped at: Phase 12 planned — ready to execute
+Last session: 2026-07-30T14:47:21.781Z
+Stopped at: Completed 12-01-PLAN.md
 Resume file: None
