@@ -55,21 +55,22 @@ Deferred beyond v1.5.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SEC-01 | TBD | Pending |
-| SEC-02 | TBD | Pending |
-| SEC-03 | TBD | Pending |
-| SEC-04 | TBD | Pending |
-| CNT-01 | TBD | Pending |
-| CNT-02 | TBD | Pending |
-| SEWP-01 | TBD | Pending |
-| SEWP-02 | TBD | Pending |
-| SEWP-03 | TBD | Pending |
-| SEWP-04 | TBD | Pending |
+| SEC-01 | Phase 10 | Pending |
+| SEC-02 | Phase 10 | Pending |
+| SEC-03 | Phase 10 | Pending |
+| SEC-04 | Phase 10 | Pending |
+| CNT-01 | Phase 11 | Pending |
+| CNT-02 | Phase 11 | Pending |
+| SEWP-01 | Phase 12 | Pending |
+| SEWP-02 | Phase 12 | Pending |
+| SEWP-03 | Phase 12 | Pending |
+| SEWP-04 | Phase 12 | Pending |
 
 **Coverage:**
 - v1.5 requirements: 10 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 10
+- Mapped to phases: 10/10 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-07-30 for milestone v1.5*
+*Traceability updated: 2026-07-30 with v1.5 roadmap*
