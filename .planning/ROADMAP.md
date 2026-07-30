@@ -71,9 +71,9 @@ Plans:
   2. `POST /api/lead` returns 404 (or the route no longer exists); contact submissions still succeed via HubSpot only.
   3. The app runs on a patched Next.js release that clears known high advisories for the current line (target `16.2.12` or newer patch); production build succeeds.
   4. Production responses include `Strict-Transport-Security` and a staged `Content-Security-Policy` that allows HubSpot, Google Analytics, YouTube, and blog-embed origins without breaking marketing pages.
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
-- [ ] 10-01-PLAN.md — Ignore .env*, delete orphan lead API, HubSpot-only contact tests
+- [x] 10-01-PLAN.md — Ignore .env*, delete orphan lead API, HubSpot-only contact tests
 - [ ] 10-02-PLAN.md — Pin Next 16.2.12; add HSTS + enforce allowlist CSP with preview smoke
 
 ### Phase 11: Content Consistency
@@ -109,7 +109,7 @@ Plans:
 | 7. Executive Recruiting Hiring Profiles | v1.2 | — | Complete | 2026-06-23 |
 | 8. NASA SEWP VI Federal Contract Page | v1.3 | — | Complete | 2026-06-23 |
 | 9. NASA SEWP VI Electronic Ordering Guide | v1.4 | 1/1 | Complete | 2026-07-05 |
-| 10. Security Hygiene | v1.5 | 0/2 | Planned | - |
+| 10. Security Hygiene | v1.5 | 1/2 | In Progress|  |
 | 11. Content Consistency | v1.5 | 0/TBD | Not started | - |
 | 12. SEWP Compliance DOM & Dead Code | v1.5 | 0/TBD | Not started | - |
 

@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Site Hardening & SEWP Compliance
-status: planning
-last_updated: "2026-07-30T09:02:27.674Z"
+status: executing
+last_updated: "2026-07-30T13:13:00.000Z"
 last_activity: 2026-07-30
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 50
 ---
 
 # Project State
@@ -20,20 +20,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-30)
 
 **Core value:** Deliver a fast, SEO-strong website that clearly communicates offerings and drives high-intent consultation leads.
-**Current focus:** Phase 10 — Security Hygiene (plans created; ready to execute)
+**Current focus:** Phase 10 — Security Hygiene (10-01 complete; 10-02 next)
 
 ## Current Position
 
 Phase: 10 of 12 (Security Hygiene)
-Plan: 10-01 next
-Status: Plans complete — ready to execute
-Last activity: 2026-07-30 — Phase 10 plans created (10-01, 10-02)
+Plan: 2 of 2 (10-02 next)
+Status: Executing — 10-01 complete
+Last activity: 2026-07-30 — Completed 10-01 (SEC-01/SEC-02)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
-*(Prior milestone velocity carried forward — no v1.5 execution metrics yet)*
+| Phase | Plan | Duration | Tasks | Files | Date |
+|-------|------|----------|-------|-------|------|
+| 10 | 01 | 4min | 2 | 5 | 2026-07-30 |
 
 ## Accumulated Context
 
@@ -47,6 +49,8 @@ Decisions are logged in PROJECT.md Key Decisions table. Recent for v1.5:
 - Delete `/api/lead` — HubSpot-only contact path
 - Remove unused past performance + unused VPAT UI (no VPAT PDF)
 - Phase 10: pin next/eslint-config-next to 16.2.12 only; enforce allowlist CSP (no nonces); HSTS with preload
+- SEC-01: .env* ignored with !.env.example kept tracked
+- SEC-02: Hard-delete /api/lead + Resend helper; HubSpot-only contact
 
 ### Pending Todos
 
@@ -61,5 +65,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-07-30
-Stopped at: Phase 10 PLAN.md files written (10-01 SEC-01/02, 10-02 SEC-03/04) — next `/gsd-execute-phase 10`
+Stopped at: Completed 10-01-PLAN.md
 Resume file: None
