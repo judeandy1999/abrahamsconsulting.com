@@ -53,7 +53,7 @@ Plans:
 </details>
 
 - [x] **Phase 10: Security Hygiene** - Ignore `.env*`, delete orphan lead API, upgrade Next, add CSP+HSTS.
-- [ ] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link.
+- [x] **Phase 11: Content Consistency** - Canonical 30 Broad Street address; remove Privacy Policy footer link. (completed 2026-07-30)
 - [ ] **Phase 12: SEWP Compliance DOM & Dead Code** - All statement panels in HTML; remove past performance and unused VPAT UI.
 
 ## Phase Details
@@ -84,9 +84,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Contact page office address matches the footer: `30 Broad Street, NY NY 10004 14th Floor` (no `40 Wall` address remains on contact).
   2. Footer no longer shows a Privacy Policy link; no new privacy page is introduced.
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
-- [ ] 11-01-PLAN.md — Align contact to 30 Broad Street; remove Privacy Policy footer link (schema + UI)
+- [x] 11-01-PLAN.md — Align contact to 30 Broad Street; remove Privacy Policy footer link (schema + UI)
 **UI hint**: yes
 
 ### Phase 12: SEWP Compliance DOM & Dead Code
@@ -113,7 +113,7 @@ Plans:
 | 8. NASA SEWP VI Federal Contract Page | v1.3 | — | Complete | 2026-06-23 |
 | 9. NASA SEWP VI Electronic Ordering Guide | v1.4 | 1/1 | Complete | 2026-07-05 |
 | 10. Security Hygiene | v1.5 | 2/2 | Complete | 2026-07-30 |
-| 11. Content Consistency | v1.5 | 0/1 | Not started | - |
+| 11. Content Consistency | v1.5 | 1/1 | Complete   | 2026-07-30 |
 | 12. SEWP Compliance DOM & Dead Code | v1.5 | 0/TBD | Not started | - |
 
 ## Coverage

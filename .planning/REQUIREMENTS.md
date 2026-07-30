@@ -19,8 +19,8 @@ Prior milestones shipped through Phase 9 (Electronic Ordering Guide) and Contrac
 
 ### Content Consistency
 
-- [ ] **CNT-01**: Contact page office address matches the footer canonical address: `30 Broad Street, NY NY 10004 14th Floor`.
-- [ ] **CNT-02**: Footer no longer exposes a Privacy Policy link (link removed; no privacy page added this milestone).
+- [x] **CNT-01**: Contact page office address matches the footer canonical address: `30 Broad Street, NY NY 10004 14th Floor`.
+- [x] **CNT-02**: Footer no longer exposes a Privacy Policy link (link removed; no privacy page added this milestone).
 
 ### SEWP Compliance & Dead Code
 
@@ -59,8 +59,8 @@ Deferred beyond v1.5.
 | SEC-02 | Phase 10 | Complete |
 | SEC-03 | Phase 10 | Complete |
 | SEC-04 | Phase 10 | Complete |
-| CNT-01 | Phase 11 | Pending |
-| CNT-02 | Phase 11 | Pending |
+| CNT-01 | Phase 11 | Complete |
+| CNT-02 | Phase 11 | Complete |
 | SEWP-01 | Phase 12 | Pending |
 | SEWP-02 | Phase 12 | Pending |
 | SEWP-03 | Phase 12 | Pending |
