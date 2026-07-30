@@ -23,7 +23,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.21.0",
-    "next": "latest",
+    "next": "16.2.12",
     "react": "latest",
     "react-dom": "latest",
     "zod": "latest"
@@ -34,7 +34,7 @@
     "@types/react": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "16.2.12",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "typescript": "latest"
   },
