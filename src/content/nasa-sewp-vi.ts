@@ -3,8 +3,7 @@ import type { NasaSewpViPageContent } from "./schema";
 /** Replace PDFs in public/documents/nasa-sewp-vi/ — no code changes required when files are added. */
 export const NASA_SEWP_VI_DOCUMENTS = {
   capabilityStatement: "/documents/nasa-sewp-vi/capability-statement.pdf",
-  orderingGuide: "/documents/nasa-sewp-vi/ordering-guide.pdf",
-  orderingGuideVpat: "/documents/nasa-sewp-vi/ordering-guide-vpat.pdf"
+  orderingGuide: "/documents/nasa-sewp-vi/ordering-guide.pdf"
 } as const;
 
 export const NASA_SEWP_VI_HERO_ASSETS = {
@@ -317,29 +316,9 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       title: "Download the Ordering Guide",
       description: "Access the official SEWP VI Electronic Ordering Guide in PDF format.",
       downloadLabel: "Download PDF",
-      comingSoonLabel: "Coming Soon",
       href: NASA_SEWP_VI_DOCUMENTS.orderingGuide,
       illustrationSrc: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationSrc,
       illustrationAlt: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationAlt
-    },
-    accessibility: {
-      title: "Section 508 Accessibility",
-      description:
-        "The Electronic Ordering Guide PDF is published as a Section 508-compliant document for federal accessibility requirements.",
-      requirements: [
-        "Tagged PDF with semantic structure",
-        "Logical reading order throughout the document",
-        "Alternative text on all meaningful images",
-        "Document bookmarks for major sections"
-      ],
-      vpat: {
-        title: "Accessibility Conformance Report (VPAT)",
-        description:
-          "Review the Voluntary Product Accessibility Template (VPAT) Accessibility Conformance Report (ACR) for the Electronic Ordering Guide.",
-        downloadLabel: "Download VPAT ACR",
-        comingSoonLabel: "VPAT ACR coming soon",
-        href: NASA_SEWP_VI_DOCUMENTS.orderingGuideVpat
-      }
     }
   },
   gwacIdentificationStatement: {

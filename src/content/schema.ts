@@ -591,24 +591,9 @@ export const nasaSewpViPageSchema = z.object({
       title: z.string().min(1),
       description: z.string().min(1),
       downloadLabel: z.string().min(1),
-      comingSoonLabel: z.string().min(1),
       href: z.string().min(1),
       illustrationSrc: z.string().min(1),
-      illustrationAlt: z.string().min(1),
-      isAvailable: z.boolean().optional()
-    }),
-    accessibility: z.object({
-      title: z.string().min(1),
-      description: z.string().min(1),
-      requirements: z.array(z.string().min(1)).length(4),
-      vpat: z.object({
-        title: z.string().min(1),
-        description: z.string().min(1),
-        downloadLabel: z.string().min(1),
-        comingSoonLabel: z.string().min(1),
-        href: z.string().min(1),
-        isAvailable: z.boolean().optional()
-      })
+      illustrationAlt: z.string().min(1)
     })
   }),
   gwacIdentificationStatement: z.object({

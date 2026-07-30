@@ -21,9 +21,7 @@ function IconDownload() {
 }
 
 export function NasaSewpViOrderingGuideCard({ section }: NasaSewpViOrderingGuideCardProps) {
-  const { download, accessibility } = section;
-  const orderingGuideAvailable = download.isAvailable === true;
-  const vpatAvailable = accessibility.vpat.isAvailable === true;
+  const { download } = section;
 
   return (
     <article className="sewp-vi-ordering-guide" aria-labelledby="sewp-vi-ordering-guide-download-heading">
