@@ -138,8 +138,8 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
           <Image
             src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
             alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-            width={96}
-            height={96}
+            width={200}
+            height={160}
             className="sewp-vi-hero__nasa-logo-image"
           />
         </span>

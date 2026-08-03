@@ -14,6 +14,8 @@ type NasaSewpViCapabilitiesVehiclesSectionProps = {
   vehicles: NasaSewpViPageContent["contractVehicles"];
   view?: "all" | "capabilities" | "vehicles";
   embedded?: boolean;
+  /** When set, that vehicle is shown as the current page (no self-link). */
+  currentVehicleId?: string;
 };
 
 type CapabilityItem = NasaSewpViPageContent["categoryACapabilities"]["items"][number];
@@ -38,7 +40,13 @@ function CapabilityColumn({ items }: { items: CapabilityItem[] }) {
   );
 }
 
-function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]["items"][number] }) {
+function VehicleCard({
+  item,
+  isCurrentPage
+}: {
+  item: NasaSewpViPageContent["contractVehicles"]["items"][number];
+  isCurrentPage?: boolean;
+}) {
   const isPdf = Boolean(item.href?.toLowerCase().endsWith(".pdf"));
   const baseLabel = `${item.title}${item.badge ? ` (${item.badge})` : ""}. ${item.description}`;
   const vehicleLabel = isPdf ? withPdfLinkLabel(baseLabel) : baseLabel;
@@ -67,12 +75,31 @@ function VehicleCard({ item }: { item: NasaSewpViPageContent["contractVehicles"]
         </span>
         {item.badge ? <span className="sewp-vi-cap-veh__vehicle-badge">{item.badge}</span> : null}
         <span className="sewp-vi-cap-veh__vehicle-desc">{item.description}</span>
+        {isCurrentPage ? (
+          <span className="sewp-vi-cap-veh__vehicle-current-label">You are currently on this page</span>
+        ) : null}
       </span>
-      <span className="sewp-vi-cap-veh__vehicle-action" aria-hidden="true">
-        <IconArrowRight className="sewp-vi-cap-veh__vehicle-arrow" />
-      </span>
+      {!isCurrentPage ? (
+        <span className="sewp-vi-cap-veh__vehicle-action" aria-hidden="true">
+          <IconArrowRight className="sewp-vi-cap-veh__vehicle-arrow" />
+        </span>
+      ) : (
+        <span className="sewp-vi-cap-veh__vehicle-action" aria-hidden="true" />
+      )}
     </>
   );
+
+  if (isCurrentPage) {
+    return (
+      <div
+        className="sewp-vi-cap-veh__vehicle-card sewp-vi-cap-veh__vehicle-card--current"
+        aria-current="page"
+        aria-label={`${baseLabel} You are currently on this page.`}
+      >
+        {content}
+      </div>
+    );
+  }
 
   if (item.href) {
     if (isExternal) {
@@ -107,7 +134,8 @@ export function NasaSewpViCapabilitiesVehiclesSection({
   capabilities,
   vehicles,
   view = "all",
-  embedded = false
+  embedded = false,
+  currentVehicleId
 }: NasaSewpViCapabilitiesVehiclesSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
   const leftCapabilities = capabilities.items.slice(0, CAPABILITY_COLUMN_SPLIT);
@@ -174,7 +202,7 @@ export function NasaSewpViCapabilitiesVehiclesSection({
             <ul className="sewp-vi-cap-veh__vehicle-list">
               {vehicles.items.map((item) => (
                 <li key={item.id} className="sewp-vi-cap-veh__vehicle-item">
-                  <VehicleCard item={item} />
+                  <VehicleCard item={item} isCurrentPage={item.id === currentVehicleId} />
                 </li>
               ))}
             </ul>
@@ -184,3 +212,4 @@ export function NasaSewpViCapabilitiesVehiclesSection({
     </div>
   );
 }
+

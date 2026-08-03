@@ -2907,62 +2907,41 @@ body.nav-menu-open {
 }
 
 @media (max-width: 768px) {
-  .award-banner__inner--split {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+  .award-banner__row {
+    height: auto;
+    min-height: 6.75rem;
   }
 
-  .award-banner__column {
+  .award-banner__row .award-banner__inner {
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0;
+    align-items: center;
+    height: auto;
+    min-height: 6.75rem;
+    gap: 0.9rem;
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
   }
 
-  .award-banner__divider {
-    width: 100%;
-    height: 1px;
-    margin: 0;
+  .award-banner__column,
+  .award-banner__column--nasa {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
   }
 
   .award-banner__copy {
     flex: 1 1 auto;
-    flex-basis: calc(100% - 4.25rem);
+    flex-basis: calc(100% - 6rem);
     min-width: 0;
   }
 
-  .award-banner__inner {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  .award-banner__badge {
-    order: 1;
-  }
-
-  .award-banner__rule {
-    display: none;
-  }
-
-  .award-banner__headline {
-    flex: 1;
-    flex-basis: calc(100% - 4rem);
-    order: 2;
-  }
-
-  .award-banner__description {
-    flex-basis: 100%;
-    order: 3;
-  }
-
-  .award-banner__cta {
+  .award-banner__cta,
+  .award-banner__cta--nasa {
     margin-left: 0;
-    order: 4;
+    width: 13rem;
+    min-width: 13rem;
+    height: 2.85rem;
+    white-space: nowrap;
   }
 }
 

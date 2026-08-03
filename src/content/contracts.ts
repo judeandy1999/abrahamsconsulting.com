@@ -4,7 +4,7 @@ export const CONTRACT_VEHICLE_ASSETS = {
   gsaLogo: "/images/contracts/gsa-logo.webp",
   synnexLogo: "/images/contracts/synnex-logo.webp",
   synnexLineCard: "/documents/contracts/synnex-gsa-line-card.pdf",
-  nasaLogo: "/images/nasa-sewp-vi/sewp-duck-logo.png",
+  nasaLogo: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
   nysSeal: "/images/nasa-sewp-vi/nys-seal.svg",
   commvault: "/images/companies/commvault-150x150.webp",
   hp: "/images/companies/hpLogo-150x150.webp"

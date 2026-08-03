@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useId, useState, type KeyboardEvent } from "react";
+import { useId, useState, type KeyboardEvent, type ReactNode } from "react";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NasaSewpViCapabilitiesVehiclesSection } from "./NasaSewpViCapabilitiesVehiclesSection";
 import { NasaSewpViCertificationsSection } from "./NasaSewpViCertificationsSection";
@@ -87,6 +87,42 @@ export function NasaSewpViCompanyHubSection({
     }
   }
 
+  function renderPanel(tabId: TabId): ReactNode {
+    switch (tabId) {
+      case "why-choose":
+        return <NasaSewpViWhyChooseSection section={whyChoose} embedded />;
+      case "core-competencies":
+        return <NasaSewpViCoreCompetenciesSection section={coreCompetencies} embedded />;
+      case "category-a":
+        return (
+          <NasaSewpViCapabilitiesVehiclesSection
+            capabilities={categoryACapabilities}
+            vehicles={contractVehicles}
+            view="capabilities"
+            embedded
+          />
+        );
+      case "contract-vehicles":
+        return (
+          <NasaSewpViCapabilitiesVehiclesSection
+            capabilities={categoryACapabilities}
+            vehicles={contractVehicles}
+            view="vehicles"
+            embedded
+            currentVehicleId="nasa-sewp-vi"
+          />
+        );
+      case "company-information":
+        return <NasaSewpViCompanyInformationSection section={companyInformation} embedded />;
+      case "certifications":
+        return <NasaSewpViCertificationsSection section={certifications} embedded />;
+      default: {
+        const _exhaustive: never = tabId;
+        return _exhaustive;
+      }
+    }
+  }
+
   return (
     <section className="sewp-vi-company-hub" aria-labelledby="sewp-vi-company-hub-heading">
       <motion.div
@@ -135,43 +171,24 @@ export function NasaSewpViCompanyHubSection({
             })}
           </div>
 
-          <div
-            id={`${baseId}-panel-${activeTab}`}
-            role="tabpanel"
-            aria-labelledby={`${baseId}-tab-${activeTab}`}
-            className="sewp-vi-company-hub__panel"
-          >
-            {activeTab === "why-choose" ? <NasaSewpViWhyChooseSection section={whyChoose} embedded /> : null}
+          <div className="sewp-vi-company-hub__panels">
+            {TABS.map((tab) => {
+              const isActive = tab.id === activeTab;
 
-            {activeTab === "core-competencies" ? (
-              <NasaSewpViCoreCompetenciesSection section={coreCompetencies} embedded />
-            ) : null}
-
-            {activeTab === "category-a" ? (
-              <NasaSewpViCapabilitiesVehiclesSection
-                capabilities={categoryACapabilities}
-                vehicles={contractVehicles}
-                view="capabilities"
-                embedded
-              />
-            ) : null}
-
-            {activeTab === "contract-vehicles" ? (
-              <NasaSewpViCapabilitiesVehiclesSection
-                capabilities={categoryACapabilities}
-                vehicles={contractVehicles}
-                view="vehicles"
-                embedded
-              />
-            ) : null}
-
-            {activeTab === "company-information" ? (
-              <NasaSewpViCompanyInformationSection section={companyInformation} embedded />
-            ) : null}
-
-            {activeTab === "certifications" ? (
-              <NasaSewpViCertificationsSection section={certifications} embedded />
-            ) : null}
+              return (
+                <div
+                  key={tab.id}
+                  id={`${baseId}-panel-${tab.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`${baseId}-tab-${tab.id}`}
+                  hidden={!isActive}
+                  className="sewp-vi-company-hub__panel"
+                >
+                  <h3 className="sewp-vi-company-hub__panel-heading">{tab.label}</h3>
+                  {renderPanel(tab.id)}
+                </div>
+              );
+            })}
           </div>
         </motion.div>
 

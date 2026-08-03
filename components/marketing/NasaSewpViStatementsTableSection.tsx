@@ -51,18 +51,30 @@ const TABS: TabDefinition[] = [
 function ContactValue({
   value,
   href,
-  ariaLabel
+  ariaLabel,
+  isEmail
 }: {
   value: string;
   href?: string;
   ariaLabel?: string;
+  isEmail?: boolean;
 }) {
+  const emailLike = isEmail || value.includes("@");
+
   if (href) {
     return (
-      <a href={href} className="sewp-vi-statements__link" aria-label={ariaLabel ?? value}>
+      <a
+        href={href}
+        className={`sewp-vi-statements__link${emailLike ? " sewp-vi-statements__link--email" : ""}`}
+        aria-label={ariaLabel ?? value}
+      >
         {value}
       </a>
     );
+  }
+
+  if (emailLike) {
+    return <span className="sewp-vi-statements__link--email">{value}</span>;
   }
 
   return (
@@ -84,9 +96,8 @@ function PostDeliveryTopics({
 }) {
   const baseId = useId();
   const [activeTopicId, setActiveTopicId] = useState(topics[0]?.id ?? "");
-  const activeTopic = topics.find((topic) => topic.id === activeTopicId) ?? topics[0];
 
-  if (!activeTopic) {
+  if (topics.length === 0) {
     return null;
   }
 
@@ -129,7 +140,7 @@ function PostDeliveryTopics({
         aria-label="Post-delivery support topics"
       >
         {topics.map((topic, index) => {
-          const isActive = topic.id === activeTopic.id;
+          const isActive = topic.id === activeTopicId;
 
           return (
             <button
@@ -150,13 +161,24 @@ function PostDeliveryTopics({
         })}
       </div>
 
-      <div
-        id={`${baseId}-topic-panel-${activeTopic.id}`}
-        role="tabpanel"
-        aria-labelledby={`${baseId}-topic-tab-${activeTopic.id}`}
-        className="sewp-vi-statements__topic-panel"
-      >
-        <p className="sewp-vi-statements__paragraph">{activeTopic.description}</p>
+      <div className="sewp-vi-statements__topic-panels">
+        {topics.map((topic) => {
+          const isActive = topic.id === activeTopicId;
+
+          return (
+            <div
+              key={topic.id}
+              id={`${baseId}-topic-panel-${topic.id}`}
+              role="tabpanel"
+              aria-labelledby={`${baseId}-topic-tab-${topic.id}`}
+              hidden={!isActive}
+              className="sewp-vi-statements__topic-panel"
+            >
+              <h4 className="sewp-vi-statements__topic-heading">{topic.title}</h4>
+              <p className="sewp-vi-statements__paragraph">{topic.description}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -288,7 +310,6 @@ export function NasaSewpViStatementsTableSection({
             <PostDeliveryTopics topics={postDeliverySupport.topics} />
 
             <div className="sewp-vi-statements__profile">
-              <p className="sewp-vi-statements__subsection-title">{supportContact.heading}</p>
               <p className="sewp-vi-statements__profile-name">{supportContact.name}</p>
               <p className="sewp-vi-statements__profile-role">{supportContact.role}</p>
 
@@ -301,6 +322,7 @@ export function NasaSewpViStatementsTableSection({
                         value={contact.value}
                         href={contact.href}
                         ariaLabel={`${contact.label}: ${contact.value}`}
+                        isEmail={contact.id === "email" || contact.label.toLowerCase() === "email"}
                       />
                     </dd>
                   </div>
@@ -322,8 +344,8 @@ export function NasaSewpViStatementsTableSection({
             <div className="sewp-vi-statements__contact-grid">
               {orderTroubleshooting.contacts.map((contactGroup) => (
                 <div key={contactGroup.id} className="sewp-vi-statements__profile">
-                  <p className="sewp-vi-statements__subsection-title">{contactGroup.heading}</p>
                   <p className="sewp-vi-statements__profile-name">{contactGroup.name}</p>
+                  <p className="sewp-vi-statements__profile-role">{contactGroup.heading}</p>
 
                   <dl className="sewp-vi-statements__meta">
                     {contactGroup.contacts.map((contact) => (
@@ -334,6 +356,7 @@ export function NasaSewpViStatementsTableSection({
                             value={contact.value}
                             href={contact.href}
                             ariaLabel={`${contact.label}: ${contact.value}`}
+                            isEmail={contact.id === "email" || contact.label.toLowerCase() === "email"}
                           />
                         </dd>
                       </div>
@@ -361,6 +384,12 @@ export function NasaSewpViStatementsTableSection({
                         value={contact.value}
                         href={contact.href}
                         ariaLabel={`${contact.label}: ${contact.value}`}
+                        isEmail={
+                          contact.id === "email" ||
+                          contact.id === "mail" ||
+                          contact.label.toLowerCase().includes("email") ||
+                          contact.label.toLowerCase().includes("mail")
+                        }
                       />
                     </dd>
                   </div>
@@ -435,8 +464,8 @@ export function NasaSewpViStatementsTableSection({
             <Image
               src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
               alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-              width={112}
-              height={112}
+              width={200}
+              height={160}
               className="sewp-vi-statements__logo-image"
             />
           </span>
@@ -476,7 +505,7 @@ export function NasaSewpViStatementsTableSection({
             </nav>
           </aside>
 
-          <div style={{ minWidth: 0 }}>
+          <div className="sewp-vi-statements__panels">
             {TABS.map((tab) => {
               const isActive = tab.id === activeTab;
 
@@ -489,6 +518,7 @@ export function NasaSewpViStatementsTableSection({
                   hidden={!isActive}
                   className="sewp-vi-statements__panel"
                 >
+                  <h3 className="sewp-vi-statements__panel-heading">{tab.label}</h3>
                   {renderStatementsPanel(tab.id)}
                 </div>
               );

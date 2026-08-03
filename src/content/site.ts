@@ -42,8 +42,8 @@ export const siteContent: SiteContent = {
     description: "Category A – ITC/AV Solutions. Explore contract details and federal support.",
     ctaLabel: "View NASA SEWP VI",
     href: "/nasa-sewp-vi",
-    imageSrc: "/images/nasa-sewp-vi/sewp-duck-logo.png",
-    imageAlt: "NASA SEWP duck logo"
+    imageSrc: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
+    imageAlt: "NASA SEWP VI official contract holder logo"
   },
   utilityLinks: [
     {

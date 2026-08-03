@@ -615,69 +615,51 @@ body.nav-menu-open {
     gap: 1.35rem;
   }
 
-  .award-banner__inner--split {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+  .award-banner__row {
+    height: auto;
+    min-height: 6.75rem;
   }
 
-  .award-banner__column {
+  .award-banner__row .award-banner__inner {
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0;
+    align-items: center;
+    height: auto;
+    min-height: 6.75rem;
+    gap: 0.9rem;
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
   }
 
-  .award-banner__divider {
-    width: 100%;
-    height: 1px;
-    margin: 0;
+  .award-banner__column,
+  .award-banner__column--nasa {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
   }
 
   .award-banner__copy {
     flex: 1 1 auto;
-    flex-basis: calc(100% - 4.25rem);
+    flex-basis: calc(100% - 6rem);
     min-width: 0;
   }
 
-  .award-banner__cta {
+  .award-banner__cta,
+  .award-banner__cta--nasa {
     margin-left: 0;
-    white-space: normal;
+    width: 13rem;
+    min-width: 13rem;
+    height: 2.85rem;
+    white-space: nowrap;
   }
 
-  .award-banner__inner {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  .award-banner__badge {
-    order: 1;
-  }
-
-  .award-banner__rule {
-    display: none;
-  }
-
-  .award-banner__headline {
+  .award-banner__headline,
+  .award-banner__headline--nasa {
     flex: 1 1 auto;
-    flex-basis: calc(100% - 4rem);
     min-width: 0;
-    order: 2;
   }
 
   .award-banner__description {
     flex-basis: 100%;
-    order: 3;
-  }
-
-  .award-banner__cta {
-    margin-left: 0;
-    order: 4;
-    white-space: normal;
   }
 }
 
@@ -704,5 +686,95 @@ body.nav-menu-open {
 @media (max-width: 400px) {
   .home-about__carousel-group {
     --partner-logo-max-height: clamp(3.5rem, 26vw, 5rem);
+  }
+}
+
+/* Very narrow viewports — tighten type and prevent overflow site-wide */
+@media (max-width: 380px) {
+  html {
+    font-size: 93.75%;
+  }
+
+  .site-footer {
+    font-size: 0.875rem;
+  }
+
+  .site-footer__heading {
+    font-size: 0.8125rem;
+  }
+
+  .site-footer__assist-text,
+  .site-footer__contact-list li,
+  .site-footer__legal {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .site-footer__logo {
+    max-width: min(100%, 9.5rem);
+    height: auto;
+  }
+
+  .site-footer__badge-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .site-footer__bar-inner {
+    gap: 0.75rem;
+  }
+
+  .site-footer__social-link {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .main-nav__logo {
+    height: 2.75rem;
+    max-width: 9.5rem;
+    width: auto;
+  }
+
+  .main-nav__cta,
+  .main-nav__cta--secondary {
+    font-size: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .main-nav__actions {
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .award-banner__headline,
+  .award-banner__headline--nasa {
+    font-size: 0.8rem;
+  }
+
+  .award-banner__description {
+    font-size: 0.75rem;
+  }
+
+  .award-banner__cta,
+  .award-banner__cta--nasa {
+    font-size: 0.8125rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 2.85rem;
+    padding: 0 0.85rem;
+  }
+
+  .btn,
+  .home-hero__cta,
+  a.btn {
+    font-size: 0.8rem;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

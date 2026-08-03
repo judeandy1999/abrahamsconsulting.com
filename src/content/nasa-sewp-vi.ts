@@ -10,8 +10,8 @@ export const NASA_SEWP_VI_HERO_ASSETS = {
   visualImageSrc: "/images/nasa-sewp-vi/hero-visual.webp",
   visualImageAlt:
     "Federal agency technology environment representing NASA SEWP VI IT products and solutions",
-  nasaLogoSrc: "/images/nasa-sewp-vi/sewp-duck-logo.png",
-  nasaLogoAlt: "NASA SEWP logo"
+  nasaLogoSrc: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
+  nasaLogoAlt: "NASA SEWP VI official logo — Solutions for Enterprise-Wide Procurement"
 } as const;
 
 export const NASA_SEWP_VI_OVERVIEW_ASSETS = {
@@ -33,7 +33,7 @@ export const NASA_SEWP_VI_EORDERING_ASSETS = {
 } as const;
 
 export const NASA_SEWP_VI_CERTIFICATION_LOGOS = {
-  nasa: "/images/nasa-sewp-vi/sewp-duck-logo.png",
+  nasa: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
   iso9001: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp",
   marylandMbe: "/images/footer/Maryland-MBE-Seal-r8yaep2c5rsdh2q6oah4rj1ltxm182b5v7189otwbs.webp",
   marylandSbr: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.webp"
@@ -293,8 +293,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         title: "NASA SEWP VI",
         badge: "Prime Contractor",
         description: "Strategic, enterprise-wide solutions for federal agencies through NASA SEWP VI.",
-        logoSrc: "/images/nasa-sewp-vi/sewp-duck-logo.png",
-        logoAlt: "NASA SEWP VI contract vehicle",
+        logoSrc: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
+        logoAlt: "NASA SEWP VI official contract vehicle logo",
         href: "#sewp-vi-overview-heading"
       },
       {
