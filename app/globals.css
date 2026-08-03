@@ -596,6 +596,15 @@ textarea:focus-visible {
   gap: 1.15rem;
 }
 
+/* Keeps logo + copy on one row (desktop and mobile) */
+.award-banner__lead {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .award-banner__badge {
   flex-shrink: 0;
   display: flex;
@@ -610,10 +619,10 @@ textarea:focus-visible {
 }
 
 .award-banner__badge--nasa {
-  width: 5.5rem;
+  width: 4.5rem;
   height: 4.5rem;
-  min-width: 5.5rem;
-  max-width: 5.5rem;
+  min-width: 4.5rem;
+  max-width: 4.5rem;
   border-radius: 0.4rem;
   background: transparent;
   overflow: hidden;
@@ -663,21 +672,12 @@ textarea:focus-visible {
   color: var(--color-white);
 }
 
-.award-banner__headline--nasa {
-  font-size: 1.05rem;
-  letter-spacing: 0.01em;
-}
-
 .award-banner__description {
   margin: 0;
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.92);
-}
-
-.award-banner__row--nasa .award-banner__description {
-  font-size: 0.9375rem;
 }
 
 .award-banner__cta {
@@ -691,10 +691,12 @@ textarea:focus-visible {
   min-width: 13rem;
   height: 2.85rem;
   padding: 0 1rem;
+  font-family: inherit;
   font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   line-height: 1.2;
+  text-transform: uppercase;
   color: var(--color-teal);
   background: transparent;
   border: 2px solid var(--color-teal);

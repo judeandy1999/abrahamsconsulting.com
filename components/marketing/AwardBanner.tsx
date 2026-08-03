@@ -17,13 +17,15 @@ export function AwardBanner({ site }: AwardBannerProps) {
       <div className="award-banner__row award-banner__row--pbits">
         <div className="award-banner__inner">
           <article className="award-banner__column">
-            <div className="award-banner__badge" aria-hidden="true">
-              <AwardBannerBadge className="award-banner__badge-icon" />
-            </div>
+            <div className="award-banner__lead">
+              <div className="award-banner__badge" aria-hidden="true">
+                <AwardBannerBadge className="award-banner__badge-icon" />
+              </div>
 
-            <div className="award-banner__copy">
-              <p className="award-banner__headline">{awardBanner.headline}</p>
-              <p className="award-banner__description">{awardBanner.description}</p>
+              <div className="award-banner__copy">
+                <p className="award-banner__headline">{awardBanner.headline}</p>
+                <p className="award-banner__description">{awardBanner.description}</p>
+              </div>
             </div>
 
             {isPbitsExternal ? (
@@ -49,20 +51,22 @@ export function AwardBanner({ site }: AwardBannerProps) {
       <div className="award-banner__row award-banner__row--nasa">
         <div className="award-banner__inner">
           <article className="award-banner__column award-banner__column--nasa">
-            <div className="award-banner__badge award-banner__badge--nasa" aria-hidden="true">
-              <Image
-                src={nasaSewpBanner.imageSrc}
-                alt=""
-                width={88}
-                height={72}
-                className="award-banner__badge-image award-banner__badge-image--nasa"
-                priority
-              />
-            </div>
+            <div className="award-banner__lead">
+              <div className="award-banner__badge award-banner__badge--nasa" aria-hidden="true">
+                <Image
+                  src={nasaSewpBanner.imageSrc}
+                  alt=""
+                  width={88}
+                  height={72}
+                  className="award-banner__badge-image award-banner__badge-image--nasa"
+                  priority
+                />
+              </div>
 
-            <div className="award-banner__copy">
-              <p className="award-banner__headline award-banner__headline--nasa">{nasaSewpBanner.headline}</p>
-              <p className="award-banner__description">{nasaSewpBanner.description}</p>
+              <div className="award-banner__copy">
+                <p className="award-banner__headline">{nasaSewpBanner.headline}</p>
+                <p className="award-banner__description">{nasaSewpBanner.description}</p>
+              </div>
             </div>
 
             <Link href={nasaSewpBanner.href} className="award-banner__cta award-banner__cta--nasa">
