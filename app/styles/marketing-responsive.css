@@ -366,7 +366,7 @@ body.nav-menu-open {
   overflow: hidden;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1240px) {
   .utility-bar {
     display: none;
   }
@@ -431,6 +431,7 @@ body.nav-menu-open {
 
   .main-nav__links > ul {
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: stretch;
     gap: 0;
   }
