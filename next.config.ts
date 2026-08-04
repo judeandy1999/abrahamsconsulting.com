@@ -7,7 +7,7 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://js.hsforms.net https://*.hsforms.net https://www.googletagmanager.com${isDev ? " https://va.vercel-scripts.com" : ""}`,
   "style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com",
-  "img-src 'self' data: blob: https://i.ytimg.com https://*.hsforms.net https://*.hsforms.com https://www.googletagmanager.com https://*.google-analytics.com",
+  "img-src 'self' data: blob: https://i.ytimg.com https://*.hsforms.net https://*.hsforms.com https://www.googletagmanager.com https://*.google-analytics.com https://*.ssl.cf1.rackcdn.com https://*.rackcdn.com https://contentmx.com https://*.contentmx.com https://abrahams73.lll-ll.com",
   "font-src 'self' data:",
   "connect-src 'self' https://*.hsforms.com https://*.hubapi.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com" +
     (isDev ? " https://va.vercel-scripts.com https://vitals.vercel-insights.com" : ""),
@@ -34,6 +34,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.ytimg.com",
         pathname: "/vi/**"
+      },
+      {
+        protocol: "https",
+        hostname: "**.ssl.cf1.rackcdn.com"
+      },
+      {
+        protocol: "https",
+        hostname: "**.rackcdn.com"
+      },
+      {
+        protocol: "https",
+        hostname: "fe5e0932bbdbee188a67-ade54de1bba9a4fe61c120942a09245b.ssl.cf1.rackcdn.com"
       }
     ]
   },

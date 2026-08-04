@@ -1,6 +1,10 @@
 export const blogPageContent = {
-  embed: {
-    src: "https://abrahams73.lll-ll.com?framed=1&n=29305",
-    title: "TechTonic Times — Abrahams Consulting blog"
+  searchPlaceholder: "Search posts by title or keyword…",
+  emptyMessage: "No posts match your search.",
+  feedErrorMessage: "Blog posts are temporarily unavailable. Please try again later.",
+  pageSize: 10,
+  feed: {
+    url: "https://abrahams73.lll-ll.com/?rss&n=103008&content=all&max=50",
+    revalidateSeconds: 300
   }
 } as const;

@@ -95,7 +95,7 @@ export const launchPageSeoContent = [
   {
     routeKey: "blog",
     path: "/blog",
-    title: "TechTonic Times | Abrahams Consulting",
+    title: "Blog | Abrahams Consulting",
     description:
       "Security, networking, storage, IT staffing, and managed services insights from Abrahams Consulting."
   },
