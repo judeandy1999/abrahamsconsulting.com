@@ -7,7 +7,7 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://js.hsforms.net https://*.hsforms.net https://www.googletagmanager.com${isDev ? " https://va.vercel-scripts.com" : ""}`,
   "style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com",
-  "img-src 'self' data: blob: https://i.ytimg.com https://*.hsforms.net https://*.hsforms.com https://www.googletagmanager.com https://*.google-analytics.com https://*.ssl.cf1.rackcdn.com https://*.rackcdn.com https://contentmx.com https://*.contentmx.com https://abrahams73.lll-ll.com",
+  "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https://*.hsforms.com https://*.hubapi.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com" +
     (isDev ? " https://va.vercel-scripts.com https://vitals.vercel-insights.com" : ""),

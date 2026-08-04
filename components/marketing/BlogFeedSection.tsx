@@ -106,9 +106,16 @@ export function BlogFeedSection({ posts, feedError = null }: BlogFeedSectionProp
                   >
                     <span className="blog-feed__media">
                       {post.imageUrl ? (
-                        // External CMS thumbnails use varying rackcdn hosts
+                        // RSS thumbs use many third-party CDN hosts; load without referrer for hotlink-safe hosts
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={post.imageUrl} alt="" className="blog-feed__image" loading="lazy" />
+                        <img
+                          src={post.imageUrl}
+                          alt=""
+                          className="blog-feed__image"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          decoding="async"
+                        />
                       ) : (
                         <span className="blog-feed__image-fallback" aria-hidden="true" />
                       )}
