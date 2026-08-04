@@ -6,7 +6,10 @@ export const marketingEaseOut = [0.22, 1, 0.36, 1] as const;
 export const MARKETING_ITEM_DURATION = 0.85;
 export const MARKETING_STAGGER = 0.12;
 export const MARKETING_DELAY_CHILDREN = 0.08;
-export const MARKETING_VIEWPORT = { once: true, amount: 0.12 } as const;
+/* amount: "some" — any intersection. On SEWP mobile we stack all tab
+   panels, so sections can be thousands of px tall; fraction thresholds
+   (e.g. 0.12) never fire and content stays at opacity 0 (blank page). */
+export const MARKETING_VIEWPORT = { once: true, amount: "some" as const };
 
 export function useMarketingMotionConfig() {
   const reduceMotion = useReducedMotion();
