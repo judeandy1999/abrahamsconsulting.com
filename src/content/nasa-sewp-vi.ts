@@ -529,7 +529,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         id: "headquarters",
         icon: "headquarters",
         label: "Headquarters",
-        value: "30 Broad Street, NY NY 10004 14th Floor"
+        value: "40 Wall Street\n28th Floor, Suite 2901\nNew York, NY 10005"
       },
       {
         id: "phone",

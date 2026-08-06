@@ -67,7 +67,11 @@ export function NasaSewpViFederalSalesContactSection({ section }: NasaSewpViFede
                 </span>
                 <div className="sewp-vi-federal-contact__method-copy">
                   <p className="sewp-vi-federal-contact__method-label">Email</p>
-                  <p className="sewp-vi-federal-contact__method-value">{section.email}</p>
+                  <p className="sewp-vi-federal-contact__method-value">
+                    <a href={federalMailto} aria-label={`Email Federal Sales at ${section.email}`}>
+                      {section.email}
+                    </a>
+                  </p>
                 </div>
               </motion.article>
 

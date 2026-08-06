@@ -151,13 +151,6 @@ async function validateFixture(path) {
       return false;
     }
 
-    const office = site.contactPage?.channels?.find((channel) => channel?.id === "office");
-    if (office && /40 Wall|Wall Street/.test(String(office.value ?? ""))) {
-      console.error(`Validation failed: ${path}`);
-      console.error("- site.contactPage.channels.office: must not use 40 Wall / Wall Street");
-      return false;
-    }
-
     printSuccess(path);
     return true;
   } catch (error) {

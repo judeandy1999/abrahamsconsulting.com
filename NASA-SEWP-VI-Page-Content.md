@@ -467,7 +467,7 @@ Description: Trusted by public sector organizations to deliver innovative IT sol
 
 Title: Company Information
 
-Headquarters: 30 Broad Street, NY NY 10004 14th Floor
+Headquarters: 40 Wall Street, 28th Floor, Suite 2901, New York, NY 10005
 
 Phone:
 877-541-1938

@@ -161,6 +161,7 @@
 }
 
 .site-footer__contact-list li {
+  white-space: pre-line;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.75rem;

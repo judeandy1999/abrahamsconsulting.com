@@ -280,7 +280,7 @@ export const siteContent: SiteContent = {
       }
     ],
     connectTitle: "Connect",
-    address: "30 Broad Street, NY NY 10004 14th Floor",
+    address: "40 Wall Street\n28th Floor, Suite 2901\nNew York, NY 10005",
     phones: ["877-541-1938", "646-558-3887"],
     contactCtaLabel: "CONTACT US",
     contactCtaHref: "/contact-us",
@@ -323,7 +323,7 @@ export const siteContent: SiteContent = {
       {
         id: "office",
         label: "Our Office",
-        value: "30 Broad Street, NY NY 10004 14th Floor",
+        value: "40 Wall Street\n28th Floor, Suite 2901\nNew York, NY 10005",
         icon: "map-pin"
       }
     ],
