@@ -260,6 +260,9 @@ textarea:focus-visible {
 .main-nav__logo {
   width: auto;
   height: 3.75rem;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .main-nav__toggle {

@@ -4008,6 +4008,9 @@
 
   .main-nav__logo {
     height: 3.35rem;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
   }
 
   .home-hero__features {
