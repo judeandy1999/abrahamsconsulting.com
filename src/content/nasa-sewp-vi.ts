@@ -3,7 +3,19 @@ import type { NasaSewpViPageContent } from "./schema";
 /** Replace PDFs in public/documents/nasa-sewp-vi/ — no code changes required when files are added. */
 export const NASA_SEWP_VI_DOCUMENTS = {
   capabilityStatement: "/documents/nasa-sewp-vi/capability-statement.pdf",
-  orderingGuide: "/documents/nasa-sewp-vi/ordering-guide.pdf"
+  /** Keep filename in sync with NASA_SEWP_VI_ORDERING_GUIDE.fileName when publishing a new guide. */
+  orderingGuide: "/documents/nasa-sewp-vi/Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf"
+} as const;
+
+/**
+ * Ordering Guide publication metadata.
+ * When releasing a new guide: update these fields, replace the PDF (matching fileName), and update NASA_SEWP_VI_DOCUMENTS.orderingGuide.
+ */
+export const NASA_SEWP_VI_ORDERING_GUIDE = {
+  version: "1",
+  versionDisplay: "Version 1",
+  effectiveDate: "August 5, 2026",
+  fileName: "Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf"
 } as const;
 
 export const NASA_SEWP_VI_HERO_ASSETS = {
@@ -311,12 +323,17 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
   electronicOrderingGuide: {
     title: "Electronic Ordering Guide",
     intro:
-      "Our Electronic Ordering Guide provides federal agencies with step-by-step instructions for placing orders through the NASA SEWP VI contract with Abrahams Consulting LLC.",
+      "Access the latest version of the Abrahams Consulting NASA SEWP Ordering Guide.",
     download: {
       title: "Download the Ordering Guide",
       description: "Access the official SEWP VI Electronic Ordering Guide in PDF format.",
-      downloadLabel: "Download PDF",
+      downloadLabel: "Download Ordering Guide",
       href: NASA_SEWP_VI_DOCUMENTS.orderingGuide,
+      fileName: NASA_SEWP_VI_ORDERING_GUIDE.fileName,
+      versionLabel: "Current Version",
+      version: NASA_SEWP_VI_ORDERING_GUIDE.versionDisplay,
+      effectiveDateLabel: "Effective Date",
+      effectiveDate: NASA_SEWP_VI_ORDERING_GUIDE.effectiveDate,
       illustrationSrc: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationSrc,
       illustrationAlt: NASA_SEWP_VI_EORDERING_ASSETS.documentIllustrationAlt
     }

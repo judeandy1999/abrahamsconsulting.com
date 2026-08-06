@@ -600,6 +600,11 @@ export const nasaSewpViPageSchema = z.object({
       description: z.string().min(1),
       downloadLabel: z.string().min(1),
       href: z.string().min(1),
+      fileName: z.string().min(1),
+      versionLabel: z.string().min(1),
+      version: z.string().min(1),
+      effectiveDateLabel: z.string().min(1),
+      effectiveDate: z.string().min(1),
       illustrationSrc: z.string().min(1),
       illustrationAlt: z.string().min(1)
     })

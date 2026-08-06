@@ -41,12 +41,26 @@ export function NasaSewpViOrderingGuideCard({ section }: NasaSewpViOrderingGuide
         </h3>
         <p className="sewp-vi-ordering-guide__description">{download.description}</p>
 
+        <dl className="sewp-vi-ordering-guide__meta">
+          <div className="sewp-vi-ordering-guide__meta-row">
+            <dt>{download.versionLabel}</dt>
+            <dd>{download.version}</dd>
+          </div>
+          <div className="sewp-vi-ordering-guide__meta-row">
+            <dt>{download.effectiveDateLabel}</dt>
+            <dd>{download.effectiveDate}</dd>
+          </div>
+        </dl>
+
         <a
           href={download.href}
           className="btn btn--primary sewp-vi-ordering-guide__cta"
+          download={download.fileName}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={accessibleExternalPdfLinkLabel(download.downloadLabel)}
+          aria-label={accessibleExternalPdfLinkLabel(
+            `${download.downloadLabel}, ${download.version}, effective ${download.effectiveDate}`
+          )}
         >
           <IconDownload />
           {withPdfLinkLabel(download.downloadLabel)}
