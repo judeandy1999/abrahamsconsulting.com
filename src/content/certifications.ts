@@ -36,12 +36,6 @@ export const certificationsPageContent: CertificationsPageContent = {
               name: "DBE Certified",
               imageSrc: img("dbe.jpg"),
               imageAlt: "DBE certification logo"
-            },
-            {
-              id: "nasa-sewp-vi",
-              name: "NASA SEWP VI",
-              imageSrc: img("nasa-sewp-vi-official-logo.png"),
-              imageAlt: "NASA SEWP VI official logo"
             }
           ]
         },
