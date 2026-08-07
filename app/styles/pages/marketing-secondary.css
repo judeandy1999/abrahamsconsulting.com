@@ -2371,35 +2371,27 @@
 }
 
 .site-footer__badges {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
   width: 100%;
-  max-width: 23.5rem;
+  max-width: 22rem;
 }
 
-.site-footer__badges-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 0.5rem;
+.site-footer__badges-grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  align-items: center;
+  justify-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.site-footer__badges-row--bottom {
-  justify-content: center;
-  align-items: center;
-  gap: 1.75rem;
-}
-
 .site-footer__badge-item {
   display: flex;
-  flex: 0 1 auto;
   align-items: center;
   justify-content: center;
   min-width: 0;
+  width: 100%;
 }
 
 .site-footer__badge-card {
@@ -2413,37 +2405,24 @@
   display: block;
   width: auto;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
 .site-footer__badge-item--pmi-2023 .site-footer__badge-image {
-  width: auto;
-  max-width: 6.35rem;
-  max-height: 5.85rem;
+  max-width: 7rem;
+  max-height: 6.5rem;
 }
 
 .site-footer__badge-item--nqa-iso9001 .site-footer__badge-image {
-  width: auto;
-  max-width: 4.35rem;
-  max-height: 7.65rem;
-}
-
-.site-footer__badge-item--maryland-mbe .site-footer__badge-image {
-  width: auto;
-  max-width: 5.65rem;
-  max-height: 5.65rem;
+  max-width: 5.5rem;
+  max-height: 8.5rem;
 }
 
 .site-footer__badge-item--ariba .site-footer__badge-image {
-  width: auto;
-  max-width: 10.75rem;
-  max-height: 3.5rem;
-}
-
-.site-footer__badge-item--maryland-sbr .site-footer__badge-image {
-  width: auto;
-  max-width: 5.65rem;
-  max-height: 5.65rem;
+  max-width: 13.5rem;
+  max-height: 4.25rem;
+  width: 100%;
 }
 
 .site-footer__contact-list {
@@ -3107,8 +3086,35 @@ body.nav-menu-open {
     max-width: 100%;
   }
 
-  .site-footer__badges-row--bottom {
-    gap: 1.35rem;
+  .site-footer__badges-grid {
+    gap: 0.75rem 1rem;
+  }
+
+  .site-footer__badge-item--nqa-iso9001 .site-footer__badge-image {
+    max-width: 4.75rem;
+    max-height: 7.5rem;
+  }
+
+  .site-footer__badge-item--ariba .site-footer__badge-image {
+    max-width: 12rem;
+    max-height: 3.85rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-footer__badges-grid {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.7rem 0.85rem;
+  }
+
+  .site-footer__badge-item--nqa-iso9001 .site-footer__badge-image {
+    max-width: 4.5rem;
+    max-height: 7rem;
+  }
+
+  .site-footer__badge-item--ariba .site-footer__badge-image {
+    max-width: 11rem;
+    max-height: 3.5rem;
   }
 }
 

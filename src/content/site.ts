@@ -256,7 +256,7 @@ export const siteContent: SiteContent = {
       "We will coach you and help you achieve your business and enterprise goals. We can help you every step of the way. Join us now and be fully prepared. What are you waiting for? Take the first step today.",
     logoSrc: "/images/logo.webp",
     logoAlt: "Abrahams Consulting",
-    badgesTitle: "Our Badge",
+    badgesTitle: "Our Badges",
     badges: [
       {
         id: "nqa-iso9001",
@@ -264,19 +264,9 @@ export const siteContent: SiteContent = {
         imageSrc: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp"
       },
       {
-        id: "maryland-mbe",
-        name: "Maryland MBE Program",
-        imageSrc: "/images/footer/Maryland-MBE-Seal-r8yaep2c5rsdh2q6oah4rj1ltxm182b5v7189otwbs.webp"
-      },
-      {
         id: "ariba",
         name: "Find us on Ariba Network",
         imageSrc: "/images/footer/badge_245x100.webp"
-      },
-      {
-        id: "maryland-sbr",
-        name: "Maryland SBR Program",
-        imageSrc: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.webp"
       }
     ],
     connectTitle: "Connect",

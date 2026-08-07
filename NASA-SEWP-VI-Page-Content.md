@@ -79,7 +79,7 @@ Intro: Our Electronic Ordering Guide provides federal agencies with step-by-step
 Download Title: Download the Ordering Guide
 Download Description: Access the official SEWP VI Electronic Ordering Guide in PDF format.
 Download Label: Download PDF
-Download Path: /documents/nasa-sewp-vi/ordering-guide.pdf
+Download Path: /documents/nasa-sewp-vi/Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf
 Illustration: /images/nasa-sewp-vi/ordering-guide-document.webp
 Illustration Alt: SEWP VI Electronic Ordering Guide PDF download
 Coming Soon Label: Coming Soon
@@ -529,7 +529,7 @@ Phone
 Capability Statement Label: Capability Statement (PDF)
 Capability Statement Path: /documents/nasa-sewp-vi/capability-statement.pdf
 
-Ordering Guide Path: /documents/nasa-sewp-vi/ordering-guide.pdf
+Ordering Guide Path: /documents/nasa-sewp-vi/Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf
 Ordering Guide VPAT Path: /documents/nasa-sewp-vi/ordering-guide-vpat.pdf
 
 Also present in public folder (not linked from page content):

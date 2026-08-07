@@ -25,22 +25,22 @@ export const capabilitiesStatementSharedCertifications = {
       imageAlt: "SCA certification logo"
     },
     {
-      id: "georgia",
-      name: "Georgia",
-      imageSrc: cert("georgia.png"),
-      imageAlt: "Georgia certification logo"
-    },
-    {
       id: "mwbe",
       name: "NYS MWBE",
-      imageSrc: cert("mwbe.jpg"),
-      imageAlt: "New York State MWBE logo"
+      imageSrc: cert("nys-mwbe-certified-seal-circle.webp"),
+      imageAlt: "Official New York State MWBE Certified seal"
     },
     {
       id: "maryland",
       name: "Maryland MBE",
-      imageSrc: cert("maryland.jpg"),
-      imageAlt: "Maryland MBE certification logo"
+      imageSrc: cert("maryland-mbe-seal.webp"),
+      imageAlt: "Maryland MBE Program seal"
+    },
+    {
+      id: "maryland-sbr",
+      name: "Maryland SBR",
+      imageSrc: cert("maryland-sbr-seal.webp"),
+      imageAlt: "Maryland SBR Program seal"
     },
     {
       id: "mwbe-ny-nj",

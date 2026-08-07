@@ -36,6 +36,12 @@ export const certificationsPageContent: CertificationsPageContent = {
               name: "DBE Certified",
               imageSrc: img("dbe.jpg"),
               imageAlt: "DBE certification logo"
+            },
+            {
+              id: "nasa-sewp-vi",
+              name: "NASA SEWP VI",
+              imageSrc: img("nasa-sewp-vi-official-logo.png"),
+              imageAlt: "NASA SEWP VI official logo"
             }
           ]
         },
@@ -44,28 +50,28 @@ export const certificationsPageContent: CertificationsPageContent = {
           title: "State Local Certification",
           items: [
             {
+              id: "nys-mwbe",
+              name: "New York State MWBE Certified",
+              imageSrc: img("nys-mwbe-certified-seal-circle.webp"),
+              imageAlt: "Official New York State MWBE Certified seal"
+            },
+            {
+              id: "maryland-mbe",
+              name: "Maryland MBE Program",
+              imageSrc: img("maryland-mbe-seal.webp"),
+              imageAlt: "Maryland MBE Program seal"
+            },
+            {
+              id: "maryland-sbr",
+              name: "Maryland SBR Program",
+              imageSrc: img("maryland-sbr-seal.webp"),
+              imageAlt: "Maryland SBR Program seal"
+            },
+            {
               id: "wbe",
               name: "New York City and Nassau County WBE",
               imageSrc: img("wbe.jpg"),
               imageAlt: "New York City and Nassau County WBE logo"
-            },
-            {
-              id: "maryland",
-              name: "Maryland MBE",
-              imageSrc: img("maryland.jpg"),
-              imageAlt: "Maryland MBE certification logo"
-            },
-            {
-              id: "mwbe",
-              name: "NYS MWBE",
-              imageSrc: img("mwbe.jpg"),
-              imageAlt: "New York State MWBE logo"
-            },
-            {
-              id: "dbe-state",
-              name: "DBE Certified",
-              imageSrc: img("dbe.jpg"),
-              imageAlt: "DBE certification logo"
             },
             {
               id: "mwbe-ny-nj",
@@ -86,12 +92,6 @@ export const certificationsPageContent: CertificationsPageContent = {
               name: "The Port Authority of NY & NJ",
               imageSrc: img("port-ny-nj.jpg"),
               imageAlt: "The Port Authority of NY and NJ certification logo"
-            },
-            {
-              id: "georgia",
-              name: "Georgia certification",
-              imageSrc: img("georgia.png"),
-              imageAlt: "Georgia certification logo"
             },
             {
               id: "sbe",

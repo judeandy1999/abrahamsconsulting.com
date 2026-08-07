@@ -34,30 +34,15 @@ export function MarketingFooter({ site }: MarketingFooterProps) {
               {footer.badgesTitle}
             </h2>
             <div className="site-footer__badges">
-              <ul className="site-footer__badges-row site-footer__badges-row--top">
-                {footer.badges.slice(0, 3).map((badge) => (
+              <ul className="site-footer__badges-grid">
+                {footer.badges.map((badge) => (
                   <li key={badge.id} className={`site-footer__badge-item site-footer__badge-item--${badge.id}`}>
                     <div className="site-footer__badge-card">
                       <Image
                         src={badge.imageSrc}
                         alt={badge.name}
-                        width={245}
-                        height={100}
-                        className="site-footer__badge-image"
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <ul className="site-footer__badges-row site-footer__badges-row--bottom">
-                {footer.badges.slice(3).map((badge) => (
-                  <li key={badge.id} className={`site-footer__badge-item site-footer__badge-item--${badge.id}`}>
-                    <div className="site-footer__badge-card">
-                      <Image
-                        src={badge.imageSrc}
-                        alt={badge.name}
-                        width={245}
-                        height={100}
+                        width={badge.id === "ariba" ? 245 : 200}
+                        height={badge.id === "ariba" ? 100 : 200}
                         className="site-footer__badge-image"
                       />
                     </div>
