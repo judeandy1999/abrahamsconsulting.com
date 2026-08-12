@@ -702,7 +702,25 @@ export const nasaSewpViPageSchema = z.object({
         )
         .min(3)
         .max(4)
-    })
+    }),
+    deputyProfile: z
+      .object({
+        name: z.string().min(1).optional(),
+        role: z.string().min(1),
+        contacts: z
+          .array(
+            z.object({
+              id: z.string().min(1),
+              icon: z.enum(["phone", "smartphone", "mail", "building"]),
+              label: z.string().min(1),
+              value: z.string().min(1),
+              href: z.string().min(1).optional()
+            })
+          )
+          .min(1)
+          .max(4)
+      })
+      .optional()
   }),
   externalResourceLinks: z.object({
     heading: z.string().min(1),
@@ -746,6 +764,7 @@ export const nasaSewpViPageSchema = z.object({
             "itil",
             "omnia-partners",
             "mwbe",
+            "dbe",
             "maryland-mbe",
             "maryland-sbr",
             "sam-gov",
@@ -754,7 +773,7 @@ export const nasaSewpViPageSchema = z.object({
           label: z.string().min(1)
         })
       )
-      .length(10)
+      .min(8)
   }),
   resources: z.object({
     title: z.string().min(1),

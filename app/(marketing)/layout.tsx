@@ -3,7 +3,6 @@ import { MarketingFooter } from "../../components/marketing/MarketingFooter";
 import { MarketingHeader } from "../../components/marketing/MarketingHeader";
 import { JsonLdScript } from "../../components/seo/JsonLdScript";
 import { loadMarketingContent } from "../../lib/content/load-content";
-import { buildOrganizationJsonLd } from "../../lib/seo/json-ld";
 
 type MarketingLayoutProps = Readonly<{
   children: React.ReactNode;
@@ -14,7 +13,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
 
   return (
     <>
-      <JsonLdScript data={buildOrganizationJsonLd(site)} />
+      <JsonLdScript src="/ld/organization" />
       <div className="skip-links">
         <a href="#main-content" className="skip-link">
           Skip to main content

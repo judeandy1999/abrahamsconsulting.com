@@ -1,12 +1,8 @@
 type JsonLdScriptProps = Readonly<{
-  data: Record<string, unknown>;
+  src: string;
 }>;
 
-export function JsonLdScript({ data }: JsonLdScriptProps) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
+/** React 19 executes async external scripts; inline JSON-LD triggers dev warnings. */
+export function JsonLdScript({ src }: JsonLdScriptProps) {
+  return <script type="application/ld+json" src={src} async />;
 }

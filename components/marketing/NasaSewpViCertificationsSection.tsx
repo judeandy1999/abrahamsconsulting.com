@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NasaSewpViCertificationIcon } from "./NasaSewpViCertificationIcon";
+import { NasaSewpViMwbeCertCard } from "./NasaSewpViMwbeCertCard";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViCertificationsSectionProps = {
@@ -26,18 +27,22 @@ export function NasaSewpViCertificationsSection({
       {section.items.map((item) => (
         <motion.li
           key={item.id}
-          className="sewp-vi-certifications__item"
+          className={`sewp-vi-certifications__item${item.id === "mwbe" ? " sewp-vi-certifications__item--mwbe" : ""}`}
           variants={itemVariants}
           transition={itemTransition}
           initial={embedded ? "visible" : undefined}
           animate={embedded ? "visible" : undefined}
         >
-          <article className="sewp-vi-certifications__card">
-            <span className="sewp-vi-certifications__icon" aria-hidden="true">
-              <NasaSewpViCertificationIcon name={item.icon} />
-            </span>
-            <h3 className="sewp-vi-certifications__label">{item.label}</h3>
-          </article>
+          {item.id === "mwbe" ? (
+            <NasaSewpViMwbeCertCard label={item.label} />
+          ) : (
+            <article className="sewp-vi-certifications__card">
+              <span className="sewp-vi-certifications__icon" aria-hidden="true">
+                <NasaSewpViCertificationIcon name={item.icon} />
+              </span>
+              <h3 className="sewp-vi-certifications__label">{item.label}</h3>
+            </article>
+          )}
         </motion.li>
       ))}
     </motion.ul>

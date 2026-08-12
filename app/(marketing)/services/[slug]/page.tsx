@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MarketingMotionGroup, MarketingMotionItem } from "../../../../components/marketing/MarketingMotion";
+import { JsonLdScript } from "../../../../components/seo/JsonLdScript";
 import { loadMarketingContent } from "../../../../lib/content/load-content";
 import { buildMarketingMetadata } from "../../../../lib/seo/metadata";
-import { JsonLdScript } from "../../../../components/seo/JsonLdScript";
-import { buildServiceDetailBreadcrumbs } from "../../../../lib/seo/breadcrumbs";
-import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "../../../../lib/seo/json-ld";
 import { getServicePageSeo } from "../../../../lib/seo/page-seo";
 
 export const dynamic = "force-static";
@@ -42,13 +40,11 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound();
   }
 
-  const breadcrumbs = buildServiceDetailBreadcrumbs(service.title, service.slug);
-
   return (
     <main id="main-content" className="marketing-main">
       <MarketingMotionGroup className="marketing-main__inner">
-        <JsonLdScript data={buildServiceJsonLd(service)} />
-        <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+        <JsonLdScript src={`/ld/services/${slug}/service`} />
+        <JsonLdScript src={`/ld/services/${slug}/breadcrumb`} />
         <MarketingMotionItem>
           <h1>{service.title}</h1>
           <p>{service.summary}</p>

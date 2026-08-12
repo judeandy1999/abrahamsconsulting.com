@@ -35,8 +35,8 @@ export const capabilitiesStatementFederalPageContent: CapabilitiesStatementFeder
       {
         id: "itil",
         name: "ITIL",
-        imageSrc: cert("itil.jpg"),
-        imageAlt: "ITIL Training Organization accreditation logo"
+        imageSrc: cert("itil.svg"),
+        imageAlt: "ITIL logo"
       },
       {
         id: "sca",

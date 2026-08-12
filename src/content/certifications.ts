@@ -17,8 +17,8 @@ export const certificationsPageContent: CertificationsPageContent = {
         {
           id: "itil",
           name: "ITIL Training Organization",
-          imageSrc: img("itil.jpg"),
-          imageAlt: "ITIL Training Organization accreditation logo"
+          imageSrc: img("itil.svg"),
+          imageAlt: "ITIL logo"
         }
       ]
     },
@@ -62,6 +62,18 @@ export const certificationsPageContent: CertificationsPageContent = {
               imageAlt: "Maryland SBR Program seal"
             },
             {
+              id: "new-jersey-mwbe",
+              name: "New Jersey MWBE",
+              imageSrc: img("new-jersey-mwbe.png"),
+              imageAlt: "New Jersey MWBE certification logo"
+            },
+            {
+              id: "georgia-sbsd-mwbe",
+              name: "Georgia SBSD MWBE",
+              imageSrc: img("georgia-sbsd-mwbe.png"),
+              imageAlt: "Georgia SBSD certified small women-owned business seal"
+            },
+            {
               id: "wbe",
               name: "New York City and Nassau County WBE",
               imageSrc: img("wbe.jpg"),
@@ -79,8 +91,6 @@ export const certificationsPageContent: CertificationsPageContent = {
               imageSrc: img("sca.jpg"),
               imageAlt: "SCA approved certification logo"
             },
-            // TODO(business): Add New Jersey Certification logo once asset is provided at
-            // public/images/certifications/new-jersey.jpg (do not add Washington DC certification).
             {
               id: "port-ny-nj",
               name: "The Port Authority of NY & NJ",

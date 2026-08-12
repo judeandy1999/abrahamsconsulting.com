@@ -47,9 +47,45 @@ export const NASA_SEWP_VI_EORDERING_ASSETS = {
 export const NASA_SEWP_VI_CERTIFICATION_LOGOS = {
   nasa: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
   iso9001: "/images/footer/NQA_ISO9001_CMYK-r73wyfb5ibpt2lplhin19cgeda5cvm507ujjlrujdq.webp",
+  itil: "/images/certifications/itil.svg",
+  omniaPartners: "/images/nasa-sewp-vi/omnia-partners-logo.webp",
+  samGov: "/images/nasa-sewp-vi/sam-gov-logo.webp",
+  aribaNetwork: "/images/nasa-sewp-vi/sap-ariba-logo.webp",
+  dbe: "/images/certifications/dbe.jpg",
+  nysMwbe: "/images/certifications/nys-mwbe-certified-seal-circle.webp",
   marylandMbe: "/images/footer/Maryland-MBE-Seal-r8yaep2c5rsdh2q6oah4rj1ltxm182b5v7189otwbs.webp",
-  marylandSbr: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.webp"
+  marylandSbr: "/images/footer/Maryland-SBR-Seal-r8yaekd57llxv0x0fqfzx28av0975ksi6jrsvb0v6w.webp",
+  newJerseyMwbe: "/images/certifications/new-jersey-mwbe.png",
+  georgiaSbsdMwbe: "/images/certifications/georgia-sbsd-mwbe.png"
 } as const;
+
+export const NASA_SEWP_VI_MWBE_SEALS = [
+  {
+    id: "nys-mwbe",
+    name: "New York State MWBE Certified",
+    imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.nysMwbe
+  },
+  {
+    id: "new-jersey-mwbe",
+    name: "New Jersey MWBE",
+    imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.newJerseyMwbe
+  },
+  {
+    id: "georgia-sbsd-mwbe",
+    name: "Georgia SBSD MWBE",
+    imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.georgiaSbsdMwbe
+  },
+  {
+    id: "maryland-mbe",
+    name: "Maryland MBE Program",
+    imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandMbe
+  },
+  {
+    id: "maryland-sbr",
+    name: "Maryland SBR Program",
+    imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandSbr
+  }
+] as const;
 
 export const nasaSewpViPageContent: NasaSewpViPageContent = {
   hero: {
@@ -459,8 +495,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           {
             id: "email",
             label: "Email",
-            value: "sewp.pm@abrahamsconsulting.com",
-            href: "mailto:sewp.pm@abrahamsconsulting.com"
+            value: "mmagnet@abrahamsconsulting.com",
+            href: "mailto:mmagnet@abrahamsconsulting.com"
           }
         ]
       }
@@ -510,8 +546,27 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           id: "email",
           icon: "mail",
           label: "Email",
-          value: "sewp.pm@abrahamsconsulting.com",
-          href: "mailto:sewp.pm@abrahamsconsulting.com"
+          value: "mmagnet@abrahamsconsulting.com",
+          href: "mailto:mmagnet@abrahamsconsulting.com"
+        }
+      ]
+    },
+    deputyProfile: {
+      role: "SEWP VI DEPUTY PROGRAM MANAGER",
+      contacts: [
+        {
+          id: "direct-phone",
+          icon: "phone",
+          label: "Direct Phone",
+          value: "(202) 869-2101, ext. 2184",
+          href: "tel:+12028692101,2184"
+        },
+        {
+          id: "email",
+          icon: "mail",
+          label: "Email",
+          value: "sorchel@abrahamsconsulting.com",
+          href: "mailto:sorchel@abrahamsconsulting.com"
         }
       ]
     }
@@ -580,8 +635,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       { id: "itil", icon: "itil", label: "ITIL Certified" },
       { id: "omnia-partners", icon: "omnia-partners", label: "OMNIA Partners" },
       { id: "mwbe", icon: "mwbe", label: "MWBE" },
-      { id: "maryland-mbe", icon: "maryland-mbe", label: "Maryland MBE" },
-      { id: "maryland-sbr", icon: "maryland-sbr", label: "Maryland SBR" },
+      { id: "dbe", icon: "dbe", label: "DBE Certified" },
       { id: "sam-gov", icon: "sam-gov", label: "SAM.gov Active" },
       { id: "ariba-network", icon: "ariba-network", label: "Ariba Network" }
     ]

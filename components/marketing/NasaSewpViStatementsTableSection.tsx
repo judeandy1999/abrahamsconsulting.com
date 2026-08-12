@@ -371,31 +371,37 @@ export function NasaSewpViStatementsTableSection({
       case "program-manager":
         return (
           <div>
-            <div className="sewp-vi-statements__profile">
-              <p className="sewp-vi-statements__profile-name">{programManager.profile.name}</p>
-              <p className="sewp-vi-statements__profile-role">{programManager.profile.role}</p>
+            {[programManager.profile, programManager.deputyProfile]
+              .filter((profile): profile is NonNullable<typeof profile> => profile != null)
+              .map((profile) => (
+                <div key={profile.role} className="sewp-vi-statements__profile">
+                  {profile.name ? (
+                    <p className="sewp-vi-statements__profile-name">{profile.name}</p>
+                  ) : null}
+                  <p className="sewp-vi-statements__profile-role">{profile.role}</p>
 
-              <dl className="sewp-vi-statements__meta">
-                {programManager.profile.contacts.map((contact) => (
-                  <div key={contact.id} className="sewp-vi-statements__meta-row">
-                    <dt>{contact.label}</dt>
-                    <dd>
-                      <ContactValue
-                        value={contact.value}
-                        href={contact.href}
-                        ariaLabel={`${contact.label}: ${contact.value}`}
-                        isEmail={
-                          contact.id === "email" ||
-                          contact.id === "mail" ||
-                          contact.label.toLowerCase().includes("email") ||
-                          contact.label.toLowerCase().includes("mail")
-                        }
-                      />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
+                  <dl className="sewp-vi-statements__meta">
+                    {profile.contacts.map((contact) => (
+                      <div key={contact.id} className="sewp-vi-statements__meta-row">
+                        <dt>{contact.label}</dt>
+                        <dd>
+                          <ContactValue
+                            value={contact.value}
+                            href={contact.href}
+                            ariaLabel={`${contact.label}: ${contact.value}`}
+                            isEmail={
+                              contact.id === "email" ||
+                              contact.id === "mail" ||
+                              contact.label.toLowerCase().includes("email") ||
+                              contact.label.toLowerCase().includes("mail")
+                            }
+                          />
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))}
 
             <div className="sewp-vi-statements__meta sewp-vi-statements__meta--secondary">
               <dl className="sewp-vi-statements__meta">
@@ -464,8 +470,8 @@ export function NasaSewpViStatementsTableSection({
             <Image
               src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
               alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-              width={200}
-              height={160}
+              width={560}
+              height={448}
               className="sewp-vi-statements__logo-image"
             />
           </span>

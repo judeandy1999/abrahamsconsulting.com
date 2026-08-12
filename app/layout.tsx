@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "../components/analytics/GoogleAnalytics";
-import { BFCACHE_RECOVERY_SCRIPT } from "../lib/bfcache/recovery-script";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,8 +22,10 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+        <script async src="/bfcache-recovery.js" />
+      </head>
       <body className={inter.variable}>
-        <script dangerouslySetInnerHTML={{ __html: BFCACHE_RECOVERY_SCRIPT }} />
         <GoogleAnalytics />
         {children}
         <SpeedInsights />
