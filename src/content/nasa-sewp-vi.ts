@@ -630,11 +630,11 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     title: "Certifications & Contract Status",
     items: [
       { id: "nasa-sewp-vi", icon: "nasa-sewp-vi", label: "NASA SEWP VI Prime" },
+      { id: "mwbe", icon: "mwbe", label: "MWBE" },
       { id: "small-business", icon: "small-business", label: "Small Business" },
       { id: "iso-9001", icon: "iso-9001", label: "ISO 9001 Certified" },
       { id: "itil", icon: "itil", label: "ITIL Certified" },
       { id: "omnia-partners", icon: "omnia-partners", label: "OMNIA Partners" },
-      { id: "mwbe", icon: "mwbe", label: "MWBE" },
       { id: "dbe", icon: "dbe", label: "DBE Certified" },
       { id: "sam-gov", icon: "sam-gov", label: "SAM.gov Active" },
       { id: "ariba-network", icon: "ariba-network", label: "Ariba Network" }
