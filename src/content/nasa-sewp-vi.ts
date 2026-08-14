@@ -552,6 +552,7 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       ]
     },
     deputyProfile: {
+      name: "Schella Orcel",
       role: "SEWP VI DEPUTY PROGRAM MANAGER",
       contacts: [
         {
@@ -565,8 +566,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
           id: "email",
           icon: "mail",
           label: "Email",
-          value: "sorchel@abrahamsconsulting.com",
-          href: "mailto:sorchel@abrahamsconsulting.com"
+          value: "sorcel@abrahamsconsulting.com",
+          href: "mailto:sorcel@abrahamsconsulting.com"
         }
       ]
     }
