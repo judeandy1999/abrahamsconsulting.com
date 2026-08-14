@@ -530,12 +530,6 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       role: "SEWP VI PROGRAM MANAGER",
       contacts: [
         {
-          id: "company",
-          icon: "building",
-          label: "Company",
-          value: "Abrahams Consulting LLC"
-        },
-        {
           id: "direct-phone",
           icon: "phone",
           label: "Direct Phone",

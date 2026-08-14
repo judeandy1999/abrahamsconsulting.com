@@ -700,7 +700,7 @@ export const nasaSewpViPageSchema = z.object({
             href: z.string().min(1).optional()
           })
         )
-        .min(3)
+        .min(2)
         .max(4)
     }),
     deputyProfile: z
