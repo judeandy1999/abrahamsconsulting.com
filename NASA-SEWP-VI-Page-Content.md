@@ -70,6 +70,28 @@ Eyebrow: NASA SEWP VI — PRIME CONTRACTOR
 
 
 ================================================================================
+2A. WHAT'S IN SCOPE FOR SEWP VI?
+================================================================================
+
+Title: What's In Scope for SEWP VI?
+
+Paragraph 1: SEWP is designed to provide a broad suite of Information Technology, Communication and Audio Visual (ITC / AV) solutions and services. Technology is ever-evolving and for that reason SEWP's processes enable our Contract Holders to add new commercial technology and IT services to their contract daily, as requested by our customers. The focus of SEWP is on the full suite of technology offerings that simplify Governmental access and Industry offerings across the entire ITC/AV solutions and services landscape. SEWP is composed of three (3) scope categories detailed below.
+
+Scope Review: If you would like SEWP to determine if your requirement is within scope of the SEWP VI contract, please send an overview and/or bill of materials (BOM) to help@sewp.nasa.gov and we will quickly review and provide feedback.
+
+Categories Intro: The SEWP Contracts were awarded by scope category, the three categories are:
+
+- Category A - ITC/AV Solutions
+- Category B - Enterprise-Wide ITC/AV Service Solutions
+- Category C - Mission-Based ITC/AV Service Solutions
+
+Category Cards:
+- Category A: ITC/AV (Information Technology, Communications, and Audio-Visual Solutions)
+- Category B: Enterprise-Wide ITC/AV Service Solutions
+- Category C: ITC/AV Mission-Based Services
+
+
+================================================================================
 3. ELECTRONIC ORDERING GUIDE
 ================================================================================
 

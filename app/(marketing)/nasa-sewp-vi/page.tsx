@@ -17,7 +17,7 @@ export default function NasaSewpViPage() {
 
   return (
     <main id="main-content" className="marketing-main marketing-main--sewp-vi">
-      <NasaSewpViHero hero={hero} capabilityStatementHref={nasaSewpViPage.resources.capabilityStatement.href} />
+      <NasaSewpViHero hero={hero} />
       <NasaSewpViBody content={bodyContent} />
     </main>
   );

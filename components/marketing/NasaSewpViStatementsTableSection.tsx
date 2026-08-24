@@ -2,18 +2,18 @@
 
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useId, useState, type KeyboardEvent, type ReactNode } from "react";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { accessibleExternalLinkLabel } from "../../lib/accessibility/accessible-external-label";
+import { NasaSewpViContactInformationBanner } from "./NasaSewpViContactInformationBanner";
 import { NasaSewpViObtainQuoteSection } from "./NasaSewpViObtainQuoteSection";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViStatementsTableSectionProps = {
+  contactBanner: NasaSewpViPageContent["contactInformationBanner"];
   contractOverview: NasaSewpViPageContent["contractOverview"];
+  inScopeForSewpVi: NasaSewpViPageContent["inScopeForSewpVi"];
   gwac: NasaSewpViPageContent["gwacIdentificationStatement"];
-  aboutSewp: NasaSewpViPageContent["aboutSewp"];
   fairOpportunity: NasaSewpViPageContent["fairOpportunityClause"];
   postDeliverySupport: NasaSewpViPageContent["postDeliverySupport"];
   orderTroubleshooting: NasaSewpViPageContent["orderTroubleshooting"];
@@ -24,6 +24,7 @@ type NasaSewpViStatementsTableSectionProps = {
 
 type TabId =
   | "contract-overview"
+  | "sewp-vi-scope"
   | "obtain-quote"
   | "gwac"
   | "fair-opportunity"
@@ -39,6 +40,7 @@ type TabDefinition = {
 
 const TABS: TabDefinition[] = [
   { id: "contract-overview", label: "Contract Overview" },
+  { id: "sewp-vi-scope", label: "What's In Scope for SEWP VI?" },
   { id: "obtain-quote", label: "How to Obtain a Quote" },
   { id: "gwac", label: "Official GWAC Identification Statement" },
   { id: "fair-opportunity", label: "Fair Opportunity" },
@@ -185,9 +187,10 @@ function PostDeliveryTopics({
 }
 
 export function NasaSewpViStatementsTableSection({
+  contactBanner,
   contractOverview,
+  inScopeForSewpVi,
   gwac,
-  aboutSewp,
   fairOpportunity,
   postDeliverySupport,
   orderTroubleshooting,
@@ -251,6 +254,44 @@ export function NasaSewpViStatementsTableSection({
           </div>
         );
 
+      case "sewp-vi-scope":
+        return (
+          <div>
+            {inScopeForSewpVi.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="sewp-vi-statements__paragraph">
+                {paragraph}
+              </p>
+            ))}
+            <p className="sewp-vi-statements__paragraph">
+              {inScopeForSewpVi.scopeReview.prefix}
+              <a
+                href={inScopeForSewpVi.scopeReview.href}
+                className="sewp-vi-statements__link sewp-vi-statements__link--email"
+              >
+                {inScopeForSewpVi.scopeReview.email}
+              </a>
+              {inScopeForSewpVi.scopeReview.suffix}
+            </p>
+            <p className="sewp-vi-statements__paragraph">{inScopeForSewpVi.categoriesIntro}</p>
+            <ul className="sewp-vi-statements__list sewp-vi-statements__list--scope">
+              {inScopeForSewpVi.categories.map((category) => (
+                <li key={category.id}>{category.label}</li>
+              ))}
+            </ul>
+            <div className="sewp-vi-statements__scope-cards">
+              {inScopeForSewpVi.categoryCards.map((card) => (
+                <article
+                  key={card.id}
+                  className={`sewp-vi-statements__scope-card sewp-vi-statements__scope-card--${card.variant}`}
+                >
+                  <p className="sewp-vi-statements__scope-card-code">{card.code}</p>
+                  <p className="sewp-vi-statements__scope-card-title">{card.title}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        );
+
       case "gwac":
         return (
           <div>
@@ -271,7 +312,7 @@ export function NasaSewpViStatementsTableSection({
                 }
 
                 blocks.push(
-                  <ol key={key} className="sewp-vi-statements__list">
+                  <ol key={key} className="sewp-vi-statements__list sewp-vi-statements__list--fair-opportunity">
                     {listItems.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
@@ -462,25 +503,11 @@ export function NasaSewpViStatementsTableSection({
         whileInView="visible"
         viewport={viewport}
       >
-        <motion.header className="sewp-vi-statements__header" variants={itemVariants} transition={itemTransition}>
-          <h2 id="sewp-vi-statements-heading" className="sewp-vi-statements__title">
-            {aboutSewp.title}
-          </h2>
-          <span className="sewp-vi-statements__logo">
-            <Image
-              src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
-              alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-              width={560}
-              height={448}
-              className="sewp-vi-statements__logo-image"
-            />
-          </span>
-          {aboutSewp.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="sewp-vi-statements__intro">
-              {paragraph}
-            </p>
-          ))}
-        </motion.header>
+        <h2 id="sewp-vi-statements-heading" className="sr-only">
+          NASA SEWP VI Contract Information
+        </h2>
+
+        <NasaSewpViContactInformationBanner banner={contactBanner} />
 
         <motion.div className="sewp-vi-statements__layout" variants={itemVariants} transition={itemTransition}>
           <aside className="sewp-vi-statements__sidebar">

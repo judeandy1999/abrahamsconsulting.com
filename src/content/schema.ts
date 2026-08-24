@@ -95,9 +95,7 @@ export const siteContentSchema = z.object({
     headline: z.string().min(1, "NASA SEWP banner headline is required"),
     description: z.string().min(1, "NASA SEWP banner description is required"),
     ctaLabel: z.string().min(1, "NASA SEWP banner CTA label is required"),
-    href: z.string().min(1, "NASA SEWP banner link is required"),
-    imageSrc: z.string().min(1, "NASA SEWP banner image source is required"),
-    imageAlt: z.string().min(1, "NASA SEWP banner image alt text is required")
+    href: z.string().min(1, "NASA SEWP banner link is required")
   }),
   navigation: z.array(navLinkSchema).min(1, "At least one navigation link is required"),
   homeHero: z.object({
@@ -458,10 +456,10 @@ export const nasaSewpViPageSchema = z.object({
     eyebrow: z.string().min(1),
     title: z.string().min(1),
     subtitle: z.string().min(1),
-    description: z.string().min(1),
-    contractNumber: z.string().min(1),
-    category: z.string().min(1),
-    capabilityStatementCtaLabel: z.string().min(1)
+    descriptions: z.array(z.string().min(1)).min(1),
+    capabilityStatementCtaLabel: z.string().min(1),
+    capabilityStatementHref: z.string().min(1),
+    capabilityStatementFileName: z.string().min(1)
   }),
   contractOverview: z.object({
     eyebrow: z.string().min(1),
@@ -489,10 +487,55 @@ export const nasaSewpViPageSchema = z.object({
       )
       .length(10)
   }),
-  aboutSewp: z.object({
-    eyebrow: z.string().min(1),
+  inScopeForSewpVi: z.object({
     title: z.string().min(1),
-    paragraphs: z.array(z.string().min(1)).min(1)
+    paragraphs: z.array(z.string().min(1)).min(1),
+    scopeReview: z.object({
+      prefix: z.string().min(1),
+      email: z.string().email(),
+      href: z.string().min(1),
+      suffix: z.string()
+    }),
+    categoriesIntro: z.string().min(1),
+    categories: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          label: z.string().min(1)
+        })
+      )
+      .length(3),
+    categoryCards: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          code: z.string().min(1),
+          title: z.string().min(1),
+          variant: z.enum(["a", "b", "c"])
+        })
+      )
+      .length(3)
+  }),
+  contactInformationBanner: z.object({
+    title: z.string().min(1),
+    companyPocLabel: z.string().min(1),
+    contacts: z
+      .array(
+        z.object({
+          id: z.string().min(1),
+          heading: z.string().min(1),
+          name: z.string().min(1).optional(),
+          role: z.string().min(1).optional(),
+          phone: z.string().min(1).optional(),
+          phoneHref: z.string().min(1).optional(),
+          email: z.string().min(1).optional(),
+          emailHref: z.string().min(1).optional()
+        })
+      )
+      .min(1),
+    footerText: z.string().min(1),
+    footerLinkLabel: z.string().min(1),
+    footerLinkHref: z.string().url()
   }),
   aboutCompany: z.object({
     eyebrow: z.string().min(1),
@@ -764,6 +807,9 @@ export const nasaSewpViPageSchema = z.object({
             "itil",
             "omnia-partners",
             "mwbe",
+            "nys-mwbe",
+            "new-jersey-mwbe",
+            "georgia-sbsd-mwbe",
             "dbe",
             "maryland-mbe",
             "maryland-sbr",
@@ -773,7 +819,11 @@ export const nasaSewpViPageSchema = z.object({
           label: z.string().min(1)
         })
       )
-      .min(8)
+      .min(8),
+    cta: z.object({
+      label: z.string().min(1),
+      href: z.string().min(1)
+    })
   }),
   resources: z.object({
     title: z.string().min(1),

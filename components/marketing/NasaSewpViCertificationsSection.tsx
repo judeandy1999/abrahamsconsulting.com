@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
 import { NasaSewpViCertificationIcon } from "./NasaSewpViCertificationIcon";
-import { NasaSewpViMwbeCertCard } from "./NasaSewpViMwbeCertCard";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViCertificationsSectionProps = {
@@ -17,35 +17,42 @@ export function NasaSewpViCertificationsSection({
 }: NasaSewpViCertificationsSectionProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
 
+  const cta = (
+    <div className="sewp-vi-certifications__cta-wrap">
+      <Link href={section.cta.href} className="btn btn--primary sewp-vi-certifications__cta">
+        {section.cta.label}
+      </Link>
+    </div>
+  );
+
   const list = (
-    <motion.ul
-      className="sewp-vi-certifications__list"
-      variants={containerVariants}
-      initial={embedded ? "visible" : undefined}
-      animate={embedded ? "visible" : undefined}
-    >
-      {section.items.map((item) => (
-        <motion.li
-          key={item.id}
-          className={`sewp-vi-certifications__item${item.id === "mwbe" ? " sewp-vi-certifications__item--mwbe" : ""}`}
-          variants={itemVariants}
-          transition={itemTransition}
-          initial={embedded ? "visible" : undefined}
-          animate={embedded ? "visible" : undefined}
-        >
-          {item.id === "mwbe" ? (
-            <NasaSewpViMwbeCertCard label={item.label} />
-          ) : (
+    <>
+      <motion.ul
+        className="sewp-vi-certifications__list"
+        variants={containerVariants}
+        initial={embedded ? "visible" : undefined}
+        animate={embedded ? "visible" : undefined}
+      >
+        {section.items.map((item) => (
+          <motion.li
+            key={item.id}
+            className="sewp-vi-certifications__item"
+            variants={itemVariants}
+            transition={itemTransition}
+            initial={embedded ? "visible" : undefined}
+            animate={embedded ? "visible" : undefined}
+          >
             <article className="sewp-vi-certifications__card">
               <span className="sewp-vi-certifications__icon" aria-hidden="true">
                 <NasaSewpViCertificationIcon name={item.icon} />
               </span>
               <h3 className="sewp-vi-certifications__label">{item.label}</h3>
             </article>
-          )}
-        </motion.li>
-      ))}
-    </motion.ul>
+          </motion.li>
+        ))}
+      </motion.ul>
+      {cta}
+    </>
   );
 
   if (embedded) {

@@ -19,9 +19,9 @@ export function NasaSewpViCertificationIcon({ name }: NasaSewpViCertificationIco
         <Image
           src={NASA_SEWP_VI_CERTIFICATION_LOGOS.nasa}
           alt=""
-          width={40}
-          height={40}
-          className="sewp-vi-certifications__cert-logo"
+          width={100}
+          height={100}
+          className="sewp-vi-certifications__cert-logo sewp-vi-certifications__cert-logo--nasa"
         />
       );
     case "small-business":
@@ -58,6 +58,36 @@ export function NasaSewpViCertificationIcon({ name }: NasaSewpViCertificationIco
       );
     case "mwbe":
       return <Users {...pillarIconProps} />;
+    case "nys-mwbe":
+      return (
+        <Image
+          src={NASA_SEWP_VI_CERTIFICATION_LOGOS.nysMwbe}
+          alt=""
+          width={48}
+          height={48}
+          className="sewp-vi-certifications__cert-logo"
+        />
+      );
+    case "new-jersey-mwbe":
+      return (
+        <Image
+          src={NASA_SEWP_VI_CERTIFICATION_LOGOS.newJerseyMwbe}
+          alt=""
+          width={48}
+          height={48}
+          className="sewp-vi-certifications__cert-logo"
+        />
+      );
+    case "georgia-sbsd-mwbe":
+      return (
+        <Image
+          src={NASA_SEWP_VI_CERTIFICATION_LOGOS.georgiaSbsdMwbe}
+          alt=""
+          width={48}
+          height={48}
+          className="sewp-vi-certifications__cert-logo"
+        />
+      );
     case "dbe":
       return (
         <Image

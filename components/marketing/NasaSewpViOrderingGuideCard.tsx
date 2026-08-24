@@ -25,33 +25,36 @@ export function NasaSewpViOrderingGuideCard({ section }: NasaSewpViOrderingGuide
 
   return (
     <article className="sewp-vi-ordering-guide" aria-labelledby="sewp-vi-ordering-guide-download-heading">
-      <div className="sewp-vi-ordering-guide__visual">
-        <Image
-          src={download.illustrationSrc}
-          alt={download.illustrationAlt}
-          width={200}
-          height={200}
-          className="sewp-vi-ordering-guide__illustration"
-        />
+      <div className="sewp-vi-ordering-guide__main">
+        <div className="sewp-vi-ordering-guide__visual">
+          <Image
+            src={download.illustrationSrc}
+            alt={download.illustrationAlt}
+            width={200}
+            height={200}
+            className="sewp-vi-ordering-guide__illustration"
+          />
+        </div>
+
+        <div className="sewp-vi-ordering-guide__body">
+          <h3 id="sewp-vi-ordering-guide-download-heading" className="sewp-vi-ordering-guide__title">
+            {download.title}
+          </h3>
+          <p className="sewp-vi-ordering-guide__description">{download.description}</p>
+        </div>
       </div>
 
-      <div className="sewp-vi-ordering-guide__body">
-        <h3 id="sewp-vi-ordering-guide-download-heading" className="sewp-vi-ordering-guide__title">
-          {download.title}
-        </h3>
-        <p className="sewp-vi-ordering-guide__description">{download.description}</p>
+      <dl className="sewp-vi-ordering-guide__meta-item">
+        <dt>{download.versionLabel}</dt>
+        <dd>{download.version}</dd>
+      </dl>
 
-        <dl className="sewp-vi-ordering-guide__meta">
-          <div className="sewp-vi-ordering-guide__meta-row">
-            <dt>{download.versionLabel}</dt>
-            <dd>{download.version}</dd>
-          </div>
-          <div className="sewp-vi-ordering-guide__meta-row">
-            <dt>{download.effectiveDateLabel}</dt>
-            <dd>{download.effectiveDate}</dd>
-          </div>
-        </dl>
+      <dl className="sewp-vi-ordering-guide__meta-item">
+        <dt>{download.effectiveDateLabel}</dt>
+        <dd>{download.effectiveDate}</dd>
+      </dl>
 
+      <div className="sewp-vi-ordering-guide__download">
         <a
           href={download.href}
           className="btn btn--primary sewp-vi-ordering-guide__cta"

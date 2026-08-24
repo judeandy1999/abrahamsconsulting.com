@@ -19,9 +19,6 @@ export const NASA_SEWP_VI_ORDERING_GUIDE = {
 } as const;
 
 export const NASA_SEWP_VI_HERO_ASSETS = {
-  visualImageSrc: "/images/nasa-sewp-vi/hero-visual.webp",
-  visualImageAlt:
-    "Federal agency technology environment representing NASA SEWP VI IT products and solutions",
   nasaLogoSrc: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
   nasaLogoAlt: "NASA SEWP VI official logo — Solutions for Enterprise-Wide Procurement"
 } as const;
@@ -62,26 +59,31 @@ export const NASA_SEWP_VI_CERTIFICATION_LOGOS = {
 export const NASA_SEWP_VI_MWBE_SEALS = [
   {
     id: "nys-mwbe",
+    icon: "nys-mwbe",
     name: "New York State MWBE Certified",
     imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.nysMwbe
   },
   {
     id: "new-jersey-mwbe",
+    icon: "new-jersey-mwbe",
     name: "New Jersey MWBE",
     imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.newJerseyMwbe
   },
   {
     id: "georgia-sbsd-mwbe",
+    icon: "georgia-sbsd-mwbe",
     name: "Georgia SBSD MWBE",
     imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.georgiaSbsdMwbe
   },
   {
     id: "maryland-mbe",
+    icon: "maryland-mbe",
     name: "Maryland MBE Program",
     imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandMbe
   },
   {
     id: "maryland-sbr",
+    icon: "maryland-sbr",
     name: "Maryland SBR Program",
     imageSrc: NASA_SEWP_VI_CERTIFICATION_LOGOS.marylandSbr
   }
@@ -92,11 +94,13 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     eyebrow: "NASA SEWP VI — PRIME CONTRACTOR",
     title: "NASA SEWP VI Prime Contractor",
     subtitle: "Category A – ITC/AV Solutions",
-    description:
-      "Abrahams Consulting LLC provides IT products and related technology solutions through its NASA SEWP VI Prime Contract under Category A – ITC/AV Solutions.",
-    contractNumber: "80TECH26D1658",
-    category: "Category A – ITC/AV Solutions",
-    capabilityStatementCtaLabel: "Download Capability Statement (PDF)"
+    descriptions: [
+      "NASA Solutions for Enterprise-Wide Procurement (SEWP VI) is a Government-Wide Acquisition Contract (GWAC) that provides a streamlined procurement vehicle for IT products and related technology solutions for NASA and U.S. Federal Agencies.",
+      "Abrahams Consulting LLC is a NASA SEWP VI Prime Contractor under Category A – ITC/AV Solutions."
+    ],
+    capabilityStatementCtaLabel: "Download Capability Statement",
+    capabilityStatementHref: NASA_SEWP_VI_DOCUMENTS.capabilityStatement,
+    capabilityStatementFileName: "capability-statement.pdf"
   },
   contractOverview: {
     eyebrow: "NASA SEWP VI — PRIME CONTRACTOR",
@@ -121,13 +125,82 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       { id: "founded", icon: "founded", label: "Founded", value: "2006" }
     ]
   },
-  aboutSewp: {
-    eyebrow: "NASA SEWP VI",
-    title: "About NASA SEWP VI",
+  inScopeForSewpVi: {
+    title: "What's In Scope for SEWP VI?",
     paragraphs: [
-      "NASA Solutions for Enterprise-Wide Procurement (SEWP VI) is a Government-Wide Acquisition Contract (GWAC) that provides a streamlined procurement vehicle for IT products and related technology solutions for NASA and U.S. Federal Agencies.",
-      "Abrahams Consulting LLC is a NASA SEWP VI Prime Contractor under Category A – ITC/AV Solutions."
+      "SEWP is designed to provide a broad suite of Information Technology, Communication and Audio Visual (ITC / AV) solutions and services. Technology is ever-evolving and for that reason SEWP's processes enable our Contract Holders to add new commercial technology and IT services to their contract daily, as requested by our customers. The focus of SEWP is on the full suite of technology offerings that simplify Governmental access and Industry offerings across the entire ITC/AV solutions and services landscape. SEWP is composed of three (3) scope categories detailed below."
+    ],
+    scopeReview: {
+      prefix:
+        "If you would like SEWP to determine if your requirement is within scope of the SEWP VI contract, please send an overview and/or bill of materials (BOM) to ",
+      email: "help@sewp.nasa.gov",
+      href: "mailto:help@sewp.nasa.gov",
+      suffix: " and we will quickly review and provide feedback."
+    },
+    categoriesIntro: "The SEWP Contracts were awarded by scope category, the three categories are:",
+    categories: [
+      { id: "category-a", label: "Category A - ITC/AV Solutions" },
+      { id: "category-b", label: "Category B - Enterprise-Wide ITC/AV Service Solutions" },
+      { id: "category-c", label: "Category C - Mission-Based ITC/AV Service Solutions" }
+    ],
+    categoryCards: [
+      {
+        id: "category-a",
+        code: "Category A",
+        title: "ITC/AV (Information Technology, Communications, and Audio-Visual Solutions)",
+        variant: "a"
+      },
+      {
+        id: "category-b",
+        code: "Category B",
+        title: "Enterprise-Wide ITC/AV Service Solutions",
+        variant: "b"
+      },
+      {
+        id: "category-c",
+        code: "Category C",
+        title: "ITC/AV Mission-Based Services",
+        variant: "c"
+      }
     ]
+  },
+  contactInformationBanner: {
+    title: "Contact Information",
+    companyPocLabel: "Abrahams Consulting LLC POC",
+    contacts: [
+      {
+        id: "sales",
+        heading: "Sales Inquiries",
+        name: "SEWP VI Sales To Receive a Quote",
+        phone: "516-405-2175",
+        phoneHref: "tel:+15164052175",
+        email: "federal.sales@abrahamsconsulting.com",
+        emailHref: "mailto:federal.sales@abrahamsconsulting.com"
+      },
+      {
+        id: "program-manager",
+        heading: "Program Manager",
+        name: "Maybelline Magnet",
+        role: "NASA SEWP VI Program Manager",
+        phone: "(301) 638-8731, ext. 2179",
+        phoneHref: "tel:+13016388731,2179",
+        email: "mmagnet@abrahamsconsulting.com",
+        emailHref: "mailto:mmagnet@abrahamsconsulting.com"
+      },
+      {
+        id: "deputy-program-manager",
+        heading: "Deputy Program Manager",
+        name: "Schella Orcel",
+        role: "NASA SEWP VI Deputy Program Manager",
+        phone: "(202) 869-2101, ext. 2184",
+        phoneHref: "tel:+12028692101,2184",
+        email: "sorcel@abrahamsconsulting.com",
+        emailHref: "mailto:sorcel@abrahamsconsulting.com"
+      }
+    ],
+    footerText: "For more information and additional resources, please visit:",
+    footerLinkLabel: "www.sewp.nasa.gov/sewpvi",
+    footerLinkHref: "https://www.sewp.nasa.gov/sewpvi"
   },
   aboutCompany: {
     eyebrow: "About Us",
@@ -574,8 +647,8 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
         title: "Visit the NASA SEWP Homepage",
         description:
           "Learn more about the NASA Solutions for Enterprise-Wide Procurement (SEWP VI) contract, contract details, news, and valuable resources for federal agencies.",
-        ctaLabel: "Go to sewp.nasa.gov",
-        href: "https://www.sewp.nasa.gov",
+        ctaLabel: "Go to sewp.nasa.gov/sewpvi",
+        href: "https://www.sewp.nasa.gov/sewpvi",
         redirectNote: "You will be redirected to the official NASA SEWP website."
       },
       {
@@ -625,7 +698,11 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
     title: "Certifications & Contract Status",
     items: [
       { id: "nasa-sewp-vi", icon: "nasa-sewp-vi", label: "NASA SEWP VI Prime" },
-      { id: "mwbe", icon: "mwbe", label: "MWBE" },
+      ...NASA_SEWP_VI_MWBE_SEALS.map((seal) => ({
+        id: seal.id,
+        icon: seal.icon,
+        label: seal.name
+      })),
       { id: "small-business", icon: "small-business", label: "Small Business" },
       { id: "iso-9001", icon: "iso-9001", label: "ISO 9001 Certified" },
       { id: "itil", icon: "itil", label: "ITIL Certified" },
@@ -633,7 +710,11 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       { id: "dbe", icon: "dbe", label: "DBE Certified" },
       { id: "sam-gov", icon: "sam-gov", label: "SAM.gov Active" },
       { id: "ariba-network", icon: "ariba-network", label: "Ariba Network" }
-    ]
+    ],
+    cta: {
+      label: "Go to Certifications",
+      href: "/certifications"
+    }
   },
   resources: {
     title: "Resources",

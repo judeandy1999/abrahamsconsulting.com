@@ -3,48 +3,19 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import type { NasaSewpViPageContent } from "../../src/content/schema";
-import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { accessibleExternalPdfLinkLabel, withPdfLinkLabel } from "../../lib/accessibility/accessible-external-label";
+import { NASA_SEWP_VI_HERO_ASSETS } from "../../src/content/nasa-sewp-vi";
 import { useMarketingMotionConfig } from "./marketing-motion";
 
 type NasaSewpViHeroProps = {
   hero: NasaSewpViPageContent["hero"];
-  capabilityStatementHref: string;
 };
-
-function IconDocumentCheck() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M8 3.75h5.17L17 7.58V20.25A1.75 1.75 0 0 1 15.25 22H8.75A1.75 1.75 0 0 1 7 20.25V5.5A1.75 1.75 0 0 1 8.75 3.75H8Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path d="M13 3.75V8.25H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="m9.5 13.25 1.5 1.5 3.5-3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function IconTag() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M4.75 12.75V6.5A1.75 1.75 0 0 1 6.5 4.75H12.75L19.25 11.25 12.75 17.75 6.5 11.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <circle cx="9.25" cy="9.25" r="1.1" fill="currentColor" />
-    </svg>
-  );
-}
 
 function IconDownload() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
-        d="M12 4.5v9.75m0 0 3.75-3.75M12 14.25l-3.75-3.75M5.25 18.75h13.5"
+        d="M12 3v10m0 0 4-4m-4 4-4-4M5 19h14"
         stroke="currentColor"
         strokeWidth="1.75"
         strokeLinecap="round"
@@ -54,12 +25,12 @@ function IconDownload() {
   );
 }
 
-export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHeroProps) {
+export function NasaSewpViHero({ hero }: NasaSewpViHeroProps) {
   const { containerVariants, itemVariants, itemTransition, viewport } = useMarketingMotionConfig();
 
   return (
     <section className="sewp-vi-hero" aria-labelledby="sewp-vi-hero-heading">
-      <div className="sewp-vi-hero__content-column">
+      <div className="sewp-vi-hero__inner">
         <motion.div
           className="sewp-vi-hero__content"
           variants={containerVariants}
@@ -81,36 +52,17 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
             </span>
           </motion.h1>
 
-          <motion.p className="sewp-vi-hero__description" variants={itemVariants} transition={itemTransition}>
-            {hero.description}
-          </motion.p>
+          {hero.descriptions.map((paragraph) => (
+            <p key={paragraph} className="sewp-vi-hero__description">
+              {paragraph}
+            </p>
+          ))}
 
-          <motion.div className="sewp-vi-hero__meta" variants={itemVariants} transition={itemTransition}>
-            <article className="sewp-vi-hero__meta-card">
-              <span className="sewp-vi-hero__meta-icon" aria-hidden="true">
-                <IconDocumentCheck />
-              </span>
-              <div className="sewp-vi-hero__meta-copy">
-                <p className="sewp-vi-hero__meta-label">Contract Number</p>
-                <p className="sewp-vi-hero__meta-value">{hero.contractNumber}</p>
-              </div>
-            </article>
-            <article className="sewp-vi-hero__meta-card">
-              <span className="sewp-vi-hero__meta-icon" aria-hidden="true">
-                <IconTag />
-              </span>
-              <div className="sewp-vi-hero__meta-copy">
-                <p className="sewp-vi-hero__meta-label">Category</p>
-                <p className="sewp-vi-hero__meta-value">{hero.category}</p>
-              </div>
-            </article>
-          </motion.div>
-
-          <motion.div className="sewp-vi-hero__actions" variants={itemVariants} transition={itemTransition}>
+          <div className="sewp-vi-hero__actions">
             <a
-              href={capabilityStatementHref}
+              href={hero.capabilityStatementHref}
               className="sewp-vi-hero__cta"
-              download
+              download={hero.capabilityStatementFileName}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={accessibleExternalPdfLinkLabel(hero.capabilityStatementCtaLabel)}
@@ -118,31 +70,19 @@ export function NasaSewpViHero({ hero, capabilityStatementHref }: NasaSewpViHero
               <IconDownload />
               {withPdfLinkLabel(hero.capabilityStatementCtaLabel)}
             </a>
-          </motion.div>
+          </div>
         </motion.div>
-      </div>
 
-      <div className="sewp-vi-hero__visual">
-        <div className="sewp-vi-hero__visual-accent" aria-hidden="true" />
-        <div className="sewp-vi-hero__visual-frame">
-          <Image
-            src={NASA_SEWP_VI_HERO_ASSETS.visualImageSrc}
-            alt={NASA_SEWP_VI_HERO_ASSETS.visualImageAlt}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="sewp-vi-hero__image"
-          />
-        </div>
-        <span className="sewp-vi-hero__nasa-logo">
+        <div className="sewp-vi-hero__visual">
           <Image
             src={NASA_SEWP_VI_HERO_ASSETS.nasaLogoSrc}
             alt={NASA_SEWP_VI_HERO_ASSETS.nasaLogoAlt}
-            width={200}
-            height={160}
+            width={560}
+            height={448}
+            priority
             className="sewp-vi-hero__nasa-logo-image"
           />
-        </span>
+        </div>
       </div>
     </section>
   );

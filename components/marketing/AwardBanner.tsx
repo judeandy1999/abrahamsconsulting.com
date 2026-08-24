@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { SiteContent } from "../../src/content/schema";
 import { AwardBannerBadge } from "./AwardBannerBadge";
@@ -52,15 +51,8 @@ export function AwardBanner({ site }: AwardBannerProps) {
         <div className="award-banner__inner">
           <article className="award-banner__column award-banner__column--nasa">
             <div className="award-banner__lead">
-              <div className="award-banner__badge award-banner__badge--nasa" aria-hidden="true">
-                <Image
-                  src={nasaSewpBanner.imageSrc}
-                  alt=""
-                  width={88}
-                  height={72}
-                  className="award-banner__badge-image award-banner__badge-image--nasa"
-                  priority
-                />
+              <div className="award-banner__badge" aria-hidden="true">
+                <AwardBannerBadge className="award-banner__badge-icon" />
               </div>
 
               <div className="award-banner__copy">

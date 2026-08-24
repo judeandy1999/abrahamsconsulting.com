@@ -13,12 +13,11 @@ type NasaSewpViBodyProps = {
 export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
   return (
     <>
-      <NasaSewpViElectronicOrderingGuideSection section={content.electronicOrderingGuide} />
-
       <NasaSewpViStatementsTableSection
+        contactBanner={content.contactInformationBanner}
         contractOverview={content.contractOverview}
+        inScopeForSewpVi={content.inScopeForSewpVi}
         gwac={content.gwacIdentificationStatement}
-        aboutSewp={content.aboutSewp}
         fairOpportunity={content.fairOpportunityClause}
         postDeliverySupport={content.postDeliverySupport}
         orderTroubleshooting={content.orderTroubleshooting}
@@ -26,6 +25,8 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         externalResources={content.externalResourceLinks}
         obtainQuote={content.obtainQuote}
       />
+
+      <NasaSewpViElectronicOrderingGuideSection section={content.electronicOrderingGuide} />
 
       <NasaSewpViCompanyHubSection
         aboutCompany={content.aboutCompany}

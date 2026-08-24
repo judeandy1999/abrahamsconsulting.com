@@ -41,9 +41,7 @@ export const siteContent: SiteContent = {
     headline: "NASA SEWP VI Prime Contractor",
     description: "Category A – ITC/AV Solutions. Explore contract details and federal support.",
     ctaLabel: "View NASA SEWP VI",
-    href: "/nasa-sewp-vi",
-    imageSrc: "/images/nasa-sewp-vi/nasa-sewp-vi-official-logo.png",
-    imageAlt: "NASA SEWP VI official contract holder logo"
+    href: "/nasa-sewp-vi"
   },
   utilityLinks: [
     {
@@ -110,7 +108,7 @@ export const siteContent: SiteContent = {
   },
   certificationStrip: {
     title: "TRUSTED CERTIFICATIONS & GOVERNMENT PARTNERSHIPS",
-    imageSrc: "/images/abrahams-certifications-final-1.png",
+    imageSrc: "/images/cert-homepage.png",
     imageAlt:
       "Certification and partnership logos: NQA ISO 9001, SBA 8(a) Certified, Empire State Development MWBE, ITIL, and OMNIA Partners"
   },

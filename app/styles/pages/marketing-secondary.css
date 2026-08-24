@@ -411,8 +411,14 @@
 }
 
 .marketing-main--sewp-vi img {
-  max-width: 100%;
+  max-width: 24rem;
   height: auto;
+}
+
+@media (min-width: 1025px) {
+  .marketing-main--sewp-vi img {
+    max-width: 100%;
+  }
 }
 
 /* Executive recruiting page */
@@ -2861,7 +2867,7 @@ body.nav-menu-open {
     gap: 2rem;
   }
 
-  .sewp-vi-hero__content-column {
+  .sewp-vi-hero__inner {
     padding: 2.5rem 1.75rem;
   }
 
