@@ -1954,6 +1954,43 @@
   padding: 0.65rem 0 0.65rem 1.5rem;
 }
 
+.sewp-vi-statements__naics {
+  padding: 1.1rem 1.15rem;
+  border: 1px solid rgba(4, 37, 81, 0.12);
+  border-radius: 0.75rem;
+  background: rgba(0, 102, 175, 0.03);
+}
+
+.sewp-vi-statements__naics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.75rem, 1fr));
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sewp-vi-statements__naics-item {
+  min-width: 0;
+}
+
+.sewp-vi-statements__naics-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(4, 37, 81, 0.14);
+  border-radius: 0.35rem;
+  background: var(--color-white);
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.04);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+  color: #042551;
+}
+
 .sewp-vi-statements__scope-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

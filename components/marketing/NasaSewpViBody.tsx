@@ -18,6 +18,7 @@ export function NasaSewpViBody({ content }: NasaSewpViBodyProps) {
         contractOverview={content.contractOverview}
         inScopeForSewpVi={content.inScopeForSewpVi}
         gwac={content.gwacIdentificationStatement}
+        naicsCodes={content.naicsCodes}
         fairOpportunity={content.fairOpportunityClause}
         postDeliverySupport={content.postDeliverySupport}
         orderTroubleshooting={content.orderTroubleshooting}

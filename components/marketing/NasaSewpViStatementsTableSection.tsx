@@ -14,6 +14,7 @@ type NasaSewpViStatementsTableSectionProps = {
   contractOverview: NasaSewpViPageContent["contractOverview"];
   inScopeForSewpVi: NasaSewpViPageContent["inScopeForSewpVi"];
   gwac: NasaSewpViPageContent["gwacIdentificationStatement"];
+  naicsCodes: NasaSewpViPageContent["naicsCodes"];
   fairOpportunity: NasaSewpViPageContent["fairOpportunityClause"];
   postDeliverySupport: NasaSewpViPageContent["postDeliverySupport"];
   orderTroubleshooting: NasaSewpViPageContent["orderTroubleshooting"];
@@ -27,6 +28,7 @@ type TabId =
   | "sewp-vi-scope"
   | "obtain-quote"
   | "gwac"
+  | "naics-codes"
   | "fair-opportunity"
   | "post-delivery"
   | "order-troubleshooting"
@@ -43,6 +45,7 @@ const TABS: TabDefinition[] = [
   { id: "sewp-vi-scope", label: "What's In Scope for SEWP VI?" },
   { id: "obtain-quote", label: "How to Obtain a Quote" },
   { id: "gwac", label: "Official GWAC Identification Statement" },
+  { id: "naics-codes", label: "NAICS Codes" },
   { id: "fair-opportunity", label: "Fair Opportunity" },
   { id: "post-delivery", label: "Post-Delivery Support Information" },
   { id: "order-troubleshooting", label: "Order Troubleshooting Information" },
@@ -191,6 +194,7 @@ export function NasaSewpViStatementsTableSection({
   contractOverview,
   inScopeForSewpVi,
   gwac,
+  naicsCodes,
   fairOpportunity,
   postDeliverySupport,
   orderTroubleshooting,
@@ -296,6 +300,19 @@ export function NasaSewpViStatementsTableSection({
         return (
           <div>
             <p className="sewp-vi-statements__paragraph">{gwac.statement}</p>
+          </div>
+        );
+
+      case "naics-codes":
+        return (
+          <div className="sewp-vi-statements__naics">
+            <ul className="sewp-vi-statements__naics-grid" aria-label={`${naicsCodes.codes.length} NAICS codes`}>
+              {naicsCodes.codes.map((code) => (
+                <li key={code} className="sewp-vi-statements__naics-item">
+                  <span className="sewp-vi-statements__naics-chip">{code}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         );
 

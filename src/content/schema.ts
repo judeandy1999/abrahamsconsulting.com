@@ -656,6 +656,12 @@ export const nasaSewpViPageSchema = z.object({
     title: z.string().min(1),
     statement: z.string().min(1)
   }),
+  naicsCodes: z.object({
+    title: z.string().min(1),
+    codes: z
+      .array(z.string().regex(/^\d{6}$/, "NAICS code must be a 6-digit number"))
+      .min(1)
+  }),
   fairOpportunityClause: z.object({
     title: z.string().min(1),
     paragraphs: z.array(z.string().min(1)).min(1)
