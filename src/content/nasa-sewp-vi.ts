@@ -14,7 +14,7 @@ export const NASA_SEWP_VI_DOCUMENTS = {
 export const NASA_SEWP_VI_ORDERING_GUIDE = {
   version: "1",
   versionDisplay: "Version 1",
-  effectiveDate: "November 1, 2026",
+  effectiveDate: "August 25, 2026",
   fileName: "Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf"
 } as const;
 
