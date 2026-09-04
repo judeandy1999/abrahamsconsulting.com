@@ -1,4 +1,6 @@
 import "../styles/marketing-responsive.css";
+import "../styles/pages/events.css";
+import { MarketingEventSplash } from "../../components/marketing/MarketingEventSplash";
 import { MarketingFooter } from "../../components/marketing/MarketingFooter";
 import { MarketingHeader } from "../../components/marketing/MarketingHeader";
 import { JsonLdScript } from "../../components/seo/JsonLdScript";
@@ -9,7 +11,7 @@ type MarketingLayoutProps = Readonly<{
 }>;
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
-  const { site } = loadMarketingContent();
+  const { site, eventsPage } = loadMarketingContent();
 
   return (
     <>
@@ -25,6 +27,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
       <MarketingHeader site={site} />
       {children}
       <MarketingFooter site={site} />
+      <MarketingEventSplash splash={eventsPage.splash} />
     </>
   );
 }

@@ -77,6 +77,10 @@ export const siteContent: SiteContent = {
       href: "/consulting-services"
     },
     {
+      label: "Events",
+      href: "/events"
+    },
+    {
       // TODO: Future work may replace CMC Engage branding with Abrahams Consulting branding.
       label: "Manufacturer Store",
       href: "https://cmcengage.com/6702"
@@ -125,7 +129,6 @@ export const siteContent: SiteContent = {
       { id: "commvault", name: "Commvault", imageSrc: "/images/companies/commvault-150x150.webp" },
       { id: "aruba", name: "Aruba", imageSrc: "/images/companies/arubaLogo.svg" },
       { id: "hp", name: "HP", imageSrc: "/images/companies/hpLogo-150x150.webp" },
-      { id: "accellion", name: "Accellion", imageSrc: "/images/companies/Accellion-Logo-150x150.webp" },
       { id: "dell", name: "Dell", imageSrc: "/images/companies/Dell-150x150.webp" },
       { id: "vmware", name: "VMware", imageSrc: "/images/companies/VmWare-150x150.webp" },
       { id: "red-hat", name: "Red Hat", imageSrc: "/images/companies/redhatlogo00.webp" },

@@ -1235,6 +1235,66 @@ export const executiveRecruitingPageSchema = z.object({
   })
 });
 
+const eventDetailSchema = z.object({
+  label: z.string().min(1, "Event detail label is required"),
+  value: z.string().min(1, "Event detail value is required")
+});
+
+const eventHighlightSchema = z.object({
+  title: z.string().min(1, "Event highlight title is required"),
+  description: z.string().min(1, "Event highlight description is required")
+});
+
+const eventModalSchema = z.object({
+  imageSrc: z.string().min(1, "Event modal image source is required"),
+  imageAlt: z.string().min(1, "Event modal image alt text is required"),
+  summary: z.string().min(1, "Event modal summary is required"),
+  details: z.array(eventDetailSchema).min(1, "Event modal requires at least one detail"),
+  highlights: z.array(eventHighlightSchema).min(1, "Event modal requires at least one highlight"),
+  ctaHref: z.string().min(1, "Event modal CTA href is required"),
+  ctaLabel: z.string().min(1, "Event modal CTA label is required")
+});
+
+const eventItemSchema = z.object({
+  id: z.string().min(1, "Event id is required"),
+  status: z.enum(["upcoming", "past"]),
+  title: z.string().min(1, "Event title is required"),
+  subtitle: z.string().min(1, "Event subtitle is required"),
+  eventType: z.string().min(1, "Event type is required"),
+  date: z.string().min(1, "Event date is required"),
+  time: z.string().min(1, "Event time is required"),
+  location: z.string().min(1, "Event location is required"),
+  partner: z.string().min(1, "Event partner is required"),
+  cardImageSrc: z.string().min(1, "Event card image source is required"),
+  cardImageAlt: z.string().min(1, "Event card image alt text is required"),
+  modal: eventModalSchema
+});
+
+export const eventsPageSchema = z.object({
+  hero: z.object({
+    title: z.string().min(1, "Events hero title is required"),
+    description: z.string().min(1, "Events hero description is required")
+  }),
+  splash: z.object({
+    enabled: z.boolean(),
+    imageSrc: z.string().min(1, "Event splash image source is required"),
+    imageAlt: z.string().min(1, "Event splash image alt text is required"),
+    ctaLabel: z.string().min(1, "Event splash CTA label is required"),
+    ctaHref: z.string().min(1, "Event splash CTA href is required")
+  }),
+  upcomingSection: z.object({
+    title: z.string().min(1, "Upcoming events section title is required"),
+    emptyMessage: z.string().min(1, "Upcoming events empty message is required")
+  }),
+  pastSection: z.object({
+    title: z.string().min(1, "Past events section title is required"),
+    emptyMessage: z.string().min(1, "Past events empty message is required")
+  }),
+  knowMoreLabel: z.string().min(1, "Events know more label is required"),
+  registerCtaLabel: z.string().min(1, "Events register CTA label is required"),
+  events: z.array(eventItemSchema).min(1, "At least one event is required")
+});
+
 export const marketingContentSchema = z.object({
   site: siteContentSchema,
   services: z.array(serviceItemSchema).min(1, "At least one service is required"),
@@ -1249,7 +1309,8 @@ export const marketingContentSchema = z.object({
   capabilitiesStatementServicesPage: capabilitiesStatementServicesPageSchema,
   capabilitiesStatementProductsPage: capabilitiesStatementProductsPageSchema,
   capabilitiesStatementFederalPage: capabilitiesStatementFederalPageSchema,
-  nasaSewpViPage: nasaSewpViPageSchema
+  nasaSewpViPage: nasaSewpViPageSchema,
+  eventsPage: eventsPageSchema
 });
 
 export type HubspotFormConfig = z.infer<typeof hubspotFormSchema>;
@@ -1277,5 +1338,7 @@ export type CapabilitiesStatementServicesPageContent = z.infer<typeof capabiliti
 export type CapabilitiesStatementProductsPageContent = z.infer<typeof capabilitiesStatementProductsPageSchema>;
 export type CapabilitiesStatementFederalPageContent = z.infer<typeof capabilitiesStatementFederalPageSchema>;
 export type NasaSewpViPageContent = z.infer<typeof nasaSewpViPageSchema>;
+export type EventsPageContent = z.infer<typeof eventsPageSchema>;
+export type EventItem = z.infer<typeof eventItemSchema>;
 export type MarketingContent = z.infer<typeof marketingContentSchema>;
 export type LaunchPageSeo = z.infer<typeof launchPageSeoSchema>;

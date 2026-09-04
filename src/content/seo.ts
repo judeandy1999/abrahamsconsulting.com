@@ -93,6 +93,13 @@ export const launchPageSeoContent = [
       "Review certifications, qualification signals, case snapshots, and partner indicators before engaging Abrahams Consulting."
   },
   {
+    routeKey: "events",
+    path: "/events",
+    title: "Events",
+    description:
+      "Explore upcoming and past Abrahams Consulting events, including technical exchange meetings and partner-led technology briefings."
+  },
+  {
     routeKey: "blog",
     path: "/blog",
     title: "Blog | Abrahams Consulting",

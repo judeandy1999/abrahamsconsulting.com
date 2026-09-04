@@ -5,6 +5,7 @@ import { certificationsPageContent } from "../../src/content/certifications";
 import { clientsPageContent } from "../../src/content/clients";
 import { contractsContent, contractsPageContent } from "../../src/content/contracts";
 import { consultingServicesPageContent } from "../../src/content/consulting-services";
+import { eventsPageContent } from "../../src/content/events";
 import { executiveRecruitingPageContent } from "../../src/content/executive-recruiting";
 import { marketingContentSchema, type MarketingContent } from "../../src/content/schema";
 import { loadNasaSewpViPageContent } from "./nasa-sewp-vi-page";
@@ -28,6 +29,7 @@ export function loadMarketingContent(): MarketingContent {
     capabilitiesStatementServicesPage: capabilitiesStatementServicesPageContent,
     capabilitiesStatementProductsPage: capabilitiesStatementProductsPageContent,
     capabilitiesStatementFederalPage: capabilitiesStatementFederalPageContent,
-    nasaSewpViPage: loadNasaSewpViPageContent()
+    nasaSewpViPage: loadNasaSewpViPageContent(),
+    eventsPage: eventsPageContent
   });
 }

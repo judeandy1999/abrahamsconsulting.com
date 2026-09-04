@@ -184,6 +184,7 @@ async function validateProjectContent() {
       "src/content/capabilities-statement-federal.ts"
     );
     const nasaSewpViModule = await importTsDataModule("src/content/nasa-sewp-vi.ts");
+    const eventsModule = await importTsDataModule("src/content/events.ts");
 
     const content = {
       site: siteModule.siteContent,
@@ -199,7 +200,8 @@ async function validateProjectContent() {
       capabilitiesStatementServicesPage: capabilitiesServicesModule.capabilitiesStatementServicesPageContent,
       capabilitiesStatementProductsPage: capabilitiesProductsModule.capabilitiesStatementProductsPageContent,
       capabilitiesStatementFederalPage: capabilitiesFederalModule.capabilitiesStatementFederalPageContent,
-      nasaSewpViPage: nasaSewpViModule.nasaSewpViPageContent
+      nasaSewpViPage: nasaSewpViModule.nasaSewpViPageContent,
+      eventsPage: eventsModule.eventsPageContent
     };
 
     const result = marketingContentSchema.safeParse(content);
