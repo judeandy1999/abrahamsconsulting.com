@@ -14,7 +14,7 @@ export const eventsPageContent: EventsPageContent = {
       "Join Abrahams Consulting for technical exchange meetings, product briefings, and partner-led sessions designed for enterprise and government technology leaders."
   },
   splash: {
-    enabled: true,
+    enabled: false,
     imageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,
     imageAlt:
       "Abrahams Consulting and HP Technical Exchange Meeting — AI Supercomputing in the Palm of Your Hand, September 17, 2026",
