@@ -4,8 +4,9 @@ export const EVENTS_IMAGES = {
   hpZgxNanoWebinar: "/images/events/hp-zgx-nano-webinar.png"
 } as const;
 
-export const HP_ZGX_NANO_WEBINAR_REGISTRATION_URL =
-  "https://us02web.zoom.us/webinar/register/WN_0BiKWclGSwSTaXRek8fyxA#/registration";
+export const HP_ZGX_NANO_WEBINAR_SLUG = "hp-zgx-nano-webinar-sep-2026";
+
+export const HP_ZGX_NANO_WEBINAR_RECORDING_URL = "https://youtu.be/UpUFdUt5Feg";
 
 export const eventsPageContent: EventsPageContent = {
   hero: {
@@ -18,8 +19,8 @@ export const eventsPageContent: EventsPageContent = {
     imageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,
     imageAlt:
       "Abrahams Consulting and HP Technical Exchange Meeting — AI Supercomputing in the Palm of Your Hand, September 17, 2026",
-    ctaLabel: "Reserve Your Free Spot Now",
-    ctaHref: HP_ZGX_NANO_WEBINAR_REGISTRATION_URL
+    ctaLabel: "View Recording",
+    ctaHref: `/events/${HP_ZGX_NANO_WEBINAR_SLUG}`
   },
   upcomingSection: {
     title: "Upcoming Events",
@@ -30,11 +31,12 @@ export const eventsPageContent: EventsPageContent = {
     emptyMessage: "No past events to display yet."
   },
   knowMoreLabel: "Learn More",
-  registerCtaLabel: "Reserve Your Free Spot Now",
+  backToEventsLabel: "Back to Events",
   events: [
     {
       id: "hp-zgx-nano-webinar-sep-2026",
-      status: "upcoming",
+      slug: HP_ZGX_NANO_WEBINAR_SLUG,
+      status: "past",
       title: "AI Supercomputing in the Palm of Your Hand",
       subtitle: "Exploring the Revolutionary HP ZGX Nano AI Station",
       eventType: "Technical Exchange Meeting",
@@ -45,6 +47,12 @@ export const eventsPageContent: EventsPageContent = {
       cardImageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,
       cardImageAlt:
         "Abrahams Consulting and HP Technical Exchange Meeting — HP ZGX Nano AI Station webinar on September 17, 2026",
+      recording: {
+        videoUrl: HP_ZGX_NANO_WEBINAR_RECORDING_URL,
+        videoTitle: "AI Supercomputing in the Palm of Your Hand — HP ZGX Nano AI Station",
+        description:
+          "Watch the recorded Technical Exchange Meeting with Abrahams Consulting and HP on the HP ZGX Nano G1n — ultra-compact on-prem AI supercomputing built for today's most demanding workloads."
+      },
       modal: {
         imageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,
         imageAlt:
@@ -74,8 +82,8 @@ export const eventsPageContent: EventsPageContent = {
               "The HP ZGX Nano G1n delivers desktop power in a device that fits in the palm of your hand."
           }
         ],
-        ctaHref: HP_ZGX_NANO_WEBINAR_REGISTRATION_URL,
-        ctaLabel: "Reserve Your Free Spot Now"
+        ctaHref: `/events/${HP_ZGX_NANO_WEBINAR_SLUG}`,
+        ctaLabel: "View Recording"
       }
     }
   ]

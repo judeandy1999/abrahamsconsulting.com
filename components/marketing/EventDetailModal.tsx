@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import type { EventItem } from "../../src/content/schema";
+import { isExternalHref } from "../../lib/navigation/is-external-href";
 import { IconArrowRight } from "./NavIcons";
 
 type EventDetailModalProps = {
@@ -100,8 +101,9 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
           <Link
             href={event.modal.ctaHref}
             className="btn btn--red event-detail-modal__cta"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(isExternalHref(event.modal.ctaHref)
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
           >
             {event.modal.ctaLabel}
             <IconArrowRight className="btn__icon" />

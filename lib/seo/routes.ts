@@ -9,11 +9,14 @@ export type LaunchRouteEntry = {
 };
 
 export function getLaunchRoutePaths(): string[] {
-  const { services } = loadMarketingContent();
+  const { services, eventsPage } = loadMarketingContent();
   const staticPaths = launchPageSeoContent.map((entry) => entry.path);
   const servicePaths = services.map((service) => `/services/${service.slug}`);
+  const eventRecordingPaths = eventsPage.events
+    .filter((event) => event.recording)
+    .map((event) => `/events/${event.slug}`);
 
-  return [...staticPaths, ...servicePaths];
+  return [...staticPaths, ...servicePaths, ...eventRecordingPaths];
 }
 
 export function getLaunchSitemapEntries(): LaunchRouteEntry[] {

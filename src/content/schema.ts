@@ -1255,8 +1255,15 @@ const eventModalSchema = z.object({
   ctaLabel: z.string().min(1, "Event modal CTA label is required")
 });
 
+const eventRecordingSchema = z.object({
+  videoUrl: z.string().url("Event recording video URL must be valid"),
+  videoTitle: z.string().min(1, "Event recording video title is required"),
+  description: z.string().min(1, "Event recording page description is required")
+});
+
 const eventItemSchema = z.object({
   id: z.string().min(1, "Event id is required"),
+  slug: z.string().min(1, "Event slug is required"),
   status: z.enum(["upcoming", "past"]),
   title: z.string().min(1, "Event title is required"),
   subtitle: z.string().min(1, "Event subtitle is required"),
@@ -1267,7 +1274,8 @@ const eventItemSchema = z.object({
   partner: z.string().min(1, "Event partner is required"),
   cardImageSrc: z.string().min(1, "Event card image source is required"),
   cardImageAlt: z.string().min(1, "Event card image alt text is required"),
-  modal: eventModalSchema
+  modal: eventModalSchema,
+  recording: eventRecordingSchema.optional()
 });
 
 export const eventsPageSchema = z.object({
@@ -1291,7 +1299,7 @@ export const eventsPageSchema = z.object({
     emptyMessage: z.string().min(1, "Past events empty message is required")
   }),
   knowMoreLabel: z.string().min(1, "Events know more label is required"),
-  registerCtaLabel: z.string().min(1, "Events register CTA label is required"),
+  backToEventsLabel: z.string().min(1, "Events back link label is required"),
   events: z.array(eventItemSchema).min(1, "At least one event is required")
 });
 

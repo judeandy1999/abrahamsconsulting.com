@@ -34,3 +34,18 @@ export function getServicePageSeo(slug: string): MarketingMetadataOptions | unde
     path: `/services/${service.slug}`
   };
 }
+
+export function getEventRecordingPageSeo(slug: string): MarketingMetadataOptions | undefined {
+  const { eventsPage } = loadMarketingContent();
+  const event = eventsPage.events.find((item) => item.slug === slug && item.recording);
+
+  if (!event?.recording) {
+    return undefined;
+  }
+
+  return {
+    title: `${event.title} | Events`,
+    description: event.recording.description,
+    path: `/events/${event.slug}`
+  };
+}
