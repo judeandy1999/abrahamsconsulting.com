@@ -51,7 +51,19 @@ export const eventsPageContent: EventsPageContent = {
         videoUrl: HP_ZGX_NANO_WEBINAR_RECORDING_URL,
         videoTitle: "AI Supercomputing in the Palm of Your Hand — HP ZGX Nano AI Station",
         description:
-          "Watch the recorded Technical Exchange Meeting with Abrahams Consulting and HP on the HP ZGX Nano G1n — ultra-compact on-prem AI supercomputing built for today's most demanding workloads."
+          "Watch the recorded Technical Exchange Meeting with Abrahams Consulting and HP on the HP ZGX Nano G1n — ultra-compact on-prem AI supercomputing built for today's most demanding workloads.",
+        gate: {
+          storageKey: "event-recording-access-hp-zgx-nano-sep-2026",
+          title: "Access the session recording",
+          description:
+            "Complete the form below to unlock the on-demand recording of our Technical Exchange Meeting with HP.",
+          hubspotForm: {
+            portalId: "44647552",
+            formId: "6a96f7c1-feff-49af-9bea-bd6f8756fadf",
+            region: "na1",
+            targetId: "hubspot-event-recording-form"
+          }
+        }
       },
       modal: {
         imageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,

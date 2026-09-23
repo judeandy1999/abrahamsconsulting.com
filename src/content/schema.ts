@@ -1255,10 +1255,18 @@ const eventModalSchema = z.object({
   ctaLabel: z.string().min(1, "Event modal CTA label is required")
 });
 
+const eventRecordingGateSchema = z.object({
+  storageKey: z.string().min(1, "Event recording gate storage key is required"),
+  title: z.string().min(1, "Event recording gate title is required"),
+  description: z.string().min(1, "Event recording gate description is required"),
+  hubspotForm: hubspotFormSchema
+});
+
 const eventRecordingSchema = z.object({
   videoUrl: z.string().url("Event recording video URL must be valid"),
   videoTitle: z.string().min(1, "Event recording video title is required"),
-  description: z.string().min(1, "Event recording page description is required")
+  description: z.string().min(1, "Event recording page description is required"),
+  gate: eventRecordingGateSchema
 });
 
 const eventItemSchema = z.object({

@@ -14,7 +14,7 @@ export const NASA_SEWP_VI_DOCUMENTS = {
 export const NASA_SEWP_VI_ORDERING_GUIDE = {
   version: "1",
   versionDisplay: "Version 1",
-  effectiveDate: "August 25, 2026",
+  effectiveDate: "September 22, 2026",
   fileName: "Abrahams-Consulting-NASA-SEWP-Ordering-Guide-v1.pdf"
 } as const;
 
@@ -190,12 +190,12 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       {
         id: "deputy-program-manager",
         heading: "Deputy Program Manager",
-        name: "Schella Orcel",
+        name: "Jay Dela Piedra",
         role: "NASA SEWP VI Deputy Program Manager",
-        phone: "(202) 869-2101, ext. 2184",
-        phoneHref: "tel:+12028692101,2184",
-        email: "sorcel@abrahamsconsulting.com",
-        emailHref: "mailto:sorcel@abrahamsconsulting.com"
+        phone: "(646) 564-3844, ext. 1009",
+        phoneHref: "tel:+16465643844,1009",
+        email: "JPiedra@abrahamsconsulting.com",
+        emailHref: "mailto:JPiedra@abrahamsconsulting.com"
       }
     ],
     footerText: "For more information and additional resources, please visit:",
@@ -638,22 +638,22 @@ export const nasaSewpViPageContent: NasaSewpViPageContent = {
       ]
     },
     deputyProfile: {
-      name: "Schella Orcel",
+      name: "Jay Dela Piedra",
       role: "SEWP VI DEPUTY PROGRAM MANAGER",
       contacts: [
         {
           id: "direct-phone",
           icon: "phone",
           label: "Direct Phone",
-          value: "(202) 869-2101, ext. 2184",
-          href: "tel:+12028692101,2184"
+          value: "(646) 564-3844, ext. 1009",
+          href: "tel:+16465643844,1009"
         },
         {
           id: "email",
           icon: "mail",
           label: "Email",
-          value: "sorcel@abrahamsconsulting.com",
-          href: "mailto:sorcel@abrahamsconsulting.com"
+          value: "JPiedra@abrahamsconsulting.com",
+          href: "mailto:JPiedra@abrahamsconsulting.com"
         }
       ]
     }

@@ -545,6 +545,42 @@
   margin-top: 0.25rem;
 }
 
+.event-recording-page__gate {
+  width: min(100%, 44rem);
+  margin: 0 auto;
+}
+
+.event-recording-page__gate-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(11, 31, 58, 0.1);
+  border-radius: 0.75rem;
+  background: var(--color-white);
+  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.08);
+}
+
+.event-recording-page__gate-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.event-recording-page__gate-description {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.event-recording-page__gate-form {
+  min-height: 12rem;
+}
+
+.event-recording-page__hubspot .hs-form-frame {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .events-page__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
