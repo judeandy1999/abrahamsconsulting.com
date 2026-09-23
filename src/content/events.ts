@@ -1,4 +1,5 @@
 import type { EventsPageContent } from "./schema";
+import { buildEventRecordingAccessAbsoluteUrl } from "../../lib/events/recording-access";
 
 export const EVENTS_IMAGES = {
   hpZgxNanoWebinar: "/images/events/hp-zgx-nano-webinar.png"
@@ -6,7 +7,15 @@ export const EVENTS_IMAGES = {
 
 export const HP_ZGX_NANO_WEBINAR_SLUG = "hp-zgx-nano-webinar-sep-2026";
 
+export const HP_ZGX_NANO_WEBINAR_FORM_ID = "6a96f7c1-feff-49af-9bea-bd6f8756fadf";
+
 export const HP_ZGX_NANO_WEBINAR_RECORDING_URL = "https://youtu.be/UpUFdUt5Feg";
+
+/** Paste into HubSpot form Step 3 → Redirect to a page → Specific URL */
+export const HP_ZGX_NANO_WEBINAR_HUBSPOT_REDIRECT_URL = buildEventRecordingAccessAbsoluteUrl(
+  HP_ZGX_NANO_WEBINAR_SLUG,
+  HP_ZGX_NANO_WEBINAR_FORM_ID
+);
 
 export const eventsPageContent: EventsPageContent = {
   hero: {
@@ -53,13 +62,12 @@ export const eventsPageContent: EventsPageContent = {
         description:
           "Watch the recorded Technical Exchange Meeting with Abrahams Consulting and HP on the HP ZGX Nano G1n — ultra-compact on-prem AI supercomputing built for today's most demanding workloads.",
         gate: {
-          storageKey: "event-recording-access-hp-zgx-nano-sep-2026",
           title: "Access the session recording",
           description:
             "Complete the form below to unlock the on-demand recording of our Technical Exchange Meeting with HP.",
           hubspotForm: {
             portalId: "44647552",
-            formId: "6a96f7c1-feff-49af-9bea-bd6f8756fadf",
+            formId: HP_ZGX_NANO_WEBINAR_FORM_ID,
             region: "na1",
             targetId: "hubspot-event-recording-form"
           }

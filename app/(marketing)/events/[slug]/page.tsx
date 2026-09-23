@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { EventRecordingPageContent } from "../../../../components/marketing/EventRecordingPageContent";
 import { getEventBySlug, getEventRecordingSlugs } from "../../../../lib/content/get-event-by-slug";
@@ -41,7 +42,9 @@ export default async function EventRecordingPage({ params }: EventRecordingPageP
 
   return (
     <main id="main-content" className="marketing-main marketing-main--event-recording">
-      <EventRecordingPageContent event={event} page={eventsPage} />
+      <Suspense fallback={null}>
+        <EventRecordingPageContent event={event} page={eventsPage} />
+      </Suspense>
     </main>
   );
 }

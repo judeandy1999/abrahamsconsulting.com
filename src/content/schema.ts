@@ -1256,7 +1256,6 @@ const eventModalSchema = z.object({
 });
 
 const eventRecordingGateSchema = z.object({
-  storageKey: z.string().min(1, "Event recording gate storage key is required"),
   title: z.string().min(1, "Event recording gate title is required"),
   description: z.string().min(1, "Event recording gate description is required"),
   hubspotForm: hubspotFormSchema

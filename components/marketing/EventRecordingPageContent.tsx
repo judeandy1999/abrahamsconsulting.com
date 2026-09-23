@@ -3,8 +3,10 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { notFound, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import type { EventItem, EventsPageContent } from "../../src/content/schema";
+import { EVENT_RECORDING_ACCESS_PARAM, isEventRecordingAccessGranted } from "../../lib/events/recording-access";
 import { HubSpotFormFrame } from "./HubSpotFormFrame";
 import { IconArrowRight } from "./NavIcons";
 
@@ -17,6 +19,8 @@ type EventRecordingPageContentProps = {
   event: EventItem;
   page: EventsPageContent;
 };
+
+type AccessView = "pending" | "gate" | "recording";
 
 function EventRecordingHero({ event }: { event: EventItem }) {
   return (
@@ -40,50 +44,51 @@ function EventRecordingHero({ event }: { event: EventItem }) {
 
 export function EventRecordingPageContent({ event, page }: EventRecordingPageContentProps) {
   const recording = event.recording;
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const searchParams = useSearchParams();
+  const [accessView, setAccessView] = useState<AccessView>("pending");
 
-  const readUnlockState = useCallback(() => {
-    if (!recording?.gate) {
-      return true;
-    }
-
-    try {
-      return localStorage.getItem(recording.gate.storageKey) === "granted";
-    } catch {
-      return false;
-    }
-  }, [recording?.gate]);
+  const accessGrant = searchParams.get(EVENT_RECORDING_ACCESS_PARAM);
 
   useEffect(() => {
-    setIsUnlocked(readUnlockState());
-  }, [readUnlockState]);
-
-  const handleFormSubmitted = useCallback(() => {
-    if (!recording?.gate) {
-      setIsUnlocked(true);
+    if (!recording) {
       return;
     }
 
-    try {
-      localStorage.setItem(recording.gate.storageKey, "granted");
-    } catch {
-      // Still unlock for the current visit if storage is unavailable.
+    if (!recording.gate) {
+      setAccessView("recording");
+      return;
     }
 
-    setIsUnlocked(true);
-  }, [recording?.gate]);
+    if (!accessGrant) {
+      setAccessView("gate");
+      return;
+    }
+
+    if (!isEventRecordingAccessGranted(accessGrant, recording.gate.hubspotForm.formId)) {
+      notFound();
+      return;
+    }
+
+    setAccessView("recording");
+  }, [accessGrant, recording]);
 
   if (!recording) {
     return null;
   }
 
-  const showGate = Boolean(recording.gate) && !isUnlocked;
+  if (accessView === "pending") {
+    return (
+      <div className="event-recording-page">
+        <EventRecordingHero event={event} />
+      </div>
+    );
+  }
 
   return (
     <div className="event-recording-page">
       <EventRecordingHero event={event} />
 
-      {showGate && recording.gate ? (
+      {accessView === "gate" && recording.gate ? (
         <div className="event-recording-page__body">
           <section className="event-recording-page__gate" aria-labelledby="event-recording-gate-heading">
             <div className="event-recording-page__gate-inner">
@@ -94,11 +99,7 @@ export function EventRecordingPageContent({ event, page }: EventRecordingPageCon
                 <p className="event-recording-page__gate-description">{recording.gate.description}</p>
               </div>
               <div className="event-recording-page__gate-form">
-                <HubSpotFormFrame
-                  config={recording.gate.hubspotForm}
-                  onFormSubmitted={handleFormSubmitted}
-                  className="event-recording-page__hubspot"
-                />
+                <HubSpotFormFrame config={recording.gate.hubspotForm} className="event-recording-page__hubspot" />
               </div>
             </div>
           </section>
