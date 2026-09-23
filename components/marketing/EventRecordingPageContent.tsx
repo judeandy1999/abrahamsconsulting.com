@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -116,15 +115,6 @@ export function EventRecordingPageContent({ event, page }: EventRecordingPageCon
             </div>
 
             <aside className="event-recording-page__sidebar" aria-label="Event details">
-              <div className="event-recording-page__poster">
-                <Image
-                  src={event.cardImageSrc}
-                  alt={event.cardImageAlt}
-                  width={640}
-                  height={360}
-                  className="event-recording-page__poster-image"
-                />
-              </div>
               <p className="event-recording-page__description">{recording.description}</p>
               <ul className="event-recording-page__highlights">
                 {event.modal.highlights.map((highlight) => (

@@ -498,18 +498,6 @@
   gap: 1rem;
 }
 
-.event-recording-page__poster {
-  overflow: hidden;
-  border-radius: 0.625rem;
-  border: 1px solid rgba(11, 31, 58, 0.1);
-}
-
-.event-recording-page__poster-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .event-recording-page__description {
   margin: 0;
   color: var(--color-text-muted);
