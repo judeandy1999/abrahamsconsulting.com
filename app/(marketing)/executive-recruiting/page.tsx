@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../../styles/pages/marketing-secondary.css";
+import { ExecutiveRecruitingEmbedFormSection } from "../../../components/marketing/ExecutiveRecruitingEmbedFormSection";
 import { ExecutiveRecruitingHero } from "../../../components/marketing/ExecutiveRecruitingHero";
 import { ExecutiveRecruitingHiringCta } from "../../../components/marketing/ExecutiveRecruitingHiringCta";
 import { ExecutiveRecruitingHiringProfilesSection } from "../../../components/marketing/ExecutiveRecruitingHiringProfilesSection";
@@ -18,6 +19,7 @@ export default function ExecutiveRecruitingPage() {
   return (
     <main id="main-content" className="marketing-main marketing-main--executive-recruiting">
       <ExecutiveRecruitingHero hero={executiveRecruitingPage.hero} />
+      <ExecutiveRecruitingEmbedFormSection section={executiveRecruitingPage.embedFormSection} />
       <ExecutiveRecruitingWrongHireSection section={executiveRecruitingPage.wrongHireSection} />
       <ExecutiveRecruitingHiringCta cta={executiveRecruitingPage.hiringProfileCta} />
       <ExecutiveRecruitingHiringProfilesSection section={executiveRecruitingPage.hiringProfilesSection} />

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { EventsPageContent } from "../../src/content/schema";
+import { isExternalHref } from "../../lib/navigation/is-external-href";
+import { IconArrowRight } from "./NavIcons";
 
 type EventSplashModalProps = {
   splash: EventsPageContent["splash"];
@@ -61,6 +63,9 @@ export function EventSplashModal({ splash }: EventSplashModalProps) {
     return null;
   }
 
+  const ctaPlacement = splash.ctaPlacement ?? "bottom";
+  const ctaExternal = isExternalHref(splash.ctaHref);
+
   return (
     <dialog ref={dialogRef} className="event-splash" aria-labelledby="event-splash-title" aria-modal="true">
       <div className="event-splash__panel">
@@ -86,18 +91,23 @@ export function EventSplashModal({ splash }: EventSplashModalProps) {
           <span id="event-splash-title" className="sr-only">
             {splash.imageAlt}
           </span>
-        </div>
-
-        <div className="event-splash__actions">
-          <Link
-            href={splash.ctaHref}
-            className="btn btn--red event-splash__cta"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={dismiss}
+          <div
+            className={
+              ctaPlacement === "banner"
+                ? "event-splash__actions event-splash__actions--banner"
+                : "event-splash__actions"
+            }
           >
-            {splash.ctaLabel}
-          </Link>
+            <Link
+              href={splash.ctaHref}
+              className="btn btn--red event-splash__cta"
+              {...(ctaExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={dismiss}
+            >
+              {splash.ctaLabel}
+              <IconArrowRight className="btn__icon" />
+            </Link>
+          </div>
         </div>
       </div>
     </dialog>

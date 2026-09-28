@@ -1232,6 +1232,12 @@ export const executiveRecruitingPageSchema = z.object({
         })
       )
       .length(3, "Hiring profile CTA requires three highlights")
+  }),
+  embedFormSection: z.object({
+    eyebrow: z.string().min(1, "Embed form section eyebrow is required"),
+    title: z.string().min(1, "Embed form section title is required"),
+    description: z.string().min(1, "Embed form section description is required"),
+    hubspotForm: hubspotFormSchema
   })
 });
 
@@ -1295,7 +1301,8 @@ export const eventsPageSchema = z.object({
     imageSrc: z.string().min(1, "Event splash image source is required"),
     imageAlt: z.string().min(1, "Event splash image alt text is required"),
     ctaLabel: z.string().min(1, "Event splash CTA label is required"),
-    ctaHref: z.string().min(1, "Event splash CTA href is required")
+    ctaHref: z.string().min(1, "Event splash CTA href is required"),
+    ctaPlacement: z.enum(["bottom", "banner"]).optional()
   }),
   upcomingSection: z.object({
     title: z.string().min(1, "Upcoming events section title is required"),

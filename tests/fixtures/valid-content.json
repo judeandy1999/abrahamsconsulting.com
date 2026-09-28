@@ -458,6 +458,16 @@
         { "icon": "precision", "label": "Precision-Driven Search" },
         { "icon": "partnership", "label": "Long-Term Partnership" }
       ]
+    },
+    "embedFormSection": {
+      "eyebrow": "IT LEADERSHIP HIRING PROFILE",
+      "title": "Discover Which Executive Search Approach Fits You",
+      "description": "Share a few details below and our team will follow up with a tailored recommendation.",
+      "hubspotForm": {
+        "portalId": "44647552",
+        "formId": "c235489c-1307-4c04-8492-3dfb11c9fbd8",
+        "region": "na1"
+      }
     }
   }
 }

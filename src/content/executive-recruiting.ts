@@ -5,6 +5,12 @@ const EXECUTIVE_RECRUITING_MEETING_URL =
 
 const HIRING_PROFILE_SCORECARD_URL = "https://itleadershiphiringprofile.scoreapp.com/";
 
+const EXECUTIVE_RECRUITING_HUBSPOT_FORM = {
+  portalId: "44647552",
+  formId: "c235489c-1307-4c04-8492-3dfb11c9fbd8",
+  region: "na1"
+} as const;
+
 export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
   hero: {
     eyebrow: "EXECUTIVE SEARCH EXCELLENCE",
@@ -174,5 +180,12 @@ export const executiveRecruitingPageContent: ExecutiveRecruitingPageContent = {
       { icon: "precision", label: "Precision-Driven Search" },
       { icon: "partnership", label: "Long-Term Partnership" }
     ]
+  },
+  embedFormSection: {
+    eyebrow: "IT LEADERSHIP HIRING PROFILE",
+    title: "Discover Which Executive Search Approach Fits You",
+    description:
+      "Share a few details below and our team will follow up with a tailored recommendation and actionable insights for your next IT leadership hire.",
+    hubspotForm: EXECUTIVE_RECRUITING_HUBSPOT_FORM
   }
 };

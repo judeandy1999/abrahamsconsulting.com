@@ -12,8 +12,9 @@
 }
 
 .event-splash {
-  width: min(100%, 72rem);
+  width: min(calc(100% - 2rem), 50rem);
   max-height: calc(100vh - 2rem);
+  margin: auto;
   padding: 0;
   border: 0;
   background: transparent;
@@ -74,8 +75,18 @@
   z-index: 1;
 }
 
+.event-splash__actions--banner {
+  right: auto;
+  left: 58%;
+  top: 40%;
+  bottom: auto;
+  transform: translate(-35%, 180%);
+}
+
 .event-splash__cta {
-  min-width: min(100%, 20rem);
+  min-width: min(100%, 14rem);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.8125rem;
   box-shadow: 0 10px 24px rgba(11, 31, 58, 0.28);
 }
 
@@ -136,6 +147,20 @@
   width: min(100%, 28rem);
   height: auto;
   border-radius: 0.5rem;
+}
+
+.events-page__card-actions {
+  position: absolute;
+  right: clamp(0.45rem, 2vw, 0.85rem);
+  bottom: clamp(0.45rem, 2vw, 0.85rem);
+  z-index: 2;
+}
+
+.events-page__card-action {
+  min-width: min(calc(100vw - 4rem), 11rem);
+  padding: 0.55rem 0.85rem;
+  font-size: 0.6875rem;
+  box-shadow: 0 8px 18px rgba(11, 31, 58, 0.28);
 }
 
 .event-detail-modal__intro {
@@ -318,18 +343,30 @@
   overflow: hidden;
   background: var(--color-white);
   text-align: left;
-  cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.events-page__card-button:hover,
-.events-page__card-button:focus-visible {
+.events-page__card-button:has(.events-page__card-body:hover),
+.events-page__card-button:has(.events-page__card-body:focus-visible),
+.events-page__card-button:has(.events-page__card-media-open:hover),
+.events-page__card-button:has(.events-page__card-media-open:focus-visible) {
   transform: translateY(-2px);
   border-color: rgba(11, 31, 58, 0.18);
   box-shadow: 0 8px 20px rgba(11, 31, 58, 0.1);
 }
 
+.events-page__card-media-open {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 .events-page__card-media {
+  position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
 }
@@ -345,7 +382,14 @@
 .events-page__card-body {
   display: grid;
   gap: 0.4rem;
+  width: 100%;
   padding: 0.85rem 0.95rem 1rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
 }
 
 .events-page__card-type {
@@ -584,8 +628,12 @@
     grid-template-columns: 1fr;
   }
 
-  .event-splash__actions {
+  .event-splash__actions,
+  .event-splash__actions--banner {
     position: static;
+    left: auto;
+    top: auto;
+    transform: none;
     padding: 1rem;
     background: var(--color-white);
     border-radius: 0 0 0.75rem 0.75rem;

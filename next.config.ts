@@ -3,15 +3,20 @@ import type { NextConfig } from "next";
 // Source pattern: https://nextjs.org/docs/app/guides/content-security-policy (Without Nonces)
 const isDev = process.env.NODE_ENV === "development";
 
+const tidioConnectSrc =
+  " https://sentry-new.tidio.co https://socket.tidio.co wss://socket.tidio.co https://uploads.tidio.com https://api-v2.tidio.co";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://js.hsforms.net https://*.hsforms.net https://www.googletagmanager.com${isDev ? " https://va.vercel-scripts.com" : ""}`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://js.hsforms.net https://*.hsforms.net https://www.googletagmanager.com https://code.tidio.co https://widget-v4.tidiochat.com${isDev ? " https://va.vercel-scripts.com" : ""}`,
   "style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com",
   "img-src 'self' data: blob: https:",
-  "font-src 'self' data:",
+  "font-src 'self' data: https://code.tidio.co",
+  "media-src 'self' https://code.tidio.co https://widget-v4.tidiochat.com",
   "connect-src 'self' https://*.hsforms.com https://*.hubapi.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com" +
+    tidioConnectSrc +
     (isDev ? " https://va.vercel-scripts.com https://vitals.vercel-insights.com" : ""),
-  "frame-src https://www.youtube.com https://youtube.com https://*.hsforms.com https://*.hsforms.net https://abrahams73.lll-ll.com",
+  "frame-src https://www.youtube.com https://youtube.com https://*.hsforms.com https://*.hsforms.net https://abrahams73.lll-ll.com https://widget-v4.tidiochat.com",
   "child-src https://*.hsforms.com",
   "object-src 'none'",
   "base-uri 'self'",

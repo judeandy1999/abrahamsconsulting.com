@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "../components/analytics/GoogleAnalytics";
+import { TidioChat } from "../components/chat/TidioChat";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <GoogleAnalytics />
         {children}
         <SpeedInsights />
+        <TidioChat />
       </body>
     </html>
   );

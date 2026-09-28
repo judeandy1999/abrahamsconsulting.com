@@ -833,6 +833,97 @@
   box-shadow: 0 16px 32px rgba(11, 31, 58, 0.12);
 }
 
+/* Executive recruiting — embedded assessment form */
+.exec-recruiting-embed-form {
+  background: var(--color-section-alt-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.exec-recruiting-embed-form__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 2rem 2.5rem;
+}
+
+.exec-recruiting-embed-form__header,
+.exec-recruiting-embed-form__frame-wrap {
+  min-width: 0;
+}
+
+.exec-recruiting-embed-form__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.exec-recruiting-embed-form__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-navy);
+}
+
+.exec-recruiting-embed-form__eyebrow::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin-top: 0.65rem;
+  background: var(--color-red);
+}
+
+.exec-recruiting-embed-form__title {
+  margin: 0;
+  max-width: 28rem;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-embed-form__description {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-embed-form__frame-wrap {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.08);
+}
+
+.exec-recruiting-embed-form__hubspot {
+  width: 100%;
+}
+
+.exec-recruiting-embed-form__hubspot .hs-form-frame {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .exec-recruiting-embed-form__inner {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .exec-recruiting-embed-form__header {
+    padding-top: 0;
+  }
+}
+
 .exec-recruiting-profiles__panel-image {
   display: block;
   width: 100%;

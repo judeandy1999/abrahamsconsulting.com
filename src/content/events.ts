@@ -2,8 +2,17 @@ import type { EventsPageContent } from "./schema";
 import { buildEventRecordingAccessAbsoluteUrl } from "../../lib/events/recording-access";
 
 export const EVENTS_IMAGES = {
-  hpZgxNanoWebinar: "/images/events/hp-zgx-nano-webinar.png"
+  hpZgxNanoWebinar: "/images/events/hp-zgx-nano-webinar.png",
+  globeNorthAiSecurityWebinar:
+    "/images/events/globe-north-ai-security-webinar-nov-2026.png",
+  globeNorthAiSecurityWebinarSplash:
+    "/images/events/globe-north-ai-security-webinar-splash.png"
 } as const;
+
+export const GLOBE_NORTH_AI_SECURITY_WEBINAR_SLUG = "globe-north-ai-security-webinar-nov-2026";
+
+export const GLOBE_NORTH_AI_SECURITY_WEBINAR_REGISTRATION_URL =
+  "https://us02web.zoom.us/webinar/register/WN_6d7bujTtQb-Af7g10ZCXUg";
 
 export const HP_ZGX_NANO_WEBINAR_SLUG = "hp-zgx-nano-webinar-sep-2026";
 
@@ -24,12 +33,13 @@ export const eventsPageContent: EventsPageContent = {
       "Join Abrahams Consulting for technical exchange meetings, product briefings, and partner-led sessions designed for enterprise and government technology leaders."
   },
   splash: {
-    enabled: false,
-    imageSrc: EVENTS_IMAGES.hpZgxNanoWebinar,
+    enabled: true,
+    imageSrc: EVENTS_IMAGES.globeNorthAiSecurityWebinarSplash,
     imageAlt:
-      "Abrahams Consulting and HP Technical Exchange Meeting — AI Supercomputing in the Palm of Your Hand, September 17, 2026",
-    ctaLabel: "View Recording",
-    ctaHref: `/events/${HP_ZGX_NANO_WEBINAR_SLUG}`
+      "Abrahams Consulting and Globe North Technical Exchange Meeting — AI-Driven Security and Deployment webinar on November 12, 2026",
+    ctaLabel: "Register Now",
+    ctaHref: GLOBE_NORTH_AI_SECURITY_WEBINAR_REGISTRATION_URL,
+    ctaPlacement: "banner"
   },
   upcomingSection: {
     title: "Upcoming Events",
@@ -42,6 +52,65 @@ export const eventsPageContent: EventsPageContent = {
   knowMoreLabel: "Learn More",
   backToEventsLabel: "Back to Events",
   events: [
+    {
+      id: "globe-north-ai-security-webinar-nov-2026",
+      slug: GLOBE_NORTH_AI_SECURITY_WEBINAR_SLUG,
+      status: "upcoming",
+      title: "AI-Driven Security & Deployment: The New Standard for Modern Organizations",
+      subtitle: "Expert Speaker Session with Gregory North",
+      eventType: "Technical Exchange Meeting",
+      date: "November 12, 2026",
+      time: "10:00 AM EST",
+      location: "Zoom",
+      partner: "Globe North",
+      cardImageSrc: EVENTS_IMAGES.globeNorthAiSecurityWebinar,
+      cardImageAlt:
+        "Abrahams Consulting and Globe North Technical Exchange Meeting — AI-Driven Security and Deployment webinar on November 12, 2026",
+      modal: {
+        imageSrc: EVENTS_IMAGES.globeNorthAiSecurityWebinar,
+        imageAlt:
+          "Abrahams Consulting and Globe North Technical Exchange Meeting — AI-Driven Security and Deployment webinar on November 12, 2026",
+        summary:
+          "Join Abrahams Consulting and Globe North for a technical exchange on AI-driven security and deployment — how modern organizations detect threats, govern generative AI, and adopt intelligent deployment strategies with confidence.",
+        details: [
+          { label: "Event Type", value: "Technical Exchange Meeting" },
+          { label: "Speaker", value: "Gregory North" },
+          { label: "Date", value: "November 12, 2026" },
+          { label: "Time", value: "10:00 AM EST" },
+          { label: "Location", value: "Zoom" },
+          { label: "Partner", value: "Globe North" }
+        ],
+        highlights: [
+          {
+            title: "AI-Powered Threat Detection",
+            description:
+              "AI-powered threat detection, anomaly analysis, and incident response for modern security operations."
+          },
+          {
+            title: "Generative & Shadow AI Governance",
+            description:
+              "Governing generative AI and shadow AI risks within your organization."
+          },
+          {
+            title: "Intelligent Deployment Strategies",
+            description:
+              "Intelligent deployment strategies: AIOps, patch prioritization, and DevSecOps."
+          },
+          {
+            title: "Secure AI Workload Adoption",
+            description:
+              "Secure AI workload adoption for regulated and compliance-driven environments."
+          },
+          {
+            title: "Practical AI Evaluation",
+            description:
+              "Practical steps to evaluate and adopt AI solutions that fit your environment."
+          }
+        ],
+        ctaHref: GLOBE_NORTH_AI_SECURITY_WEBINAR_REGISTRATION_URL,
+        ctaLabel: "Register Now"
+      }
+    },
     {
       id: "hp-zgx-nano-webinar-sep-2026",
       slug: HP_ZGX_NANO_WEBINAR_SLUG,

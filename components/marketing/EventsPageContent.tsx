@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { EventItem, EventsPageContent as EventsPageContentType } from "../../src/content/schema";
+import { isExternalHref } from "../../lib/navigation/is-external-href";
 import { EventDetailModal } from "./EventDetailModal";
+import { IconArrowRight } from "./NavIcons";
 
 type EventsPageContentProps = {
   content: EventsPageContentType;
@@ -20,8 +23,14 @@ function EventCard({
 }) {
   return (
     <article className="events-page__card">
-      <button type="button" className="events-page__card-button" onClick={() => onSelect(event)}>
+      <div className="events-page__card-button">
         <div className="events-page__card-media">
+          <button
+            type="button"
+            className="events-page__card-media-open"
+            aria-label={`${knowMoreLabel}: ${event.title}`}
+            onClick={() => onSelect(event)}
+          />
           <Image
             src={event.cardImageSrc}
             alt={event.cardImageAlt}
@@ -29,8 +38,20 @@ function EventCard({
             height={360}
             className="events-page__card-image"
           />
+          <div className="events-page__card-actions">
+            <Link
+              href={event.modal.ctaHref}
+              className="btn btn--red events-page__card-action"
+              {...(isExternalHref(event.modal.ctaHref)
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {event.modal.ctaLabel}
+              <IconArrowRight className="btn__icon" />
+            </Link>
+          </div>
         </div>
-        <div className="events-page__card-body">
+        <button type="button" className="events-page__card-body" onClick={() => onSelect(event)}>
           <p className="events-page__card-type">{event.eventType}</p>
           <h3 className="events-page__card-title">{event.title}</h3>
           <p className="events-page__card-subtitle">{event.subtitle}</p>
@@ -40,8 +61,8 @@ function EventCard({
             <li>{event.location}</li>
           </ul>
           <span className="events-page__card-cta">{knowMoreLabel}</span>
-        </div>
-      </button>
+        </button>
+      </div>
     </article>
   );
 }
