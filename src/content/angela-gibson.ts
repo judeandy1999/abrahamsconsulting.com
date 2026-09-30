@@ -6,7 +6,7 @@ export const EVE_SPEAKS_BOOKING_HREF = "https://evespeaks.com/";
 /** HubSpot stay-connected form (Angela Gibson page). */
 export const angelaGibsonStayConnectedHubspotForm: HubspotFormConfig = {
   portalId: "44647552",
-  formId: "9c255610-20a6-4d30-9b78-d89600778503",
+  formId: "052dbc8d-2e5c-4608-952f-f45dbf2ebe74",
   region: "na1"
 };
 
