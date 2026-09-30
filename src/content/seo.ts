@@ -119,5 +119,12 @@ export const launchPageSeoContent = [
     title: "Message Received",
     description:
       "Your message was received. Abrahams Consulting will review your submission and follow up with next steps."
+  },
+  {
+    routeKey: "angela-gibson",
+    path: "/angela-gibson",
+    title: "Angela Gibson | Government Technology Contractor, Founder & Speaker",
+    description:
+      "Angela Gibson is a certified M/WBE government contractor, founder of Abrahams Consulting and leader of the Consortium for Black Women in IT. Partner with her, join the community or book her to speak."
   }
 ] as const satisfies readonly LaunchPageSeo[];

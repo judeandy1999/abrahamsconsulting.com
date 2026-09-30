@@ -55,6 +55,10 @@ export const siteContent: SiteContent = {
     {
       label: "Clients",
       href: "/clients"
+    },
+    {
+      label: "Angela Gibson",
+      href: "/angela-gibson"
     }
   ],
   navigation: [
