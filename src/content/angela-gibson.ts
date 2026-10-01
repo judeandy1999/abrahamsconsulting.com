@@ -12,16 +12,16 @@ export const angelaGibsonStayConnectedHubspotForm: HubspotFormConfig = {
 
 export const angelaGibsonBrandImages = {
   abrahams: {
-    src: "/images/angela-gibson/brand-abrahams-consulting.png",
-    alt: "Abrahams Consulting — Trusted Government IT Solutions and Procurement Partner"
+    src: "/images/angela-gibson/brand-abrahams-consulting1.png",
+    alt: "Abrahams Consulting — Trusted Government IT Solutions and Procurement Partner with company logo"
   },
   cobwiit: {
     src: "/images/angela-gibson/brand-cobwiit.png",
     alt: "CoBWiIT — Together, We Open Doors. Consortium for Black Women in IT"
   },
   eveSpeaks: {
-    src: "/images/angela-gibson/brand-eve-speaks.png",
-    alt: "Eve Speaks — Unlock Your Full Potential. Heal, Aspire, and Grow"
+    src: "/images/angela-gibson/brand-eve-speaks1.png",
+    alt: "Eve Speaks — Welcome to My Channel by Angela Gibson. Heal, Aspire, and Grow"
   }
 } as const;
 

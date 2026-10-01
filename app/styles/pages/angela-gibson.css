@@ -384,12 +384,12 @@
 .angela-page__brand-media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 19 / 6;
   background: #eef2f7;
 }
 
 .angela-page__brand-image {
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
 }
 
@@ -468,6 +468,15 @@
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: 2rem;
   align-items: start;
+}
+
+.angela-page__about-role {
+  margin: 0 0 0.65rem;
+  max-width: 22rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--color-slate);
 }
 
 .angela-page__about-title {

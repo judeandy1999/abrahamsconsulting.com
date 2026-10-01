@@ -4,6 +4,7 @@ export function AngelaAbout() {
       <div className="angela-page__about-inner">
         <div className="angela-page__about-intro">
           <p className="angela-page__eyebrow">About</p>
+          <p className="angela-page__about-role">Government Technology Contractor, Founder, Speaker, Coach</p>
           <h2 id="angela-about-heading" className="angela-page__about-title">
             Angela Gibson
           </h2>

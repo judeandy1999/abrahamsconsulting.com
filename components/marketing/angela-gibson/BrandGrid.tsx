@@ -19,7 +19,7 @@ export function BrandGrid({ analytics }: BrandGridProps) {
           <h2 id="angela-brands-heading" className="angela-page__brands-title">
             Explore the Work
           </h2>
-          <p className="angela-page__brands-description">Three separate organizations, each with a distinct mission.</p>
+          <p className="angela-page__brands-description">Our ecosystem — three brands, each with a distinct mission.</p>
         </header>
 
         <ul className="angela-page__brand-grid">
@@ -31,7 +31,7 @@ export function BrandGrid({ analytics }: BrandGridProps) {
                   alt={angelaGibsonBrandImages.abrahams.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="angela-page__brand-image"
+                  className="angela-page__brand-image angela-page__brand-image--abrahams"
                 />
               </div>
               <div className="angela-page__brand-card-body">
@@ -93,7 +93,7 @@ export function BrandGrid({ analytics }: BrandGridProps) {
                   alt={angelaGibsonBrandImages.eveSpeaks.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="angela-page__brand-image"
+                  className="angela-page__brand-image angela-page__brand-image--eve-speaks"
                 />
               </div>
               <div className="angela-page__brand-card-body">
