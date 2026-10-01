@@ -14,7 +14,7 @@ export function AngelaHero({ analytics }: AngelaHeroProps) {
     <section className="angela-page__hero" aria-labelledby="angela-hero-heading">
       <div className="angela-page__hero-inner">
         <p className="angela-page__eyebrow angela-page__eyebrow--on-dark angela-page__eyebrow--center">
-          Government Technology Contractor · Founder · Speaker
+          Government Technology Contractor · Founder · Speaker · Coach
         </p>
         <h1 id="angela-hero-heading" className="angela-page__hero-title">
           Angela Gibson
