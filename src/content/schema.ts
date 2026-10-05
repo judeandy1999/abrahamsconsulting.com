@@ -887,6 +887,30 @@ export const nasaSewpViPageSchema = z.object({
 });
 
 const executiveRecruitingFeatureIconSchema = z.enum(["talent", "vetting", "leadership", "impact"]);
+const executiveRecruitingWhoThisIsForIconSchema = z.enum([
+  "ceos",
+  "cios",
+  "ctos",
+  "boards",
+  "confidential-transitions"
+]);
+const executiveRecruitingProcessStepIconSchema = z.enum([
+  "discovery",
+  "alignment",
+  "search",
+  "shortlist"
+]);
+const executiveRecruitingOpportunityIconSchema = z.enum([
+  "financial-services",
+  "fintech",
+  "healthcare",
+  "engineering-growth"
+]);
+const executiveRecruitingImpactCardIconSchema = z.enum(["cio-placement", "ciso-placement", "cto-hire"]);
+const executiveRecruitingOutcomeSegmentSchema = z.object({
+  text: z.string(),
+  emphasis: z.boolean().optional()
+});
 const executiveRecruitingCtaHighlightIconSchema = z.enum(["confidential", "precision", "partnership"]);
 const executiveRecruitingHiringProfileTabIconSchema = z.enum(["advisory", "retained", "confidential", "interim"]);
 const executiveRecruitingHiringProfileHighlightIconSchema = z.enum([
@@ -1237,7 +1261,111 @@ export const executiveRecruitingPageSchema = z.object({
     eyebrow: z.string().min(1, "Embed form section eyebrow is required"),
     title: z.string().min(1, "Embed form section title is required"),
     description: z.string().min(1, "Embed form section description is required"),
-    hubspotForm: hubspotFormSchema
+    formPrompt: z.string().min(1, "Embed form section form prompt is required"),
+    employerPath: z.object({
+      title: z.string().min(1, "Employer path title is required"),
+      description: z.string().optional(),
+      ctaLabel: z.string().min(1, "Employer path CTA label is required"),
+      hubspotForm: hubspotFormSchema
+    }),
+    candidatePath: z.object({
+      title: z.string().min(1, "Candidate path title is required"),
+      description: z.string().min(1, "Candidate path description is required"),
+      ctaLabel: z.string().min(1, "Candidate path CTA label is required"),
+      hubspotForm: hubspotFormSchema
+    })
+  }),
+  whoThisIsForSection: z.object({
+    eyebrow: z.string().min(1, "Who this is for eyebrow is required"),
+    title: z.string().min(1, "Who this is for title is required"),
+    description: z.string().min(1, "Who this is for description is required"),
+    items: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Who this is for item id is required"),
+          icon: executiveRecruitingWhoThisIsForIconSchema,
+          label: z.string().min(1, "Who this is for item label is required")
+        })
+      )
+      .min(1, "Who this is for section requires at least one item"),
+    callout: z.string().min(1, "Who this is for callout is required")
+  }),
+  processSection: z.object({
+    eyebrow: z.string().min(1, "Process section eyebrow is required"),
+    title: z.string().min(1, "Process section title is required"),
+    steps: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Process step id is required"),
+          stepNumber: z.string().min(1, "Process step number is required"),
+          icon: executiveRecruitingProcessStepIconSchema,
+          title: z.string().min(1, "Process step title is required"),
+          description: z.string().min(1, "Process step description is required")
+        })
+      )
+      .length(4, "Process section requires four steps"),
+    callout: z.string().min(1, "Process section callout is required")
+  }),
+  whyAbrahamsSection: z.object({
+    eyebrow: z.string().min(1, "Why Abrahams section eyebrow is required"),
+    title: z.string().min(1, "Why Abrahams section title is required"),
+    traditionalColumnLabel: z.string().min(1, "Why Abrahams traditional column label is required"),
+    abrahamsColumnLabel: z.string().min(1, "Why Abrahams Abrahams column label is required"),
+    comparisonRows: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Comparison row id is required"),
+          traditional: z.string().min(1, "Comparison row traditional label is required"),
+          abrahams: z.string().min(1, "Comparison row Abrahams label is required")
+        })
+      )
+      .length(4, "Why Abrahams section requires four comparison rows"),
+    sidebarQuote: z.string().min(1, "Why Abrahams sidebar quote is required"),
+    sidebarImageSrc: z.string().min(1, "Why Abrahams sidebar image source is required"),
+    sidebarImageAlt: z.string().min(1, "Why Abrahams sidebar image alt text is required")
+  }),
+  executiveImpactSection: z.object({
+    eyebrow: z.string().min(1, "Executive impact section eyebrow is required"),
+    title: z.string().min(1, "Executive impact section title is required"),
+    sidebarQuote: z.string().min(1, "Executive impact sidebar quote is required"),
+    cards: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Impact card id is required"),
+          icon: executiveRecruitingImpactCardIconSchema,
+          title: z.string().min(1, "Impact card title is required"),
+          outcome: z
+            .array(executiveRecruitingOutcomeSegmentSchema)
+            .min(1, "Impact card outcome requires at least one segment")
+        })
+      )
+      .length(3, "Executive impact section requires three cards")
+  }),
+  executiveOpportunitiesSection: z.object({
+    eyebrow: z.string().min(1, "Executive opportunities eyebrow is required"),
+    title: z.string().min(1, "Executive opportunities title is required"),
+    description: z.string().min(1, "Executive opportunities description is required"),
+    applyLabel: z.string().min(1, "Executive opportunities apply label is required"),
+    opportunities: z
+      .array(
+        z.object({
+          id: z.string().min(1, "Opportunity id is required"),
+          title: z.string().min(1, "Opportunity title is required"),
+          industry: z.string().min(1, "Opportunity industry is required"),
+          icon: executiveRecruitingOpportunityIconSchema
+        })
+      )
+      .min(1, "Executive opportunities section requires at least one opportunity"),
+    candidatePanel: z.object({
+      eyebrow: z.string().min(1, "Candidate panel eyebrow is required"),
+      title: z.string().min(1, "Candidate panel title is required"),
+      description: z.string().min(1, "Candidate panel description is required"),
+      bullets: z.array(z.string().min(1)).min(1, "Candidate panel requires at least one bullet"),
+      ctaLabel: z.string().min(1, "Candidate panel CTA label is required"),
+      confidentialityNote: z.string().min(1, "Candidate panel confidentiality note is required"),
+      imageSrc: z.string().min(1, "Candidate panel image source is required"),
+      imageAlt: z.string().min(1, "Candidate panel image alt text is required")
+    })
   })
 });
 

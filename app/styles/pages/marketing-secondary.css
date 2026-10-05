@@ -623,7 +623,6 @@
 /* Executive recruiting — hiring profiles tabs */
 .exec-recruiting-profiles {
   background: var(--color-white);
-  border-top: 1px solid var(--color-border);
 }
 
 .exec-recruiting-profiles__inner {
@@ -834,70 +833,174 @@
   box-shadow: 0 16px 32px rgba(11, 31, 58, 0.12);
 }
 
-/* Executive recruiting — embedded assessment form */
+/* Executive recruiting — dual-path form section */
 .exec-recruiting-embed-form {
-  background: var(--color-section-alt-bg);
-  border-top: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #eef6fc 0%, #f4f7fa 45%, var(--color-section-alt-bg) 100%);
 }
 
 .exec-recruiting-embed-form__inner {
   margin: 0 auto;
   max-width: var(--container-max);
   padding: 3.5rem 1.75rem 4rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  align-items: start;
-  gap: 2rem 2.5rem;
-}
-
-.exec-recruiting-embed-form__header,
-.exec-recruiting-embed-form__frame-wrap {
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
 }
 
 .exec-recruiting-embed-form__header {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-top: 0.5rem;
-}
-
-.exec-recruiting-embed-form__eyebrow {
-  margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--color-navy);
-}
-
-.exec-recruiting-embed-form__eyebrow::after {
-  content: "";
-  display: block;
-  width: 2.75rem;
-  height: 3px;
-  margin-top: 0.65rem;
-  background: var(--color-red);
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 40rem;
+  text-align: center;
 }
 
 .exec-recruiting-embed-form__title {
   margin: 0;
-  max-width: 28rem;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  line-height: 1.25;
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: #042551;
 }
 
 .exec-recruiting-embed-form__description {
   margin: 0;
-  max-width: 34rem;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--color-slate);
 }
 
-.exec-recruiting-embed-form__frame-wrap {
+.exec-recruiting-embed-form__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.exec-recruiting-embed-form__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100%;
+  padding: 1.75rem 1.65rem 1.65rem;
+  border: 1px solid rgba(11, 31, 58, 0.08);
+  border-radius: 0.75rem;
+  background: var(--color-white);
+  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.07);
+}
+
+.exec-recruiting-embed-form__card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.exec-recruiting-embed-form__path-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+}
+
+.exec-recruiting-embed-form__path-icon svg {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.exec-recruiting-embed-form__path-icon--employer {
+  color: var(--color-blue-primary);
+  background: rgba(0, 102, 175, 0.12);
+}
+
+.exec-recruiting-embed-form__path-icon--candidate {
+  color: var(--color-blue-primary);
+  background: rgba(0, 102, 175, 0.12);
+}
+
+.exec-recruiting-embed-form__card-copy {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.exec-recruiting-embed-form__card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.exec-recruiting-embed-form__card-description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-embed-form__card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.35rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.exec-recruiting-embed-form__card-cta--employer {
+  background: var(--color-blue-primary);
+  border-color: var(--color-blue-primary);
+  color: var(--color-white);
+}
+
+.exec-recruiting-embed-form__card-cta--employer:hover {
+  background: var(--color-blue-primary-hover);
+  border-color: var(--color-blue-primary-hover);
+}
+
+.exec-recruiting-embed-form__card-cta--candidate {
+  background: transparent;
+  border-color: rgba(4, 37, 81, 0.35);
+  color: #042551;
+}
+
+.exec-recruiting-embed-form__card-cta--candidate:hover {
+  background: rgba(4, 37, 81, 0.04);
+  border-color: var(--color-section-heading);
+  color: var(--color-section-heading);
+}
+
+.exec-recruiting-embed-form__card-cta-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.exec-recruiting-embed-form__card-cta:hover .exec-recruiting-embed-form__card-cta-icon {
+  transform: translateX(2px);
+}
+
+.exec-recruiting-embed-form__form-wrap {
+  width: 100%;
+  max-width: 42rem;
   overflow: hidden;
   border-radius: 0.75rem;
   border: 1px solid var(--color-border);
@@ -905,8 +1008,45 @@
   box-shadow: 0 16px 32px rgba(11, 31, 58, 0.08);
 }
 
+.exec-recruiting-embed-form__form-wrap--preload {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.exec-recruiting-embed-form__back {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1.75rem 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-blue-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.exec-recruiting-embed-form__back:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.exec-recruiting-embed-form__form-panel {
+  min-width: 0;
+}
+
+.exec-recruiting-embed-form__form-panel[hidden] {
+  display: none;
+}
+
 .exec-recruiting-embed-form__hubspot {
   width: 100%;
+  padding: 0.75rem 1.75rem 2rem;
 }
 
 .exec-recruiting-embed-form__hubspot .hs-form-frame {
@@ -915,13 +1055,1005 @@
 
 @media (max-width: 768px) {
   .exec-recruiting-embed-form__inner {
-    grid-template-columns: 1fr;
-    padding: 2.5rem 1.25rem;
-    gap: 1.5rem;
+    padding: 2.5rem 1.25rem 3rem;
+    gap: 1.75rem;
   }
 
-  .exec-recruiting-embed-form__header {
-    padding-top: 0;
+  .exec-recruiting-embed-form__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Executive recruiting — who this is for */
+.exec-recruiting-audience {
+  background: var(--color-white);
+}
+
+.exec-recruiting-audience__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) minmax(0, 0.75fr);
+  gap: 2rem 2.5rem;
+  align-items: start;
+}
+
+.exec-recruiting-audience__intro {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.exec-recruiting-audience__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-audience__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-audience__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-audience__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.exec-recruiting-audience__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.exec-recruiting-audience__item-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: 0.1rem;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-audience__item-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.exec-recruiting-audience__item-label {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #042551;
+}
+
+.exec-recruiting-audience__callout {
+  min-width: 0;
+  padding-left: 2rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.exec-recruiting-audience__callout p {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #042551;
+}
+
+@media (max-width: 1024px) {
+  .exec-recruiting-audience__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .exec-recruiting-audience__callout {
+    padding-left: 0;
+    padding-top: 1.5rem;
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 768px) {
+  .exec-recruiting-audience__inner {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+}
+
+/* Executive recruiting — process */
+.exec-recruiting-process {
+  background: linear-gradient(180deg, #eef6fc 0%, #f4f8fb 100%);
+}
+
+.exec-recruiting-process__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.exec-recruiting-process__header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.exec-recruiting-process__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-process__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-process__track {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 14rem);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.exec-recruiting-process__steps {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.exec-recruiting-process__step-group {
+  display: contents;
+}
+
+.exec-recruiting-process__step-group:first-child .exec-recruiting-process__step {
+  padding-left: 0;
+}
+
+.exec-recruiting-process__separator {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 0 0.5rem;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.exec-recruiting-process__step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.exec-recruiting-process__step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(0, 102, 175, 0.12);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-process__step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-process__step-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.exec-recruiting-process__step-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.exec-recruiting-process__step-description {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-process__callout {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  padding: 1.35rem 1.25rem 1.35rem 1rem;
+  border-radius: 0.65rem;
+  background: rgba(0, 102, 175, 0.1);
+  border-left: 4px solid var(--color-blue-primary);
+}
+
+.exec-recruiting-process__callout p {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #042551;
+}
+
+@media (max-width: 1100px) {
+  .exec-recruiting-process__track {
+    grid-template-columns: 1fr;
+  }
+
+  .exec-recruiting-process__steps {
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+  }
+
+  .exec-recruiting-process__step-group {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: min(100%, 14rem);
+  }
+
+  .exec-recruiting-process__step-group:first-child {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .exec-recruiting-process__separator {
+    display: none;
+  }
+
+  .exec-recruiting-process__step {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .exec-recruiting-process__inner {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .exec-recruiting-process__step-group {
+    flex: 1 1 100%;
+  }
+}
+
+/* Executive recruiting — why Abrahams */
+.exec-recruiting-why {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.exec-recruiting-why__scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.exec-recruiting-why__scene-media {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 34%,
+    rgba(0, 0, 0, 0.08) 42%,
+    rgba(0, 0, 0, 0.22) 50%,
+    rgba(0, 0, 0, 0.42) 58%,
+    rgba(0, 0, 0, 0.62) 66%,
+    rgba(0, 0, 0, 0.82) 74%,
+    #000000 84%,
+    #000000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 34%,
+    rgba(0, 0, 0, 0.08) 42%,
+    rgba(0, 0, 0, 0.22) 50%,
+    rgba(0, 0, 0, 0.42) 58%,
+    rgba(0, 0, 0, 0.62) 66%,
+    rgba(0, 0, 0, 0.82) 74%,
+    #000000 84%,
+    #000000 100%
+  );
+}
+
+.exec-recruiting-why__scene-image {
+  object-fit: cover;
+  object-position: 68% center;
+  filter: saturate(0.38) brightness(1.06) contrast(0.96);
+}
+
+.exec-recruiting-why__scene-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 24%,
+      rgba(255, 255, 255, 0.992) 30%,
+      rgba(255, 255, 255, 0.975) 36%,
+      rgba(255, 255, 255, 0.948) 42%,
+      rgba(255, 255, 255, 0.908) 48%,
+      rgba(255, 255, 255, 0.855) 53%,
+      rgba(252, 253, 255, 0.79) 58%,
+      rgba(247, 251, 254, 0.71) 63%,
+      rgba(241, 248, 253, 0.6) 68%,
+      rgba(236, 245, 252, 0.48) 73%,
+      rgba(232, 243, 251, 0.36) 78%,
+      rgba(228, 241, 251, 0.24) 83%,
+      rgba(224, 239, 250, 0.14) 88%,
+      rgba(220, 237, 249, 0.07) 93%,
+      rgba(215, 234, 248, 0) 100%
+    ),
+    linear-gradient(90deg, transparent 0%, transparent 55%, rgba(238, 246, 252, 0.35) 100%);
+}
+
+.exec-recruiting-why__inner {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.exec-recruiting-why__header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.exec-recruiting-why__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-why__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-why__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+  gap: 2rem;
+  align-items: center;
+}
+
+.exec-recruiting-why__table-wrap {
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.exec-recruiting-why__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(0, 102, 175, 0.16);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.04);
+}
+
+.exec-recruiting-why__th {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+.exec-recruiting-why__th--traditional {
+  background: #e8edf2;
+  color: #334155;
+  border-bottom: 1px solid rgba(11, 31, 58, 0.1);
+}
+
+.exec-recruiting-why__th--abrahams {
+  background: #042551;
+  color: var(--color-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.exec-recruiting-why__td {
+  padding: 0.9rem 1.1rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+}
+
+.exec-recruiting-why__td--traditional {
+  background: var(--color-white);
+  color: #475569;
+}
+
+.exec-recruiting-why__td--abrahams {
+  background: rgba(0, 102, 175, 0.06);
+  color: #042551;
+  font-weight: 600;
+}
+
+.exec-recruiting-why__table tbody tr:last-child .exec-recruiting-why__td {
+  border-bottom: 0;
+}
+
+.exec-recruiting-why__aside {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  padding: 1.5rem 0 1.5rem 1.35rem;
+  border-left: 3px solid var(--color-blue-primary);
+}
+
+.exec-recruiting-why__aside-quote {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #042551;
+}
+
+@media (max-width: 1100px) {
+  .exec-recruiting-why__body {
+    grid-template-columns: 1fr;
+  }
+
+  .exec-recruiting-why__scene-media {
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 38%,
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.55) 72%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 38%,
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.55) 72%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+  }
+
+  .exec-recruiting-why__scene-gradient {
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.985) 28%,
+        rgba(255, 255, 255, 0.94) 42%,
+        rgba(248, 252, 255, 0.82) 56%,
+        rgba(238, 246, 252, 0.62) 70%,
+        rgba(228, 241, 251, 0.38) 100%
+      ),
+      linear-gradient(180deg, transparent 0%, rgba(238, 246, 252, 0.25) 100%);
+  }
+
+  .exec-recruiting-why__aside {
+    min-height: auto;
+    padding: 1.75rem 0 0 1.35rem;
+  }
+}
+
+/* Executive recruiting — executive impact */
+.exec-recruiting-impact {
+  background: linear-gradient(180deg, #f8fbfd 0%, var(--color-white) 100%);
+}
+
+.exec-recruiting-impact__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.exec-recruiting-impact__header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.exec-recruiting-impact__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-impact__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #042551;
+}
+
+.exec-recruiting-impact__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 14rem);
+  gap: 2rem;
+  align-items: center;
+}
+
+.exec-recruiting-impact__cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.exec-recruiting-impact__card {
+  display: grid;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.35rem 1.15rem 1.25rem;
+  border: 1px solid rgba(0, 102, 175, 0.18);
+  border-radius: 0.65rem;
+  background: var(--color-white);
+  box-shadow: 0 10px 24px rgba(11, 31, 58, 0.06);
+}
+
+.exec-recruiting-impact__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-blue-primary);
+  color: var(--color-white);
+  box-shadow: 0 8px 18px rgba(0, 102, 175, 0.22);
+}
+
+.exec-recruiting-impact__card-icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.exec-recruiting-impact__card-title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.exec-recruiting-impact__card-outcome {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-impact__card-outcome strong {
+  font-weight: 700;
+  color: #042551;
+}
+
+.exec-recruiting-impact__aside {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  padding: 1.35rem 1.25rem 1.35rem 1rem;
+  border-left: 4px solid var(--color-blue-primary);
+}
+
+.exec-recruiting-impact__aside-quote {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #042551;
+}
+
+@media (max-width: 1100px) {
+  .exec-recruiting-impact__body {
+    grid-template-columns: 1fr;
+  }
+
+  .exec-recruiting-impact__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .exec-recruiting-why__inner,
+  .exec-recruiting-impact__inner {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+}
+
+/* Executive recruiting — opportunities */
+.exec-recruiting-opportunities {
+  background: var(--color-white);
+}
+
+.exec-recruiting-opportunities__inner {
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 3.5rem 1.75rem 4rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.exec-recruiting-opportunities__inner--form {
+  max-width: 42rem;
+}
+
+.exec-recruiting-opportunities__header--section {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 40rem;
+}
+
+.exec-recruiting-opportunities__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.exec-recruiting-opportunities__main {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.exec-recruiting-opportunities__form-wrap {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.08);
+}
+
+.exec-recruiting-opportunities__back {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1.75rem 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-blue-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.exec-recruiting-opportunities__back:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.exec-recruiting-opportunities__hubspot {
+  width: 100%;
+  padding: 0.75rem 1.75rem 2rem;
+}
+
+.exec-recruiting-opportunities__hubspot .hs-form-frame {
+  width: 100%;
+}
+
+.exec-recruiting-opportunities__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-opportunities__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #042551;
+}
+
+.exec-recruiting-opportunities__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-opportunities__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.exec-recruiting-opportunities__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+  padding: 1.35rem 1.25rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.65rem;
+  background: var(--color-white);
+  box-shadow: 0 8px 20px rgba(11, 31, 58, 0.05);
+}
+
+.exec-recruiting-opportunities__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.exec-recruiting-opportunities__card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #042551;
+}
+
+.exec-recruiting-opportunities__card-industry {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-slate);
+}
+
+.exec-recruiting-opportunities__card-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--color-blue-primary);
+  background: rgba(0, 102, 175, 0.1);
+}
+
+.exec-recruiting-opportunities__card-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.exec-recruiting-opportunities__apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-blue-primary);
+  cursor: pointer;
+}
+
+.exec-recruiting-opportunities__apply:hover {
+  color: var(--color-blue-primary-hover);
+  text-decoration: underline;
+}
+
+.exec-recruiting-opportunities__apply-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.exec-recruiting-opportunities__panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #eef6fc 0%, #f4f8fb 100%);
+  border: 1px solid rgba(11, 31, 58, 0.08);
+  min-height: 100%;
+}
+
+.exec-recruiting-opportunities__panel-media {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+}
+
+.exec-recruiting-opportunities__panel-image {
+  object-fit: cover;
+  object-position: center right;
+}
+
+.exec-recruiting-opportunities__panel-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.75rem 1.5rem;
+}
+
+.exec-recruiting-opportunities__panel-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  color: var(--color-blue-primary);
+}
+
+.exec-recruiting-opportunities__panel-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #042551;
+}
+
+.exec-recruiting-opportunities__panel-description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.exec-recruiting-opportunities__panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.exec-recruiting-opportunities__panel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.exec-recruiting-opportunities__panel-check {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: var(--color-blue-primary);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.exec-recruiting-opportunities__panel-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.85rem 1.25rem;
+  border: 2px solid rgba(4, 37, 81, 0.35);
+  border-radius: 0.35rem;
+  background: transparent;
+  color: #042551;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.exec-recruiting-opportunities__panel-cta:hover {
+  background: rgba(4, 37, 81, 0.04);
+  border-color: var(--color-section-heading);
+  color: var(--color-section-heading);
+}
+
+.exec-recruiting-opportunities__panel-cta-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.exec-recruiting-opportunities__panel-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.exec-recruiting-opportunities__panel-lock svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 1100px) {
+  .exec-recruiting-opportunities__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .exec-recruiting-opportunities__panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .exec-recruiting-opportunities__inner {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .exec-recruiting-opportunities__grid {
+    grid-template-columns: 1fr;
   }
 }
 

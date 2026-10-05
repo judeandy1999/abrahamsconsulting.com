@@ -1,17 +1,19 @@
 "use client";
 
-import Script from "next/script";
 import type { HubspotFormConfig } from "../../src/content/schema";
+import { HubSpotPortalEmbedScript } from "./HubSpotPortalEmbedScript";
 
 type HubSpotFormFrameProps = {
   config: HubspotFormConfig;
   className?: string;
+  /** When false, assume the portal embed script is loaded elsewhere on the page. */
+  loadPortalScript?: boolean;
 };
 
-export function HubSpotFormFrame({ config, className }: HubSpotFormFrameProps) {
+export function HubSpotFormFrame({ config, className, loadPortalScript = true }: HubSpotFormFrameProps) {
   return (
     <div className={className}>
-      <Script src={`https://js.hsforms.net/forms/embed/${config.portalId}.js`} strategy="afterInteractive" />
+      {loadPortalScript ? <HubSpotPortalEmbedScript portalId={config.portalId} /> : null}
       <div
         className="hs-form-frame"
         data-region={config.region}
